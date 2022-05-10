@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20120330//EN" "http://jats.nlm.nih.gov/publishing/1.2/JATS-journalpublishing1.dtd">
+<!--<?xml-stylesheet type="text/xsl" href="article.xsl"?>-->
+<article article-type="research-article" dtd-version="1.2" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<front>
+<journal-meta>
+<journal-id journal-id-type="issn">2397-1835</journal-id>
+<journal-title-group>
+<journal-title>Glossa: a journal of general linguistics</journal-title>
+</journal-title-group>
+<issn pub-type="epub">2397-1835</issn>
+<publisher>
+<publisher-name>Open Library of Humanities</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.16995/glossa.6371</article-id>
+<article-categories>
+<subj-group>
+<subject>Research article</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Differential place marking beyond place names: Evidence from two Amazonian languages</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Skilton</surname>
+<given-names>Amalia</given-names>
+</name>
+<email>amalia.skilton@cornell.edu</email>
+<xref ref-type="aff" rid="aff-1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Obert</surname>
+<given-names>Karolin</given-names>
+</name>
+<email>karoobert@gmail.com</email>
+<xref ref-type="aff" rid="aff-2">2</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1"><label>1</label>Cornell University, US</aff>
+<aff id="aff-2"><label>2</label>University of Texas at Austin, US</aff>
+<pub-date publication-format="electronic" date-type="pub" iso-8601-date="2022-04-11">
+<day>11</day>
+<month>04</month>
+<year>2022</year>
+</pub-date>
+<pub-date pub-type="collection">
+<year>2022</year>
+</pub-date>
+<volume>7</volume>
+<issue>1</issue>
+<fpage>1</fpage>
+<lpage>31</lpage>
+<permissions>
+<copyright-statement>Copyright: &#x00A9; 2022 The Author(s)</copyright-statement>
+<copyright-year>2022</copyright-year>
+<license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/4.0/">
+<license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0 International License (CC-BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited. See <uri xlink:href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</uri>.</license-p>
+</license>
+</permissions>
+<self-uri xlink:href="http://www.glossa-journal.org/articles/10.16995/glossa.6371/"/>
+<abstract>
+<p>Not all spatial adjuncts behave alike. In some languages, certain spatial adjuncts display different marking or different combinatorial possibilities than others. Recent functional-typological studies make two claims about this <italic>differential place marking</italic> phenomenon: (1) it is primarily motivated by noun semantics, opposing place names and other nouns; and (2) it is primarily realized as a contrast between zero-marking and overt marking of spatial adjunct function. We evaluate this view against new fieldwork data from two Indigenous Amazonian languages, D&#226;w (Naduhup) and Ticuna (isolate). In D&#226;w and Ticuna, differential place marking is conditioned not only by noun semantics, but also by the perceptual properties of noun referents and by morphosyntactic and semantic properties of verbs. Further, the phenomenon is realized not only by alternations between zero and overt marking, but also by alternations among overt markers and alternations in the set of markers with which the adjunct can combine. These findings suggest that differential place marking &#8211; like other differential case phenomena, such as split ergativity &#8211; is conditioned by a cross-linguistically diverse suite of factors within and beyond the noun phrase.</p>
+</abstract>
+</article-meta>
+</front>
+<body>
+<sec>
+<title>1 Introduction</title>
+<p>Not all spatial adjuncts behave alike. For example, in languages such as Yucatec (Mayan), Kilivila (Austronesian), and Tswana (Bantu) (<xref ref-type="bibr" rid="B26">Stolz et al. 2014: 109, 119, 145&#8211;147</xref>), place names are zero-marked in spatial adjunct function, while other noun phrases receive overt marking. Prior studies of this phenomenon, where some spatial adjuncts are marked differently from others in the same semantic role &#8211; for example, with vs. without a preposition &#8211; have christened it <italic>differential place marking</italic> (DPM; <xref ref-type="bibr" rid="B10">Haspelmath 2019</xref>). These studies suggest that DPM is driven primarily by the lexical semantics of the adjunct noun phrase, especially its status as a place name, and is realized primarily as alternation between zero- and overt marking of the spatial adjunct function (<xref ref-type="bibr" rid="B27">Stolz et al. 2017: 456</xref>; <xref ref-type="bibr" rid="B10">Haspelmath 2019: 319</xref>). Under this analysis, DPM &#8211; with its simple form and its close relationship to lexical semantics &#8211; looks like a reflex of noun categorization, analogous to the differential plural marking of mass vs. count nouns.</p>
+<p>In this study, we propose an alternative view of DPM: not as noun categorization, but as a form of differential case marking. Presenting fieldwork data from two Amazonian languages, D&#226;w (Naduhup, Brazil) and Ticuna (isolate; Brazil, Colombia, Peru), we show that DPM can be conditioned not only by the lexical semantics of the noun phrase, but also by properties of the verb and clause, such as lexical aspect and transitivity &#8211; much as split ergativity, another kind of differential case marking, can be conditioned either by noun or verb properties. We further demonstrate that DPM can be realized through alternations between overt markers of equal complexity, as well as through alternations between zero and overt marking &#8211; again, much as differential object marking can be realized via alternations between overt accusative and overt oblique cases with object-marking functions, as well as between overt and zero markers. In other words, while DPM is sensitive to lexical semantics, it is not simply a reflex of noun categorization or the semantic role associations of nouns (cf. <xref ref-type="bibr" rid="B10">Haspelmath 2019</xref>). Rather, DPM is a differential case phenomenon which departs from other forms of differential case marking only in that it affects adjuncts rather than arguments.</p>
+<p>The paper is structured as follows. In &#167;1 we summarize the main arguments made about DPM in the functional-typological literature. In &#167;2, we introduce the study languages and data sources. Over the following two sections, we examine the conditioning and form of differential place marking in D&#226;w (&#167;3) and Ticuna (&#167;4). In &#167;5 we discuss our findings in the light of prior approaches to DPM, and in &#167;6 we conclude.</p>
+<sec>
+<title>1.1 Approaches to DPM</title>
+<p>DPM is often conditioned by properties of the place-marked noun, and it often involves alternations in the length or complexity of marking. Some analyses of DPM focus on the conditioning role of nouns, treating the phenomenon as a form of noun categorization. Other, complementary analyses focus on the form of the alternating place markers. Though these analyses still view DPM as driven by noun properties and noun categorization, they also draw analogies between DPM and the differential marking of arguments &#8211; especially objects. While categorization- and alternation-focused approaches are theoretically compatible, these differing emphases lead us to review them separately.</p>
+<sec>
+<title>1.1.1 Categorization analyses</title>
+<p>Some authors (<xref ref-type="bibr" rid="B6">Cablitz 2008</xref>; <xref ref-type="bibr" rid="B23">Rybka 2014</xref>; <xref ref-type="bibr" rid="B24">2015</xref>) treat DPM as a reflex of a more general lexical distinction between object-denoting nouns, or <italic>what-</italic>nouns, and place-denoting nouns, or <italic>where</italic>-nouns. In studies of languages such as Lokono (Arawak) and Marquesan (Oceanic), these authors propose that nouns can be categorized as either <italic>what-</italic> or <italic>where-</italic>nouns based on ontological properties of their referents, such as size, moveability, and perceptual boundedness. For example, terms for relatively stationary referents are likely to be <italic>where-</italic>nouns, while terms for moveable referents are <italic>what-</italic>nouns (Lyons 1997; <xref ref-type="bibr" rid="B29">Talmy 2000</xref>). The ontological basis of the <italic>what-where</italic> distinction makes it akin to the mass-count distinction &#8211; and as with countability, languages vary in the referent properties underlying the <italic>what-where</italic> distinction and in the number of noun categories which it defines (<xref ref-type="bibr" rid="B23">Rybka 2014</xref>).</p>
+<p>Categorization as a <italic>what-</italic> or <italic>where-</italic>noun influences many of the noun&#8217;s syntactic behaviors, including its marking in spatial adjunct function (<xref ref-type="bibr" rid="B17">Landau &amp; Jackendoff 1993</xref>; <xref ref-type="bibr" rid="B6">Cablitz 2008</xref>; <xref ref-type="bibr" rid="B23">Rybka 2014</xref>; <xref ref-type="bibr" rid="B22">Obert 2019</xref>). This grammatical influence of categorization is not direct, but instead mediated by role-referent association (hence, <italic>role association</italic>; <xref ref-type="bibr" rid="B11">Haspelmath 2021</xref>) &#8211; the concept that a noun&#8217;s complexity of marking in a particular semantic role varies inversely with its degree of semantic association with that role (often conceptualized as frequency in the role). In figure-ground constructions, these authors argue, <italic>what-</italic>nouns typically appear as figures. When they instead appear as grounds, they deviate from their usual semantic roles and therefore require more explicit place marking. In contrast, <italic>where</italic>-nouns require less marking because ground is their default semantic role (<xref ref-type="bibr" rid="B23">Rybka 2014: 41</xref>).</p>
+</sec>
+<sec>
+<title>1.1.2 Alternation analyses</title>
+<p>Approaches to DPM which focus on the form of the alternating place markers, such as Haspelmath (<xref ref-type="bibr" rid="B10">2019</xref>) and Stolz et al. (<xref ref-type="bibr" rid="B26">2014</xref>), depart from categorization-based accounts in several ways.</p>
+<p>First, while categorization-focused analyses of DPM focus on the <italic>distinctness</italic> of marking between noun categories, alternation-focused analyses emphasize <italic>differences</italic> in the length and complexity of marking. This emphasis is evident from authors&#8217; comparisons of ground phrases formed with place names vs. with common nouns. For example, Stolz et al. (<xref ref-type="bibr" rid="B27">2017: 455</xref>) write that the marking of place name grounds is &#8220;less complex,&#8221; while Haspelmath (<xref ref-type="bibr" rid="B10">2019: 317</xref>) states that typologically, place names bear &#8220;shorter&#8221; marking and are more likely to appear zero-marked. Within this literature, these comparisons are important because they support larger claims about correspondences between form length and role association (<xref ref-type="bibr" rid="B10">Haspelmath 2019: 331</xref>).</p>
+<p>Second, while categorization-focused analyses see DPM as conditioned primarily by the real-world properties of nominal <italic>referents</italic>, alternation-based analyses posit that it is also conditioned by the lexical properties of <italic>nouns</italic>. These authors acknowledge that referent properties like animacy can impact DPM, but treat lexical category &#8211; status as a place name &#8211; as the most important influence on a noun&#8217;s DPM behavior: place names are more likely to display zero-marking than any other noun type (<xref ref-type="bibr" rid="B10">Haspelmath 2019: 319</xref>; <xref ref-type="bibr" rid="B27">Stolz et al. 2017: 456</xref>). Despite this difference, alternation-focused analyses, like categorization-focused ones, still view role association as the most immediate cause of DPM. In this framework, the zero-marking of place names in ground function is explained as showing that &#8211; because of these nouns&#8217; place-denoting semantics &#8211; they frequently appear in the ground role (<xref ref-type="bibr" rid="B10">Haspelmath 2019: 315&#8211;317</xref>). Thus, despite their lesser emphasis on the real-world basis for categorization, alternation-based analyses still see DPM as driven by a form of noun categorization &#8211; i.e., categorization as an item that more vs. less frequently or prototypically appears as a ground.</p>
+<p>Last, alternation-focused accounts examine a different kind of data than categorization-focused ones. Categorization approaches describe the DPM systems of specific languages, while alternation approaches describe typological trends. Furthermore, where categorization approaches analyze the behavior of individual nouns, alternation approaches offer explanations for the cross-linguistic behavior of entire noun categories.</p>
+</sec>
+</sec>
+<sec>
+<title>1.2 DPM vs. differential argument marking</title>
+<p>Under both alternation- and categorization-focused approaches, DPM centers on alternations between more vs. less complex marking of spatial adjunct function; is controlled by lexical semantic properties of the noun; and is mediated by role association. This view strongly resembles functional-typological analyses of differential object marking (<xref ref-type="bibr" rid="B4">Bossong 1991</xref>). Haspelmath (<xref ref-type="bibr" rid="B10">2019: 314</xref>) makes the analogy explicit, arguing that DPM and asymmetric differential object marking &#8211; such as the alternation between zero-marking of inanimate and overt marking of animate objects in Spanish &#8211; are driven by the same universal pressure toward more explicit marking of less expected semantic roles.</p>
+<p>Haspelmath&#8217;s (<xref ref-type="bibr" rid="B10">2019</xref>) analogy is insightful for reconceptualizing DPM as a form of differential case marking, rather than a reflex of noun categorization. Yet if we view DPM through the lens of differential case marking of arguments, we predict that the phenomenon will display much greater diversity in both conditioning and form than observed in prior studies. While existing research views DPM as conditioned only by the lexical semantics of the noun, differential object marking can also be conditioned by the definiteness and topicality of the noun phrase (<xref ref-type="bibr" rid="B1">Aissen 2003</xref>) and the TAM properties of the entire clause, as in Palauan (Austronesian; <xref ref-type="bibr" rid="B33">Woolford 2000</xref>). Similarly, differential object marking &#8211; like DPM &#8211; is most often realized, and sometimes even defined (e.g., by <xref ref-type="bibr" rid="B1">Aissen 2003</xref>), as alternation between zero and overt markers. But it can also be realized by symmetricthe spatial adjunct. As we will explor ecase alternations, for example between an overt accusative case and an oblique case with certain object-marking functions (<xref ref-type="bibr" rid="B13">Iemmolo 2013: 397</xref>; <xref ref-type="bibr" rid="B20">Malchukov &amp; de Swart 2008: 347</xref>). Differential <italic>subject</italic> marking phenomena, such as split ergativity, display an even more typologically diverse array of conditioning factors &#8211; not only noun phrase properties, but also clause properties like tense, aspect, mood, and main vs. dependent clause type &#8211; and realizations (<xref ref-type="bibr" rid="B12">Hopper &amp; Thompson 1980</xref>; <xref ref-type="bibr" rid="B9">de Hoop &amp; de Swart 2009</xref>).</p>
+<p>In other words, if DPM resembles the differential case marking of arguments, we expect that it will be conditioned by a cross-linguistically diverse suite of factors. These will include the lexical semantics of the noun (i.e., status as a place name or denoting a place), but may also &#8211; as with differential argument marking &#8211; include information-structural features of the noun phrase, as well as TAM and other features of the clause. Similarly, if DPM is fully analogous to differential argument marking phenomena, asymmetric alternation (e.g., between zero and overt marking) will be typologically most common, but symmetric alternation will also be present. In the remainder of this study, we demonstrate that the DPM systems of D&#226;w and Ticuna lend strong support to these predictions, and less support to an account of DPM as noun categorization.</p>
+</sec>
+<sec>
+<title>1.3 Working definitions</title>
+<p>Because studies of DPM use widely varying terminology, we offer the following working definitions before introducing the language data. We define <italic>differential place marking</italic> as any phenomenon where two spatial adjuncts with the same semantic role display different morphological possibilities for marking of the adjunct role. We consider adjuncts to have the same semantic role if they are both goals, both sources, or both locations. We refer to proper nouns denoting places interchangeably as <italic>place names</italic> and <italic>toponyms</italic>. Following Stolz et al. (<xref ref-type="bibr" rid="B26">2014: 42</xref>), we refer to nouns that denote places &#8211; landscape terms, landform terms (e.g. <italic>mountain, valley</italic>), and place names &#8211; collectively as <italic>place nouns</italic>. Following the convention of DPM literature (<xref ref-type="bibr" rid="B26">Stolz et al. 2014</xref>), we refer to all other nouns, including the names of animates, as <italic>common nouns</italic>. We avoid the terms <italic>what-noun, where-noun</italic>, and <italic>topo-noun</italic> (<xref ref-type="bibr" rid="B10">Haspelmath 2019: 322</xref>) because they do not map well onto the noun categories proposed in our analyses.</p>
+</sec>
+</sec>
+<sec>
+<title>2 Language background</title>
+<sec>
+<title>2.1 D&#226;w</title>
+<p>D&#226;w (ISO-639: kwa) is a Naduhup language spoken by 142 people. Speakers live in a single community near the town of S&#227;o Gabriel da Cachoeira in northwestern Brazil.</p>
+<p>All D&#226;w examples are from language documentation conducted by the second author and the Waru&#225; community. Most data come from landscape descriptions and personal and traditional narratives. Elicited data was collected using standardized stimuli, such as space games (e.g. <xref ref-type="bibr" rid="B2">Ameka et al. 1999</xref>), images (e.g. <xref ref-type="bibr" rid="B5">Bowerman &amp; Pederson 1992</xref>), and questionnaires. These were administered in both D&#226;w and Portuguese.</p>
+<p>Most D&#226;w examples were contributed by Deolinda Fernandes, Jair Ara&#250;jo, Mocita Ara&#250;jo, Mois&#233;s Moraes de Souza, Roberto Sanches, Pedro Moraes de Souza, Maria Auxiliadora Souza and Ester Sanches, all of whom consented to the disclosure of their names. These collaborators ranged in age from 22 to &#126;75 years. Six were fluent in both D&#226;w and Portuguese; two only had passive knowledge of Portuguese. Most data is available in the Archive of the Indigenous Languages of Latin America. Other data was deposited in the archive of the Museu do &#205;ndio Rio de Janeiro (MIRJ), which is not yet open to the public. D&#226;w examples are displayed in a practical orthography which mirrors the IPA, with the following exceptions: /&#607;/ is written &lt;j&gt;; /&#660;/ &lt;&#8217;&gt;; /&#643;/ &lt;s&gt;; /h/ &lt;r&gt;; /&#331;/ &lt;nh&gt;; /&#331;/ &lt;gn&gt;; /j/ &lt;y&gt;; /&#616;/ &lt;&#649;&gt;; /e/ &lt;&#234;&gt;; /&#603;/ &lt;e&gt;; /&#612;/ &lt;&#226;&gt;; /o/ &lt;&#244;&gt;; and /&#596;/ &lt;o&gt;. Long vowels are marked by doubling.</p>
+</sec>
+<sec>
+<title>2.2 Ticuna</title>
+<p>Ticuna (ISO: tca) is a language isolate spoken by 38,690 to 70,000 people (<xref ref-type="bibr" rid="B18">Lewis et al. 2014</xref>; <xref ref-type="bibr" rid="B14">ISA 2021</xref>). Most speakers live along the western course of the Amazon/Solimo&#771;es River in western Brazil, southern Colombia, and northeastern Peru.</p>
+<p>Ticuna examples in this paper are from the first author&#8217;s fieldwork in Cushillococha, Peru. Positive examples come primarily from landscape description interviews (<xref ref-type="bibr" rid="B15">Kita 2001</xref>). These are non-metalinguistic interviews where speakers describe the location of landmarks in their community and how the landmarks have changed over time. Negative examples and minimal pairs come from elicitation. Landscape description interviews were conducted monolingually in Ticuna, while elicitation was conducted bilingually in Ticuna and Spanish.</p>
+<p>Eight people, four women and four men, contributed most of the Ticuna examples. Angel Bitancourt Serra, Yaneth Candido Guerrero, Deoclesio Guerrero Gomez, and Sotil Suarez Gonzalez contributed both landscape description interviews and elicited examples. Lilia Witancort Guerrero and an anonymous consultant contributed elicited examples only; Lucinda Gomez Cordero and Hortensia Coello Guerrero contributed landscape description interviews only. All of these consultants agreed to the disclosure of their names, except that one chose to remain anonymous. The Ticuna consultants ranged in age from 36 to 74 years and all spoke Ticuna as their sole native language. Six spoke Spanish as an L2, while two had only passive knowledge of Spanish.</p>
+<p>All Ticuna data is publicly available in the California Language Archive (CLA). Below each example, we identify the consultant who produced the example, then cite the archival source of the example by CLA accession number and filename. Transcriptions of Ticuna use IPA, except that IPA [&#638;] is written &lt;r&gt;. Numerals represent lexical tone; 5 is the highest tone.</p>
+</sec>
+</sec>
+<sec>
+<title>3 DPM in D&#226;w: Between boundedness and markedness</title>
+<p>DPM in D&#226;w is realized mostly by alternation in the combinatorial possibilities available to nouns, involving categorical alternation between markers only to a limited extent (&#167;3.2). Furthermore, while DPM is controlled by noun semantics, the semantic classes involved partition the lexicon much more finely than seen in previous categorization-based analyses.</p>
+<p>The D&#226;w examples in (1)&#8211;(2) provide initial evidence for DPM. Here, the alternation between configuational postpositions such as <italic>ked</italic> and the generic locative marker <italic>rid</italic> is rooted in the semantic class of the noun heading the spatial adjunct. As we will explore in &#167;3.1, in D&#226;w human, inanimate, and place-denoting nouns can combine with a rich inventory of configurational postpositions, such as <italic>ked</italic> in (1). However, these classes of nouns cannot be zero-marked, nor can they combine with the generic locative marker <italic>rid</italic>. In contrast, spatial adjuncts headed by a toponym, as in (2), are compatible only with the generic locative <italic>rid</italic>.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(1)</p></list-item>
+</list>
+</list-item>
+<list-item>
+    <list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+    <list-item><p><italic>Hebrew (Semitic)</italic><xref rid="B1" ref-type="bibr">label</xref></p></list-item>
+</list>
+</list-item>
+</list>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>tir</p></list-item>
+<list-item><p>3<sc>sg</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ka&#8217;</p></list-item>
+<list-item><p>lie.in.hammock</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>m&#227;r</p></list-item>
+<list-item><p><sc>rep</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>yeg</bold></p></list-item>
+<list-item><p>[hammock</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>ked</bold>/*rid/*&#8709;)]<sub>ground</sub></p></list-item>
+<list-item><p>in/*<sc>loc</sc>/*&#8709;]</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;He was lying in the <bold>hammock</bold> [inanimate noun], they say.&#8217;</p></list-item>
+<list-item><p>(MS, ailla:254700, 20130724_historia_McS.wav, 4:30&#8211;4:46)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(2)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>&#8216;aa&#8217;</p></list-item>
+<list-item><p><sc>anph</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#7869;ed</p></list-item>
+<list-item><p>come</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>d&#244;o&#8217;</p></list-item>
+<list-item><p><sc>aux</sc>:source</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>baal&#8217;</bold></p></list-item>
+<list-item><p>[Manaus</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid/</bold>*ked/ *&#8709;)]<sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc>/*<sc>in</sc>/*&#8709;]</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;He came yesterday from <bold>Manaus</bold> [place name].&#8217;</p></list-item>
+<list-item><p>(MFM, ailla:254700, 20130723_historia_MFM.wav, 6:50&#8211;7:30)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>As we discuss in more detail below, the postpositions heading the adjuncts in (1)&#8211;(2) differ in meaning and with respect to the types of arguments they select. Configurational postpositions such as <italic>ked</italic> express many different spatial relations (with equivalents to <italic>in, at, on</italic>, and so on). In contrast, <italic>rid</italic> lacks any configurational meaning. It collapses the roles of location, goal, and source and contributes no information about the spatial relation between the figure and ground. The alternations between the configurational postpositions and the generic locative <italic>rid</italic> therefore represent a form of DPM.</p>
+<p>Exceptions to the pattern of marking with postpositions in (1)&#8211;(2) do exist. Three D&#226;w landscape terms can occur zero-marked as spatial adjuncts: <italic>xaay</italic> &#8216;forest&#8217; (in (3), <italic>tuu</italic> &#8216;ground,&#8217; and <italic>pox</italic> &#8216;sky.&#8217; This indicates a first division among place nouns &#8211; nouns which require postpositions, such as the toponym <italic>baal</italic> &#8216;Manaus&#8217; &#8216;in (2), contrast with nouns which allow zero-marking, such as <italic>xaay</italic> &#8216;forest&#8217; in (3).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(3)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>id</p></list-item>
+<list-item><p>1<sc>pl</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ton-&#234;e</p></list-item>
+<list-item><p>give.birth-<sc>pst</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>xaay</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>forest</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>id-e&#771;j</p></list-item>
+<list-item><p>1<sc>pl.ben</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>r&#245;ot</p></list-item>
+<list-item><p>far</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Far away, we gave birth in the <bold>forest</bold> [landscape term].&#8217;</p></list-item>
+<list-item><p>(MFM, ailla:254700, 20130723_historia_MFM.wav, 0:40&#8211;1:10)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Thus, D&#226;w displays three place-marking strategies: configurational postpositions (1), the generic locative marker <italic>rid</italic> (2), and zero-marking (3). Two properties of the nominal referent control the alternation between these strategies: <italic>perceptual boundedness</italic> and <italic>size</italic>.</p>
+<p>Perceptual boundedness is defined by a referent&#8217;s intrinsic perceptual properties. First-order entities &#8211; three-dimensional, self-moving or manipulable entities, like humans, animals, or prototypical objects (e.g. baskets) &#8211; show clear perceptual boundaries (<xref ref-type="bibr" rid="B19">Lyons 1977</xref>). In contrast, place nouns, including landscape or landform terms such as <italic>forest</italic> and <italic>sky</italic>, usually lack such boundaries (<xref ref-type="bibr" rid="B6">Cablitz 2008</xref>; <xref ref-type="bibr" rid="B25">Smith &amp; Mark 1999</xref>). Furthermore, some geographic formations, such as ponds, cliffs, and lakes, occupy an intermediate position between these poles. They have clear perceptual boundaries, but are not manipulable.</p>
+<p>DPM in Da&#770;w displays a correlation between perceptual boundedness and markedness: referents which are larger and less perceptually bounded have more restricted marking possibilities. Common nouns (those denoting smaller objects, with clear perceptual boundaries) can be marked with a variety of configurational postpositions. Landscape terms denoting larger but bounded referents are incompatible with most of these postpositions, instead allowing only one configurational postposition each. Only landscape terms that lack perceptual boundaries at all (e.g. <italic>sky</italic>) can occur zero-marked. Toponyms occupy a special place within this continuum. Though landform terms, such as <italic>n&#226;ax</italic> &#8216;river,&#8217; can combine with postpositions, toponyms &#8211; even toponyms formed with landform terms, such as <italic>w&#226;an n&#226;ax</italic> &#8216;Curicurari river&#8217; &#8211; combine only with <italic>rid</italic>.</p>
+<sec>
+<title>3.1 Nouns that combine with configurational postpositions</title>
+<p>D&#226;w displays 14 spatial postpositions. They mark common nouns and some place nouns in spatial adjunct function. Semantically, they express configurational relations between the figure and ground, equivalent to English prepositions such as <italic>on, in, under, at</italic>, and <italic>below</italic>. In this section, we explore the properties which make nouns compatible with spatial postpositions, examining how size and degree of boundedness influence this compatibility.</p>
+<p>Recall from &#167;3 that first-order entities (human and object-denoting nouns) usually have clear perceptual boundaries. In line with this, figures can participate in a range of spatial relations with first-order entity grounds. For example, consider the inanimate noun <italic>yeg</italic> &#8216;hammock.&#8217; Figures can participate in a variety of spatial relations with specific parts of this ground, such as containment (4); attachment (5); and non-contiguity (6). Each relation is marked with a different configurational postposition.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(4)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>Lucian</p></list-item>
+<list-item><p>Luciana</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>x&#649;t&#649;</p></list-item>
+<list-item><p>go.down</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>d&#244;o&#8217;</p></list-item>
+<list-item><p><sc>aux</sc>:source</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>yeg</bold></p></list-item>
+<list-item><p>hammock</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>ked</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>in</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Luciana gets off the <bold>hammock</bold> [inanimate noun].&#8217;</p></list-item>
+<list-item><p>Lit.: &#8216;Luciana goes down from inside the hammock.&#8217;</p></list-item>
+<list-item><p>(SFS, field notes, 2017/07/03, p. 78)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(5)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>yeg</p></list-item>
+<list-item><p>hammock</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>tit</p></list-item>
+<list-item><p>string</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>d&#226;k</p></list-item>
+<list-item><p>be.attached</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>yeg</bold></p></list-item>
+<list-item><p>hammock</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>re&#771;d</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>in.adhesion</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;The hammock string is attached to the <bold>hammock</bold> [inanimate noun].&#8217;</p></list-item>
+<list-item><p>(SFS, field notes, 2016/07/28, p. 50)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(6)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>d&#226;w</p></list-item>
+<list-item><p>d&#226;w.people</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>tee</p></list-item>
+<list-item><p>child</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>pe&#771;em</p></list-item>
+<list-item><p>sit</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>yeg</bold></p></list-item>
+<list-item><p>hammock</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>b&#649;&#649;t</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>under</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;The child is sitting under the <bold>hammock</bold> [inanimate noun].&#8217;</p></list-item>
+<list-item><p>(SFS, field notes, 2017/07/03, p. 62)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>(4)&#8211;(6) point to a first correlation between boundedness and markedness. First-order entities &#8211; which have clear perceptual boundaries and extension in space &#8211; have very extensive combinatorial possibilities, potentially combining with any spatial postposition in Da&#770;w.</p>
+<p>At the same time, some geographic entities, such as islands, ponds, and mountains, have fairly perceptible boundaries. D&#226;w nouns denoting these referents can also combine with configurational postpositions. However, their combinatorial possibilities are restricted, usually to just one postposition that expresses the default spatial relationship between a figure and the relevant geographic entity. Manmade landscape terms &#8211; such as <italic>taaw</italic> &#8216;town,&#8217; <italic>kaaw</italic> &#8216;manioc garden,&#8217; and <italic>xam</italic> &#8216;soccer field&#8217; &#8211; provide a prominent example of this restriction. All of these landscape terms appear as complements of the postposition <italic>w&#226;</italic>&#8217; &#8216;on,&#8217; as illustrated by (7).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(7)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>[<bold>taaw</bold></p></list-item>
+<list-item><p>town</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>w&#226;&#8217;</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>on</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>daad</p></list-item>
+<list-item><p>write</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#234;en</p></list-item>
+<list-item><p>now</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>rid-i&#8217;</p></list-item>
+<list-item><p>3<sc>pl.foc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Now they are studying in the <bold>town (S&#227;o Gabriel da Cachoeira)</bold> [landscape term].&#8217;</p></list-item>
+<list-item><p>(NMS, ailla:254700, 20130725_narrativa_NMS.wav, 3:40&#8211;3:55)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In the topographic context of Northwestern Amazonia, towns, gardens, and fields can be understood as clearings within the dense tree cover of the rainforest, and their boundaries are clearly perceptible to D&#226;w speakers. At the same time, these landforms typically show large extensions in space &#8211; much larger than human referents or objects. This restricts the possible spatial relations between a figure and these grounds.</p>
+<p>Like manmade landscapes, islands and river beaches also show clear perceptual boundaries delimited by water. As a result, figures are usually understood to be <italic>w&#226;&#8217;</italic> &#8216;on&#8217; these places, as illustrated in (8).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(8)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>id</p></list-item>
+<list-item><p>1<sc>pl</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#245;x</p></list-item>
+<list-item><p>fall</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>y&#234;t-&#234;e&#8217;</p></list-item>
+<list-item><p>lie.down-<sc>pst</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>merec&#234;e</p></list-item>
+<list-item><p>Merc&#234;s</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>merec&#234;e</p></list-item>
+<list-item><p>Merc&#234;s</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>taa,</p></list-item>
+<list-item><p>in.front</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>xeew</bold></p></list-item>
+<list-item><p>beach</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>w&#226;&#8217;]</bold><sub>ground</sub></p></list-item>
+<list-item><p>on</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;We arrived in front of (the city of) Merc&#234;s, at the <bold>beach</bold> [landscape term].&#8217;</p></list-item>
+<list-item><p>(JA, MIRJ, daw_28122017_ko_01.wav, 0:20&#8211;0:42)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Likewise, bodies of water &#8211; such as rivers, creeks and lakes &#8211; are bounded in space by their banks and edges. Nouns denoting bodies of water are thus typically complements of the aquatic postposition <italic>mi&#771;i&#8217;</italic> &#8216;in liquid/at a waterway,&#8217; as shown in (9). This postposition does not express configuration, but instead classifies the ground as a liquid.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(9)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>id</p></list-item>
+<list-item><p>1<sc>pl</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>bax</p></list-item>
+<list-item><p>emerge</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>m&#361;g</p></list-item>
+<list-item><p>here</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>n&#226;ax</bold></p></list-item>
+<list-item><p>water</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>p&#244;og</bold></p></list-item>
+<list-item><p>big</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>m&#297;i&#8217;</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>in.liquid</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;We emerged here in <bold>this river</bold> [landform term].&#8217;</p></list-item>
+<list-item><p>(JXX, ailla:254700, 20130725_narrativo_antigos_JXX.wav)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In sum, for nouns compatible with at least some postpositions, DPM is controlled by ontological properties of the nominal referent, primarily size and boundedness. It is differential in that nouns differ in their combinatorial possibilities &#8211; how many different postpositions they may combine with &#8211; and <italic>not</italic> in that nouns differ in the length or complexity or marking. Furthermore, while properties of the nominal referent clearly impact DPM, animacy (treated as important to DPM by <xref ref-type="bibr" rid="B10">Haspelmath 2019: 323</xref>) does not. Humans and other animate referents pattern together with inanimates, reflecting their shared status as first-order entities.</p>
+</sec>
+<sec>
+<title>3.2 Nouns that combine with the locative marker <italic>rid</italic></title>
+<p>Besides the configurational postpositions, D&#226;w also displays a generic locative marker <italic>rid</italic>. This item can mark all place nouns functioning as spatial adjuncts, but does not mark common nouns in this position. Thus, compatibility with <italic>rid</italic> is the most notable morphosyntactic cut-off point between common nouns and place nouns in D&#226;w.</p>
+<p>The generic locative <italic>rid</italic> is &#8216;generic&#8217; because it can mark all three spatial roles on place nouns: location in static spatial scenes (10) and goal (11) or source (12) in motion events. As this range of readings indicates, <italic>rid</italic> lacks any configurational meaning.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(10)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>Maria</p></list-item>
+<list-item><p>Maria</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#297;i</p></list-item>
+<list-item><p>be.located</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>n&#361;&#8217; &#8216;m&#227;ay</bold></p></list-item>
+<list-item><p>other</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>n&#297;r xoot</bold></p></list-item>
+<list-item><p>community</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid</bold>]<sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Maria is in another <bold>community</bold> [landform term].&#8217;</p></list-item>
+<list-item><p>(DFS, field notes, 2016/07/05, p. 35)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(11)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>ab&#649;g</p></list-item>
+<list-item><p>and.then</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>rid</p></list-item>
+<list-item><p>3<sc>pl</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>r&#227;m</p></list-item>
+<list-item><p>go</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>yoow</p></list-item>
+<list-item><p><sc>prog</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>m&#227;r</p></list-item>
+<list-item><p><sc>rpt</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>pox</bold></p></list-item>
+<list-item><p>sky</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid</bold>]<sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Then they were going away upwards.&#8217;</p></list-item>
+<list-item><p>(McS, ailla:254700, 20130724_historia_McS.wav, 3:30&#8211;3:55)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(12)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>&#8216;aa&#8217;</p></list-item>
+<list-item><p><sc>anph</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#7869;ed</p></list-item>
+<list-item><p>come</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>d&#244;o&#8217;</p></list-item>
+<list-item><p><sc>aux</sc>:source</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>baal&#8217;</bold></p></list-item>
+<list-item><p>Manaus</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid]</bold><sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;She came from <bold>Manaus</bold> [place name].&#8217;</p></list-item>
+<list-item><p>(PM, field notes 2017/07/15, p. 13)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>All place nouns &#8211; whether landscape terms, landform terms, toponyms or spatial adverbs &#8211; are compatible with <italic>rid</italic>. In contrast, object and human nouns are <italic>not</italic> compatible with the marker for any spatial role. (13) illustrates this for the role of location; goal and source behave the same.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(13)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>*tir</p></list-item>
+<list-item><p>&#160;&#160;3<sc>sg</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ka&#8217;</p></list-item>
+<list-item><p>lie.in.hammock</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>m&#227;r</p></list-item>
+<list-item><p><sc>rpt</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>yeg</bold></p></list-item>
+<list-item><p>hammock</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid</bold>]<sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#160;&#160;&#160;Intended meaning: She is lying in the <bold>hammock</bold> [inanimate noun].</p></list-item>
+<list-item><p>&#160;&#160;&#160;(SFS, field notes, 2017/07/03, p. 79)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Nouns that are compatible with the generic locative <italic>rid</italic> function as grounds <italic>per se</italic>, since they are permanently anchored in space. Furthermore, their specific ontological properties &#8211; lesser perceptual boundedness, larger size, less crisp spatial boundaries, and immobility &#8211; all imply that these nouns function more readily as grounds (<xref ref-type="bibr" rid="B24">Rybka 2015</xref>; <xref ref-type="bibr" rid="B28">Talmy 1983</xref>).</p>
+<p>Many landscape and landform terms can combine either with (one) spatial postposition <italic>or</italic> with the generic locative marker, as exemplified in (14). This interchangeability does not alter the spatial relationship that holds between figure and ground. However, the alternation between configurational postpositions and the generic locative marker again seems to be conditioned by the perceptual properties of the place noun. Landscape and landform terms that denote referents with clearer perceptual boundaries, such as <italic>kaaw</italic> &#8216;manioc garden,&#8217; &#8216;<italic>m&#245;r</italic> &#8216;pond,&#8217; and <italic>paas</italic> &#8216;mountain,&#8217; are preferentially marked with spatial postpositions. In contrast, landscape and landform terms that denote referents with less clear perceptual boundaries and larger size &#8211; such as <italic>xaay</italic> &#8216;forest&#8217; and <italic>pox</italic> &#8216;sky&#8217; &#8211; allow only marking with <italic>rid</italic> or zero-marking (cf. &#167;3.3).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(14)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>T&#245;onh</p></list-item>
+<list-item><p>T&#245;onh</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#8216;w&#297;inh</p></list-item>
+<list-item><p>work</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>tir</p></list-item>
+<list-item><p>3<sc>sg</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>kaaw</bold></p></list-item>
+<list-item><p>[manioc.garden</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>w&#226;</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>on]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>/</p></list-item>
+<list-item><p>/</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>kaaw</bold></p></list-item>
+<list-item><p>[manioc.garden</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid</bold>]<sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>y&#245;r</p></list-item>
+<list-item><p>today</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;T&#245;onh (person&#8217;s name) is working in [<bold>&#10003;</bold>configurational postposition / <bold>&#10003;</bold><italic>rid</italic>] her <bold>manioc garden</bold> today.&#8217;</p></list-item>
+<list-item><p>(DFS, field notes, 2018/06/28, p. 3)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>D&#226;w also exhibits a small class of nouns that represent homophonous substance/landform pairs, including <italic>n&#226;ax</italic> &#8216;water/river,&#8217; <italic>&#231;ax</italic> &#8216;earth/territory,&#8217; <italic>paas</italic> &#8216;stone/mountain,&#8217; and <italic>xeew</italic> &#8216;sand/beach&#8217; (<xref ref-type="bibr" rid="B22">Obert 2019</xref>). When these nouns denote a substance, they are marked with a configurational postposition, as in (15), but when they denote a landform, they bear the generic locative marker <italic>rid</italic>, as in (16). Thus, for this specific class of nouns, DPM is meaningful &#8211; it contributes to the semantic disambiguation of grounds in locative constructions via coercion of mass nouns to count nouns. The DPM behavior of the substance/landform pairs also shows that D&#226;w does differentiate morphosyntactically between object/substance/human nouns and place nouns.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(15)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>bok</p></list-item>
+<list-item><p>pot</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#244;ox</p></list-item>
+<list-item><p>fall</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>x&#649;t&#649;</p></list-item>
+<list-item><p>descend</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>xeew</bold></p></list-item>
+<list-item><p>sand</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>xaax</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>between</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;The pot falls in the sand.&#8217;</p></list-item>
+<list-item><p>(DFS, field notes, 2018/06/29, p. 10)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(16)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>tir</p></list-item>
+<list-item><p>3<sc>sg</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#7869;ed</p></list-item>
+<list-item><p>come</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>d&#244;o&#8217;</p></list-item>
+<list-item><p><sc>aux</sc>:source</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>xeew</bold></p></list-item>
+<list-item><p>beach</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid</bold>]<sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;He is returning from the beach.&#8217;</p></list-item>
+<list-item><p>(DFS, field notes, 2018/06/29, p. 10)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Cross-linguistically, toponyms occupy a unique position in DPM (<xref ref-type="bibr" rid="B8">Creissels 2009</xref>; <xref ref-type="bibr" rid="B26">Stolz et al. 2014</xref>; <xref ref-type="bibr" rid="B27">2017</xref>; <xref ref-type="bibr" rid="B10">Haspelmath 2019</xref>). In D&#226;w, toponyms generally occur with the generic locative marker <italic>rid</italic> (17). The exception is toponyms for bodies of water, which are frequently marked with the aquatic postposition <italic>mi&#771;i&#8217;</italic> &#8216;in water/at a waterway&#8217; (18).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(17)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>&#8216;aa&#8217;</p></list-item>
+<list-item><p><sc>anph</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#7869;ed</p></list-item>
+<list-item><p>come</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>d&#244;o&#8217;</p></list-item>
+<list-item><p><sc>aux</sc>:source</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>baal&#8217;</bold></p></list-item>
+<list-item><p>Manaus</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid</bold>]<sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;He came from Manaus.&#8217;</p></list-item>
+<list-item><p>(MFM, ailla:254700, 20130723_historia_MFM.wav, 6:50&#8211;7:30)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(18)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>[<bold>&#8216;liw&#8217;</bold></p></list-item>
+<list-item><p>Kariwa.Creek</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>m&#297;i&#8217;</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>in.liquid</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>m&#227;ay</p></list-item>
+<list-item><p>not.be</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#231;eeb</p></list-item>
+<list-item><p>change.place</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>pee</p></list-item>
+<list-item><p>go.upriver</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>bug</p></list-item>
+<list-item><p>there</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>d&#226;w</p></list-item>
+<list-item><p>D&#226;w.people</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#234;e&#8217;</p></list-item>
+<list-item><p><sc>dub</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Wasn&#8217;t it at the Kariwa creek that the D&#226;w moved upriver?&#8217;</p></list-item>
+<list-item><p>(CMM, MIRJ, daw_22112017_ko.wav, 0:40&#8211;1:10)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Comparing toponyms to their corresponding landscape or landform terms &#8211; as in <italic>Solimo&#771;es River</italic> vs. <italic>river</italic> &#8211; reveals a syntactic contrast. (19) shows that a locative adjunct headed by a toponym, <italic>Tumbil</italic> &#8216;Tumbira community,&#8217; is marked with the generic locative marker <italic>rid</italic>. In contrast, (20) shows that the corresponding landscape term <italic>ni&#771;r xoot</italic> &#8216;community&#8217; is marked with the postposition <italic>w&#226;&#8217;</italic> &#8216;on&#8217;.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(19)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>y&#245;r</p></list-item>
+<list-item><p>today</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>id</p></list-item>
+<list-item><p>1<sc>pl</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#7869;ed</p></list-item>
+<list-item><p>come</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>raay</p></list-item>
+<list-item><p>whatchmacallit</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>tumbil</bold></p></list-item>
+<list-item><p>Tumbira</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>rid</bold>]<sub>ground</sub></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Today we arrived at this Tumbira (community).&#8217;</p></list-item>
+<list-item><p>(JA, MIRJ, daw_28122017_ko_03.wav, 0:00&#8211;0:40)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(20)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>t&#234;en</p></list-item>
+<list-item><p>now</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>id</p></list-item>
+<list-item><p>1<sc>pl</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ni&#771;i</p></list-item>
+<list-item><p>be.located</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#8216;m&#649;&#771;g</p></list-item>
+<list-item><p>here</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>ni&#771;r xoot</bold></p></list-item>
+<list-item><p>community</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>w&#226;&#8217;</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>on</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Now we are here in the community.&#8217;</p></list-item>
+<list-item><p>(DFS, field notes, 2018/06/29, p. 10)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>This suggests that the ontological properties of toponyms are not the only factors responsible for their DPM behavior &#8211; since the toponym in (19) and the landscape term in (20) have similar conceptual properties but distinct marking. Rather, the alternation here is syntactically motivated, driven by word class: toponyms can combine only with the generic locative marker <italic>rid</italic>, while landform terms can be marked with either <italic>rid</italic> or a configurational postposition.</p>
+<p>In sum, DPM in Da&#770;w primarily affects nouns&#8217; compatibility with the generic locative marker <italic>rid</italic>. Real-world properties of the nominal referent seem to influence compatibility with this marker. Nouns that denote places with larger size and less clear perceptual boundaries may combine with <italic>rid</italic>, while common nouns (animate and inanimate) cannot. These observations illustrate that, in line with the DPM literature, D&#226;w place nouns receive different spatial marking than common nouns.</p>
+<p>At the same time, these findings also contrast with some prominent ideas about the realization of DPM. DPM in D&#226;w is realized by <italic>different</italic>, but not <italic>shorter</italic>, marking of place nouns. This departs from two typological generalizations about DPM: (1) that whenever place nouns and common nouns are marked differently, place nouns receive shorter marking (<xref ref-type="bibr" rid="B8">Creissels 2009</xref>; <xref ref-type="bibr" rid="B10">Haspelmath 2019: 319</xref>), and (2) that whenever a language displays zero-marking of spatial adjuncts, the zero-marking will apply to toponyms (<xref ref-type="bibr" rid="B26">Stolz et al. 2014: 291</xref>). At a conceptual level, the D&#226;w data also demonstrates that DPM alternations can affect not only the syntagmatic complexity of place marking &#8211; that is, the length or morphological composition of the marker(s) with which the noun combines &#8211; but also its paradigmatic complexity, or the number of possible markers with which the noun can combine.</p>
+</sec>
+<sec>
+<title>3.3 Nouns that display zero-marking</title>
+<p>Differential place marking in D&#226;w can also involve zero-marking. Zero-marking applies only to four landscape terms: <italic>xaay</italic> &#8216;forest&#8217;, <italic>pox</italic> &#8216;sky,&#8217; <italic>tuu</italic> &#8216;ground&#8217;, and <italic>xoot</italic> &#8216;place.&#8217; All four nouns denote large referents which lack clear perceptual boundaries. As with the landform terms in &#167;3.2, these properties prevent the nouns from combining with a configurational postposition. But in contrast to the landscape terms, these four nouns predominantly occur zero-marked in our corpus. They also allow, but do not require, marking with <italic>rid</italic> (21, 22).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(21)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>ab&#649;g</p></list-item>
+<list-item><p>and.then</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>id</p></list-item>
+<list-item><p>1<sc>pl</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#297;i</p></list-item>
+<list-item><p>be.located</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>d&#226;r&#227;am</p></list-item>
+<list-item><p><sc>cont</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#8216;m&#649;g</p></list-item>
+<list-item><p>here</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>woor</bold></p></list-item>
+<list-item><p>Tukano.person</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>xoot</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>place</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>&#10003;(rid)</bold></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;And now we will stay here at the Tukanoan&#8217;s place.&#8217;</p></list-item>
+<list-item><p>(JA, MIRJ, daw_28122017_ko_03.wav, 0:20&#8211;0:54)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(22)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>ab&#649;g</p></list-item>
+<list-item><p>and.then</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>xut</p></list-item>
+<list-item><p>man</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>buy</p></list-item>
+<list-item><p>knock.down</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>y&#234;t</p></list-item>
+<list-item><p>lie.on.ground</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ma&#771;r</p></list-item>
+<list-item><p><sc>rep</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>a&#771;ay-&#649;&#771;&#649;y&#8217;</p></list-item>
+<list-item><p>woman-<sc>obj</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>[<bold>tuu</bold>]<sub>ground</sub></p></list-item>
+<list-item><p>ground</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>&#10003;(rid)</bold></p></list-item>
+<list-item><p><sc>loc</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;And then, they say, the man knocked the woman down on the ground.&#8217;</p></list-item>
+<list-item><p>(DFS, ailla:254700, 20130725_historia_onca_paje_DFS.wav, 3:00&#8211;3:20)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+</sec>
+<sec>
+<title>3.4 Interim summary</title>
+<p>DPM in D&#226;w is motivated primarily by the ontological properties of noun referents. Evidence for this claim comes from nouns&#8217; varying compatibility with configurational postpositions vs. the generic locative marker vs. zero-marking. As summarized in <xref ref-type="fig" rid="F1">Figure 1</xref>, the cut-off point between common nouns and place nouns in the DPM system of D&#226;w is compatibility with the generic locative marker <italic>rid</italic>. While human and object nouns are not compatible with <italic>rid</italic>, all nouns denoting places can combine with it. We can thus observe a relation between boundedness and markedness: the larger an entity is and the less perceptible its boundaries are, the more restricted are the marking possibilities of the noun which denotes it.</p>
+<fig id="F1">
+<label>Figure 1</label>
+<caption>
+<p>Combinatorial possibilities for place marking of each category of nouns in D&#226;w.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-6371-g1.png"/>
+</fig>
+<p>Furthermore, DPM gains semantic significance in contexts where marking can alternate between postposition and <italic>rid</italic> marking, as we have seen for the substance-landform pairs above. In these cases, change in marking leads to systematic changes in interpretation of the noun: more generic marking with <italic>rid</italic> supports a landform reading of the noun, while postpositional marking leads to a substance reading.</p>
+<p>On the one hand, as <xref ref-type="fig" rid="F1">Figure 1</xref> shows, all types of place nouns in Da&#770;w pattern together in one way: they are compatible with the generic locative marker <italic>rid</italic>. Because this aspect of the system divides place nouns from all other nouns, it supports the core claims of role association theories. But on the other hand, different classes of place nouns pattern apart in their compatibility with zero-marking and configurational postpositions, and this split is not simply conditioned by status as a toponym.</p>
+<p>Thus, the DPM system of D&#226;w expands prior role association theories in two ways. First, this system provides evidence that place nouns are not a homogenous class. Fine-grained semantic distinctions can trigger distinct marking of subclasses within the class of place nouns. Second, while the data shows that place nouns and human/object nouns are marked differently, the marking of place nouns is not shorter or less morphologically complex.</p>
+<p>Though our D&#226;w findings challenge some aspects of role association theories, they support these theories&#8217; premise that DPM is motivated primarily by noun semantics. This contrasts sharply with the DPM system of Ticuna, which we discuss next.</p>
+</sec>
+</sec>
+<sec>
+<title>4 DPM in Ticuna: Controlled by verbs, not nouns</title>
+<p>While role association theories suggest that DPM is conditioned entirely by properties of the noun, this is not the case in Ticuna. Instead, in this language, DPM is controlled primarily by morphosyntactic and semantic properties of the <italic>verb</italic>. Verb-controlled DPM in Ticuna shows that a cross-linguistically adequate account of DPM cannot rely entirely on semantic or morphosyntactic properties of nouns. Rather, DPM is sensitive to <italic>both</italic> properties of the place-marked constituent and properties of the clause which contains that constituent.</p>
+<p>We discuss three forms of verb-controlled DPM in Ticuna: DPM controlled by the verb&#8217;s conjugation class; DPM controlled by the verb&#8217;s lexical aspect; and DPM controlled by the verb&#8217;s transitivity.</p>
+<sec>
+<title>4.1 DPM is not controlled by nouns</title>
+<p>As context for our discussion of verb-controlled DPM, we first provide background on the general system of place marking in Ticuna. When Ticuna nouns appear as adjuncts, they always combine with either the allative case enclitic =<italic>wa<sup>5</sup></italic> or the locative case enclitic =<italic>gu<sup>2</sup></italic>. (We label =<italic>wa<sup>5</sup></italic> as allative and =<italic>gu<sup>2</sup></italic> as locative because of their distribution in intransitive motion clauses, discussed in &#167;4.4. The names should not be taken as claims about the markers&#8217; meaning or distribution in any other type of clause.)</p>
+<p>The same requirement for overt case marking with either =<italic>wa<sup>5</sup></italic> or =<italic>gu<sup>2</sup></italic> applies equally to all spatial adjuncts. It does not distinguish between the roles of location (23), goal (24, 25), and source (26); nor does the requirement for case marking distinguish between place names (23), other place nouns (24), common nouns (25, 26), and human nouns (26). Note in 23 and all Ticuna examples that, per &#167;2.2, raised numerals mark tone.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(23)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>ma<sup>3</sup>r&#616;<sup>3</sup> [<bold>K&#616;<sup>3</sup>&#660;t&#643;i<sup>3</sup>tu<sup>1</sup>wa<sup>5</sup></bold>]<sub>ground</sub> ta<sup>4</sup>&#331;e<sup>2</sup>&#660;ma<sup>4</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>ma<sup>3</sup>r&#616;<sup>3</sup></p></list-item>
+<list-item><p><sc>prf</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>K&#616;<sup>3</sup>&#660;t&#643;i<sup>3</sup>tu<sup>1</sup>=wa<sup>5</sup></p></list-item>
+<list-item><p>Cushillococha=<sc>all</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ta<sup>4</sup>=&#331;e<sup>2</sup>&#660;ma<sup>4</sup></p></list-item>
+<list-item><p>3(I)<sc>sbj</sc>=be.in.place</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;By then he was <bold>in Cushillococha</bold> [place name].&#8217;</p></list-item>
+<list-item><p>(ABS, 2015-06.039, tca_20170825_abs_ahs_elicit_001.wav, 4:19)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(24)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[<bold>t&#616;<sup>31</sup>ma<sup>2</sup>a<sup>1</sup>ne<sup>1</sup>wa<sup>5</sup></bold>]<sub>ground</sub> ta<sup>4</sup>&#660;u&#771;<sup>43</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>t&#616;<sup>31</sup>ma<sup>2</sup>=a<sup>1</sup>ne<sup>1</sup>=wa<sup>5</sup></p></list-item>
+<list-item><p>3(I)=garden=<sc>all</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ta<sup>4</sup>=u&#771;<sup>43</sup></p></list-item>
+<list-item><p>3(I)<sc>sbj</sc>=go:<sc>sg.sbj</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;She went <bold>to her garden</bold> [place noun].&#8217;</p></list-item>
+<list-item><p>(LWG, 2015-06.049, tca_20180718_lwg_ahs_tau.wav, 2:06)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(25)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[<bold>de<sup>43</sup>a<sup>5</sup>wa<sup>5</sup></bold>]<sub>ground</sub> na<sup>4</sup>&#660;i&#771;<sup>43</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p><bold>de<sup>43</sup>&#660;a<sup>5</sup>=wa<sup>5</sup></bold></p></list-item>
+<list-item><p><bold>water=<sc>all</sc></bold></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=i&#771;<sup>43</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=go:<sc>pl.sbj</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;They go <bold>to the water</bold> [common noun].&#8217;</p></list-item>
+<list-item><p>(LWG, 2015-06.042, tca_20170804_lwg_ahs_elicit_001.wav, 2:41)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(26)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>r&#616;<sup>1</sup> [<bold>&#607;e<sup>4</sup>ma<sup>4</sup> no<sup>31</sup>e<sup>5</sup>wa<sup>5</sup></bold>]<sub>ground</sub> i<sup>5</sup>na<sup>4</sup>&#607;a<sup>3</sup>&#607;i<sup>31</sup> ga<sup>4</sup> ta<sup>2</sup>&#660;re<sup>4</sup> ga<sup>4</sup> ai<sup>31</sup>ru<sup>5</sup>g&#616;<sup>4</sup>, [<bold>na<sup>31</sup>a<sup>1</sup>n&#616;<sup>1</sup>wa<sup>5</sup></bold>]<sub>ground</sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>r&#616;<sup>1</sup></p></list-item>
+<list-item><p>and</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#607;e<sup>4</sup>ma<sup>4</sup></p></list-item>
+<list-item><p><sc>dem</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>no<sup>31</sup>e<sup>5</sup>=wa<sup>5</sup></p></list-item>
+<list-item><p>grandmother=<sc>all</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>i<sup>5</sup>=na<sup>4</sup>=&#607;a<sup>3</sup>=&#607;i<sup>31</sup></p></list-item>
+<list-item><p><sc>dir</sc>=3<sc>sbj</sc>=<sc>am</sc>=fall:<sc>pl.sbj</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ga<sup>4</sup></p></list-item>
+<list-item><p><sc>det.rempst</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ta<sup>2</sup>&#660;re<sup>4</sup></p></list-item>
+<list-item><p>two</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ga<sup>4</sup></p></list-item>
+<list-item><p><sc>det.rempst</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ai<sup>31</sup>ru<sup>5</sup>=g&#616;<sup>4</sup></p></list-item>
+<list-item><p>dog=<sc>pl</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>43</sup>=a<sup>1</sup>n&#616;<sup>1</sup>=wa<sup>5</sup></p></list-item>
+<list-item><p><sc>dflt</sc>.<sc>poss</sc>=belly=<sc>all</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Then two dogs emerged <bold>from the old woman</bold> [human noun], <bold>from the belly</bold> [common noun].&#8217;</p></list-item>
+<list-item><p>(LWG, 2015-06.049, tca_20180718_lwg_ahs_tak.wav, 5:41)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Zero-marking of spatial adjuncts never occurs in our corpus materials, which contain over 110,000 words. It is also judged unacceptable in elicitation, including for place names (27).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(27)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[<bold>K&#616;<sup>3</sup>&#660;t&#643;i<sup>3</sup>tu<sup>1</sup>*(wa<sup>5</sup>)</bold>]<sub>ground</sub> na<sup>4</sup>&#660;u&#771;<sup>43</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>K&#616;<sup>3</sup>&#660;t&#643;i<sup>3</sup>tu<sup>1</sup>=*(wa<sup>5</sup>)</p></list-item>
+<list-item><p>Cushillococha=*(<sc>all</sc>)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=u&#771;<sup>43</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=go:<sc>sg.sbj</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;They (sg.) went <bold>to Cushillococha</bold> [place name].&#8217;</p></list-item>
+<list-item><p>(DGG, 2015-06.040, tca_20170823_dgg_ahs_elicit_001.wav, 9:25&#8211;9:46)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Since nouns from all DPM-relevant semantic categories behave the same in place marking (23&#8211;26), we conclude that Ticuna does not have DPM controlled by noun semantics.</p>
+</sec>
+<sec>
+<title>4.2 DPM is controlled by the morphological class of the verb</title>
+<p>Ticuna has an extensive system of verb inflection classes. The inflection classes sort verb stems in several orthogonal ways: by the form of the subject proclitic, by the form of third-person object marking, and by the syntax of spatial adjuncts. In this section, we are concerned just with the classification which sorts verbs by the syntax of spatial adjuncts.</p>
+<p>The spatial adjunct classification divides verbs into three classes, shown in <xref ref-type="table" rid="T1">Table 1</xref>. Two classes of verbs require a spatial adjunct, realized as either a free noun phrase or a proclitic. They contrast in the case which they assign to the adjunct. The other class of verbs does not require a spatial adjunct.</p>
+<table-wrap id="T1">
+<label>Table 1</label>
+<caption>
+<p>Ticuna verb inflection classes defined by spatial adjunct syntax.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold><italic>Verb Class</italic></bold></td>
+<td align="left" valign="top"><bold><italic>Requires Adjunct</italic></bold></td>
+<td align="left" valign="top"><bold><italic>Case on Adjunct</italic></bold></td>
+<td align="left" valign="top"><bold><italic>Example Verb</italic></bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><italic>wa<sup>5</sup></italic> Adjunct</td>
+<td align="left" valign="top">+</td>
+<td align="left" valign="top">=<italic>wa<sup>5</sup></italic> <sc>all</sc></td>
+<td align="left" valign="top"><italic>ta&#816;<sup>1</sup></italic> &#8216;discard&#8217;</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><italic>gu<sup>2</sup></italic> Adjunct</td>
+<td align="left" valign="top">+</td>
+<td align="left" valign="top">=<italic>gu<sup>2</sup></italic> <sc>loc</sc></td>
+<td align="left" valign="top"><italic>ta&#816;<sup>1</sup></italic> &#8216;bury&#8217;</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">No Adjunct</td>
+<td align="left" valign="top">&#8211;</td>
+<td align="left" valign="top">n/a</td>
+<td align="left" valign="top"><italic>&#607;au<sup>1</sup>&#660;</italic> &#8216;acquire&#8217;</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Verbs that do not require a spatial adjunct, such as the transitive verb <italic>&#607;au<sup>1</sup>&#660;</italic> &#8216;take, acquire,&#8217; are grammatically acceptable with only their subject and object arguments. The citation forms of these verbs include subject and object proclitics only, as in (28).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(28)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>t&#643;a<sup>3</sup>na<sup>3</sup>&#607;a<sup>1</sup>&#660;u<sup>2</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>t&#643;a<sup>3</sup>=na<sup>3</sup>=&#607;au<sup>1</sup>&#660;</p></list-item>
+<list-item><p>1S<sc>g</sc>S<sc>bj</sc>=3<sc>obj</sc>=acquire</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;I took it.&#8217;</p></list-item>
+<list-item><p>(Anon., 2015-06.041, tca_20170530_ecp_ahs_elicit_001.wav, 1:17&#8211;1:30)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Verbs that require a spatial adjunct are <italic>not</italic> grammatical with only subject and object arguments. In citation form, they take an additional proclitic before the subject proclitic. For some obligatory spatial adjunct verbs, such as <italic>ta&#816;<sup>1</sup></italic> &#8216;discard,&#8217; this proclitic has the form <italic>i<sup>5</sup></italic> = (29). For others, such as the homophonous verb &#8216;bury,&#8217; the additional proclitic has the form <italic>i<sup>2</sup></italic> = (30).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(29)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>*(i<sup>5</sup>)t&#643;a<sup>3</sup>na<sup>3</sup>ta&#816;<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>*(i<sup>5</sup>=)t&#643;a<sup>3</sup>=na<sup>3</sup>=ta&#816;<sup>1</sup></p></list-item>
+<list-item><p>*(<sc>vcl</sc>=)1S<sc>g</sc>S<sc>bj</sc>=3<sc>obj</sc>=discard</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;I discarded it.&#8217;</p></list-item>
+<list-item><p>(LWG, 2015-06.042, tca_20170724_lwg_ahs_elicit_001.wav, 13:44&#8211;14:24)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(30)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>*(i<sup>2</sup>)t&#643;a<sup>3</sup>na<sup>3</sup>ta&#816;<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>*(i<sup>2</sup>=)t&#643;a<sup>3</sup>=na<sup>3</sup>=ta&#816;<sup>1</sup></p></list-item>
+<list-item><p>*(<sc>vcl</sc>=)1S<sc>g</sc>S<sc>bj</sc>=3<sc>obj</sc>=bury</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;I buried it.&#8217;</p></list-item>
+<list-item><p>(DGG, 2015-06.040, tca_20170724_dgg_ahs_elicit_001.wav, 17:44&#8211;19:10)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>If a verb takes the additional proclitic <italic>i<sup>5</sup></italic> = in its citation form, then when it appears with a spatial adjunct, it assigns the allative case marker =<italic>wa<sup>5</sup></italic> to that adjunct. The <italic>i<sup>5</sup></italic> = proclitic deletes, as shown for &#8216;discard&#8217; in (31).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(31)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>*(na<sup>31</sup>ma<sup>3</sup>wa<sup>5</sup>)<sub>ground</sub> t&#643;a<sup>3</sup>na<sup>3</sup>ta&#816;<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>*(na<sup>43</sup>=ma<sup>3</sup>=wa<sup>5</sup>)</p></list-item>
+<list-item><p>*(<sc>dflt.poss</sc>=path=<sc>all</sc>)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#643;a<sup>3</sup>=na<sup>3</sup>=ta&#816;<sup>1</sup></p></list-item>
+<list-item><p>1S<sc>g</sc>S<sc>bj</sc>=3<sc>obj</sc>=discard</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;I discarded it *(on the path) (allative).&#8217; [ungrammatical without adjunct]</p></list-item>
+<list-item><p>(LWG, 2015-06.042, tca_20170724_lwg_ahs_elicit_001.wav, 14:24&#8211;15:51)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Likewise, if a verb takes the additional proclitic <italic>i<sup>2</sup></italic> = in its citation form, then when it appears with a spatial adjunct, it assigns the locative case marker =<italic>gu<sup>2</sup></italic> to the boadjunct. As before, the <italic>i<sup>2</sup></italic> = proclitic deletes, as shown for &#8216;bury&#8217; in (32).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(32)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>*(i&#771;<sup>31</sup>a&#816;&#771;<sup>1</sup>t&#616;<sup>3</sup>gu<sup>2</sup>)<sub>ground</sub> t&#643;a<sup>3</sup>na<sup>3</sup>ta&#816;<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>*(i&#771;<sup>31</sup>a&#816;&#771;<sup>1</sup>t&#616;<sup>3</sup>=gu<sup>2</sup>)</p></list-item>
+<list-item><p>*(yard=<sc>loc</sc>)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#643;a<sup>3</sup>=na<sup>3</sup>=ta&#816;<sup>1</sup></p></list-item>
+<list-item><p>1S<sc>g</sc>S<sc>bj</sc>=3<sc>obj</sc>=bury</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;I buried it *(in the yard) (locative).&#8217; [ungrammatical without adjunct]</p></list-item>
+<list-item><p>(DGG, 2015-06.040, tca_20170724_dgg_ahs_elicit_001.wav, 17:44&#8211;19:10)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In other words, adjuncts with the allative case marker are in complementary distribution with the <italic>i<sup>5</sup></italic> = proclitic, and adjuncts with the locative case marker are in complementary distribution with the <italic>i<sup>2</sup></italic> = proclitic.</p>
+<p>Thus, the best analysis of verbs such as &#8216;bury&#8217; and &#8216;discard&#8217; is that they always require a spatial adjunct with a particular case value &#8211; locative or allative. In clauses that include a noun phrase adjunct, such as (31) and (32), this requirement is satisfied by the presence of the case-marked noun phrase. In the citation forms of these verbs, the requirement is satisfied by the <italic>i<sup>2</sup>=/i<sup>5</sup></italic>= proclitic. These proclitics effectively act as expletive pronouns which absorb the verb&#8217;s requirement for a spatial adjunct. The <italic>i<sup>5</sup></italic> = proclitic is an allative case pronoun, and the <italic>i<sup>2</sup></italic> = proclitic is a locative case pronoun.</p>
+<p>As the above examples suggest, whether a verb root requires a spatial adjunct, and what case it assigns that adjunct, is an essentially morphological property. Verb roots&#8217; phonological form, other morphological properties, and semantics do not categorically predict their spatial adjunct syntax. For example, the verb roots shown in (31) and (32), <italic>ta&#816;<sup>1</sup></italic> &#8216;discard&#8217; and <italic>ta&#816;<sup>1</sup></italic> &#8216;bury,&#8217; are homophonous, belong to the same subject and object inflection classes, and both require a spatial adjunct. Yet &#8216;discard&#8217; assigns the allative case to its adjunct, while &#8216;bury&#8217; assigns the locative case.</p>
+<p>As in some other languages with inflection class, such as Yucatec (<xref ref-type="bibr" rid="B3">Bohnemeyer 2002</xref>), inflection class membership &#8211; including membership in the obligatory adjunct classes &#8211; does correlate with certain semantic properties of verb roots. For example, all intransitive verbs of posture, such as &#8216;sit,&#8217; &#8216;stand,&#8217; and &#8216;kneel,&#8217; belong to one of the obligatory spatial adjunct classes (though they do not all assign the same case to their adjuncts). But this regularity does not extend to other stative verbs: for example, both <italic>&#331;e<sup>2</sup>&#660;ma<sup>4</sup></italic> &#8216;be in a place&#8217; and <italic>pe<sup>43</sup></italic> &#8216;live in a place&#8217; are stative verbs with space-related meanings, but <italic>pe<sup>43</sup></italic> is an obligatory spatial adjunct verb and <italic>&#331;e<sup>2</sup>&#660;ma<sup>4</sup></italic> is not. Thus, since semantic features underdetermine roots&#8217; inflection class membership, it is better analyzed as a morphological than a semantic feature of the root.</p>
+</sec>
+<sec>
+<title>4.3 DPM is controlled by the lexical aspect of the verb</title>
+<p>Beyond morphological class, other properties of the verb also affect DPM in Ticuna. Another key DPM-controlling property of the verb is lexical aspect. Much as in English (<xref ref-type="bibr" rid="B31">Vendler 1957</xref>), Ticuna verb stems can be divided into four lexical aspect classes: states, activities, accomplishments, and achievements. Lexical aspect influences inflection class assignment and has many other morphosyntactic effects, controlling the enclitics, adverbs, and adjuncts with which the verb can combine.</p>
+<p>One of the most conspicuous effects of lexical aspect in Ticuna is on the syntax of spatial adjuncts. When a state, activity, or accomplishment verb combines with a ground-denoting spatial adjunct, that adjunct is marked with the allative case =<italic>wa<sup>5</sup></italic>. This is shown for a stative verb in (33), an activity in (34), and an accomplishment in (35) (other language-internal tests establish the lexical aspect of these verbs).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(33)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[na<sup>4</sup>pa<sup>4</sup>ta<sup>3</sup>[<bold>&#10003;wa<sup>5</sup>/*gu<sup>2</sup></bold>]]<sub>ground</sub> Bi<sup>3</sup>tu<sup>5</sup> r&#616;<sup>1</sup> no<sup>51</sup>r&#616;<sup>3</sup> ma<sup>3</sup>ma<sup>5</sup>&#660;&#616;&#771;<sup>3</sup> na<sup>4</sup>&#331;e<sup>4</sup>t&#643;a<sup>1</sup>&#616;&#771;<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=pa<sup>4</sup>ta<sup>3</sup>=[<bold>&#10003;</bold>wa<sup>5</sup>/*gu<sup>2</sup>]</p></list-item>
+<list-item><p>3(IV)=house[=<bold>&#10003;</bold><sc>all</sc>/*<sc>loc</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>Bi<sup>3</sup>tu<sup>5</sup></p></list-item>
+<list-item><p>Victoria(IV)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>r&#616;<sup>1</sup></p></list-item>
+<list-item><p>Top</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>no<sup>51</sup>r&#616;<sup>3</sup></p></list-item>
+<list-item><p>3.<sc>alposs</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ma<sup>3</sup>ma<sup>5</sup>=&#660;&#616;&#771;<sup>3</sup></p></list-item>
+<list-item><p>mother=<sc>acc</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=&#331;e<sup>4</sup>t&#643;a<sup>1</sup>&#616;&#771;<sup>1</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=love/miss</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Victoria missed her mother in her house (<bold>&#10003;</bold>allative, *locative).&#8217; [state]</p></list-item>
+<list-item><p>(LWG, 2015-06.042, tca_20170628_lwg_ahs_elicit_001.wav, 44:12&#8211;44:40)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(34)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[na<sup>43</sup>pa<sup>4</sup>ta<sup>3</sup>[<bold>&#10003;wa<sup>5</sup>/*gu<sup>2</sup></bold>]]<sub>ground</sub> na<sup>4</sup>wi<sup>3</sup>&#607;a<sup>3</sup>e<sup>3</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>na<sup>43</sup>=pa<sup>4</sup>ta<sup>3</sup>=[<bold>&#10003;</bold>wa<sup>5</sup>/*gu<sup>2</sup>]</p></list-item>
+<list-item><p><sc>dflt.poss</sc>=house=[<bold>&#10003;</bold><sc>all</sc>/*<sc>loc</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=wi<sup>3</sup>&#607;a<sup>3</sup>e<sup>3</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=sing</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;He sang in the house (<bold>&#10003;</bold>allative, *locative).&#8217; [activity]</p></list-item>
+<list-item><p>(LWG, 2015-06.042, tca_20170628_lwg_ahs_elicit_001.wav, 26:24&#8211;27:10)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(35)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>Ka<sup>3</sup>ru<sup>1</sup> r&#616;<sup>1</sup> [t&#616;<sup>3</sup>re<sup>1</sup>[<bold>&#10003;wa<sup>5</sup>/*gu<sup>2</sup></bold>]]<sub>ground</sub> w&#616;<sup>43</sup>&#660;i<sup>4</sup> &#607;a<sup>1</sup> &#331;u<sup>31</sup>e<sup>3</sup> na<sup>4</sup>&#660;&#616;<sup>2</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Ka<sup>3</sup>ru<sup>1</sup></p></list-item>
+<list-item><p>Carlos</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>r&#616;<sup>1</sup></p></list-item>
+<list-item><p><sc>top</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#616;<sup>3</sup>re<sup>1</sup>=[<bold>&#10003;</bold>wa<sup>5</sup>/*gu<sup>2</sup>]</p></list-item>
+<list-item><p>port=[<bold>&#10003;</bold><sc>all</sc>/*<sc>loc</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>w&#616;<sup>43</sup>&#660;i<sup>4</sup></p></list-item>
+<list-item><p>one</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#607;a<sup>1</sup></p></list-item>
+<list-item><p><sc>det</sc>(III)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#331;u<sup>31</sup>e<sup>3</sup></p></list-item>
+<list-item><p>canoe(III)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=&#616;<sup>2</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=make</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;Carlos made a canoe in the port (<bold>&#10003;</bold>allative, *locative).&#8217; [accomplishment]</p></list-item>
+<list-item><p>(Anon., 2015-06.041, tca_20170629_ecp_ahs_elicit_002.wav, 38:24&#8211;38:40)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In contrast, when an achievement verb &#8211; a verb denoting an instantaneous change of state &#8211; combines with a spatial adjunct, that adjunct is marked with the locative case =<italic>gu<sup>2</sup></italic>. This is shown for three different achievement verbs in (36)&#8211;(38). It is clear that all three verb stems in (36)&#8211;(38) are achievements because they have other morphosyntactic properties that are unique to achievements in Ticuna, such as being incompatible with phasal verbs like <italic>&#616;<sup>2</sup>g&#616;<sup>4</sup></italic> &#8216;begin.&#8217;</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(36)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[na<sup>4</sup>pa<sup>4</sup>ta<sup>3</sup>[<bold>&#10003;gu<sup>2</sup>/*wa<sup>5</sup></bold>]]<sub>ground</sub> ni<sup>4</sup>pu<sup>31</sup> &#607;a<sup>1</sup> da<sup>31</sup>a<sup>1</sup> po<sup>3</sup>ra<sup>4</sup>tu<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=pa<sup>4</sup>ta<sup>3</sup>=[<bold>&#10003;</bold>gu<sup>2</sup>/*wa<sup>5</sup>]</p></list-item>
+<list-item><p>3<sc>poss</sc>=house=[<bold>&#10003;</bold><sc>loc</sc>/*<sc>all</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ni<sup>4</sup>=pu<sup>31</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=shatter</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#607;a<sup>1</sup></p></list-item>
+<list-item><p><sc>det</sc>(III)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>da<sup>31</sup>a<sup>1</sup></p></list-item>
+<list-item><p><sc>dem</sc>(III)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>po<sup>3</sup>ra<sup>4</sup>tu<sup>1</sup></p></list-item>
+<list-item><p>plate(III)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;This plate shattered in his/her house (<bold>&#10003;</bold>locative, *allative).&#8217; [achievement]</p></list-item>
+<list-item><p>(LWG, 2015-06.042, tca_20170628_lwg_ahs_elicit_002.wav, 5:00&#8211;6:01)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(37)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[t&#616;<sup>3</sup>re<sup>1</sup>[<bold>&#10003;gu<sup>2</sup>/*wa<sup>5</sup></bold>]]<sub>ground</sub> t&#643;o<sup>31</sup>r&#616;<sup>3</sup> dau<sup>5</sup>&#616;&#771;<sup>2</sup> na<sup>4</sup>r&#616;<sup>3</sup>gau<sup>51</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>t&#616;<sup>3</sup>re<sup>1</sup>=[<bold>&#10003;</bold>gu<sup>2</sup>/*wa<sup>5</sup>]</p></list-item>
+<list-item><p>port=[<bold>&#10003;</bold><sc>loc</sc>/*<sc>all</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#643;o<sup>31</sup>r&#616;<sup>3</sup></p></list-item>
+<list-item><p>1<sc>sg.alposs</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>dau<sup>5</sup>&#616;&#771;<sup>2</sup></p></list-item>
+<list-item><p>shirt</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>r&#616;<sup>3</sup>=gau<sup>51</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=rip</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;My shirt ripped in the port (<bold>&#10003;</bold>locative, *allative).&#8217; [achievement]</p></list-item>
+<list-item><p>(LWG, 2015-06.042, tca_20170628_lwg_ahs_elicit_002.wav, 10:07&#8211;10:31)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(38)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[i&#771;<sup>31</sup>a&#771;&#816;<sup>1</sup>t&#616;<sup>3</sup>[<bold>&#10003;gu<sup>2</sup>/*wa<sup>5</sup></bold>]]<sub>ground</sub> na<sup>4</sup>&#607;u<sup>2</sup> i<sup>4</sup> ku<sup>3</sup>ru<sup>3</sup>ru<sup>5</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>i&#771;<sup>31</sup>a&#771;&#816;<sup>1</sup>t&#616;<sup>3</sup>=[<bold>&#10003;</bold>gu<sup>2</sup>/*wa<sup>5</sup>]</p></list-item>
+<list-item><p>yard=[<bold>&#10003;</bold><sc>loc</sc>/*<sc>all</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=&#607;u<sup>2</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=die</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>i<sup>4</sup></p></list-item>
+<list-item><p><sc>det</sc>(IV)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ku<sup>3</sup>ru<sup>3</sup>ru<sup>5</sup></p></list-item>
+<list-item><p>frog(IV)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;The frog died in the yard (<bold>&#10003;</bold>locative, *allative).&#8217; [achievement]</p></list-item>
+<list-item><p>(DGG, 2015-06.040, tca_20170626_dgg_ahs_elicit_001.wav, 33:48&#8211;34:22)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>The spatial adjuncts in all of (33)&#8211;(38) have the same semantic role, acting as grounds. Similarly, the nouns which head the adjuncts all belong to the same semantic category of human-made landform nouns. Yet despite these semantic similarities, the spatial adjuncts are not all assigned the same case. (33)&#8211;(35) take the allative case, but (36)&#8211;(38) the locative case.</p>
+<p>As in &#167;4.2, the contrast in case marking between (33)&#8211;(35) and (36)&#8211;(38) is not a matter of nominal semantics. All of the nouns in these examples belong to the same semantic category of manmade landform nouns, and some of them are actually the same nouns (e.g., 33, 34, 36). Given these similarities among the nouns, the contrast in case marking between (33)&#8211;(35) and (36)&#8211;(38) must arise from a property of the verb.</p>
+<p>But what property? None of the verbs given in (33)&#8211;(38) are verbs which display obligatory spatial adjuncts. Thus, the contrast between (33)&#8211;(35) and (36)&#8211;(38) cannot be due to the same property of the verb &#8211; a requirement for a spatial adjunct marked with a specific case &#8211; which motivated the DPM seen in &#167;4.2. Instead, this contrast in place-marking is due to a different property of the verb: the lexical aspect contrast between achievement verbs, which cause place adjuncts to be marked with =<italic>gu<sup>2</sup></italic> (36&#8211;38), and all other lexical aspect classes of verbs, which cause place adjuncts to be marked with =<italic>wa<sup>5</sup></italic> (33&#8211;35).</p>
+<p>This information about DPM controlled by lexical aspect raises a question about the morphologically controlled DPM introduced in &#167;4.2. In that section, we claimed that whether an obligatory spatial adjunct verb assigned locative or allative case was arbitrary. But given what we have seen here about the influence of lexical aspect on DPM, could the case profile of obligatory spatial adjunct verbs instead arise from their lexical aspect class membership?</p>
+<p>The answer is no. Obligatory spatial adjunct verbs belong to a variety of lexical aspect classes, but they are not subject to lexical aspect-based DPM. Instead, their morphology (i.e. the form of their citation form proclitics) determines their spatial adjunct syntax. One example of this generalization comes from the verb <italic>t&#643;i<sup>4</sup></italic> &#8216;stand.&#8217; This verb is an obligatory spatial adjunct verb, bearing an <italic>i<sup>2</sup></italic> = proclitic in citation form. Based on language-internal tests of lexical aspect, it is also a stative verb. If <italic>t&#643;i<sup>4</sup></italic> &#8216;stand&#8217; followed the lexical aspect-controlled DPM pattern, it would mark spatial adjuncts exclusively with allative =<italic>wa<sup>5</sup></italic>, like other stative verbs, such as <italic>&#331;e<sup>4</sup>t&#643;a<sup>1</sup>&#616;&#771;<sup>1</sup></italic> &#8216;love/miss a person&#8217; in (33). In contrast, if <italic>t&#643;i<sup>4</sup></italic> &#8216;stand&#8217; followed the morphologically controlled DPM pattern, it would mark spatial adjuncts exclusively with =<italic>gu<sup>2</sup></italic>, like other verbs that bear the <italic>i<sup>2</sup></italic> = proclitic, such as <italic>ta&#816;<sup>1</sup></italic> &#8216;bury&#8217; in (32). What we actually find is that &#8216;stand&#8217; marks adjuncts with =<italic>gu<sup>2</sup></italic>, as shown in (39).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(39)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>*[i&#771;<sup>31</sup>a&#816;&#771;<sup>1</sup>t&#616;<sup>3</sup> [<bold>&#10003;gu<sup>2</sup>/*wa<sup>5</sup></bold>]]<sub>ground</sub> t&#643;a<sup>3</sup>t&#643;i<sup>4</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>&#160;&#160;i&#771;<sup>31</sup>a&#771;&#816;<sup>1</sup>t&#616;<sup>3</sup>=[<bold>&#10003;</bold>gu<sup>2</sup>/*wa<sup>5</sup>]</p></list-item>
+<list-item><p>&#160;&#160;yard=[<bold>&#10003;</bold><sc>loc</sc>/*<sc>all</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#643;a<sup>3</sup>=t&#643;i<sup>4</sup></p></list-item>
+<list-item><p>1S<sc>g</sc>S<sc>bj</sc>=stand</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#160;&#160;&#8216;I stood in the yard (<bold>&#10003;</bold>locative, *allative).&#8217;</p></list-item>
+<list-item><p>&#160;&#160;(ABS, 2015-06.063, tca_20170725_abs_i2i5.txt)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Thus, when DPM conditioned by lexical aspect and DPM conditioned by morphology conflict for <italic>t&#643;i<sup>4</sup></italic> &#8216;stand,&#8217; the morphologically conditioned DPM wins out. The same pattern holds for many other obligatory location verbs, such as <italic>ta&#816;<sup>1</sup></italic> &#8216;bury&#8217; (another non-achievement which assigns the locative case) and <italic>&#331;u<sup>3</sup></italic> &#8216;arrive&#8217; (an achievement which assigns the allative case). As such, the DPM properties of obligatory location verbs cannot be due to their lexical aspect.</p>
+<p>These observations illustrate the larger generalization that morphologically controlled DPM and lexical aspect-controlled DPM are two separate phenomena. They interact, but their interactions have a hierarchical relationship: morphologically controlled DPM takes precedence over lexical aspect-controlled DPM.</p>
+</sec>
+<sec>
+<title>4.4 DPM is controlled by the transitivity of the verb</title>
+<p>DPM controlled by the verb&#8217;s morphological class and lexical aspect is found throughout the lexicon of Ticuna. As &#167;&#167;4.2&#8211;4.3 illustrate, these forms of verb-controlled DPM extend to verbs, such as <italic>wi<sup>3</sup>&#607;a<sup>3</sup>e<sup>3</sup></italic> &#8216;sing&#8217; and gau<sup>51</sup> &#8216;rip,&#8217; which do not have meanings related to space or motion. Alongside these lexicon-wide forms of DPM, Ticuna also has a form of verb-controlled DPM specific to verbs of motion. This form of DPM is controlled by transitivity: intransitive vs. transitive verbs of motion display different case profiles for spatial adjuncts.</p>
+<p>Intransitive verbs of motion, such as <italic>a&#771;<sup>1</sup></italic> &#8216;paddle (a boat)&#8217; in (40), mark ground adjuncts with the locative case marker =<italic>gu<sup>2</sup></italic>. Using the allative case marker =<italic>wa<sup>5</sup></italic>, which marks the ground of most non-motion events (e.g. 33&#8211;35), is ungrammatical.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(40)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[na<sup>4</sup>&#660;ta<sup>4</sup>a<sup>2</sup>[<bold>&#10003;gu<sup>2</sup>/*wa<sup>5</sup></bold>]]<sub>ground</sub> t&#643;i<sup>3</sup>&#660;a&#771;<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=&#660;ta<sup>4</sup>a<sup>2</sup>=[<bold>&#10003;</bold>gu<sup>2</sup>/*wa<sup>5</sup>]</p></list-item>
+<list-item><p><sc>dflt.poss</sc>=lake=[<bold>&#10003;</bold><sc>loc</sc>/*<sc>all</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#643;i<sup>3</sup>=a&#771;<sup>1</sup></p></list-item>
+<list-item><p>1S<sc>g</sc>S<sc>bj</sc>=paddle</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;I paddled in the lake (ground = locative).&#8217;</p></list-item>
+<list-item><p>(DGG, 2015-06.040, tca_20170807_dgg_ahs_elicit_002.wav, 0:31&#8211;0:59)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In contrast to intransitive verbs, transitive verbs of caused motion and placement mark ground adjuncts with the <italic>allative</italic> case marker, =<italic>wa<sup>5</sup></italic>. Using =<italic>gu<sup>2</sup></italic> to mark the ground of a transitive verb of caused motion or placement leads to either ungrammaticality or an interpretation of the adjunct as a goal rather than a ground. (41) illustrates this for <italic>ku<sup>31</sup>&#660;</italic> &#8216;kick,&#8217; a transitive verb of caused motion.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(41)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>Context: On a field, I played soccer.</p></list-item>
+<list-item><p>[campo[<bold>&#10003;wa<sup>5</sup>/#gu<sup>2</sup></bold>]]<sub>ground</sub> t&#616;<sup>31</sup>&#660;&#616;&#771;<sup>3</sup> t&#643;a<sup>3</sup>ku<sup>31</sup>&#660;u<sup>3</sup> &#607;a<sup>4</sup> pe<sup>3</sup>ru<sup>4</sup>ta<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>campo=[<bold>&#10003;</bold>wa<sup>5</sup>/#gu<sup>2</sup>]</p></list-item>
+<list-item><p><sc>sp</sc>:field=[<bold>&#10003;</bold><sc>all</sc>/#<sc>loc</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#616;<sup>31</sup>=&#660;&#616;&#771;<sup>3</sup></p></list-item>
+<list-item><p>3(I)=<sc>acc</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#643;a<sup>3</sup>=ku<sup>31</sup>&#660;</p></list-item>
+<list-item><p>1S<sc>g</sc>S<sc>bj</sc>=kick</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#607;a<sup>4</sup></p></list-item>
+<list-item><p><sc>det</sc>(I)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>pe<sup>3</sup>ru<sup>4</sup>ta<sup>1</sup></p></list-item>
+<list-item><p>ball(I)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;I kicked the ball on the field (ground = allative).&#8217;</p></list-item>
+<list-item><p>AHS: Can you say this with <italic>campogu<sup>2</sup></italic> (ground = locative)?</p></list-item>
+<list-item><p>LWG: That means you were somewhere else and you kicked the ball onto the field. [locative interpreted as <bold>goal</bold>]</p></list-item>
+<list-item><p>(LWG, 2015-06.042, tca_20170623_lwg_ahs_elicit_002.wav, 35:10&#8211;36:25)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>(40) and (41) show that intransitive verbs of motion mark grounds with the locative case, while their transitive counterparts mark grounds with the allative case. Exactly the opposite contrast appears in marking of the goal of motion. Intransitive verbs of motion mark their goals only with the allative case =<italic>wa<sup>5</sup></italic>. Using the locative case =<italic>gu<sup>2</sup></italic> is ungrammatical (42).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(42)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[i&#771;<sup>31</sup>a&#816;&#771;<sup>1</sup>t&#616;<sup>3</sup>[<bold>&#10003;wa<sup>5</sup>/*gu<sup>2</sup></bold>]]<sub>ground</sub> na<sup>4</sup>&#660;u&#771;<sup>43</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>i&#771;<sup>31</sup>a&#771;&#816;<sup>1</sup>t&#616;<sup>3</sup>=[<bold>&#10003;</bold>wa<sup>5</sup>/*gu<sup>2</sup>]</p></list-item>
+<list-item><p>yard=[<bold>&#10003;</bold><sc>all</sc>/*<sc>loc</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>na<sup>4</sup>=u&#771;<sup>43</sup></p></list-item>
+<list-item><p>3<sc>sbj</sc>=go:<sc>sg.sbj</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;They (sg.) went to the yard (goal = allative).&#8217;</p></list-item>
+<list-item><p>(DGG, 2015-06.040, tca_20170626_dgg_ahs_elicit_001.wav, 1:41&#8211;2:07)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In contrast, and as already suggested by the consultant comments on (41), transitive verbs of caused motion and placement mark their goals with the <italic>locative</italic> case, =<italic>gu<sup>2</sup></italic>, exclusively. Using =<italic>wa<sup>5</sup></italic> is ungrammatical or leads to a non-goal interpretation of the adjunct. (43) illustrates this for a verb of placement.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(43)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[ku<sup>31</sup>t&#643;i<sup>5</sup>&#616;&#771;<sup>1</sup>[<bold><bold>&#10003;</bold>gu<sup>2</sup>/*wa<sup>5</sup></bold>]]<sub>ground</sub> t&#643;a<sup>3</sup>na<sup>3</sup>&#660;&#616;<sup>43</sup> i<sup>4</sup> w&#616;<sup>43</sup>&#660;i<sup>4</sup> i<sup>4</sup> t&#643;o<sup>3</sup>ka<sup>1</sup></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>ku<sup>31</sup>=t&#643;i<sup>5</sup>&#616;&#771;<sup>1</sup>=[<bold>&#10003;</bold>gu<sup>2</sup>/*wa<sup>5</sup>]</p></list-item>
+<list-item><p>2<sc>sg</sc>=house=[<bold>&#10003;</bold><sc>loc</sc>/*<sc>all</sc>]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#643;a<sup>3</sup>=na<sup>3</sup>=&#616;<sup>43</sup></p></list-item>
+<list-item><p>1<sc>sgsbj</sc>.3<sc>obj</sc>=put:<sc>inam.sg.obj</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>i<sup>4</sup></p></list-item>
+<list-item><p><sc>det</sc>(IV)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>w&#616;<sup>43</sup>&#660;i<sup>4</sup></p></list-item>
+<list-item><p>one</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>i<sup>4</sup></p></list-item>
+<list-item><p><sc>det</sc>(IV)</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>t&#643;o<sup>3</sup>ka<sup>1</sup></p></list-item>
+<list-item><p>bag(IV)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;I dropped off (lit. put) a bag at your house (goal = locative).&#8217;</p></list-item>
+<list-item><p>(DGG, 2015-06.040, tca_20170626_dgg_ahs_elicit_002.wav, 27:10&#8211;27:49)</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>To summarize, intransitive vs. transitive verbs of motion display precisely opposite case-marking on spatial adjuncts. Intransitives mark ground adjuncts with the locative case (40) and goals with the allative (42). In contrast, transitives mark ground adjuncts with the <italic>allative</italic> case (41) and goals with the <italic>locative</italic> (43).</p>
+<p>This transitivity-controlled form of DPM is distinct from the other forms of verb-controlled DPM seen in the previous two sections. It differs from the DPM observed with obligatory spatial adjunct verbs (&#167;4.2) because not all verbs of motion are obligatory spatial adjunct verbs (some are, but none of those described in this section). Similarly, it differs from the DPM observed with achievements (&#167;4.3) because not all verbs of motion are achievements.</p>
+<p>Thus, transitivity-controlled inversion in place marking is not due to the other DPM phenomena in the language. Rather, it represents a separate, third form of verb-controlled DPM. Since Ticuna is not morphologically ergative and lacks other evidence of syntactic ergativity, this finding is surprising theoretically. In areal perspective, however, it is less surprising. While this may be the first report of transitivity-controlled DPM in a language that is not ergative, it is not the first report of transitivity-controlled DPM in Amazonia. DPM of spatial adjuncts in transitive vs. intransitive clauses is attested in several Panoan languages, including Shipibo-Konibo (<xref ref-type="bibr" rid="B30">Valenzuela 2005</xref>), Kashibo-Kakataibo (<xref ref-type="bibr" rid="B34">Zariquiey 2018: 160</xref>), and Yaminahua (<xref ref-type="bibr" rid="B21">Neely 2019: 305&#8211;307</xref>). However, in Panoan languages the differential place marking (1) is controlled by the orientation of the adjunct to an argument, rather than by the transitivity of the clause as such, and (2) involves addition of extra (agreement) marking to the case-marked adjunct, rather than alternations in the case marking appearing on the adjunct.</p>
+</sec>
+<sec>
+<title>4.5 Interim summary</title>
+<p>This section has shown that Ticuna displays three distinct forms of DPM which are controlled by verbs rather than nouns. DPM can be controlled by the morphological class of the verb (&#167;4.2), by the lexical aspect of the verb (&#167;4.3), and for verbs of motion and placement, by the transitivity of the verb (&#167;4.4). <xref ref-type="fig" rid="F2">Figure 2</xref> provides a diagram representing these multiple forms of verb-controlled DPM.</p>
+<fig id="F2">
+<label>Figure 2</label>
+<caption>
+<p>Types of verb-controlled DPM in Ticuna.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-6371-g2.png"/>
+</fig>
+<p>Role association theories, as reviewed in &#167;1.1, attribute DPM exclusively to the (semantic) properties of ground-denoting nouns. In contrast, this section has shown that &#8211; while much of DPM across languages is controlled by noun properties &#8211; DPM may also be controlled by the verb. Moreover, the Ticuna system shows not only that verbs as a class can control DPM, but also that <italic>many</italic> different features of the verb or verb phrase can control the phenomenon. The language displays DPM controlled by lexical aspect, a semantic feature; by inflection class, a morphological feature; and by the transitivity of verbs of motion, a property which involves crossed morphosyntactic and semantic features. Furthermore, contrasting with the predictions of role association theories, these forms of DPM are completely insensitive to properties of the noun. The same noun, in the same role, displays different marking with different verbs, indicating that these phenomena are driven exclusively by verb features.</p>
+</sec>
+</sec>
+<sec>
+<title>5 Discussion</title>
+<p>We now consider the impacts of our findings on the two research questions proposed in &#167;1 about what motivates DPM across languages, and about how it is realized.</p>
+<sec>
+<title>5.1 Motivation of DPM</title>
+<p>Recall from &#167;1.1 that previous analyses, using both categorization- and alternation-based frameworks, view DPM as motivated by noun semantics and mediated by role association. Under these analyses, properties of the nominal referent determine each noun&#8217;s degree of association with the semantic role of ground. Differential association with the ground role then leads to differential marking of that role.</p>
+<p>Many of our findings for D&#226;w support this analysis. As we showed in &#167;3, DPM in D&#226;w is motivated largely by properties of the nominal referent. However, the relationship between D&#226;w nouns&#8217; semantic properties and their DPM behavior is much more complex than predicted by either type of previous analysis. In this language, the referent properties that control nouns&#8217; DPM behavior are not coarse-grained features such as animacy, but fine-grained ontological properties such as relative size and perceptual boundedness. As a result of these finer divisions, DPM in D&#226;w distinguishes at least six different classes of nouns, in contrast to the two to four classes posited by earlier analyses (<xref ref-type="bibr" rid="B6">Cablitz 2008</xref>; <xref ref-type="bibr" rid="B10">Haspelmath 2019: 323</xref>).</p>
+<p>At the same time, other findings of this paper complicate the analysis of the motivations of DPM outlined above. Though noun semantics do control DPM in D&#226;w, in Ticuna most DPM is controlled by properties of the verb, such as transitivity and lexical aspect. Per &#167;4, this verb-controlled DPM is completely insensitive to properties of the ground-denoting noun: with different verbs, the same noun displays different marking. In contrast, prior analyses in both categorization- and alternation-focused frameworks treat DPM as controlled by the ground-denoting noun, without considering effects of the verb.</p>
+<p>While these findings contrast with traditional analyses of DPM, they are consistent with research on differential argument marking. Just as languages vary in the factors which control argument marking or define transitivity (<xref ref-type="bibr" rid="B12">Hopper &amp; Thompson 1980</xref>), they also differ widely in the conditioning of <italic>place</italic> marking: DPM is controlled primarily by verbs in Ticuna, but primarily by the perceptual and ontological properties of noun referents in D&#226;w. This position leaves a place for role association &#8211; which may still create the link between nouns&#8217; semantics and their DPM behavior &#8211; but does not treat it as the only possible motivation for the phenomenon. Rather, exactly as split ergativity can be conditioned either by lexical properties of the agent, such as animacy, or by properties of the verb, such as aspect, DPM can be controlled by either noun or verb properties.</p>
+</sec>
+<sec>
+<title>5.2 Form of DPM</title>
+<p>Role association-based theories of DPM, whether in alternation- or categorization-based frameworks, emphasize the length of spatial adjunct marking. They propose that association with a given semantic role is inversely related to the length (or complexity) of marking for that role. Thus, the nouns most associated with the ground role display the shortest or least complex marking for that role.</p>
+<p>This analysis clearly explains DPM alternations between longer and shorter (or zero) markers. On the other hand, it cannot explain DPM systems that involve alternations between markers of equal length and complexity. Yet in both Da&#770;w and Ticuna, most DPM belongs to this type. DPM in Da&#770;w primarily involves alternations in the combinatorial possibilities available to nouns, rather than alternations in markers per se. Where there are alternations in markers, as between configurational postpositions and <italic>rid</italic>, the alternating markers are all equal in length (&#167;3.1). Similarly, DPM in Ticuna consists entirely of alternations between two case markers of equal length (&#167;4).</p>
+<p>Thus, DPM in these languages does not concern the <italic>syntagmatic</italic> complexity of case marking &#8211; the number of morphemes or segments involved in a noun&#8217;s marking for the ground role. Instead, DPM in Da&#770;w concerns the <italic>paradigmatic</italic> complexity of marking, instantiated by the number of possible markers with which a noun can combine. And in a further contrast with traditional analyses, DPM in Ticuna does not involve contrasts in the complexity of marking at all, but rather equipollent contrasts between markers of equal complexity. These findings show that in terms of form, DPM cannot be understood as simply less explicit or shorter marking of nouns more frequently associated with the ground role. Alternations between shorter and longer marking are part of the phenomenon, but so are equipollent and paradigmatic alternations.</p>
+<p>This diversity of realizations represents another parallel between DPM and the differential case marking of arguments. In differential argument marking, as in DPM, asymmetrical contrasts between zero and overt marking are typologically most common (<xref ref-type="bibr" rid="B4">Bossong 1991</xref>). But differential argument marking also includes symmetrical alternations, for example between overt accusative and partitive cases in the differential object marking system of Finnish (<xref ref-type="bibr" rid="B16">Kiparsky 1998</xref>). Likewise, differential argument marking may be realized via paradigmatic alternations as well. For example, the Pama-Nyungan language Umpithamu (<xref ref-type="bibr" rid="B32">Verstraete 2010</xref>) displays a split ergative system where pronominal agents are always nominative, inanimate NP agents are always ergative, and animate NP agents alternate between nominative and ergative marking depending on information structure. This kind of multiply split ergativity can be seen as analogous to the DPM system of Da&#770;w: in both systems, nouns contrast in the combinatorial possibilities of marking &#8211; the number of different cases (for split ergativity) or postpositions (for DPM) which they allow &#8211; rather than in the form or acceptability of a single overt marker. In other words, DPM mirrors differential argument marking in form as well as motivation, and the form of both phenomena varies substantially across languages.</p>
+</sec>
+</sec>
+<sec>
+<title>6 Conclusion</title>
+<p>This study has examined the DPM systems of two unrelated languages spoken in northwestern Amazonia, D&#226;w and Ticuna. Both languages&#8217; DPM systems contrast with the claims about DPM made in previous typological literature. While prior work claims that DPM is conditioned exclusively by noun semantics, we show that it can also be conditioned by syntactic and semantic properties of verbs. Similarly, while prior work views DPM through the lens of alternations between more and less syntagmatically complex place markers, we show that DPM can also be realized by alternations in paradigmatic complexity, as well as by equipollent alternations between markers of equal complexity. Together, these findings show &#8211; <italic>contra</italic> Haspelmath (<xref ref-type="bibr" rid="B10">2019</xref>), Landau &amp; Jackendoff (<xref ref-type="bibr" rid="B17">1993</xref>), and Stolz et al. (<xref ref-type="bibr" rid="B26">2014</xref>) &#8211; that DPM is not exclusively conditioned by the role associations of the ground-denoting noun, or exclusively realized by alternations between markers of differential complexity. Rather, like differential argument marking (<xref ref-type="bibr" rid="B4">Bossong 1991</xref>; <xref ref-type="bibr" rid="B1">Aissen 2003</xref>), DPM can be conditioned by properties of either the noun or the clause, and can be realized with either symmetrical or asymmetrical alternations.</p>
+<p>We reach these novel conclusions because we choose to avoid some common assumptions about the scope and form of DPM. For example, while other analyses of DPM do not include markers encoding configurational relations (<xref ref-type="bibr" rid="B10">Haspelmath 2019: 316</xref>), our analysis of D&#226;w includes configurational postpositions. This decision allows us to describe an additional form of DPM in the language &#8211; the contrast in paradigmatic complexity between nouns which combine only with configurational postpositions, and nouns which can combine with both configurational postpositions and other place markers. Similarly, most studies of DPM consider only clauses headed by intransitive verbs of motion and location. Our analysis of Ticuna, on the other hand, also includes transitive verbs, as well as verbs outside the semantic domains of space and motion. Because of this decision, we can describe the system of verb-controlled DPM &#8211; which would not be evident from intransitive motion verbs alone, as in Ticuna these verbs all display the same DPM behavior.</p>
+<p>Looking to the future, we encourage other researchers studying the grammar of space to treat DPM as analogous to differential argument marking, with the same possible diversity of motivation and realization. Because so much is known about differential argument marking, this analysis makes many testable predictions. For example, since information-structural features of the noun phrase often condition differential argument marking, we predict that information structure can condition DPM as well, and since pronouns pattern apart from noun phrases in many differential argument marking systems, we predict that they may also pattern apart in DPM. To test these predictions, much more research on DPM &#8211; in individual languages, and in typological perspective &#8211; is necessary.</p>
+</sec>
+</body>
+<back>
+<sec>
+<title>Abbreviations</title>
+<p>1 first; 2 second; 3 third; I&#8211;IV agreement with Ticuna noun classes I&#8211;IV; <sc>acc</sc> accusative; <sc>al.poss</sc> alienable possession; <sc>all</sc> allative; <sc>am</sc> associated motion; <sc>anph</sc> anaphor; <sc>aux</sc> auxiliary; demonstrative; <sc>det</sc> determiner; <sc>dflt.poss</sc> default possessor (of inalienably possessed noun); <sc>dir</sc> directional; <sc>dub</sc> dubitative; <sc>foc</sc> focus; <sc>inam</sc> inanimate; <sc>loc</sc> locative; <sc>obj</sc> object; <sc>pl</sc> plural; <sc>prog</sc> progessive; <sc>pst</sc> past; <sc>prf</sc> perfect; <sc>rep</sc> reportative; <sc>rempst</sc> remote past; <sc>sbj</sc> subject; <sc>sg</sc> singular; <sc>sp</sc> Spanish word; <sc>top</sc> topic; <sc>vcl</sc> verb class proclitic.</p>
+</sec>
+<sec>
+<title>Ethics and consent</title>
+<p>Amalia Skilton&#8217;s fieldwork with Ticuna speakers reported in this study was approved by the Institutional Review Board of the University of California Berkeley (protocol 2017-08-10232). Karolin Obert&#8217;s fieldwork with Da&#770;w speakers was approved by the Conselho Nacional de Etica e Pesquisa of Brazil (protocol 20669119.9.0000.5493). All research participants provided informed consent to participation and, where applicable, the disclosure of their names.</p>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>Both authors thank the Da&#770;w and Ticuna speakers who contributed data. For comments on earlier versions of this study, they also thank an audience at the University of Texas at Austin; an audience at the 2022 Society for the Study of Indigenous Languages of the Americas; and Pattie Epps.</p>
+</ack>
+<sec>
+<title>Funding information</title>
+<p>During data collection and writeup of this study, Amalia Skilton was supported by National Science Foundation grants BCS-1741751 and SMA-1911762; an NSF Graduate Research Fellowship; and a Klarman Fellowship awarded by Cornell University. Karolin Obert was supported by National Endowment for the Humanities/Documenting Endangered Languages grant PD-266994-19; Museu do I&#769;ndio/UNESCO grant 914BRZ4019; a fieldwork grant from the Firebird Foundation; and a CAPES Ph.D. fellowship.</p>
+</sec>
+<sec>
+<title>Competing interests</title>
+<p>The authors have no competing interests to declare.</p>
+</sec>
+<sec>
+<title>Author contributions</title>
+<p>Amalia Skilton participated in conceptualization, data curation, writing of the original draft, and review and editing. Karol Obert participated in conceptualization, development of methodology, data curation, writing of the original draft, and review and editing.</p>
+</sec>
+<ref-list>
+<ref id="B1"><label>1</label><mixed-citation publication-type="journal"><string-name><surname>Aissen</surname>, <given-names>Judith</given-names></string-name>. <year>2003</year>. <article-title>Differential object marking: Iconicity vs. economy</article-title>. <source>Natural Language and Linguistic Theory</source> <volume>21</volume>. <fpage>435</fpage>&#8211;<lpage>483</lpage>. DOI: <pub-id pub-id-type="doi">10.1023/A:1024109008573</pub-id></mixed-citation></ref>
+<ref id="B2"><label>2</label><mixed-citation publication-type="book"><string-name><surname>Ameka</surname>, <given-names>Felix</given-names></string-name> &amp; <string-name><surname>de Witte</surname>, <given-names>Carlien</given-names></string-name> &amp; <string-name><surname>Wilkins</surname>, <given-names>David</given-names></string-name>. <year>1999</year>. <chapter-title>Picture series for positional verbs: Eliciting the verbal component in locative descriptions</chapter-title>. In <string-name><surname>Wilkins</surname>, <given-names>David</given-names></string-name> (ed.), <source>Manual for the 1999 field season</source>, <fpage>48</fpage>&#8211;<lpage>54</lpage>. <publisher-loc>Nijmegen</publisher-loc>: <publisher-name>Max Planck Institute for Psycholinguistics</publisher-name>.</mixed-citation></ref>
+<ref id="B3"><label>3</label><mixed-citation publication-type="book"><string-name><surname>Bohnemeyer</surname>, <given-names>Ju&#776;rgen</given-names></string-name>. <year>2002</year>. <source>The grammar of time reference in Yukatek Maya</source>. <publisher-loc>Munich</publisher-loc>: <publisher-name>Lincom Europa</publisher-name>.</mixed-citation></ref>
+<ref id="B4"><label>4</label><mixed-citation publication-type="book"><string-name><surname>Bossong</surname>, <given-names>Georg</given-names></string-name>. <year>1991</year>. <chapter-title>Differential object marking in Romance and beyond</chapter-title>. In <string-name><surname>Kibbee</surname>, <given-names>Douglas A.</given-names></string-name> &amp; <string-name><surname>Wanner</surname>, <given-names>Dieter</given-names></string-name> (eds.), <source>New analyses in Romance linguistics</source>, <fpage>143</fpage>&#8211;<lpage>170</lpage>. <publisher-loc>Amsterdam</publisher-loc>: <publisher-name>Benjamins</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1075/cilt.69.14bos</pub-id></mixed-citation></ref>
+<ref id="B5"><label>5</label><mixed-citation publication-type="book"><string-name><surname>Bowerman</surname>, <given-names>Melissa</given-names></string-name> &amp; <string-name><surname>Pederson</surname>, <given-names>Eric</given-names></string-name>. <year>1992</year>. <chapter-title>Topological relations picture series</chapter-title>. In <string-name><surname>Levinson</surname>, <given-names>Stephen C.</given-names></string-name> (ed.), <source>Space stimuli kit 1.2</source>. <publisher-loc>Nijmegen</publisher-loc>: <publisher-name>Max Planck Institute for Psycholinguistics</publisher-name>.</mixed-citation></ref>
+<ref id="B6"><label>6</label><mixed-citation publication-type="journal"><string-name><surname>Cablitz</surname>, <given-names>Gabriele H.</given-names></string-name> <year>2008</year>. <article-title>When &#8220;what&#8221; is &#8220;where&#8221;: A linguistic analysis of landscape terms, place names and body part terms in Marquesan (Oceanic, French Polynesia)</article-title>. <source>Language Sciences</source> <volume>30</volume>. <fpage>200</fpage>&#8211;<lpage>226</lpage>. DOI: <pub-id pub-id-type="doi">10.1016/j.langsci.2006.12.004</pub-id></mixed-citation></ref>
+<ref id="B8"><label>8</label><mixed-citation publication-type="book"><string-name><surname>Creissels</surname>, <given-names>Denis</given-names></string-name>. <year>2009</year>. <chapter-title>Spatial cases</chapter-title>. In <string-name><surname>Malchukov</surname>, <given-names>Andrej</given-names></string-name> &amp; <string-name><surname>Spencer</surname>, <given-names>Andrew</given-names></string-name> (eds.), <source>The Oxford handbook of case</source>, <fpage>609</fpage>&#8211;<lpage>625</lpage>. <publisher-loc>Oxford</publisher-loc>: <publisher-name>Oxford University Press</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1093/oxfordhb/9780199206476.013.0043</pub-id></mixed-citation></ref>
+<ref id="B9"><label>9</label><mixed-citation publication-type="book"><string-name><surname>de Hoop</surname>, <given-names>Helen</given-names></string-name> &amp; <string-name><surname>de Swart</surname>, <given-names>Peter</given-names></string-name>. <year>2009</year>. <chapter-title>Cross-linguistic variation in differential subject marking</chapter-title>. In <string-name><surname>de Hoop</surname>, <given-names>Helen</given-names></string-name> &amp; <string-name><surname>de Swart</surname>, <given-names>Peter</given-names></string-name> (eds.), <source>Differential subject marking</source>, <fpage>1</fpage>&#8211;<lpage>16</lpage>. <publisher-loc>Dordrecht</publisher-loc>: <publisher-name>Springer</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1007/978-1-4020-6497-5_1</pub-id></mixed-citation></ref>
+<ref id="B10"><label>10</label><mixed-citation publication-type="journal"><string-name><surname>Haspelmath</surname>, <given-names>Martin</given-names></string-name>. <year>2019</year>. <article-title>Differential place marking and differential object marking</article-title>. <source>STUF</source> <volume>72</volume>(<issue>3</issue>). <fpage>313</fpage>&#8211;<lpage>334</lpage>. DOI: <pub-id pub-id-type="doi">10.1515/stuf-2019-0013</pub-id></mixed-citation></ref>
+<ref id="B11"><label>11</label><mixed-citation publication-type="journal"><string-name><surname>Haspelmath</surname>, <given-names>Martin</given-names></string-name>. <year>2021</year>. <article-title>Role-reference associations and the explanation of argument coding splits</article-title>. <source>Linguistics</source> <volume>59</volume>(<issue>1</issue>). <fpage>123</fpage>&#8211;<lpage>174</lpage>. DOI: <pub-id pub-id-type="doi">10.1515/ling-2020-0252</pub-id></mixed-citation></ref>
+<ref id="B12"><label>12</label><mixed-citation publication-type="journal"><string-name><surname>Hopper</surname>, <given-names>Paul J.</given-names></string-name> &amp; <string-name><surname>Thompson</surname>, <given-names>Sandra A.</given-names></string-name> <year>1980</year>. <article-title>Transitivity in grammar and discourse</article-title>. <source>Language</source> <volume>56</volume>(<issue>2</issue>). <fpage>251</fpage>&#8211;<lpage>299</lpage>. DOI: <pub-id pub-id-type="doi">10.1353/lan.1980.0017</pub-id></mixed-citation></ref>
+<ref id="B13"><label>13</label><mixed-citation publication-type="journal"><string-name><surname>Iemmolo</surname>, <given-names>Giorgio</given-names></string-name>. <year>2013</year>. <article-title>Symmetric and asymmetric alternations in direct object encoding</article-title>. <source>STUF &#8211; Language Typology and Universals</source> <volume>66</volume>(<issue>4</issue>). <fpage>378</fpage>&#8211;<lpage>403</lpage>. DOI: <pub-id pub-id-type="doi">10.1524/stuf.2013.0019</pub-id></mixed-citation></ref>
+<ref id="B14"><label>14</label><mixed-citation publication-type="webpage"><collab>Instituto Socio-Ambiental [ISA]</collab>. <year>2021</year>. <source>Ticuna &#8211; Povos indi&#769;genas no Brasil</source> [<publisher-loc>Ticuna</publisher-loc>: <publisher-name>Indigenous Peoples of Brazil</publisher-name>.] <uri>https://pib.socioambiental.org/pt/Povo:Ticuna</uri>.</mixed-citation></ref>
+<ref id="B15"><label>15</label><mixed-citation publication-type="book"><string-name><surname>Kita</surname>, <given-names>Sotaro</given-names></string-name>. <year>2001</year>. <chapter-title>Locally-anchored spatial gestures, version 2: historical description of the local environment as a gesture elicitation task</chapter-title>. In <string-name><surname>Levinson</surname>, <given-names>Stephen C.</given-names></string-name> &amp; <string-name><surname>Enfield</surname>, <given-names>N. J.</given-names></string-name> (eds.), <source>Manual for the field season 2001</source>, <fpage>132</fpage>&#8211;<lpage>135</lpage>. <publisher-loc>Nijmegen</publisher-loc>: <publisher-name>Max Planck Institute for Psycholinguistics</publisher-name>.</mixed-citation></ref>
+<ref id="B16"><label>16</label><mixed-citation publication-type="book"><string-name><surname>Kiparsky</surname>, <given-names>Paul</given-names></string-name>. <year>1998</year>. <chapter-title>Partitive case and aspect</chapter-title>. In <string-name><surname>Butt</surname>, <given-names>Miriam</given-names></string-name> &amp; <string-name><surname>Geuder</surname>, <given-names>Wilhelm</given-names></string-name> (eds.), <source>The projection of arguments</source>, <fpage>265</fpage>&#8211;<lpage>307</lpage>. <publisher-loc>Stanford</publisher-loc>: <publisher-name>CSLI</publisher-name>.</mixed-citation></ref>
+<ref id="B17"><label>17</label><mixed-citation publication-type="journal"><string-name><surname>Landau</surname>, <given-names>Barbara</given-names></string-name> &amp; <string-name><surname>Jackendoff</surname>, <given-names>Ray</given-names></string-name>. <year>1993</year>. <article-title>&#8220;What&#8221; and &#8220;where&#8221; in spatial language and spatial cognition</article-title>. <source>Behavioral and Brain Sciences</source> <volume>16</volume>. <fpage>217</fpage>&#8211;<lpage>265</lpage>. DOI: <pub-id pub-id-type="doi">10.1017/S0140525X00029733</pub-id></mixed-citation></ref>
+<ref id="B18"><label>18</label><mixed-citation publication-type="book"><string-name><surname>Lewis</surname>, <given-names>M. Paul</given-names></string-name> &amp; <string-name><surname>Simons</surname>, <given-names>Gary F.</given-names></string-name> &amp; <string-name><surname>Fennig</surname>, <given-names>Charles D.</given-names></string-name> (eds.) <year>2014</year>. <source>Ethnologue: Languages of the world</source>. <edition>17th</edition> edn. <publisher-loc>Dallas</publisher-loc>: <publisher-name>SIL International</publisher-name>.</mixed-citation></ref>
+<ref id="B19"><label>19</label><mixed-citation publication-type="book"><string-name><surname>Lyons</surname>, <given-names>John</given-names></string-name>. <year>1977</year>. <source>Semantics</source>. <publisher-name>Cambridge University Press</publisher-name>, <publisher-loc>Cambridge, New York</publisher-loc>.</mixed-citation></ref>
+<ref id="B20"><label>20</label><mixed-citation publication-type="book"><string-name><surname>Malchukov</surname>, <given-names>Andrej L.</given-names></string-name> &amp; <string-name><surname>de Swart</surname>, <given-names>Peter</given-names></string-name>. <year>2008</year>. <chapter-title>Differential case marking and actancy variations</chapter-title>. In <string-name><surname>Malchukov</surname>, <given-names>Andrej</given-names></string-name> &amp; <string-name><surname>Spencer</surname>, <given-names>Andrew</given-names></string-name> (eds.), <source>The Oxford handbook of case</source>, <fpage>339</fpage>&#8211;<lpage>356</lpage>. <publisher-loc>Oxford</publisher-loc>: <publisher-name>Oxford University Press</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1093/oxfordhb/9780199206476.013.0023</pub-id></mixed-citation></ref>
+<ref id="B21"><label>21</label><mixed-citation publication-type="thesis"><string-name><surname>Neely</surname>, <given-names>Kelsey</given-names></string-name>. <year>2019</year>. <source>The linguistic expression of affective stance in Yaminawa (Pano, Peru)</source>. <publisher-loc>Berkeley</publisher-loc>: <publisher-name>University of California</publisher-name> dissertation.</mixed-citation></ref>
+<ref id="B22"><label>22</label><mixed-citation publication-type="thesis"><string-name><surname>Obert</surname>, <given-names>Karolin</given-names></string-name>. <year>2019</year>. <source>The linguistic encoding of space in D&#226;w</source>. <publisher-loc>S&#227;o Paulo</publisher-loc>: <publisher-name>University of S&#227;o Paulo</publisher-name> dissertation.</mixed-citation></ref>
+<ref id="B23"><label>23</label><mixed-citation publication-type="journal"><string-name><surname>Rybka</surname>, <given-names>Konrad</given-names></string-name>. <year>2014</year>. <article-title>How are nouns categorized as denoting &#8220;what&#8221; and &#8220;where&#8221;?</article-title> <source>Language Sciences</source> <volume>45</volume>. <fpage>28</fpage>&#8211;<lpage>43</lpage>. DOI: <pub-id pub-id-type="doi">10.1016/j.langsci.2014.05.002</pub-id></mixed-citation></ref>
+<ref id="B24"><label>24</label><mixed-citation publication-type="thesis"><string-name><surname>Rybka</surname>, <given-names>Konrad</given-names></string-name>. <year>2015</year>. <source>The linguistic encoding of landscape in Lokono</source>. <publisher-loc>Amsterdam</publisher-loc>: <publisher-name>University of Amsterdam</publisher-name> dissertation.</mixed-citation></ref>
+<ref id="B25"><label>25</label><mixed-citation publication-type="journal"><string-name><surname>Smith</surname>, <given-names>Barry</given-names></string-name> &amp; <string-name><surname>Mark</surname>, <given-names>David</given-names></string-name>. <year>1999</year>. <article-title>Ontology with human subjects testing: An empirical investigation of geographic categories</article-title>. <source>American Journal of Economics and Sociology</source> <volume>58</volume>(<issue>2</issue>). <fpage>245</fpage>&#8211;<lpage>272</lpage>. DOI: <pub-id pub-id-type="doi">10.1111/j.1536-7150.1998.tb03471.x</pub-id></mixed-citation></ref>
+<ref id="B26"><label>26</label><mixed-citation publication-type="book"><string-name><surname>Stolz</surname>, <given-names>Thomas</given-names></string-name> &amp; <string-name><surname>Lestrade</surname>, <given-names>Sander</given-names></string-name> &amp; <string-name><surname>Stolz</surname>, <given-names>Christel</given-names></string-name>. <year>2014</year>. <source>The crosslinguistics of zero-marking of spatial relations</source>. <publisher-loc>Berlin &amp; Boston</publisher-loc>: <publisher-name>De Gruyter Mouton</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1524/9783050065304</pub-id></mixed-citation></ref>
+<ref id="B27"><label>27</label><mixed-citation publication-type="journal"><string-name><surname>Stolz</surname>, <given-names>Thomas</given-names></string-name> &amp; <string-name><surname>Levkovych</surname>, <given-names>Nataliya</given-names></string-name> &amp; <string-name><surname>Urdze</surname>, <given-names>Aina</given-names></string-name>. <year>2017</year>. <article-title>When zero is just enough: In support of a special toponymic grammar in Maltese</article-title>. <source>Folia Linguistica</source> <volume>51</volume>(<issue>2</issue>). <fpage>453</fpage>&#8211;<lpage>482</lpage>. DOI: <pub-id pub-id-type="doi">10.1515/flin-2017-0016</pub-id></mixed-citation></ref>
+<ref id="B28"><label>28</label><mixed-citation publication-type="book"><string-name><surname>Talmy</surname>, <given-names>Leonard</given-names></string-name>. <year>1983</year>. <chapter-title>How language structures space</chapter-title>. In <string-name><surname>Pick</surname>, <given-names>Herbert L.</given-names></string-name> &amp; <string-name><surname>Acredolo</surname>, <given-names>Linda P.</given-names></string-name> (eds.), <source>Spatial orientation: Theory, research, and application</source>, <fpage>225</fpage>&#8211;<lpage>282</lpage>. <publisher-loc>New York</publisher-loc>: <publisher-name>Plenum Press</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1007/978-1-4615-9325-6_11</pub-id></mixed-citation></ref>
+<ref id="B29"><label>29</label><mixed-citation publication-type="book"><string-name><surname>Talmy</surname>, <given-names>Leonard</given-names></string-name>. <year>2000</year>. <source>Toward a cognitive semantics</source>. <publisher-loc>Cambridge</publisher-loc>: <publisher-name>MIT Press</publisher-name>. DOI: <pub-id pub-id-type="doi">10.7551/mitpress/6847.001.0001</pub-id></mixed-citation></ref>
+<ref id="B30"><label>30</label><mixed-citation publication-type="book"><string-name><surname>Valenzuela</surname>, <given-names>Pilar</given-names></string-name>. <year>2005</year>. <chapter-title>Participant agreement in Panoan</chapter-title>. In <string-name><surname>Himmelmann</surname>, <given-names>Nikolaus P.</given-names></string-name> &amp; <string-name><surname>Schultze-Berndt</surname>, <given-names>Eva F.</given-names></string-name> (eds.), <source>Secondary predication and adverbial modification: The typology of depictives</source>, <fpage>259</fpage>&#8211;<lpage>298</lpage>. <publisher-loc>Oxford</publisher-loc>: <publisher-name>Oxford University Press</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1093/acprof:oso/9780199272266.003.0008</pub-id></mixed-citation></ref>
+<ref id="B31"><label>31</label><mixed-citation publication-type="journal"><string-name><surname>Vendler</surname>, <given-names>Zeno</given-names></string-name>. <year>1957</year>. <article-title>Verbs and times</article-title>. <source>Philosophical Review</source> <volume>66</volume>(<issue>2</issue>). <fpage>143</fpage>&#8211;<lpage>160</lpage>. DOI: <pub-id pub-id-type="doi">10.2307/2182371</pub-id></mixed-citation></ref>
+<ref id="B32"><label>32</label><mixed-citation publication-type="journal"><string-name><surname>Verstraete</surname>, <given-names>Jean-Christophe</given-names></string-name>. <year>2010</year>. <article-title>Animacy and information structure in the system of ergative marking in Umpithamu</article-title>. <source>Lingua</source> <volume>120</volume>(<issue>7</issue>). <fpage>1637</fpage>&#8211;<lpage>1651</lpage>. DOI: <pub-id pub-id-type="doi">10.1016/j.lingua.2009.05.011</pub-id></mixed-citation></ref>
+<ref id="B33"><label>33</label><mixed-citation publication-type="book"><string-name><surname>Woolford</surname>, <given-names>Ellen</given-names></string-name>. <year>2000</year>. <chapter-title>Object agreement in Palauan: Specificity, humanness, economy and optimality</chapter-title>. In <string-name><surname>Paul</surname>, <given-names>Ileana</given-names></string-name> &amp; <string-name><surname>Phillips</surname>, <given-names>Vivianne</given-names></string-name> &amp; <string-name><surname>Travis</surname>, <given-names>Lisa</given-names></string-name> (eds.), <source>Formal issues in Austronesian linguistics</source>, <fpage>215</fpage>&#8211;<lpage>245</lpage>. <publisher-loc>Dordrecht</publisher-loc>: <publisher-name>Springer</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1007/978-94-017-1580-5_11</pub-id></mixed-citation></ref>
+<ref id="B34"><label>34</label><mixed-citation publication-type="book"><string-name><surname>Zariquiey</surname>, <given-names>Roberto</given-names></string-name>. <year>2018</year>. <source>A grammar of Kakataibo</source>. <publisher-loc>Berlin</publisher-loc>: <publisher-name>Mouton de Gruyter</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1086/695544</pub-id></mixed-citation></ref>
+</ref-list>
+</back>
+</article>

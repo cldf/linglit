@@ -1,4 +1,5 @@
 import re
+import typing
 import hashlib
 
 from pyigt.igt import IGT, NON_OVERT_ELEMENT
@@ -6,7 +7,7 @@ from pyigt.lgrmorphemes import MORPHEME_SEPARATORS
 from TexSoup import TexSoup
 from TexSoup.data import TexCmd
 
-from linglit.base import Example
+from linglit.base import Example, Publication
 from .latex import to_text, strip_tex_comment
 
 __all__ = ['iter_gll', 'make_example']
@@ -25,7 +26,9 @@ CHAR_REPLS = {
 
 def parse_langinfo(l):
     def get_name(arg):
-        if len(arg.contents) == 1 and isinstance(arg.contents[0], TexCmd) and not arg.contents[0].args:
+        if len(arg.contents) == 1 and \
+                isinstance(arg.contents[0], TexCmd) and \
+                not arg.contents[0].args:
             return '\\' + arg.contents[0].name
         return ''.join(TexSoup(re.sub(r'\\label{[^}]+}', '', arg.string)).text)
 
@@ -61,19 +64,20 @@ def iter_gll(s):
     Loop over the lines in a TeX file, detecting examples by matching start- and end-lines.
 
     FIXME: 123:
-    \syacex{Noun}{Pronoun}{984}
+    \\syacex{Noun}{Pronoun}{984}
     {ܗܲܝܡܵܢܘܼܬ݂ܹܗ}
     {haymānut-ēh}
-    {faith-\poss.3\masc}
+    {faith-\\poss.3\\masc}
     {his faith}
-    {\cite[70, \S 91e]{MuraokaSyriac}}
+    {\\cite[70, \\S 91e]{MuraokaSyriac}}
     """
     gll_start = re.compile(r'\\(g[l]{2,3}|exg\.|ag\.|bg\.)([^a-zA-Z]|$)')
     glt_start = re.compile(r'\\(glt|trans|Transl|TranslMulti|rede)([^a-zA-Z]|$)')
     longexampleandlanguage_pattern = re.compile(r'\\\\}{([^}]+)}$')
 
     linfo = None
-    ex_pattern = re.compile(r"\\ex\s+(?P<lname>[A-Z][a-z]+)\s+(\([A-Z][0-9],\s+)?\\cite[^{]+{(?P<ref>[^}]+)}")
+    ex_pattern = re.compile(
+        r"\\ex\s+(?P<lname>[A-Z][a-z]+)\s+(\([A-Z][0-9],\s+)?\\cite[^{]+{(?P<ref>[^}]+)}")
     gll, in_gll, prevline, pregll = [], False, None, None
     for lineno, line in enumerate(s.split('\n')):
         line = strip_tex_comment(line).strip()
@@ -85,8 +89,6 @@ def iter_gll(s):
             res = parse_ili(line)
             if res:
                 linfo = (res, lineno)
-                #line, rem = line.split(r'\ili{', maxsplit=1)
-                #line += rem.split('}', maxsplit=1)[1] if '}' in rem else ''
                 line = line.replace('()', '').strip()
         elif r'\il{' in line:
             res = parse_il(line)
@@ -234,15 +236,12 @@ def fixed_alignment(pt, gl):
 
 def lines_and_comment(lines):
     """
-    Figure out which lines of all lines between \gll and \glt to be considered as
+    Figure out which lines of all lines between \\gll and \\glt to be considered as
     word/morpheme-segmented primary text and gloss.
 
     :param lines:
     :return:
     """
-    from .latex import to_text
-    from TexSoup import TexSoup
-
     res, comment, linfo = [], [], None
     for line in lines:
         line = line.strip()
@@ -278,7 +277,9 @@ def lines_and_comment(lines):
                     res = res[:-1]
                 else:
                     # Language names appended as special comment in parentheses to the example.
-                    m = re.fullmatch(r'\(?([A-Z][a-z]+(-English)?|[0-9/]+|[A-Z][A-Z]+)\)?', to_text(res[-1].split('\n')[0])[0].strip())
+                    m = re.fullmatch(
+                        r'\(?([A-Z][a-z]+(-English)?|[0-9/]+|[A-Z][A-Z]+)\)?',
+                        to_text(res[-1].split('\n')[0])[0].strip())
                     if m:
                         if m.groups()[0][0].isalpha() and m.groups()[0][0].islower():
                             linfo = (m.groups()[0], '', '')
@@ -288,7 +289,11 @@ def lines_and_comment(lines):
     return [r.replace('\n', ' ') for r in res], '; '.join(comment), linfo
 
 
-def make_example(pub, linfo, gll, prevline):
+def make_example(
+        pub: Publication,
+        linfo: typing.Tuple[str, str, str],
+        gll: typing.List[str],
+        prevline: str) -> typing.Optional[Example]:
     _, _, refs = to_text(prevline)
     comment = []
     if linfo:

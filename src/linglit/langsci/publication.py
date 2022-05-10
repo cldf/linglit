@@ -51,7 +51,7 @@ class Publication(base.Publication):
         for p in self.includes:
             for linfo, gll, prevline in iter_gll(self.read_tex(p)):
                 ex = make_example(self, linfo, gll, prevline)
-                if ex and ex.ID not in seen:
+                if ex and (ex.ID not in seen):
                     ex.Source_Path = p
                     if self.repos:
                         ex.Source_Path = p.relative_to(self.repos.dir)
@@ -69,8 +69,9 @@ class Publication(base.Publication):
                         ex.Abbreviations = self.gloss_abbreviations[str(p)]
                     elif None in self.gloss_abbreviations:
                         ex.Abbreviations = self.gloss_abbreviations[None]
-                    yield ex
+                    ex.Meta_Language_ID = self.record.metalanguage
                     seen.add(ex.ID)
+                    yield ex
 
     def iter_cited(self):
         relevant = self.includes + [self.main]

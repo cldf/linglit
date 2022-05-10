@@ -42,18 +42,31 @@ def iter_text(p):
             elif e.tag in ['xref', 'ext-link', 'table-wrap', 'disp-formula']:
                 pass
             elif e.tag == 'list':
-                # FIXME: '<list xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" list-type="alpha-lower">\n<list-item><p>&#8220;Shark caught fish, but penguin did not catch fish.&#8221;</p></list-item>\n<list-item><p>&#8220;Shark caught fish, but shark did not catch penguin.&#8221;</p></list-item>\n<list-item><p>Both (a) and (b)</p></list-item>\n<list-item><p>I am not sure</p></list-item>\n</list>'
+                # FIXME: '<list xmlns:mml="http://www.w3.org/1998/Math/MathML"
+                #  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/
+                #  2001/XMLSchema-instance" list-type="alpha-lower">\n<list-item>
+                #  <p>&#8220;Shark caught fish, but penguin did not catch fish.&#8221;
+                #  </p></list-item>\n<list-item><p>&#8220;Shark caught fish, but shark
+                #  did not catch penguin.&#8221;</p></list-item>\n<list-item><p>Both
+                #  (a) and (b)</p></list-item>\n<list-item><p>I am not sure</p>
+                #  </list-item>\n</list>'
                 pass
             elif e.text:
-                assert not isinstance(e.tag, str) or (e.tag in ['bold', 'italic', 'underline', 'strike', 'monospace', 'inline-formula']), tostring(e)
+                assert not isinstance(e.tag, str) or (e.tag in [
+                    'bold', 'italic', 'underline', 'strike', 'monospace', 'inline-formula'
+                ]), tostring(e)
                 yield e.text
         else:
             yield str(e)
 
+
 def t(s, multi=False):
     p = s.xpath('p')
     if not multi:
-        assert len(p) == 1 or p[1].xpath('table-wrap') or (len(p) == 2 and ''.join(iter_text(p[1])).strip() in ['', '↔', 'ɛ elsewhere', 'ə elsewhere']), '\n'.join(tostring(pp).decode('utf8') for pp in p)
+        assert len(p) == 1 or p[1].xpath('table-wrap') or (
+                len(p) == 2 and
+                ''.join(iter_text(p[1])).strip() in ['', '↔', 'ɛ elsewhere', 'ə elsewhere']), \
+            '\n'.join(tostring(pp).decode('utf8') for pp in p)
         return ''.join(iter_text(p[0]))
     return '\n'.join(''.join(iter_text(pp)) for pp in p)
 
@@ -168,7 +181,9 @@ def iter_igt(d, abbrs):
                         len(items) == 1 and \
                         (
                                 items[0].xpath('p/italic') or
-                                (items[0].xpath('p') and re.match(r'([A-Z][a-z]+)(\s+[A-Z][a-z]+)*\s+\(', items[0].xpath('p')[0].text or ''))):
+                                (items[0].xpath('p') and re.match(
+                                    r'([A-Z][a-z]+)(\s+[A-Z][a-z]+)*\s+\(',
+                                    items[0].xpath('p')[0].text or ''))):
                     # parse language name!
                     if items[0].xpath('p/italic'):
                         lname = items[0].xpath('p/italic')[0].text
@@ -187,7 +202,6 @@ def iter_igt(d, abbrs):
                         count += 1
                         yield count, number, letter, lang, refs, res
                         seen.add(res.primary_text)
-        #parse_igt(l)
 
 
 def names(xp):

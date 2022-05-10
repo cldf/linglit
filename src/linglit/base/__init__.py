@@ -7,10 +7,51 @@ import attr
 from pyigt import IGT
 from pycldf.sources import Source
 from clldutils.misc import lazyproperty
+from pyglottolog import Glottolog as API
 
 STARTINGQUOTE = "`‘"
 ENDINGQUOTE = "'’"
 ELLIPSIS = '…'
+
+
+class Glottolog:
+    def __init__(self, glottolog):
+        if not isinstance(glottolog, API):
+            glottolog = API(glottolog)
+        self.by_glottocode = {}
+        self.by_isocode = {}
+        self._by_name = {}
+        self.by_custom_name = {}
+
+        for lg in glottolog.languoids():
+            self.by_glottocode[lg.id] = lg
+            if lg.iso:
+                self.by_isocode[lg.iso] = lg
+            self._by_name[lg.name] = lg
+            for _, names in lg.names.items():
+                for name in names:
+                    name = name.split('[')[0].strip()
+                    if name not in self._by_name:
+                        self._by_name[name] = lg
+
+        self.by_name = {k: v for k, v in self._by_name.items()}
+        self.api = glottolog
+
+    def register_names(self, names):
+        self.by_name = {k: v for k, v in self._by_name.items()}
+        for k, v in names.items():
+            if v:
+                self.by_name[k] = self.by_glottocode[v]
+
+    def __call__(self, name):
+        if name:
+            if name in self.by_glottocode:
+                return self.by_glottocode[name].id
+            if name in self.by_isocode:
+                return self.by_isocode[name].id
+            gl = self.by_name.get(name)
+            if gl:
+                return gl.id
 
 
 @attr.s
@@ -146,12 +187,13 @@ class Example:
     Gloss = attr.ib(validator=attr.validators.instance_of(list))
     Translated_Text = attr.ib(converter=clean_translation)
     Language_Name = attr.ib()
-    Comment = attr.ib()
+    Comment = attr.ib(converter=lambda s: '; '.join(s) if isinstance(s, list) else s)
     Source = attr.ib(validator=attr.validators.instance_of(list))
     Language_ID = attr.ib(default=None)  # Assigned after initialization based on Language_Name
     Source_Path = attr.ib(default=None)
     Abbreviations = attr.ib(default=attr.Factory(collections.OrderedDict))
     Local_ID = attr.ib(default=None)
+    Meta_Language_ID = attr.ib(default=None)
 
     def as_igt(self):
         return IGT(

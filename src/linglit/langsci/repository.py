@@ -14,7 +14,6 @@ from clldutils.jsonlib import update_ordered, load
 from clldutils.path import ensure_cmd
 
 from linglit import base
-from linglit import util
 from .catalog import Catalog, GITHUB_ORG
 from .publication import Publication
 from . import cfg
@@ -48,7 +47,7 @@ class File:
         return self.content == p.read_bytes()
 
     def fullpath(self, d):
-        p = d.joinpath(self.path)
+        p = pathlib.Path(d).joinpath(self.path)
         p.parent.mkdir(parents=True, exist_ok=True)
         return p
 

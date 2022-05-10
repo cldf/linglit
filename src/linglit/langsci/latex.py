@@ -338,25 +338,25 @@ SIMPLE_MACROS = {
     'h': "'",
     'eer': 'ε',
     "textrtaild": "ɖ",
-    "D": "ɖ",  #\textrtaild} %for retroflex d
-    "F": "ʄ",  #\texthtbardotlessj}
-    "oor": "ɔ",  #\textopeno}  % for ooor
-    "Ng": "N",  #\textipa{N}}  %for NG
-    "shw": "ə",  #\textschwa}  %for Shwa
-    "gy": "ʤ",  #\textdyoghlig}  %for GY
-    "ssh": "ʃ",  #\textesh} %ssh
+    "D": "ɖ",  # \textrtaild} %for retroflex d
+    "F": "ʄ",  # \texthtbardotlessj}
+    "oor": "ɔ",  # \textopeno}  % for ooor
+    "Ng": "N",  # \textipa{N}}  %for NG
+    "shw": "ə",  # \textschwa}  %for Shwa
+    "gy": "ʤ",  # \textdyoghlig}  %for GY
+    "ssh": "ʃ",  # \textesh} %ssh
     "tts": "ʧ",  # \textteshlig} %ts
     "zzh": "ʒ",  # \textyogh} %zzh
-    "ny": "ɲ",  #\textltailn}
-    "ph": "ɸ",  #\textphi}  %phi
-    "lw": "`",  #\`} %LOW
-    #"ds": "",  #\textdownstep} %DOWNSTEP
-    "ns": "~",  #\~} %NAS
-    "syl": "σ",  #$\sigma$} %SYLL
-    "mo": "μ",  #$\mu$} %MORA
-    "rnk": "≫",  #$\gg$} %>>
+    "ny": "ɲ",  # \textltailn}
+    "ph": "ɸ",  # \textphi}  %phi
+    "lw": "`",  # \`} %LOW
+    # "ds": "",  # \textdownstep} %DOWNSTEP
+    "ns": "~",  # \~} %NAS
+    "syl": "σ",  # $\sigma$} %SYLL
+    "mo": "μ",  # $\mu$} %MORA
+    "rnk": "≫",  # $\gg$} %>>
     "textcrh": "ħ",
-    "rs": "\u030c",  #\v}
+    "rs": "\u030c",  # \v}
     'subj': "SUBJ",
     'PREP': 'PREP',
     'PAST': 'PAST',
@@ -374,16 +374,16 @@ SIMPLE_MACROS = {
     'Pos': 'POS',  # positional verb stem
     'ᵓ': 'ᵓ',
     '°': '°',
-    "ᵃ": "ᵃ",  #\textsf{{\hspace{.5pt}ᵃ}}}
-    "ᵋ": "ᵋ",  #\textsf{{\hspace{.5pt}ᵋ}}}
-    "ᵉ": "ᵉ",  #\textsf{{\hspace{.1pt}ᵉ}}}
-    "ⁱ": "ⁱ",  #{\raisebox{-.65mm": "",  #{\textsuperscript{\sffamily\scriptsize i}}}}}
-    "ᴵ": "ᴵ",  #\textsf{{\hspace{.5pt}ᴵ}}}
-    "ᶤ": "ᶤ",  #\textsf{{\hspace{.5pt}ᶤ}}}
-    "ᵒ": "ᵒ",  #\textsf{{\hspace{.5pt}ᵒ}}}
-    "ᵘ": "ᵘ",  #\textsf{{\hspace{.5pt}ᵘ}}}
-    "ᶶ": "ᶶ",  #\textsf{{\hspace{.5pt}ᶶ}}}
-    "ꜜ": "ꜜ",  #\textsf{ꜜ\hspace*{-2pt}}}
+    "ᵃ": "ᵃ",  # \textsf{{\hspace{.5pt}ᵃ}}}
+    "ᵋ": "ᵋ",  # \textsf{{\hspace{.5pt}ᵋ}}}
+    "ᵉ": "ᵉ",  # \textsf{{\hspace{.1pt}ᵉ}}}
+    "ⁱ": "ⁱ",  # {\raisebox{-.65mm": "",  #{\textsuperscript{\sffamily\scriptsize i}}}}}
+    "ᴵ": "ᴵ",  # \textsf{{\hspace{.5pt}ᴵ}}}
+    "ᶤ": "ᶤ",  # \textsf{{\hspace{.5pt}ᶤ}}}
+    "ᵒ": "ᵒ",  # \textsf{{\hspace{.5pt}ᵒ}}}
+    "ᵘ": "ᵘ",  # \textsf{{\hspace{.5pt}ᵘ}}}
+    "ᶶ": "ᶶ",  # \textsf{{\hspace{.5pt}ᶶ}}}
+    "ꜜ": "ꜜ",  # \textsf{ꜜ\hspace*{-2pt}}}
     'supperl': 'SUPPERL',
     'supp': 'SUP',
     'definite': 'DEF',
@@ -685,10 +685,10 @@ SIMPLE_MACROS = {
     "paaf": "č",  # voiceless post-alveolar affricate
     "vuvfr": "ʁ",  # voiced uvular fricative
     "uvfr": "χ",  # voiceless uvular fricative
-    "phfr": "ħ",  #	voiceless pharyngeal fricative
-    "eppl": "ʡ",  #	epiglottal plosive
-    "glpl": "ʔ",  #	glottal stop
-    "glst": "ʔ",  #	alias for glottal stop
+    "phfr": "ħ",  # voiceless pharyngeal fricative
+    "eppl": "ʡ",  # epiglottal plosive
+    "glpl": "ʔ",  # glottal stop
+    "glst": "ʔ",  # alias for glottal stop
     "ej": "’",  # ejective
     "lab": "ʷ",  # labialized
     "pha": "ˤ",  # pharyngealized
@@ -766,32 +766,7 @@ macros = [
     macrospec.MacroSpec("dline", "{{{"),
     macrospec.MacroSpec("autocite", "[[{"),
     macrospec.MacroSpec("autocites", "[[{"),
-
     macrospec.MacroSpec("cite", "[[{"),
-    #macrospec.MacroSpec("citeapo", "[[{"),
-    #macrospec.MacroSpec("citeplain", "[[{"),
-    #macrospec.MacroSpec("citeyear", "[{"),
-    #macrospec.MacroSpec("citetitle", "[{"),
-    #macrospec.MacroSpec("citeyearNP", "[{"),
-    #macrospec.MacroSpec("citeyearpar", "[[{"),
-    #macrospec.MacroSpec("citeauthor", "[{"),
-    #macrospec.MacroSpec("citep", "[[{"),
-    #macrospec.MacroSpec("citepos", "[[{"),
-    #macrospec.MacroSpec("citeposs", "[[{"),
-    #macrospec.MacroSpec("citepalias", "[[{"),
-    #macrospec.MacroSpec("citet", "[[{"),
-    #macrospec.MacroSpec("citetv", "[[{"),
-    #macrospec.MacroSpec("citepv", "[[{"),
-    #macrospec.MacroSpec("citealtv", "[{"),
-    #macrospec.MacroSpec("Citep", "[{"),
-    #macrospec.MacroSpec("Citet", "[{"),
-    #macrospec.MacroSpec("citealp", "[[{"),
-    #macrospec.MacroSpec("citeA", "[[{"),
-    #macrospec.MacroSpec("citegen", "[{"),
-    #macrospec.MacroSpec("citegenp", "[{"),
-    #macrospec.MacroSpec("citegens", "[{"),
-    #macrospec.MacroSpec("citealt", "[[{"),
-    #macrospec.MacroSpec("citew", "[[{"),
     # FIXME: 17 Corpus and CorpusE
 ]
 for k in SIMPLE_MACROS:
@@ -876,7 +851,9 @@ def scite(n, l2tobj):
 
 
 def fatcit(n, l2tobj):
-    return '<cit page="{}">{}</cit>'.format(l2tobj.nodelist_to_text([n.nodeargd.argnlist[1]]), l2tobj.nodelist_to_text([n.nodeargd.argnlist[0]]))
+    return '<cit page="{}">{}</cit>'.format(
+        l2tobj.nodelist_to_text([n.nodeargd.argnlist[1]]),
+        l2tobj.nodelist_to_text([n.nodeargd.argnlist[0]]))
 
 
 def _get_optional_arg(node, default, l2tobj):
@@ -887,8 +864,9 @@ def _get_optional_arg(node, default, l2tobj):
         return default
     return l2tobj.nodelist_to_text([node])
 
+
 def cite(n, l2tobj):
-    """Get the text replacement for the macro \cite...[page]{bibkey}"""
+    """Get the text replacement for the macro \\cite...[page]{bibkey}"""
     if not n.nodeargd:
         # n.nodeargd can be empty if e.g. \putinquotes was a single
         # token passed as an argument to a macro,
@@ -949,12 +927,12 @@ macros = [
     latex2text.MacroTextSpec("ix", simplify_repl=lambda *args: ''),
     latex2text.MacroTextSpec("ux", simplify_repl=lambda *args: ''),
     latex2text.MacroTextSpec("dline", simplify_repl=lambda *args: ''),
-    #latex2text.MacroTextSpec("ili", simplify_repl=lambda *args: ''),
+    # latex2text.MacroTextSpec("ili", simplify_repl=lambda *args: ''),
     latex2text.MacroTextSpec("ili", simplify_repl=firstarg),
     latex2text.MacroTextSpec("REF", simplify_repl=lambda *args: ''),
     latex2text.MacroTextSpec("particle", simplify_repl='PARTICLE'),
     # For example parsing, we want to disregard jambox content
-    #latex2text.MacroTextSpec("jambox", simplify_repl=''),
+    # latex2text.MacroTextSpec("jambox", simplify_repl=''),
     # But for citation parsing, we need it.
     latex2text.MacroTextSpec("jambox", simplify_repl=lastarg),
     latex2text.MacroTextSpec("mbox", simplify_repl=firstarg),
@@ -978,30 +956,6 @@ macros = [
     latex2text.MacroTextSpec("autocite", simplify_repl=cite),
     latex2text.MacroTextSpec("autocites", simplify_repl=cite),
     latex2text.MacroTextSpec("cite", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citeplain", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citeyear", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citetitle", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citeyearNP", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citeyearpar", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citeauthor", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citeapo", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citeA", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citep", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citepos", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citeposs", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citepalias", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citet", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citetv", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citepv", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citealtv", simplify_repl=cite),
-    #latex2text.MacroTextSpec("Citep", simplify_repl=cite),
-    #latex2text.MacroTextSpec("Citet", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citew", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citealp", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citegen", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citegenp", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citegens", simplify_repl=cite),
-    #latex2text.MacroTextSpec("citealt", simplify_repl=cite),
 ]
 for k, v in SIMPLE_MACROS.items():
     macros.append(latex2text.MacroTextSpec(k, simplify_repl=functools.partial(repl, v)),)
@@ -1013,7 +967,8 @@ for abbr in lgr.ABBRS:
         ])
         if len(abbr) > 1:
             macros.append(
-                latex2text.MacroTextSpec(abbr.capitalize(), simplify_repl=functools.partial(repl, abbr)))
+                latex2text.MacroTextSpec(
+                    abbr.capitalize(), simplify_repl=functools.partial(repl, abbr)))
 
 l2t_context_db = latex2text.get_default_latex_context_db()
 l2t_context_db.add_context_category('gll', prepend=True, macros=macros[:])
@@ -1102,4 +1057,7 @@ def to_text(latex):
     #
     # FIXME: unicodedata.normalize.nfc!
     #
-    return text, '\n'.join(comment), [(leading_amp.sub('', k.replace('–', '--').lower()), v) for k, v in refs]
+    return (
+        text,
+        '\n'.join(comment),
+        [(leading_amp.sub('', k.replace('–', '--').lower()), v) for k, v in refs])

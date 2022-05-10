@@ -1,7 +1,4 @@
-import collections
-
 import attr
-from clldutils.misc import lazyproperty
 from pycldf.sources import Source
 
 from linglit import base
@@ -36,8 +33,8 @@ class Publication(base.Publication):
         super().__init__(*args, **kw)
         self.doc = xml.parse(self.dir)
         self.language_spec = self.record
-        self.record=Record(**xml.metadata(self.dir, self.doc))
-        self.abbreviations=xml.abbreviations(self.doc)
+        self.record = Record(**xml.metadata(self.dir, self.doc))
+        self.abbreviations = xml.abbreviations(self.doc)
 
     def iter_references(self):
         yield from xml.refs(self.doc)
@@ -67,4 +64,5 @@ class Publication(base.Publication):
                 Comment=None,
                 Source=refs,
                 Abbreviations=self.abbreviations,
+                Meta_Language_ID='stan1293',
             )

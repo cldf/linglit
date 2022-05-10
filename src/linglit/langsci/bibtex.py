@@ -21,10 +21,14 @@ __all__ = ['iter_bib', 'normalize_key']
 NAMES = {
     'SkL, Holm. B 74, 4\\textsuperscript{o} = Brøndum-Nielsen, Johs':
         'SkL, Holm. B and Brøndum-Nielsen, Johs',
-    'De Marneffe, Marie-Catherine, Timothy Dozat, Natalia Silveira, Katri Haverinen, Filip Ginter, Joakim Nivre,':
-        'De Marneffe, Marie-Catherine and Timothy Dozat and Natalia Silveira and Katri Haverinen and Filip Ginter and Joakim Nivre,',
-    'Igoo Ribaa, Mark Post,Ilii Ribaa, Miilii Nodu, Kenjum Bagra, Bomcak Ribaa, Toomoo Ribaa, Notoo Aado, Dambom Keenaa':
-        'Igoo Ribaa and Mark Post and Ilii Ribaa and Miilii Nodu and Kenjum Bagra and Bomcak Ribaa and Toomoo Ribaa and Notoo Aado and Dambom Keenaa',
+    'De Marneffe, Marie-Catherine, Timothy Dozat, Natalia Silveira, Katri Haverinen, Filip Ginter, '
+    'Joakim Nivre,':
+        'De Marneffe, Marie-Catherine and Timothy Dozat and Natalia Silveira and Katri Haverinen '
+        'and Filip Ginter and Joakim Nivre,',
+    'Igoo Ribaa, Mark Post,Ilii Ribaa, Miilii Nodu, Kenjum Bagra, Bomcak Ribaa, Toomoo Ribaa, '
+    'Notoo Aado, Dambom Keenaa':
+        'Igoo Ribaa and Mark Post and Ilii Ribaa and Miilii Nodu and Kenjum Bagra and Bomcak Ribaa '
+        'and Toomoo Ribaa and Notoo Aado and Dambom Keenaa',
     'Ringe, Donald A., Jr.,':
         'Ringe, Donald A. Jr.,',
     'Yahalom-Mack, Naama, Eliyahu-Behar, Adi':
@@ -36,19 +40,30 @@ NAMES = {
     'Féry, Caroline, Fanselow, Gisbert':
         'Féry, Caroline and Fanselow, Gisbert',
     'Dan Velleman, David Beaver, Emilie Destruel, Dylan Bumford, Edgar Onea, Liz Coppock':
-        'Dan Velleman and David Beaver and Emilie Destruel and Dylan Bumford and Edgar Onea and Liz Coppock',
+        'Dan Velleman and David Beaver and Emilie Destruel and Dylan Bumford and Edgar Onea and '
+        'Liz Coppock',
     'Riad, Tomas, & Gussonhoven, Carlos':
         'Riad, Tomas and Gussonhoven, Carlos',
     "B\\'{e}r\\'{e}nice Bellina, Elisabeth A Bacus, Thomas Oliver Pryce, Jan Wisseman Christie":
-        "B\\'{e}r\\'{e}nice Bellina and Elisabeth A Bacus and Thomas Oliver Pryce and Jan Wisseman Christie",
+        "B\\'{e}r\\'{e}nice Bellina and Elisabeth A Bacus and Thomas Oliver Pryce and Jan "
+        "Wisseman Christie",
     "D'Alessandro, Roberta \\& Fischer, Susann \\& Hrafnbjargarson, Gunnar Hrafn":
         "D'Alessandro, Roberta and Fischer, Susann and Hrafnbjargarson, Gunnar Hrafn",
     'Mitchell, Rosamond, Tracy-Ventura, Nicole':
         'Mitchell, Rosamond and Tracy-Ventura, Nicole',
     'Juan-Garau, Maria., Joana Salazar-Noguera,':
         'Juan-Garau, Maria and Joana Salazar-Noguera',
-    'Andr{\\\'e} M{\\"u}ller, Annkathrin Wett, Viveka Velupillai, Julia Bischoffberger, Cecil H. Brown, Eric W. Holman, Sebastian Sauppe, Zarina Molochieva, Pamela Brown, Harald Hammarstr{\\"o}m, Oleg Belyaev, Johann-Mattis List, Dik Bakker, Dmitry Egorov, Matthias Urban, Robert Mailhammer, Agustina Carrizo, Matthew S. Dryer, Evgenia Korovina, David Beck, Helen Geyer, Patience Epps, Anthony Grant,':
-        'Andr{\\\'e} M{\\"u}ller and Annkathrin Wett and Viveka Velupillai and Julia Bischoffberger and Cecil H. Brown and Eric W. Holman and Sebastian Sauppe and Zarina Molochieva and Pamela Brown and Harald Hammarstr{\\"o}m and Oleg Belyaev and Johann-Mattis List and Dik Bakker and Dmitry Egorov and Matthias Urban and Robert Mailhammer and Agustina Carrizo and Matthew S. Dryer and Evgenia Korovina and David Beck and Helen Geyer and Patience Epps and Anthony Grant',
+    'Andr{\\\'e} M{\\"u}ller, Annkathrin Wett, Viveka Velupillai, Julia Bischoffberger, '
+    'Cecil H. Brown, Eric W. Holman, Sebastian Sauppe, Zarina Molochieva, Pamela Brown, '
+    'Harald Hammarstr{\\"o}m, Oleg Belyaev, Johann-Mattis List, Dik Bakker, Dmitry Egorov, '
+    'Matthias Urban, Robert Mailhammer, Agustina Carrizo, Matthew S. Dryer, Evgenia Korovina, '
+    'David Beck, Helen Geyer, Patience Epps, Anthony Grant,':
+        'Andr{\\\'e} M{\\"u}ller and Annkathrin Wett and Viveka Velupillai and Julia '
+        'Bischoffberger and Cecil H. Brown and Eric W. Holman and Sebastian Sauppe and Zarina '
+        'Molochieva and Pamela Brown and Harald Hammarstr{\\"o}m and Oleg Belyaev and '
+        'Johann-Mattis List and Dik Bakker and Dmitry Egorov and Matthias Urban and Robert '
+        'Mailhammer and Agustina Carrizo and Matthew S. Dryer and Evgenia Korovina and David Beck '
+        'and Helen Geyer and Patience Epps and Anthony Grant',
 }
 
 GENRE_MAP = {
@@ -101,7 +116,7 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
     for p in ps:
         # preprocess the bibtex, fixing the stuff that bibtool can't fix:
         text = p.read_text(encoding='utf8')
-        lines = [l.strip() for l in text.split('\n') if l.strip()]
+        lines = [ln.strip() for ln in text.split('\n') if ln.strip()]
         if len(lines) == 1 and len(lines[0]) < 200 and p.parent.joinpath(lines[0]).exists():
             # Special handling for 237, where the path to 223's bib is given in the bibfile!
             text = p.parent.joinpath(lines[0]).read_text(encoding='utf8')
@@ -134,7 +149,7 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             (r'{{\{', '{{{'),
             (r'{L\{', '{L{\\'),
             ('}%,', '},'),
-            ('{\{AA}}', '{\AA}'),
+            (r'{\{AA}}', r'{\AA}'),
             ('RepúblicadelParaguay2001,', 'RepublicadelParaguay2001,'),
             (r'@book{Kury\l{}owicz1973', '@book{kurylowicz1973'),
             ('@Article{,', '@Article{undefined,'),
@@ -170,7 +185,7 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             chunk = chunk.replace(k, v)
         # Field values without enclosing braces:
         chunk = re.sub(
-            '^\s*([a-zA-Z]+)\s*=([^{]+),$',
+            r'^\s*([a-zA-Z]+)\s*=([^{]+),$',
             lambda m: '%s = {%s},' % (m.groups()[0], m.groups()[1]),
             chunk,
             flags=re.MULTILINE)

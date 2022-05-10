@@ -1,3 +1,5 @@
+import json
+import base64
 import pathlib
 
 import pytest
@@ -18,3 +20,31 @@ def test_Repository(repo):
 
     assert len(pub.examples) == 1
     assert pub.example_sources(pub.examples[0])[0].genre == 'book'
+
+
+def test_File(mocker, tmp_path):
+    from linglit.langsci.repository import File
+
+    content = b'abc'
+    mocker.patch(
+        'linglit.langsci.repository.subprocess',
+        mocker.Mock(
+            check_output=lambda *a, **kw: json.dumps(
+                dict(content=base64.b64encode(content).decode(), encoding='base64'))))
+    f = File(path='x', sha='x', mode='', type='blob', size=3, url='x')
+    assert f.content == content
+
+    f.save(tmp_path)
+    assert f.same_content(tmp_path / 'x')
+    assert f.same_content(tmp_path / 'x', shallow=False)
+
+
+def test_branch_and_tree(mocker):
+    from linglit.langsci.repository import branch_and_tree
+
+    mocker.patch(
+        'linglit.langsci.repository.subprocess',
+        mocker.Mock(check_output=lambda *a, **kw: json.dumps(dict(default_branch='main'))))
+
+    res = branch_and_tree('3', None)
+    assert res[0] == 'main'

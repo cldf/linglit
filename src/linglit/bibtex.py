@@ -1,4 +1,5 @@
 import re
+import typing
 import pathlib
 import collections
 
@@ -8,7 +9,7 @@ from pycldf.sources import Source
 from thefuzz import fuzz
 from unidecode import unidecode
 
-__all__ = ['iter_merged']
+__all__ = ['iter_merged', 'iter_entries']
 
 YEAR_PATTERN = re.compile('([0-9]{4})')
 
@@ -27,13 +28,16 @@ def similarity(s1, s2):
     return max([fuzz.ratio(s1, s2), fuzz.token_set_ratio(s1, s2)])
 
 
-def iter_entries(d):
+def iter_entries(
+        d: typing.Union[str, pathlib.Path]) -> typing.Generator[database.Entry, None, None]:
     d = pathlib.Path(d)
     for p in sorted(d.glob('*.bib'), key=lambda pp: pp.stem):
         yield from database.parse_string(p.read_text(encoding='utf8'), 'bibtex').entries.values()
 
 
-def iter_merged(entries):
+def iter_merged(
+        entries: typing.Iterable[typing.Union[Source, database.Entry]]
+) -> typing.Generator[typing.Tuple[Source, dict], None, None]:
     """
     We merge in a multi-step procedure.
 
@@ -46,6 +50,10 @@ def iter_merged(entries):
     """
     aggr = collections.defaultdict(list)
     for e in entries:
+        if isinstance(e, Source):
+            sid = e.id
+            e = e.entry
+            e.key = sid
         aggr[hash(e)].append(e)
 
     keys = {}
@@ -133,12 +141,12 @@ def make_key(e):
     return creators.lower() + ed + ':' + year
 
 
-#--------------------------------------
-def read_bib(p):
-    return {k: e for k, e in database.parse_string(p.read_text(encoding='utf8'), 'bibtex').entries.items()}
+# --------------------------------------
+def main():  # pragma: no cover
+    def read_bib(p):
+        return {k: e for k, e in
+                database.parse_string(p.read_text(encoding='utf8'), 'bibtex').entries.items()}
 
-
-if __name__ == '__main__':
     lsp = pathlib.Path('lsp.bib')
     lsp.write_text('\n\n'.join(
         [m[0].bibtex() for m in iter_merged(iter_entries('langsci/bibtex'))]), encoding='utf8')

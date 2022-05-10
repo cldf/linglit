@@ -33,7 +33,7 @@ class Record(base.Record):
             publisher="Language Science Press",
             doi=self.DOI,
         )
-        if self.edited == 'True':
+        if self.edited:
             md['editor'] = self.creators
         else:
             md['author'] = self.creators
@@ -60,14 +60,17 @@ class Catalog:
             for item in self.items:
                 w.writerow(attr.astuple(item))
 
+    def __len__(self):
+        return len(self.items)
+
     def __iter__(self):
         for item in self.items:
             if item.has_open_license:
                 yield item
 
     def __getitem__(self, item):
-        for item in self.items:
-            if item.ID == item:
-                return item
+        for it in self.items:
+            if it.ID == item:
+                return it
         else:
             raise KeyError(item)
