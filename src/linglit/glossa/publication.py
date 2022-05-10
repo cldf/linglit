@@ -44,7 +44,8 @@ class Publication(base.Publication):
             yield xref.get('rid')
 
     def iter_examples(self, glottolog=None):
-        for count, number, letter, lang, xrefs, igt in xml.iter_igt(self.doc, self.abbreviations):
+        for count, number, letter, lang, xrefs, igt, comment in xml.iter_igt(
+                self.doc, self.abbreviations):
             lid = '{}{}'.format(number or '', letter or '')
             refs = []
             for sid, reft, label in xrefs:
@@ -61,8 +62,8 @@ class Publication(base.Publication):
                 Translated_Text=igt.translation,
                 Language_ID=None,
                 Language_Name=self.language_spec(lang, lid) if self.language_spec else lang,
-                Comment=None,
                 Source=refs,
                 Abbreviations=self.abbreviations,
                 Meta_Language_ID='stan1293',
+                Comment=comment,
             )

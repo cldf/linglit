@@ -37,7 +37,7 @@ def iter_text(p):
             elif e.tag == 'upper':
                 if e.text:
                     yield e.text.upper()
-                else:
+                else:  # pragma: no cover
                     raise ValueError(tostring(e))
             elif e.tag in ['xref', 'ext-link', 'table-wrap', 'disp-formula']:
                 pass
@@ -50,7 +50,7 @@ def iter_text(p):
                 #  did not catch penguin.&#8221;</p></list-item>\n<list-item><p>Both
                 #  (a) and (b)</p></list-item>\n<list-item><p>I am not sure</p>
                 #  </list-item>\n</list>'
-                pass
+                pass  # pragma: no cover
             elif e.text:
                 assert not isinstance(e.tag, str) or (e.tag in [
                     'bold', 'italic', 'underline', 'strike', 'monospace', 'inline-formula'
@@ -115,15 +115,9 @@ def parse_igt(d):
 <list-item><p>&#8216;powder&#8217;</p></list-item>
 </list>
 </list-item>
-
-#
-# FIXME: comments
-#
-<list list-type="word">
-<list-item><p>Ayda&#160;&#160;&#160;&#160;(Pseudo-stripping)</p></list-item>
-<list-item><p>Ayda</p></list-item>
-</list>
     """
+    comment = ''
+    comment_pattern = re.compile(r'\s\s+\(([^)]+)\)$')
     aw, gl, tr = [], [], []
     for i, li in enumerate(d.xpath('list-item')):
         words = li.xpath("list[@list-type='word']")
@@ -138,7 +132,12 @@ def parse_igt(d):
                     # See 4835
                     #
                     return
-                aw.append(t(tiers[0]))
+                word = t(tiers[0])
+                m = comment_pattern.search(word)
+                if m:
+                    comment = m.groups()[0]
+                    word = word[:m.start()]
+                aw.append(word)
                 gl.append(t(tiers[1]))
         fs = li.xpath("list[@list-type='final-sentence']")
         if fs:
@@ -148,7 +147,7 @@ def parse_igt(d):
                     tr.append(t(lii, multi=True))
                 break
 
-    return aw, gl, '\n'.join(tr)
+    return aw, gl, '\n'.join(tr), comment
 
 
 def iter_igt(d, abbrs):
@@ -197,11 +196,11 @@ def iter_igt(d, abbrs):
             if ll.xpath("list-item/list[@list-type='word']") and not ll.xpath(".//inline-graphic"):
                 res = parse_igt(ll)
                 if res:
-                    res = IGT(phrase=res[0], gloss=res[1], translation=res[2], abbrs=abbrs)
-                    if res.primary_text not in seen:
+                    igt = IGT(phrase=res[0], gloss=res[1], translation=res[2], abbrs=abbrs)
+                    if igt.primary_text not in seen:
                         count += 1
-                        yield count, number, letter, lang, refs, res
-                        seen.add(res.primary_text)
+                        yield count, number, letter, lang, refs, igt, res[3]
+                        seen.add(igt.primary_text)
 
 
 def names(xp):

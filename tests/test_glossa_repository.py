@@ -21,3 +21,4 @@ def test_Repository_examples(repo):
     assert len(pub.cited_references) == 33
     assert len(pub.examples) == 42
     assert pub.examples[3].Language_Name == 'daww1239'
+    assert pub.examples[0].Comment == 'Pseudo-stripping'
