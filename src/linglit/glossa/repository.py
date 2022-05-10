@@ -15,8 +15,8 @@ CATALOG_URL = BASE_URL + "/articles/"
 class Repository(base.Repository):
     id = 'glossa'
 
-    def create(self):
-        get_all(self.dir)
+    def create(self, verbose=False):
+        get_all(self.dir, verbose=verbose)
 
     def iter_publications(self):
         lspecs = cfg.language_specs()
@@ -24,18 +24,20 @@ class Repository(base.Repository):
             yield Publication(lspecs.get(int(p.stem)), p, repos=self)
 
 
-def download(url):
+def download(url, verbose=False):
+    if verbose:
+        print('retrieving {}'.format(url))
     return urllib.request.urlopen(url).read().decode('utf8')
 
 
-def get_xml(url, d):
+def get_xml(url, d, verbose=False):
     if not url:
         return
     m = URL_PATTERN.search(url)
     if m:
         p = d / '{}.xml'.format(m.group('id'))
         if not p.exists():
-            page = bs(download(url), 'lxml')
+            page = bs(download(url, verbose=verbose), 'lxml')
             xml_url = page.find('a', href=True, text='Download XML')
             if xml_url:
                 xml_url = xml_url['href']
@@ -45,13 +47,13 @@ def get_xml(url, d):
         return p.read_text(encoding='utf8')
 
 
-def get_all(d):
+def get_all(d, verbose=False):
     url = CATALOG_URL
     while url:
-        page = bs(download(url), 'lxml')
+        page = bs(download(url, verbose=verbose), 'lxml')
         for p in page.find_all('div', class_='card-panel'):
             for a in p.find_all('a'):
-                get_xml(BASE_URL + a['href'], d)
+                get_xml(BASE_URL + a['href'], d, verbose=verbose)
                 # download HTML, look for "Download XML" link:
                 # <a href="/article/5809/galley/21790/download/">Download XML</a>
                 # https://www.glossa-journal.org/article/5821/galley/21844/download/

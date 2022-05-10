@@ -20,7 +20,8 @@ from . import cfg
 
 CATALOG_NAME = "catalog.tsv"
 FILELIST_NAME = "files.json"
-MISSING_TEX_SOURCES = [155, 187, 192, 195, 255, 287, 297, 311, 325]
+MISSING_TEX_SOURCES = [155, 192, 195, 255, 287, 297, 311, 325]
+TEX_BRANCH = {187: 'master'}
 
 
 @attr.s
@@ -65,6 +66,8 @@ def gh_api(item, path=None, url=None):
 
 def branch_and_tree(item, olddata):
     default_branch = olddata[0] if olddata else gh_api(item)['default_branch']
+    if item.int_id in TEX_BRANCH:
+        default_branch = TEX_BRANCH[item.int_id]
     return default_branch, gh_api(item, '/git/trees/{}?recursive=1'.format(default_branch))
 
 
@@ -81,7 +84,7 @@ class Repository(base.Repository):
             if item.int_id not in MISSING_TEX_SOURCES:
                 yield Publication(item, self.dir / item.ID, self)
 
-    def create(self):
+    def create(self, verbose=False):
         """
         Create a repository from scratch (may need to be restarted a couple of times if
         GH rate limit problems are encountered):

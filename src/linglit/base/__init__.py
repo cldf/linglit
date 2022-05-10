@@ -87,7 +87,7 @@ class Repository:
     def __init__(self, d):
         self.dir = pathlib.Path(d)
 
-    def create(self):
+    def create(self, verbose=False):
         raise NotImplementedError()
 
     def iter_publications(self):
