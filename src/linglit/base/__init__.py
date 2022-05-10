@@ -1,10 +1,12 @@
 import re
+import typing
 import pathlib
 import collections
 
 import attr
 from pyigt import IGT
-from clldutils.source import Source
+from pycldf.sources import Source
+from clldutils.misc import lazyproperty
 
 STARTINGQUOTE = "`‘"
 ENDINGQUOTE = "'’"
@@ -60,18 +62,61 @@ class Publication:
         self.dir = pathlib.Path(d)
         self.repos = repos
 
+    @lazyproperty
+    def cited_references(self):
+        return [ref for ref in self.references.values() if ref.id in self.cited]
+
+    @lazyproperty
+    def id(self):
+        return '{}{}'.format(self.repos.id, self.record.ID)
+
     def as_source(self):
         src = self.record.as_source()
-        src.id = '{}:{}'.format(self.repos.id, src.id)
+        src.id = self.id
         return src
 
-    @property
+    @lazyproperty
     def references(self) -> collections.OrderedDict:
+        res = collections.OrderedDict()
+        for src in self.iter_references():
+            sid = '{}:{}'.format(self.id, src.id)
+            res[sid] = Source(src.genre, sid, _check_id=False, **src)
+        return res
+
+    def iter_references(self) -> typing.Generator[Source, None, None]:
         raise NotImplementedError()
 
-    @property
+    @lazyproperty
     def cited(self) -> collections.Counter:
+        res = collections.Counter()
+        for key in self.iter_cited():
+            res.update(['{}:{}'.format(self.id, key)])
+        return res
+
+    def iter_cited(self):
         raise NotImplementedError()
+
+    def example_sources(self, ex):
+        return [self.references[sid] for sid, _ in ex.Source if sid != self.id] + [self.as_source()]
+
+    @lazyproperty
+    def examples(self):
+        res = []
+        for ex in self.iter_examples():
+            ex.ID = '{}-{}'.format(self.id, ex.ID)
+            refs = []
+            for sid, pages in ex.Source:
+                refs.append(('{}:{}'.format(self.id, sid), pages))
+            if refs:
+                pages = 'via'
+                if ex.Local_ID:
+                    pages += ':{}'.format(ex.Local_ID)
+                refs.append((self.id, pages))
+            else:
+                refs.append((self.id, ex.Local_ID))
+            ex.Source = refs
+            res.append(ex)
+        return res
 
     def iter_examples(self):
         raise NotImplementedError()

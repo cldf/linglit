@@ -261,7 +261,6 @@ def metadata(p, doc):
     )
 
 
-
 def refs(doc):
     for ref in doc.xpath('.//ref-list/ref'):
         sid = ref.get('id')

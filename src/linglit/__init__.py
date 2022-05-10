@@ -1,6 +1,7 @@
 import collections
 import pathlib
 
+from tqdm import tqdm
 from pyglottolog import Glottolog as API
 
 from . import langsci
@@ -56,19 +57,32 @@ def iter_examples(d='.', glottolog='glottolog', **dirs):
     glottolog = Glottolog(glottolog)
     for rid, cls in PROVIDERS.items():
         #if rid != 'glossa':
-        #    continue
+        if rid != 'langsci':
+            continue
         sd = dirs.get(rid, d / rid)
+        bibtex = sd / 'bibtex'
         if sd.exists():
+            if not bibtex.exists():
+                bibtex.mkdir()
             repos = cls(sd)
             repos.register_language_names(glottolog)
 
-            for pub in cls(sd).iter_publications():
-                if not pub.record.current:
-                    print(pub.as_source())
+            for pub in tqdm(cls(sd).iter_publications(), desc=rid):
+                #if pub.record.int_id not in [6371]:
+                #if rid == 'langsci' and pub.record.int_id < 289:
+                #    continue
+
+                #print(pub.id, len(pub.references), len(pub.cited))
+                t = []
+                for src in pub.cited_references:
+                    #
+                    # FIXME: add lgcode for refs related to identified examples!
+                    #
+                    t.append(src.bibtex())
+
+                bibtex.joinpath('{}.bib'.format(pub.record.ID)).write_text('\n\n'.join(t), encoding='utf8')
 
                 continue
-                if pub.record.int_id not in [6371]:
-                    continue
                 pid = '{}-{}'.format(rid, pub.record.ID)
                 for i, ex in enumerate(pub.iter_examples()):
                     if ex.Language_ID is None:

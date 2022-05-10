@@ -16,5 +16,5 @@ def iter_texsoup_lines(p, level=0, tex=None):
                         yield from iter_texsoup_lines(pp, level=level + 1)
             else:
                 yield soup
-        except:
+        except:  # pragma: no cover
             pass

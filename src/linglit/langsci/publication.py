@@ -40,6 +40,7 @@ class Publication(base.Publication):
         self._bibs = None
         self._includes = None
         self._includes_tex = {}
+        self._refs = []
 
     def iter_examples(self):
         texfile2language = {}
@@ -58,7 +59,7 @@ class Publication(base.Publication):
                     for key, pages in ex.Source:
                         key = normalize_key(key)
                         if key in self.bibkeys:
-                            refs.append((key, pages))
+                            refs.append((self.bibkeys[key], pages))
                     ex.Source = refs
                     if ex.Language_Name is None and (self.record.int_id, p.name) in texfile2language:
                         ex.Language_Name = texfile2language[(self.record.int_id, p.name)]
@@ -71,9 +72,7 @@ class Publication(base.Publication):
                     yield ex
                     seen.add(ex.ID)
 
-    @lazyproperty
-    def cited(self):
-        res = collections.Counter()
+    def iter_cited(self):
         relevant = self.includes + [self.main]
         if self.main.parent.joinpath(BACKMATTER_NAME).exists():
             relevant.append(self.main.parent.joinpath(BACKMATTER_NAME))
@@ -83,20 +82,17 @@ class Publication(base.Publication):
                 for ref, _ in refs:
                     key = normalize_key(ref)
                     if key in self.bibkeys:
-                        res.update([self.bibkeys[key]])
-        return res
+                        yield self.bibkeys[key]
 
-    @lazyproperty
-    def references(self):
-        res = collections.OrderedDict()
-        for src in iter_bib(self.bibs):
-            res[src.id] = src
-        return res
+    def iter_references(self):
+        if not self._refs:
+            self._refs = list(iter_bib(self.bibs))
+        yield from iter(self._refs)
 
     #--- langsci specifics
-    def read_tex(self, p):
+    def read_tex(self, p, with_input=True):
         if str(p) not in self._includes_tex:
-            self._includes_tex[str(p)] = texfixes.read_tex(p)
+            self._includes_tex[str(p)] = texfixes.read_tex(p, with_input=with_input)
         return self._includes_tex[str(p)]
 
     @lazyproperty
@@ -133,10 +129,10 @@ class Publication(base.Publication):
     @lazyproperty
     def bibkeys(self):
         res = {}
-        for akey, src in self.references.items():
-            res[akey] = akey
+        for src in self.iter_references():
+            res[src.id] = src.id
             for altkey in src.alt_keys:
-                res[altkey] = akey
+                res[altkey] = src.id
         return res
 
     @property
@@ -174,7 +170,7 @@ class Publication(base.Publication):
                     if tex and make.parent.joinpath(tex).exists():
                         return make.parent / tex
             for line in make.read_text(encoding='utf8').splitlines():
-                pdf = re.search('\s+([A-Za-z_0-9]+)\.pdf(\s|$)', line.strip())
+                pdf = re.search(r'\s+([A-Za-z_0-9]+)\.pdf(\s|$)', line.strip())
                 if pdf:
                     tex = '{}.tex'.format(pdf.groups()[0])
                     if tex and make.parent.joinpath(tex).exists():

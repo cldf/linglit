@@ -377,9 +377,7 @@ def make_example(pub, linfo, gll, prevline):
 
     obj = obj or IGT(phrase=pt, gloss=gl).primary_text
     return Example(
-        ID = "{}-{}".format(
-            pub.dir.name,
-            hashlib.sha256(obj.replace('.', '').encode('utf8')).hexdigest()[:10]),
+        ID = hashlib.sha256(obj.replace('.', '').encode('utf8')).hexdigest()[:10],
         Primary_Text=obj,
         Analyzed_Word=pt,
         Gloss=gl,

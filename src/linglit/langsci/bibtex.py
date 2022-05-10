@@ -10,8 +10,8 @@ import unicodedata
 
 from pybtex import database
 from clldutils.source import Source
+from clldutils.path import ensure_cmd
 
-from linglit import util
 from .latex import simple_to_text
 from . import cfg
 
@@ -88,11 +88,11 @@ def to_source(key, e):
     src.id = normalize_key(key)
     src.genre = GENRE_MAP.get(src.genre.lower(), src.genre.lower())
     for k in list(src):
-        src[k.lower()] = simple_to_text(src.pop(k))
+        src[k.lower() if k.lower() != 'date' else 'year'] = simple_to_text(src.pop(k))
     return src
 
 
-def iter_bib(ps: typing.List[pathlib.Path]) -> typing.Generator[Source, None, None]:
+def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[Source, None, None]:
     """
     :param ps: `list` of paths to bibtex files making up one bibliography.
     """
@@ -102,7 +102,7 @@ def iter_bib(ps: typing.List[pathlib.Path]) -> typing.Generator[Source, None, No
         # preprocess the bibtex, fixing the stuff that bibtool can't fix:
         text = p.read_text(encoding='utf8')
         lines = [l.strip() for l in text.split('\n') if l.strip()]
-        if len(lines) == 1 and p.parent.joinpath(lines[0]).exists():
+        if len(lines) == 1 and len(lines[0]) < 200 and p.parent.joinpath(lines[0]).exists():
             # Special handling for 237, where the path to 223's bib is given in the bibfile!
             text = p.parent.joinpath(lines[0]).read_text(encoding='utf8')
 
@@ -145,7 +145,7 @@ def iter_bib(ps: typing.List[pathlib.Path]) -> typing.Generator[Source, None, No
 
     # Now run bibtool:
     cmd = subprocess.Popen(
-        [util.ensure_cmd('bibtool'), '-r', str(cfg.BIBTOOL_RSC)],
+        [ensure_cmd('bibtool'), '-r', str(cfg.BIBTOOL_RSC)],
         stdin=subprocess.PIPE,
         stderr=subprocess.PIPE,
         stdout=subprocess.PIPE,
@@ -156,7 +156,8 @@ def iter_bib(ps: typing.List[pathlib.Path]) -> typing.Generator[Source, None, No
             if any(s in line for s in
                    ['Duplicate field', 'non-space characters ignored', "Missing ',' assumed"]):
                 continue
-            log.warning('bibtool:::' + line)
+            if verbose:
+                log.warning('bibtool:::' + line)
 
     # Now feed the bibtex to pybtex one record at a time to skip duplicate keys:
     for i, chunk in enumerate(re.split(r'^@', stdout.decode('utf8'), flags=re.MULTILINE)):

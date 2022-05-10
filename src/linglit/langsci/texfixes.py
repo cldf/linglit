@@ -47,7 +47,7 @@ def read_tex(p, with_input=True):
     """
     try:
         t = p.read_text(encoding='utf8')
-    except UnicodeDecodeError:
+    except UnicodeDecodeError:  # pragma: no cover
         t = p.read_text(encoding='latin1')
 
     t = normalize_cite(t)

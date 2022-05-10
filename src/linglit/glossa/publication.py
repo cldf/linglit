@@ -39,13 +39,12 @@ class Publication(base.Publication):
         self.record=Record(**xml.metadata(self.dir, self.doc))
         self.abbreviations=xml.abbreviations(self.doc)
 
-    @lazyproperty
-    def references(self):
-        return collections.OrderedDict([(s.id, s) for s in xml.refs(self.doc)]),
+    def iter_references(self):
+        yield from xml.refs(self.doc)
 
-    @property
-    def cited(self):
-        raise NotImplementedError()
+    def iter_cited(self):
+        for xref in self.doc.xpath(".//xref[@ref-type='bibr']"):
+            yield xref.get('rid')
 
     def iter_examples(self, glottolog=None):
         for count, number, letter, lang, xrefs, igt in xml.iter_igt(self.doc, self.abbreviations):
@@ -55,13 +54,9 @@ class Publication(base.Publication):
                 if reft == 'bibr':
                     pages = label.partition(':')[2].strip() if label else ''
                     refs.append((sid, pages.replace('[', '(').replace(']', ')')))
-            #if refs:
-            #    refs.append((self.record.id, 'via:{}'.format(lid)))
-            #else:
-            #    refs.append((self.record.id, lid))
 
             yield base.Example(
-                ID='{}-{}'.format(self.record.ID, count),
+                ID='{}'.format(count),
                 Local_ID=lid,
                 Primary_Text=igt.primary_text,
                 Analyzed_Word=igt.phrase,
