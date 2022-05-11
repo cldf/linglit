@@ -1,16 +1,13 @@
 """
 Update a linglit data repository
 """
-from clldutils.clilib import PathType
-
-from linglit import PROVIDERS
+from linglit.cli_util import add_provider, get_provider
 
 
 def register(parser):
-    parser.add_argument('provider', choices=list(PROVIDERS.keys()))
-    parser.add_argument('dir', type=PathType(type='dir'))
+    add_provider(parser)
 
 
 def run(args):
-    repo = PROVIDERS[args.provider](args.dir)
+    repo = get_provider(args)
     repo.create(verbose=True)

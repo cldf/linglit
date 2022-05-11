@@ -66,7 +66,7 @@ def gh_api(item, path=None, url=None):
 
 def branch_and_tree(item, olddata):
     default_branch = olddata[0] if olddata else gh_api(item)['default_branch']
-    if item.int_id in TEX_BRANCH:
+    if int(getattr(item, 'ID', item)) in TEX_BRANCH:
         default_branch = TEX_BRANCH[item.int_id]
     return default_branch, gh_api(item, '/git/trees/{}?recursive=1'.format(default_branch))
 
@@ -76,6 +76,9 @@ class Repository(base.Repository):
 
     def register_language_names(self, glottolog):
         glottolog.register_names(cfg.LNAME_TO_GC)
+
+    def __getitem__(self, item):
+        return Publication(self.catalog[item], self.dir / item, self)
 
     def iter_publications(self):
         for item in self.catalog:

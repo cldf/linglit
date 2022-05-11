@@ -87,6 +87,9 @@ class Repository:
     def __init__(self, d):
         self.dir = pathlib.Path(d)
 
+    def __getitem__(self, item):
+        raise NotImplementedError()
+
     def create(self, verbose=False):
         raise NotImplementedError()
 
@@ -102,6 +105,9 @@ class Publication:
         self.record = record
         self.dir = pathlib.Path(d)
         self.repos = repos
+
+    def __str__(self):
+        return "{0.creators} {0.year}. {0.title}".format(self.record)
 
     @lazyproperty
     def cited_references(self):
@@ -194,6 +200,23 @@ class Example:
     Abbreviations = attr.ib(default=attr.Factory(collections.OrderedDict))
     Local_ID = attr.ib(default=None)
     Meta_Language_ID = attr.ib(default=None)
+
+    def __str__(self):
+        res = '({})'.format(self.Local_ID or self.ID)
+        if self.Language_Name:
+            res += ' {}'.format(self.Language_Name)
+        if self.Source:
+            res += ' ('
+            for i, (sid, pages) in enumerate(self.Source):
+                if i:
+                    res += '; '
+                res += sid
+                if pages:
+                    res += ': {}'.format(pages)
+            res += ')'
+        res += '\n'
+        res += str(self.as_igt())
+        return res
 
     def as_igt(self):
         return IGT(

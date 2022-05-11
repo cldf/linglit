@@ -18,6 +18,13 @@ class Repository(base.Repository):
     def create(self, verbose=False):
         get_all(self.dir, verbose=verbose)
 
+    def __getitem__(self, item):
+        p = self.dir / '{}.xml'.format(item)
+        if not p.exists():
+            raise KeyError(item)
+        lspecs = cfg.language_specs()
+        return Publication(lspecs.get(int(item)), p, repos=self)
+
     def iter_publications(self):
         lspecs = cfg.language_specs()
         for p in self.dir.glob('*.xml'):
