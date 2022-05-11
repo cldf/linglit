@@ -111,7 +111,7 @@ class Repository(base.Repository):
                 if not ids or (item.int_id in ids):
                     d[item.ID] = branch_and_tree(item, d.get(item.ID))
 
-    def fetch_files(self):
+    def fetch_files(self, filelist=None):
         exclude = [
             'seriesinfo',
             'langsci/locale',
@@ -129,7 +129,7 @@ class Repository(base.Repository):
             '__MACOSX',
             'pdf/',
         ]
-        for itemid, (_, filelist) in load(self.dir / FILELIST_NAME).items():
+        for itemid, (_, filelist) in load(filelist or self.dir / FILELIST_NAME).items():
             sd = self.dir / itemid
             if not sd.exists():
                 sd.mkdir()

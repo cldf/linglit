@@ -42,19 +42,17 @@ def parse_langinfo(l):
 
 
 def parse_ili(l):
-    from TexSoup import TexSoup
     try:
         ili = TexSoup(r'\ili{' + l.split(r'\ili{')[-1].split('}')[0], tolerance=1).ili
-    except:
+    except:  # pragma: no cover
         raise ValueError(l)
     return (ili.args[0].string, '', '')
 
 
 def parse_il(l):
-    from TexSoup import TexSoup
     try:
         il = TexSoup(r'\il{' + l.split(r'\il{')[-1].split('}')[0], tolerance=1).il
-    except:
+    except:  # pragma: no cover
         raise ValueError(l)
     return (il.args[0].string.split('!')[-1], '', '')
 
@@ -300,15 +298,8 @@ def make_example(
         linfo = [to_text(s or '')[0] for s in linfo]
         if linfo[2]:
             comment.append(linfo[2])
-    #
-    # Determine language:
-    # 1. linfo
-    # 2. chapter language
-    # 3. book language
-    #
-    lname = None
-    if linfo and linfo[0]:
-        lname = linfo[0]
+
+    lname = linfo[0] if linfo and linfo[0] else None
 
     #
     # At this point `gll` is just a bunch of text lines containing latex formatting.

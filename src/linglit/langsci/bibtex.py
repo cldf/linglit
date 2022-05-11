@@ -119,7 +119,7 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
         lines = [ln.strip() for ln in text.split('\n') if ln.strip()]
         if len(lines) == 1 and len(lines[0]) < 200 and p.parent.joinpath(lines[0]).exists():
             # Special handling for 237, where the path to 223's bib is given in the bibfile!
-            text = p.parent.joinpath(lines[0]).read_text(encoding='utf8')
+            text = p.parent.joinpath(lines[0]).read_text(encoding='utf8')  # pragma: no cover
 
         text = text.replace('\xa0', ' ')
 
@@ -166,7 +166,7 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
         stdout=subprocess.PIPE,
     )
     stdout, stderr = cmd.communicate(input='\n'.join(bibtex).encode('utf8'))
-    for line in stderr.decode('utf8').splitlines():
+    for line in stderr.decode('utf8').splitlines():  # pragma: no cover
         if line.strip():
             if any(s in line for s in
                    ['Duplicate field', 'non-space characters ignored', "Missing ',' assumed"]):
@@ -178,9 +178,9 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
     for i, chunk in enumerate(re.split(r'^@', stdout.decode('utf8'), flags=re.MULTILINE)):
         # Again some preprocessing:
         if re.match('[A-Za-z]+{,', chunk):  # record without key.
-            continue
+            continue  # pragma: no cover
         if chunk.startswith('unpublished{rien'):  # empty stub.
-            continue
+            continue  # pragma: no cover
         for k, v in NAMES.items():  # Fix invalid author lists.
             chunk = chunk.replace(k, v)
         # Field values without enclosing braces:
@@ -193,5 +193,5 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             try:
                 for k, e in database.parse_string('@' + chunk, 'bibtex').entries.items():
                     yield to_source(k, e)
-            except:
+            except:  # pragma: no cover
                 raise ValueError('{}::@{}'.format(ps, chunk))
