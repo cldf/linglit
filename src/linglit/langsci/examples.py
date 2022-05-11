@@ -252,7 +252,7 @@ def lines_and_comment(lines):
                     comment.append(s.jambox.string)
                     s.jambox.delete()
                     line = str(s)
-            except:
+            except:  # pragma: no cover
                 pass
             if line:
                 res.append(line)

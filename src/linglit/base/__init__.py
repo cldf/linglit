@@ -16,7 +16,7 @@ ELLIPSIS = '…'
 
 class Glottolog:
     def __init__(self, glottolog):
-        if not isinstance(glottolog, API):
+        if not isinstance(glottolog, API):  # pragma: no cover
             glottolog = API(glottolog)
         self.by_glottocode = {}
         self.by_isocode = {}
@@ -65,7 +65,7 @@ class Record:
     title = attr.ib()
     year = attr.ib()
 
-    def as_source(self) -> Source:
+    def as_source(self) -> Source:  # pragma: no cover
         raise NotImplementedError()
 
     @property
@@ -87,13 +87,13 @@ class Repository:
     def __init__(self, d):
         self.dir = pathlib.Path(d)
 
-    def __getitem__(self, item):
+    def __getitem__(self, item):  # pragma: no cover
         raise NotImplementedError()
 
-    def create(self, verbose=False):
+    def create(self, verbose=False):  # pragma: no cover
         raise NotImplementedError()
 
-    def iter_publications(self):
+    def iter_publications(self):  # pragma: no cover
         raise NotImplementedError()
 
     def register_language_names(self, glottolog):
@@ -130,7 +130,7 @@ class Publication:
             res[sid] = Source(src.genre, sid, _check_id=False, **src)
         return res
 
-    def iter_references(self) -> typing.Generator[Source, None, None]:
+    def iter_references(self) -> typing.Generator[Source, None, None]:  # pragma: no cover
         raise NotImplementedError()
 
     @lazyproperty
@@ -140,7 +140,7 @@ class Publication:
             res.update(['{}:{}'.format(self.id, key)])
         return res
 
-    def iter_cited(self):
+    def iter_cited(self):  # pragma: no cover
         raise NotImplementedError()
 
     def example_sources(self, ex):
@@ -165,7 +165,7 @@ class Publication:
             res.append(ex)
         return res
 
-    def iter_examples(self):
+    def iter_examples(self):  # pragma: no cover
         raise NotImplementedError()
 
 

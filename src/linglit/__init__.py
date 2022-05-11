@@ -24,6 +24,9 @@ def iter_publications(d='.', glottolog='glottolog', with_examples=False, **dirs)
                     for ex in pub.examples:
                         ex.Language_ID = glottolog(ex.Language_Name)
                         ex.Meta_Language_ID = glottolog(ex.Meta_Language_ID)
+                        if not ex.Language_ID and ex.Comment in glottolog.by_name:
+                            ex.Language_ID = glottolog.by_name[ex.Comment]
+                            ex.Comment = None
                 yield pub
 
 
