@@ -2,6 +2,10 @@
 
 Programmatic access to linguistic literature
 
+[![Build Status](https://github.com/cldf/linglit/workflows/tests/badge.svg)](https://github.com/cldf/linglit/actions?query=workflow%3Atests)
+[![PyPI](https://img.shields.io/pypi/v/linglit.svg)](https://pypi.org/project/linglit)
+
+
 ## Overview
 
 `linglit` provides programmatic access to data buried in linguistic literature. Currently, this means
