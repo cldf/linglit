@@ -9,6 +9,8 @@ from pycldf.sources import Source
 from clldutils.misc import lazyproperty
 from pyglottolog import Glottolog as API
 
+__all__ = ['Glottolog', 'Record', 'Repository', 'Publication', 'Example']
+
 STARTINGQUOTE = "`‘"
 ENDINGQUOTE = "'’"
 ELLIPSIS = '…'
@@ -41,7 +43,9 @@ class Glottolog:
         self.by_name = {k: v for k, v in self._by_name.items()}
         for k, v in names.items():
             if v:
-                self.by_name[k] = self.by_glottocode[v]
+                v = self(v)
+                if v:
+                    self.by_name[k] = self.by_glottocode[v]
 
     def __call__(self, name):
         if name:
@@ -226,26 +230,3 @@ class Example:
             translation=self.Translated_Text,
             abbrs=self.Abbreviations,
         )
-
-    @property
-    def coordination(self):
-        for type_ in [' and ', ' or ']:
-            if type_ in self.Translated_Text:
-                return type_.strip()
-
-    def _aspect(self, *types):
-        for marker, type_ in types:
-            if marker in self.Translated_Text.lower():
-                return type_
-
-    @property
-    def time(self):
-        return self._aspect((' yesterday ', 'past'), (' tomorrow ', 'future'), (' now ', 'present'))
-
-    @property
-    def modality(self):
-        return self._aspect((' want ', 'volitive'))
-
-    @property
-    def polarity(self):
-        return self._aspect((' not ', 'negative'))

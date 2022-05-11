@@ -30,7 +30,7 @@ def iter_publications(d='.', glottolog='glottolog', with_examples=False, **dirs)
                 yield pub
 
 
-def iter_examples(d='.', glottolog='glottolog', **dirs):
+def iter_examples(d='.', glottolog='glottolog', **dirs):  # pragma: no cover
     d = pathlib.Path(d)
     c = collections.Counter()
     glottolog = Glottolog(glottolog)
