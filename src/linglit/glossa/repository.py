@@ -14,6 +14,7 @@ CATALOG_URL = BASE_URL + "/articles/"
 
 class Repository(base.Repository):
     id = 'glossa'
+    lname_map = cfg.LNAME_MAP
 
     def create(self, verbose=False):
         get_all(self.dir, verbose=verbose)
@@ -38,20 +39,19 @@ def download(url, verbose=False):
 
 
 def get_xml(url, d, verbose=False):
-    if not url:
-        return
-    m = URL_PATTERN.search(url)
-    if m:
-        p = d / '{}.xml'.format(m.group('id'))
-        if not p.exists():
-            page = bs(download(url, verbose=verbose), 'lxml')
-            xml_url = page.find('a', href=True, text='Download XML')
-            if xml_url:
-                xml_url = xml_url['href']
-                p.write_text(download(BASE_URL + xml_url), encoding='utf8')
-            else:
-                return
-        return p.read_text(encoding='utf8')
+    if url:
+        m = URL_PATTERN.search(url)
+        if m:
+            p = d / '{}.xml'.format(m.group('id'))
+            if not p.exists():
+                page = bs(download(url, verbose=verbose), 'lxml')
+                xml_url = page.find('a', href=True, text='Download XML')
+                if xml_url:
+                    xml_url = xml_url['href']
+                    p.write_text(download(BASE_URL + xml_url), encoding='utf8')
+                else:  # pragma: no cover
+                    return
+            return p.read_text(encoding='utf8')
 
 
 def get_all(d, verbose=False):
@@ -69,7 +69,7 @@ def get_all(d, verbose=False):
         pagination = page.find('ul', class_='pagination')
         active = None
         for p in pagination.find_all('li'):
-            if active:
+            if active:  # pragma: no cover
                 url = CATALOG_URL + p.find('a')['href']
                 break
             if 'active' in p['class']:

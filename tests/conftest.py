@@ -24,3 +24,10 @@ def test_dir():
 @pytest.fixture
 def glossa_repos(test_dir):
     return test_dir / 'glossa'
+
+
+@pytest.fixture
+def glossa_pub(glossa_repos):
+    from linglit.glossa import Repository
+
+    return Repository(glossa_repos)['6371']

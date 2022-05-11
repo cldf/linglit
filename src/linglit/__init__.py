@@ -18,15 +18,16 @@ def iter_publications(d='.', glottolog='glottolog', with_examples=False, **dirs)
         sd = dirs.get(rid, d / rid)
         if sd.exists():
             repos = cls(sd)
-            repos.register_language_names(glottolog)
+            glottolog.register_names(repos.lname_map)
             for pub in cls(sd).iter_publications():
                 if with_examples:
                     for ex in pub.examples:
                         ex.Language_ID = glottolog(ex.Language_Name)
                         ex.Meta_Language_ID = glottolog(ex.Meta_Language_ID)
-                        if not ex.Language_ID and ex.Comment in glottolog.by_name:
-                            ex.Language_ID = glottolog.by_name[ex.Comment]
-                            ex.Comment = None
+                        if not ex.Language_ID:
+                            if ex.Comment in glottolog.by_name:  # pragma: no cover
+                                ex.Language_ID = glottolog.by_name[ex.Comment].id
+                                ex.Comment = None
                 yield pub
 
 
@@ -44,7 +45,7 @@ def iter_examples(d='.', glottolog='glottolog', **dirs):  # pragma: no cover
             if not bibtex.exists():
                 bibtex.mkdir()
             repos = cls(sd)
-            repos.register_language_names(glottolog)
+            glottolog.register_names(repos.lname_map)
 
             for pub in tqdm(cls(sd).iter_publications(), desc=rid):
                 # if pub.record.int_id not in [6371]:

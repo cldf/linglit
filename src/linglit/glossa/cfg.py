@@ -6,6 +6,9 @@ from pyglottolog.languoids import Glottocode
 from linglit import util
 
 CFG_PATH = util.CFG_PATH / 'glossa'
+LNAME_MAP = {
+    'Medieval Spanish': 'Old Spanish',
+}
 
 
 def language_specs():

@@ -10,3 +10,8 @@ def test_Glottolog(glottolog_api):
     assert gl('lang') == 'abcd1234'
     assert gl('abc') == 'abcd1234'
     assert gl('xyz') is None
+
+
+def test_Publication(glossa_pub):
+    assert glossa_pub.is_current and glossa_pub.has_open_license
+    assert 'Skilton' in str(glossa_pub)

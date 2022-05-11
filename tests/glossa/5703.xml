@@ -1,0 +1,2973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20120330//EN" "http://jats.nlm.nih.gov/publishing/1.2/JATS-journalpublishing1.dtd">
+<!--<?xml-stylesheet type="text/xsl" href="article.xsl"?>-->
+<article article-type="research-article" dtd-version="1.2" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<front>
+<journal-meta>
+<journal-id journal-id-type="issn">2397-1835</journal-id>
+<journal-title-group>
+<journal-title>Glossa: a journal of general linguistics</journal-title>
+</journal-title-group>
+<issn pub-type="epub">2397-1835</issn>
+<publisher>
+<publisher-name>Open Library of Humanities</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.16995/glossa.5703</article-id>
+<article-categories>
+<subj-group>
+<subject>Special collection: definiteness and referentiality</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>The evolution of possessive phrases and the rise of DP in French, Spanish, and Portuguese</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Simonenko</surname>
+<given-names>Alexandra</given-names>
+</name>
+<email>alexandra.simonenko@ugent.be</email>
+<xref ref-type="aff" rid="aff-1">1</xref>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Carlier</surname>
+<given-names>Anne</given-names>
+</name>
+<email>anna.carlier@sorbonne-universite.fr</email>
+<xref ref-type="aff" rid="aff-2">2</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1"><label>1</label>Research Foundation Flanders &amp; Ghent University, BE</aff>
+<aff id="aff-2"><label>2</label>Sorbonne University, EA STIH, FR</aff>
+<pub-date publication-format="electronic" date-type="pub" iso-8601-date="2022-04-08">
+<day>08</day>
+<month>04</month>
+<year>2022</year>
+</pub-date>
+<pub-date pub-type="collection">
+<year>2022</year>
+</pub-date>
+<volume>7</volume>
+<issue>1</issue>
+<fpage>1</fpage>
+<lpage>35</lpage>
+<permissions>
+<copyright-statement>Copyright: &#x00A9; 2022 The Author(s)</copyright-statement>
+<copyright-year>2022</copyright-year>
+<license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/4.0/">
+<license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution 4.0 International License (CC-BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited. See <uri xlink:href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</uri>.</license-p>
+</license>
+</permissions>
+<self-uri xlink:href="http://www.glossa-journal.org/articles/10.16995/glossa.5703/"/>
+<abstract>
+<p>This paper deals with the evolution of nominal expressions with prenominal possessives in Romance languages. Until now, the prevalent view has been that their historical development follows one of the two diachronic paths: either they stop co-occurring with determiners (French, Spanish) or they start requiring their presence (European Portuguese). One common analysis associates the first case with a transition from a modifier to a determiner semantics of possessives and the second with a retention of a modifier semantics (e.g. <xref ref-type="bibr" rid="B1">Alexiadou 2004</xref>). It has also been observed, however, that documented Romance languages each make use of two morphologically distinct possessive paradigms, the so-called short and long forms, and, at least for French, that the short forms co-occur with determiners in historical documents less frequently than the long ones (<xref ref-type="bibr" rid="B8">Butet 2018</xref>). We adduce novel quantitative evidence from treebanks of French, Spanish, and Portuguese to the latter observation and show for the first time that the two paradigms followed very different evolutionary trajectories: frequency of determiners goes monotonically up with long possessives and goes up and then down with the short possessives across the three languages. Given these new data, we argue that the only point of evolutionary divergence in Romance possessive DPs is the choice of either the long or the short prenominal possessive in each of the languages, while the semantics of long and short possessives is stable both diachronically and across the three languages we examine. We also argue that the observed diachronic developments are consequences of a pan-Romance rise of a DP grammar. The paper thus contributes to our understanding of the emergence of DP in general and definiteness marking in particular, of the semantico-syntactic architecture of possessive DPs, as well as of the evolutionary divergence and convergence within a language family.</p>
+</abstract>
+</article-meta>
+</front>
+<body>
+<sec>
+<title>1 Introduction</title>
+<p>The goal of this paper is to advance a unified analysis of the diachronic evolution of possessive phrases in Romance languages. Most current analyses for different Romance languages are based on the following empirical picture: in languages such as French or Spanish there is an emerging ban on the co-occurrence of prenominal possessives with overt determiners while in others, such as Portuguese and Italian, there is a emerging requirement of their co-occurrence (<xref ref-type="bibr" rid="B1">Alexiadou 2004</xref>, among others). A quantitative study by Butet (<xref ref-type="bibr" rid="B8">2018</xref>) shows, however, that in historical French, which features two morphologically distinct paradigms of prenominal possessives, forms from the so-called long paradigm tend to co-occur with determiners more frequently than the so-called short ones. This paper presents novel quantitative data and statistically examines quantitative profiles of co-occurrence with determiners for short and long prenominal possessives in French, Spanish, and Portuguese. These data show that there is indeed a quantitative difference between the two paradigms and that the difference can be represented as a successful spread of determiners with long forms and a failed spread, in the sense of a failed change of Postma (<xref ref-type="bibr" rid="B36">2010</xref>), with short ones. It is also shown that across these three Romance languages, the two paradigms evolve in a strikingly similar way with respect to the co-occurrence with determiners.</p>
+<p>All early medieval Romance languages feature prenominal possessive morphemes which can co-occur with determiners in the prenominal position. Examples (1)&#8211;(3) illustrate this for medieval French, Spanish, and Portuguese.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(1)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval</sc> F<sc>rench</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p><bold>la</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>tue</bold></p></list-item>
+<list-item><p>your</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>aname</p></list-item>
+<list-item><p>soul</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>el</p></list-item>
+<list-item><p>in.<sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ciel</p></list-item>
+<list-item><p>heaven</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>seit</p></list-item>
+<list-item><p>be.<sc>sbjv</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>absoluthe!</p></list-item>
+<list-item><p>absolved</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;&#8230;that your soul may be absolved in heaven!&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>10XX-ALEXIS-PENN-V,82.751</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(2)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval Spanish</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Bevemos</p></list-item>
+<list-item><p>we.drink</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>so</p></list-item>
+<list-item><p>their</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>vino</p></list-item>
+<list-item><p>wine</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>e</p></list-item>
+<list-item><p>and</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>comemos</p></list-item>
+<list-item><p>we.eat</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>el</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>so</bold></p></list-item>
+<list-item><p>their</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>pan</p></list-item>
+<list-item><p>bread</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;We are drinking their wine and we are eating their bread.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<italic><sub>Cid</sub></italic><sub>, 1104, cited from Ishikawa (<xref ref-type="bibr" rid="B22">1997: 62</xref>)]</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(3)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>u</p></list-item>
+<list-item><p>where</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>o</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>seu</bold></p></list-item>
+<list-item><p>his</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>nome</p></list-item>
+<list-item><p>name</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>era</p></list-item>
+<list-item><p>was</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>escrito</p></list-item>
+<list-item><p>written</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;&#8230; where his name was written.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Graal,1245, cited from Labrousse (<xref ref-type="bibr" rid="B27">2018: 1620</xref>)</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>The evolutionary outcome for this configuration is different for each language. In Modern French and Spanish, prenominal possessives never co-occur with determiners, as (4) and (5) show.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(4)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Modern French</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Que</p></list-item>
+<list-item><p>That</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>(*la)</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>ton</bold></p></list-item>
+<list-item><p>your</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#226;me</p></list-item>
+<list-item><p>soul</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>soit</p></list-item>
+<list-item><p>be.<sc>sbj</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>absolue !</p></list-item>
+<list-item><p>absolved</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;That your soul may be absolved!&#8221;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(5)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Modern Spanish</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Puedes</p></list-item>
+<list-item><p>you.can</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>tomar</p></list-item>
+<list-item><p>take</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>(*el)</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>mi</bold></p></list-item>
+<list-item><p>my</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>libro</p></list-item>
+<list-item><p>book</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;You can take my book.&#8221;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>European Portuguese, along with other Romance languages such as Italian, that we do not consider here, took a seemingly opposite path: Modern European Portuguese requires that prenominal possessives be accompanied by a determiner, as in (6).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(6)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Modern (European) Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>*(<bold>Os</bold>)</p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>meus</bold></p></list-item>
+<list-item><p>my</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>dias</p></list-item>
+<list-item><p>days</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>s&#227;o</p></list-item>
+<list-item><p>are</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>melhores</p></list-item>
+<list-item><p>better</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>que</p></list-item>
+<list-item><p>than</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>as</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>vossas</bold></p></list-item>
+<list-item><p>your</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>noites</p></list-item>
+<list-item><p>nights</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;My days are better than your nights.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>From Miguel (<xref ref-type="bibr" rid="B30">2002: 221</xref>)</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>The (non)co-occurrence property has been analysed as evidence of the morphosyntactic status of possessives. Lyons (<xref ref-type="bibr" rid="B28">1985</xref>) draws a distinction between adjectival (co-occurring) and determiner-like (non-co-occurring) possessives and adjectival-genitive-languages and determinative-genitive languages, respectively. The same distinction, based on the (non)co-occurrence pattern, is drawn in Schoorlemmer (<xref ref-type="bibr" rid="B40">1998</xref>). Schoorlemmer (<xref ref-type="bibr" rid="B40">1998</xref>) argues that in languages where the functional head Pos is specified with [+definite] feature, the possessive form moves from Spec,PosP to D, thus precluding the insertion of another determiner, whereas in languages where Pos does not carry [+definite], no such movement happens, making possible co-occurrence with a determiner.<xref ref-type="fn" rid="n1">1</xref> Cardinaletti (<xref ref-type="bibr" rid="B9">1998</xref>) distinguishes between three types of adnominal possessives: strong possessive adjectives, weak possessive adjectives, and (clitic) possessive determiners. While the former two types can co-occur with determiners, the latter cannot because, according to Cardinaletti (<xref ref-type="bibr" rid="B9">1998</xref>), it syntactically incorporates into D, which makes the use of another determiner impossible. Ihsane (<xref ref-type="bibr" rid="B21">2000</xref>), likewise, identifies three types of possessives. The first one are determiner possessives, which move from AgrPossP to the DP layer, because of their [+definite] specification and therefore compete with definite and indefinite determiners.<xref ref-type="fn" rid="n2">2</xref> The second type are adjectival possessives, not marked with [+definite] and therefore not moving to the DP. The hallmark of this class, as in other classifications, is their ability to co-occur with determiners. The third type are pronominal possessives, occurring without nominal heads, which we do not consider in this paper.</p>
+<p>On this view, the contrast between (4)&#8211;(5) on the one hand and (6) on the other indicates that in French and Spanish prenominal possessives acquired a [+definite] feature or switched their status from adjectival to determiner-like (e.g. <xref ref-type="bibr" rid="B1">Alexiadou 2004</xref>; <xref ref-type="bibr" rid="B49">Van Peteghem 2012</xref>), while in Portuguese (and other languages with similar patterning) they did not.</p>
+<p>We argue, however, against the reanalysis of prenominal possessive morphemes. Taking as a starting point the observation made by Butet (<xref ref-type="bibr" rid="B8">2018</xref>) for historical French that the two morphologically distinct possessive paradigms in this language co-occur with determiners at different frequencies, we examine short and long paradigms separately in large historical treebanks and morphologically annotated corpora of French, Spanish, and Portuguese. We show that all nominal expressions, including all possessive phrases, in the Romance languages under consideration underwent the same change, viz. a rise in frequency of overt determiners. Uniformly across the three languages, this change succeeded with one type of prenominal possessive morphemes, long possessives, and failed with another, short possessives. We further analyse the spread of determiners with possessives, both failed and successful, in terms of a pan-Romance shift from an (extended) NP grammar, which characterized their Latin ancestor that did not have articles, to a DP grammar, the latter involving a systematic use of morphological triggers of existential presupposition at the nominal level.</p>
+<p>This paper focuses on prenominal possessives because it is in the prenominal position that we register evolutionary changes in the co-occurrence of possessives and determiners.</p>
+<p>The paper is organized in the following way. In the next three sections we present philological and quantitative data on the distribution of short and long prenominal possessives in French (section 2), Spanish (section 3) and Portuguese (section 4). We present syntactic and semantic details of the proposed unified account in section 5 and conclude in section 6.</p>
+</sec>
+<sec>
+<title>2 French</title>
+<p>In this section we present novel quantitative corpus evidence suggesting that the pan-Romance rise in determiner frequency proceeded very differently with two different morphological types of possessives in French, short and long. Along with other descendants of (Vulgar) Latin, the earliest documented stages of French (ca. ninth c.) show that at that point the language did not make use of determiners in the same way Modern French does. This situation is entirely expected since Latin did not have any consistent (in)definiteness marking, the absence of nominal determination being largely dominant (see Carlier &amp; Lamiroy (<xref ref-type="bibr" rid="B11">2018</xref>) for quantitative data, based on a small corpus). In older stages of Romance languages we find bare nouns in contexts which strictly require a determiner in today&#8217;s varieties. In particular, it can be observed that over time the frequency of determiners grows in the context which require them in Modern French (see Simonenko &amp; Carlier (<xref ref-type="bibr" rid="B45">2020b</xref>) for quantitative data and statistical modeling of this evolution from the ninth to the fourteenth c.). In contrast, while in older stages we observe determiners in the context of prenominal possessives, the frequency of such co-occurrences seems to go down with time and reaches zero in Modern French. We show in this section that the latter generalization is empirically inaccurate, and that we need to take into account that Old French had two morphologically distinct paradigms of prenominal possessives, a fact well-known from the grammatical descriptions but whose quantitative ramifications we can evaluate only now with the help of treebanks and statistical modeling techniques.</p>
+<sec>
+<title>2.1 Two possessive paradigms</title>
+<p>Old French features two morphologically distinct paradigms of prenominal possessive morphemes. The two paradigms are illustrated for the first person possessives in <xref ref-type="table" rid="T1">Tables 1</xref>, <xref ref-type="table" rid="T2">2</xref> from Buridant (<xref ref-type="bibr" rid="B7">2019: 219</xref>). We label the paradigms &#8220;short&#8221; and &#8220;long&#8221; as pre-theoretical descriptions referring only to their relative phonological weight.<xref ref-type="fn" rid="n3">3</xref> By the end of the fourteenth century, long forms virtually go out of use.<xref ref-type="fn" rid="n4">4</xref></p>
+<table-wrap id="T1">
+<label>Table 1</label>
+<caption>
+<p>Old French short prenominal possessive forms.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>singular</sc></bold></td>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>plural</sc></bold></td>
+<td align="left" valign="top"></td>
+</tr>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>nominative</sc></bold></td>
+<td align="left" valign="top"><bold><sc>oblique</sc></bold></td>
+<td align="left" valign="top"><bold><sc>nominative</sc></bold></td>
+<td align="left" valign="top"><bold><sc>oblique</sc></bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>masculine</sc></td>
+<td align="left" valign="top">mes</td>
+<td align="left" valign="top">mon</td>
+<td align="left" valign="top">mi</td>
+<td align="left" valign="top">mes</td>
+</tr>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>feminine</sc></td>
+<td align="left" valign="top">ma</td>
+<td align="left" valign="top">ma</td>
+<td align="left" valign="top">mes</td>
+<td align="left" valign="top">mes</td>
+</tr>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<table-wrap id="T2">
+<label>Table 2</label>
+<caption>
+<p>Old French long prenominal possessive forms.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>singular</sc></bold></td>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>plural</sc></bold></td>
+<td align="left" valign="top"></td>
+</tr>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>nominative</sc></bold></td>
+<td align="left" valign="top"><bold><sc>oblique</sc></bold></td>
+<td align="left" valign="top"><bold><sc>nominative</sc></bold></td>
+<td align="left" valign="top"><bold><sc>oblique</sc></bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>masculine</sc></td>
+<td align="left" valign="top">miens</td>
+<td align="left" valign="top">mien</td>
+<td align="left" valign="top">mien</td>
+<td align="left" valign="top">miens</td>
+</tr>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>feminine</sc></td>
+<td align="left" valign="top">meie</td>
+<td align="left" valign="top">meie</td>
+<td align="left" valign="top">meies</td>
+<td align="left" valign="top">meies</td>
+</tr>
+<tr>
+<td colspan="5"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>We investigate the distribution of the two series in the treebanks of Martineau et al. (<xref ref-type="bibr" rid="B29">2010</xref>) and Kroch &amp; Santorini (<xref ref-type="bibr" rid="B26">2021</xref>).<xref ref-type="fn" rid="n5">5</xref> We extracted from these corpora all noun phrases with possessives in 1st, 2nd, or 3rd person singular (N = 25,104 noun phrases), since only these distinguish between short and long forms. <xref ref-type="fig" rid="F1">Figure 1</xref> shows the relative frequency of the two paradigms across time.</p>
+<fig id="F1">
+<label>Figure 1</label>
+<caption>
+<p>Estimated probability of short vs. long possessives in French.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g1.png"/>
+</fig>
+<p>There is no consensus in the literature as to whether or to which extent the morphological contrast is a reflection of syntactic and semantic differences. Gamillscheg (<xref ref-type="bibr" rid="B19">1957</xref>) argues that the choice between the paradigms is governed by metrical considerations only.<xref ref-type="fn" rid="n6">6</xref> Arteaga (<xref ref-type="bibr" rid="B3">1995</xref>) notes that the two types can be coordinated, which suggests their syntactic and semantic equivalence. In contrast, Butet (<xref ref-type="bibr" rid="B8">2018</xref>) and Buridant (<xref ref-type="bibr" rid="B7">2019</xref>) argue that the two series differ with respect to the possibility of co-occurrence with determiners: while short forms tend to not co-occur, long forms tend to do so. Butet (<xref ref-type="bibr" rid="B8">2018</xref>) takes the co-occurrence to be a hallmark of an adjectival status, and absence of co-occurrence as a signature of the determiner status. Our corpus data show that while both types of possessives do occur with and without determiners, diachronic trajectories differ dramatically.</p>
+</sec>
+<sec>
+<title>2.2 Co-occurrence with determiners</title>
+<p>Examples (7) and (8) illustrate co-occurrence of a short form <italic>tos</italic> and a long form <italic>tuen</italic>, respectively, with an <italic>l</italic>-determiner (i.e., <italic>le</italic>/<italic>la</italic>/<italic>les</italic>).<xref ref-type="fn" rid="n7">7</xref></p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(7)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p><bold>Los</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>tos</bold></p></list-item>
+<list-item><p>your.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>enfanz</p></list-item>
+<list-item><p>children</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>qui</p></list-item>
+<list-item><p>that</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>in</p></list-item>
+<list-item><p>in</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>te</p></list-item>
+<list-item><p>you</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>sunt,</p></list-item>
+<list-item><p>are</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>a</p></list-item>
+<list-item><p>to</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>males</p></list-item>
+<list-item><p>bad</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>penas</p></list-item>
+<list-item><p>pains</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>aucidront;</p></list-item>
+<list-item><p>succumb</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;Your children inside you will succumb to violent pains&#8221;.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>1000-PASSION-BFM-P,100.41</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(8)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>E</p></list-item>
+<list-item><p>and</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>tantes</p></list-item>
+<list-item><p>many</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>lermes</p></list-item>
+<list-item><p>tears</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>pur</p></list-item>
+<list-item><p>for</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>le</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>tuen</bold></p></list-item>
+<list-item><p>your.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>cors</p></list-item>
+<list-item><p>body</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>plur&#233;t</p></list-item>
+<list-item><p>cried</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;And she shed so many tears after you.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>(10XX-ALEXIS-PENN-V,95.860)</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Examples (9) and (10) illustrate co-occurrence of short and long forms, respectively, with indefinite determiners.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(9)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>il</p></list-item>
+<list-item><p>he</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>aueit</p></list-item>
+<list-item><p>had</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>un</p></list-item>
+<list-item><p>a</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>sol</p></list-item>
+<list-item><p>single</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>cheual</p></list-item>
+<list-item><p>horse</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>qu</p></list-item>
+<list-item><p>which</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>il</p></list-item>
+<list-item><p>he</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>balia</p></list-item>
+<list-item><p>took</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>a</p></list-item>
+<list-item><p>to</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>un</bold></p></list-item>
+<list-item><p><sc>indef</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>son</bold></p></list-item>
+<list-item><p>his.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>parent.</p></list-item>
+<list-item><p>relative</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;he had a single horse, which we had taken from a relative of his.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>122X-PSEUDOTURPIN-P-MCVF,270.180</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(10)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>Mais</p></list-item>
+<list-item><p>but</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>uns</bold></p></list-item>
+<list-item><p>one</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>siens</bold></p></list-item>
+<list-item><p>his.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>moines</p></list-item>
+<list-item><p>monk</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>donat</p></list-item>
+<list-item><p>gave</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>sa</p></list-item>
+<list-item><p>his.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>pense</p></list-item>
+<list-item><p>thought</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>a</p></list-item>
+<list-item><p>to</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>mobiliteit,</p></list-item>
+<list-item><p>mobility</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;But one of his monks was planning to leave.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>1190-DIALGREG2-BFM-P,92.815</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In Modern French, co-occurrence of (short) possessives with any determiner type is strictly ungrammatical, as (11) and (12) illustrate.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(11)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sc>Modern French</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Que</p></list-item>
+<list-item><p>that</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>(*la)</bold></p></list-item>
+<list-item><p>the</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>ton</bold></p></list-item>
+<list-item><p>your</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#226;me</p></list-item>
+<list-item><p>soul</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>soit</p></list-item>
+<list-item><p>be</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>absolue!</p></list-item>
+<list-item><p>absolved</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;That your soul may be absolved!&#8221;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(12)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sc>Modern French</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Il</p></list-item>
+<list-item><p>he</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>veut</p></list-item>
+<list-item><p>wants</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>parler</p></list-item>
+<list-item><p>speak</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>de</p></list-item>
+<list-item><p>of</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>(*un)</bold></p></list-item>
+<list-item><p>a</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>son</bold></p></list-item>
+<list-item><p>his</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>fils.</p></list-item>
+<list-item><p>son</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;He wants to talk about his son.&#8221;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Modulo the claim by Butet (<xref ref-type="bibr" rid="B8">2018</xref>) that short and long possessives co-occur with determiners at different frequencies, it has been commonly assumed that the general trend in the co-occurrence pattern is that of a <italic>continuous decrease</italic> in the frequency of determiners in noun phrases with prenominal possessives. As mentioned above, this has been taken to indicate a progressive reanalysis of prenominal possessives from adjectives, capable of co-occurrence, to determiner heads, incompatible with another determiner. There has been however no large-scale quantitative studies testing the original empirical assumption underlying the reanalysis view. In order to carry out such a quantitative study, we fit logistic regression models of the form in (13) to three datasets: noun phrases with short possessives (N = 24,607 noun phrases), noun phrases with long possessives (N = 497 noun phrases) and noun phrases without possessives (N = 186,768 noun phrases).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(13)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g11.png"/></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>The logistic function, which describes processes that have phases of a slow take-off, rapid growth, and again a slow attenuation, has been identified as a model particularly suitable for capturing successful language changes (see Altmann et al. (<xref ref-type="bibr" rid="B2">1983</xref>); Kroch (<xref ref-type="bibr" rid="B25">1989</xref>); Niyogi &amp; Berwick (<xref ref-type="bibr" rid="B31">1997</xref>); Kauhanen &amp; Walkden (<xref ref-type="bibr" rid="B23">2018</xref>) for details). In our case, the model predicts the probability that the binary variable Determiner takes on the value <italic>yes</italic> given variable Date as a predictor. The coefficient <italic>&#946;</italic> reflects the importance of the time factor for predicting the determiner probability, while <italic>&#945;</italic> corresponds to the predicted probability at an (idealized) time point 0. By estimating the parameters of a model fitted to our data on the determiner-possessive co-occurrence and also by comparing the performance of this predictive model and an alternative one which describes non-monotonic processes, we can evaluate to which extent the assumption about a steady co-occurrence decrease is reliable.</p>
+<p>The three logistic regression models are plotted in <xref ref-type="fig" rid="F2">Figure 2</xref> together with data points which correspond to the empirical frequencies of determiners in the three types of noun phrases in 50 year intervals.<xref ref-type="fn" rid="n8">8</xref> For model fitting, we used a normalized time period variable, to facilitate comparisons across languages, since different time spans are available for observation in each case.</p>
+<fig id="F2">
+<label>Figure 2</label>
+<caption>
+<p>Determiners in noun phrases with and without possessives in French, logistic models.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g2.png"/>
+</fig>
+<p>The parameter estimates for the three models are given in <xref ref-type="table" rid="T3">Table 3</xref>.</p>
+<table-wrap id="T3">
+<label>Table 3</label>
+<caption>
+<p>Logistic model parameter estimates for French.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Possessives</bold></td>
+<td align="left" valign="top"><bold>no</bold></td>
+<td align="left" valign="top"><bold>long</bold></td>
+<td align="left" valign="top"><bold>short</bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Intercept</bold></td>
+<td align="left" valign="top">0.4243</td>
+<td align="left" valign="top">1.8539</td>
+<td align="left" valign="top"><italic>&#8211;</italic>6.1032</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0047</td>
+<td align="left" valign="top">0.1772</td>
+<td align="left" valign="top">0.1616</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">89.49</td>
+<td align="left" valign="top">10.460</td>
+<td align="left" valign="top"><italic>&#8211;</italic>37.778</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Time coefficient</bold></td>
+<td align="left" valign="top">0.1221</td>
+<td align="left" valign="top">0.9064</td>
+<td align="left" valign="top"><italic>&#8211;</italic>1.2242</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0048</td>
+<td align="left" valign="top">0.1496</td>
+<td align="left" valign="top">0.1485</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">25.60</td>
+<td align="left" valign="top">6.061</td>
+<td align="left" valign="top"><italic>&#8211;</italic>8.245</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>The model fit to the dataset without possessives detects a significant rise in the use of determiners (time coefficient = 0.1221, p &lt; 0.001***). This means that the likelihood that the perceived diachronic trend is due to chance and that the weight of the time factor is zero is very small. That the coefficient is positive means that that for the higher values of date the model predicts higher probabilities of determiner appearance or, put differently, that the frequency of determiners increases over time in noun phrases without possessives. This matches the results presented in Simonenko &amp; Carlier (<xref ref-type="bibr" rid="B45">2020b</xref>) on the general increase in the frequency of determiners in historical French.</p>
+<p>In the dataset with long possessives we find a similar trend. The frequency of determiners in noun phrases with long possessives increases in Old French at a statistically significant positive rate (time coefficient = 0.9064, p &lt; 0.001***). This means that at least for the long possessives, the assumption about co-occurrence decrease is wrong. It appears that the frequency of determiners in noun phrases with long possessives goes towards its maximum about the same time that they disappear from the language.</p>
+<p>The dynamics of the co-occurrence pattern in noun phrases with short possessives are more complex. In this case, the model detects a significant decline in determiner use (time coefficient = <italic>&#8211;</italic>1.2242, p &lt; 0.001***). On the face of it, this result matches the assumption about a steady co-occurrence decrease. In the following section, however, we present both statistical and linguistic arguments suggesting that a monotonic decrease assumption may be erroneous for the short possessives as well.</p>
+</sec>
+<sec>
+<title>2.3 A failed change</title>
+<p>Although the model fitted to the noun phrases with short possessives detects a diachronic trend, it does not fit the data particularly well for the texts composed before 1000. Moreover, the distribution of data points that correspond to individual texts (in black in <xref ref-type="fig" rid="F3">Figure 3</xref>) makes one suspect a different, non-monotonic trend, namely, the rise of the co-occurrence frequency before 1000 and a decline afterwards. Such a trend is entirely expected given the general philological reasoning. While Classical Latin did not have a consistent marking of (in)definiteness, from Late Latin onwards, definiteness marking at the noun phrase level increases (<xref ref-type="bibr" rid="B10">Carlier &amp; De Mulder 2010</xref>). This increase continues in Old French, in the form of the definite determiner derived from Late Latin demonstrative <italic>ille</italic> (<xref ref-type="bibr" rid="B44">Simonenko &amp; Carlier 2020a</xref>). It is therefore highly plausible that, in comparison with the Classical and even Late Latin baseline, the stage of the determiner loss in noun phrases with short possessives that we clearly observe in Old French after 1000 has been preceded by their rise in this context before 1000. We therefore suggest that instead of a steady decline in the frequency of short possessive-determiner co-occurrence, a rise-and-fall or a bell-shaped pattern should be assumed. The rise-and-fall evolution hypothesis is all the more plausible in view of the fact that the possessive only rarely co-occurs with a (demonstrative) determiner in Latin (including in Late Latin). In general, the rate of bare nouns in Classical Latin has been estimated to be 77% (<xref ref-type="bibr" rid="B11">Carlier &amp; Lamiroy 2018</xref>), while at the beginning of the Old French period it is down to approximately 40% (<xref ref-type="bibr" rid="B44">Simonenko &amp; Carlier 2020a</xref>). The empirical question at stake here is whether the rise-and-fall pattern can be detected in the observable time period, that is, after 800, or whether the rise of determiners with short possessives precedes the earliest preserved records in the vernacular. In what follows, we will formally evaluate the assumption that the rise-and-fall can be observed in the available data.</p>
+<p>An initial rise in the frequency of a particular grammatical phenomenon followed by its decline has been referred to as a &#8220;failed change&#8221; pattern since Postma (<xref ref-type="bibr" rid="B36">2010</xref>). A failed change is not a particularly rare phenomenon. On the basis of data presented in Oliveira e Silva (<xref ref-type="bibr" rid="B32">1982</xref>), Postma (<xref ref-type="bibr" rid="B36">2010</xref>) argues that in Brazilian Portuguese, the frequency of determiners in noun phrases with possessives first rises and then goes down between 1650 and 1850. Another example is the failed <italic>do</italic>-support in positive declarative contexts in English. This construction grows in frequency from around 1500 to 1560 and rapidly declines afterwards (<xref ref-type="bibr" rid="B36">Postma 2010</xref>). The distribution of <italic>to</italic>-marking with the recipient argument in English ditransitive constructions has likewise been analyzed as a failed change by Bacovcin (<xref ref-type="bibr" rid="B4">2017</xref>). Truswell et al. (<xref ref-type="bibr" rid="B47">2019</xref>) describe the pattern characterizing the use of the <italic>ne</italic> &#8230; <italic>not</italic> construction from Early Middle English until the fifteenth century as a failed change.</p>
+<p>Postma (<xref ref-type="bibr" rid="B36">2010</xref>) proposes to use a bell-shaped or parabolic function of the type in (14) to model such failed changes.<xref ref-type="fn" rid="n9">9</xref></p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(14)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g12.png"/></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>If a parabolic function in (14) fits the data on the determiner (non)occurrence in the set of noun phrases with short possessives as good or better than a simple monotonically decreasing logistic function, we can conclude that the failed change assumption for the evolution of determiners with short possessives in the observable data window is as viable or more viable than the simple decline assumption.</p>
+<p>To evaluate a parabolic model, we fit it to the dataset consisting of noun phrases with prenominal short possessive forms. The result is illustrated in <xref ref-type="fig" rid="F3">Figure 3</xref>, where green points correspond to 50 year bins (used for model fitting) and black ones &#8211; to determiner frequencies in individual texts, which are unevenly distributed across centuries.</p>
+<fig id="F3">
+<label>Figure 3</label>
+<caption>
+<p>Determiners in noun phrases with and without possessives in French, parabolic model added.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g3.png"/>
+</fig>
+<p>The parameter estimates for the parabolic model are given in <xref ref-type="table" rid="T4">Table 4</xref>.</p>
+<table-wrap id="T4">
+<label>Table 4</label>
+<caption>
+<p>Parabolic model parameter estimates for French.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Possessives</bold></td>
+<td align="left" valign="top"><bold>short</bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Intercept</bold></td>
+<td align="left" valign="top">12.0000</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">2.4900</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">4.8193</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Time coefficient</bold></td>
+<td align="left" valign="top">5.0000</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">1.7686</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">2.8270</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.005**</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Sparsity of determiner occurrences in noun phrases with short possessives in general and before 1000 in particular makes it difficult to compare the simple logistic vs. parabolic models. The two earliest texts, which do not contain any determiners in noun phrases with short possessives, are very short. The first one, <italic>Sermons de Strasbourg</italic> (composition date 842 A.D.), consists of 115 words and contains 2 noun phrases with short possessives, as in (15), and 4 with long, of which 1 with a determiner, (16)&#8211;(17) (second noun phrase) and 3 without, (17) (first noun phrase).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(15)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval French</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>si</p></list-item>
+<list-item><p>so</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>cum</p></list-item>
+<list-item><p>how</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>om</p></list-item>
+<list-item><p>one</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>per</p></list-item>
+<list-item><p>by</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>dreit</p></list-item>
+<list-item><p>law</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>son</bold></p></list-item>
+<list-item><p>his.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>fradra</p></list-item>
+<list-item><p>brother</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>salvar</p></list-item>
+<list-item><p>save</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>dift</p></list-item>
+<list-item><p>should</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;as one should protect one&#8217;s brother&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>0842-STRASB-BFM-P,.2</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(16)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval French</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>si</p></list-item>
+<list-item><p>so</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>salvarai</p></list-item>
+<list-item><p>save.will</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>eo,</p></list-item>
+<list-item><p>I</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>cist</bold></p></list-item>
+<list-item><p>that</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>meon</bold></p></list-item>
+<list-item><p>my.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>fradre</p></list-item>
+<list-item><p>brother</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>Karlo</p></list-item>
+<list-item><p>Charles</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;I shall protect my brother Charles&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>0842-STRASB-BFM-P,.2</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(17)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval French</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>qui</p></list-item>
+<list-item><p>which</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>meon</bold></p></list-item>
+<list-item><p>my.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>vol</p></list-item>
+<list-item><p>will</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>cist</bold></p></list-item>
+<list-item><p>that</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>meon</bold></p></list-item>
+<list-item><p>my.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>fradre</p></list-item>
+<list-item><p>brother</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>Karle</p></list-item>
+<list-item><p>Charles</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>in</p></list-item>
+<list-item><p>in</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>damno</p></list-item>
+<list-item><p>loss</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>sit</p></list-item>
+<list-item><p>be</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;which, by my will, would be to the loss for my brother Charles&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>ID 0842-STRASB-BFM-P,.3</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>The second earliest text, <italic>S&#233;quence de sainte Eulalie</italic> (composition date 881), counts 189 words and has only 1 noun phrase with a short possessive and without other determiners, (18). It also has 2 noun phrases with long possessives, one with, (19), and one without a determiner, (20).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(18)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval French</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Qu&#8217;</p></list-item>
+<list-item><p>than</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>elle</p></list-item>
+<list-item><p>she</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>perdesse</p></list-item>
+<list-item><p>loses</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>sa</bold></p></list-item>
+<list-item><p>her.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>virginitet</p></list-item>
+<list-item><p>virginity</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;than losing her virginity&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>0900-EULALI-BFM-P,.13</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(19)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval French</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Ell&#8217;</p></list-item>
+<list-item><p>she</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ent</p></list-item>
+<list-item><p>of.there</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>adunet</p></list-item>
+<list-item><p>gathers.up</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>lo</bold></p></list-item>
+<list-item><p>def</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>suon</bold></p></list-item>
+<list-item><p>her.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>element</p></list-item>
+<list-item><p>force</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;She gathers up her strength&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>0900-EULALI-BFM-P,.12</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(20)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>medieval French</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>et</p></list-item>
+<list-item><p>and</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>a</p></list-item>
+<list-item><p>to</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>lui</p></list-item>
+<list-item><p>Him</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>nos</p></list-item>
+<list-item><p>us</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>laist</p></list-item>
+<list-item><p>lets</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>venir</p></list-item>
+<list-item><p>come</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>par</p></list-item>
+<list-item><p>by</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>souue</bold></p></list-item>
+<list-item><p>his.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>clementia</p></list-item>
+<list-item><p>mercy</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;and allows us to come to Him by His mercy&#8217;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>0900-EULALI-BFM-P,.26</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Although absolute numbers of noun phrases with either short or long possessives in these earliest texts are very low, we nevertheless do see determiners with the long, but not with the short paradigms.</p>
+<p>We now proceed to the evaluation of both models in terms of classificatory accuracy. In particular, we compare the predictive performance of simple logistic and parabolic models using their receiver operating characteristics (ROC), which correspond to the relation between model&#8217;s sensitivity (proportion of true positive cases predicted to be positive among all true positive cases) and specificity (proportion of true negative cases predicted to be negative among all true negative cases) across multiple possible cut-off points, that is, different arbitrary thresholds for predicted probabilities below which a case is classified as negative and above which it is classified as positive. To compare models&#8217; ROCs, we use the area under the curve measure (AUC). A greater AUC indicates a greater predictive accuracy of a model across multiple cut-offs. ROC (AUC) is 0.7115 for the logistic model corresponding to the steady decrease assumption within the observable window, and 0.7116 for the parabolic model, which assumes a rise-and-fall pattern within the attested data window. The models&#8217; performance proves to be essentially identical and in both cases quite good. The search for a better model will not be pursued further here.<xref ref-type="fn" rid="n10">10</xref> However, this result allows us to conclude that a parabolic or rise-and-fall model is at least as good at capturing the distribution of determiners with short possessives as a steady decline model. We would like to stress that the rise-and-fall evolution hypothesis is the only one which is able to reconstruct the gap between Late Latin and Old French, and the question we have just explored is whether this pattern manifests itself in the observed data window. We conclude that it is plausible that it does, namely, that the available Old French sources offer evidence of a failed change in the context of short possessive noun phrases.</p>
+<p>In Postma&#8217;s perspective, a change can be &#8220;doomed&#8221; to fail from the outset: the frequency of certain forms rises only to go down in the next generation because of an inherent suboptimality of the configuration resulting from the change. On this view, which we adopt, short possessive forms intrinsically have a property (or properties) making their co-occurrence with overt determiners suboptimal. We argue that this property is their determiner-like semantics, which enables them to spell out D (details are given in section 5).</p>
+</sec>
+</sec>
+<sec>
+<title>3 Spanish</title>
+<p>It will be shown below that in Spanish, just like in French, determiner frequency grows with long possessives, as well as in noun phrases without possessives. Unlike in French, long forms do not disappear from the language completely but rather stop occurring in the prenominal position. With regard to the co-occurrence of short possessives with determiners, again, just like in French, we show that it is plausible to assume an &#8220;up and down&#8221; pattern rather than a steady decrease. Once again, the two paradigms evolve very differently with respect to the presence of determiners.</p>
+<sec>
+<title>3.1 Two possessive paradigms</title>
+<p>Medieval Spanish features two paradigms of possessives, short and long forms, both of which can occur in the prenominal position. Sub-paradigms of both types for the first person are given in <xref ref-type="table" rid="T5">Tables 5</xref>, <xref ref-type="table" rid="T6">6</xref>.</p>
+<table-wrap id="T5">
+<label>Table 5</label>
+<caption>
+<p>Spanish short prenominal possessive forms.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold><sc>singular</sc></bold></td>
+<td align="left" valign="top"><bold><sc>plural</sc></bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">mi</td>
+<td align="left" valign="top">mis</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<table-wrap id="T6">
+<label>Table 6</label>
+<caption>
+<p>Spanish long prenominal possessive forms.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>singular</sc></bold></td>
+<td align="left" valign="top"><bold><sc>plural</sc></bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>masculine</sc></td>
+<td align="left" valign="top">m&#237;o</td>
+<td align="left" valign="top">m&#237;os</td>
+</tr>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>feminine</sc></td>
+<td align="left" valign="top">m&#237;a</td>
+<td align="left" valign="top">m&#237;as</td>
+</tr>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Similarly to French (cf. <xref ref-type="fig" rid="F1">Figure 1</xref>), long forms disappear from the prenominal position, as illustrated in <xref ref-type="fig" rid="F4">Figure 4</xref>. Our dataset consists of 1st, 2nd, and 3rd person short and long prenominal possessives (N = 1,275,626 noun phrases, of which 3657 have long possessives) taken from Davies (<xref ref-type="bibr" rid="B16">2006-</xref>).</p>
+<fig id="F4">
+<label>Figure 4</label>
+<caption>
+<p>Estimated probability of short vs. long possessives in Spanish.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g4.png"/>
+</fig>
+</sec>
+<sec>
+<title>3.2 Co-occurrence with determiners</title>
+<p>In medieval Spanish, both short, (21)&#8211;(22), and long, (23)&#8211;(24), series can be used with and without determiners in the prenominal position (<xref ref-type="bibr" rid="B27">Labrousse 2018: 38</xref>).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(21)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Medieval Spanish</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>cuanto</p></list-item>
+<list-item><p>how.much</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>los</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>sus</bold></p></list-item>
+<list-item><p>their.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>scriptores</p></list-item>
+<list-item><p>scribes</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>lo[s]</p></list-item>
+<list-item><p>them</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>quisieron</p></list-item>
+<list-item><p>wanted</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>crescer</p></list-item>
+<list-item><p>magnify</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>y</p></list-item>
+<list-item><p>and</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ensal&#231;ar</p></list-item>
+<list-item><p>praise</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;How much their scribes wanted to magnify and to praise him.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Amad&#237;s, 1490, from <xref ref-type="bibr" rid="B27">Labrousse 2018: 2296</xref></sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(22)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Medieval Spanish</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>por</p></list-item>
+<list-item><p>for</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ser</p></list-item>
+<list-item><p>being</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>a</p></list-item>
+<list-item><p>to</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#233;l</p></list-item>
+<list-item><p>him</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>seg&#250;n</p></list-item>
+<list-item><p>according</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>su</bold></p></list-item>
+<list-item><p>his.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>flaqueza</p></list-item>
+<list-item><p>weakness</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>m&#225;s</p></list-item>
+<list-item><p>more</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>conformes</p></list-item>
+<list-item><p>compliant</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8221;for being more compliant to him according to his weakness&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Amad&#237;s, 1490, from <xref ref-type="bibr" rid="B27">Labrousse 2018: 2303</xref></sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(23)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Medieval Spanish</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>fuestes</p></list-item>
+<list-item><p>you.were</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>mio</p></list-item>
+<list-item><p>my</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>vasallo</p></list-item>
+<list-item><p>vassal</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>e</p></list-item>
+<list-item><p>and</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>heredado</p></list-item>
+<list-item><p>inherited</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>en</p></list-item>
+<list-item><p>to</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>el</bold></p></list-item>
+<list-item><p><sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>mio</bold></p></list-item>
+<list-item><p>my.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>regno</p></list-item>
+<list-item><p>reign</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;You were my vassal and inherited my reign&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Livro del cavallero Cifar, 1300, from Davies 2006</sub>.</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(24)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Medieval Spanish</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>mande</p></list-item>
+<list-item><p>send.<sc>imp</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>seellar</p></list-item>
+<list-item><p>seal</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>esta</p></list-item>
+<list-item><p>this</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>carta</p></list-item>
+<list-item><p>letter</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>con</p></list-item>
+<list-item><p>with</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>mio</bold></p></list-item>
+<list-item><p>my.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>seello</p></list-item>
+<list-item><p>seal</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>de</p></list-item>
+<list-item><p>of</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>plomo.</p></list-item>
+<list-item><p>lead</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;have this letter sealed with my lead seal&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Documentos castellanos de Alfonso X, 1221, from Davies 2006-</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In Modern Spanish, short forms cannot co-occur with determiners, while long forms, restricted to the postnominal position, can, as illustrated in (25)&#8211;(26).<xref ref-type="fn" rid="n11">11</xref></p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(25)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Modern Spanish</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>(*la)</p></list-item>
+<list-item><p>the</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>su</p></list-item>
+<list-item><p>his/her</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>casa</p></list-item>
+<list-item><p>house</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;his/her/their house&#8221;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(26)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Modern Spanish</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>la</p></list-item>
+<list-item><p>the</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>casa</p></list-item>
+<list-item><p>house</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>suya</p></list-item>
+<list-item><p>her</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;his/her/their house&#8221;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Below it is shown that, just like in medieval French, the frequency of determiners increases in medieval Spanish with long forms (until the long forms disappear from the prenominal position), as well as in noun phrases without prenominal possessives, and decreases with short forms. Again, as in medieval French, we show that it is very plausible that the frequency of determiners in the latter case follows an &#8220;up-and-down&#8221; pattern and thus constitutes a case of failed change.</p>
+<p>In order to evaluate the plausibility of the monotonic decrease vs. failed change assumptions for the short possessives, we first fit logistic regression models of the form in (13) to three data sets: noun phrases with (mostly) short possessives (N = 7703 noun phrases from <xref ref-type="bibr" rid="B27">Labrousse 2018: 79</xref>), noun phrases with prenominal long forms from Davies (<xref ref-type="bibr" rid="B16">2006-</xref>) (N = 3657 noun phrases), and noun phrases without possessives from P.S. Post Scriptum (<xref ref-type="bibr" rid="B37">2014</xref>) corpus (N = 6121 noun phrases).<xref ref-type="fn" rid="n12">12</xref> These models are graphed in <xref ref-type="fig" rid="F5">Figure 5</xref>, and the parameter estimates are given in <xref ref-type="table" rid="T7">Table 7</xref>.</p>
+<fig id="F5">
+<label>Figure 5</label>
+<caption>
+<p>Determiners in noun phrases with and without possessives in Spanish, logistic models.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g5.png"/>
+</fig>
+<table-wrap id="T7">
+<label>Table 7</label>
+<caption>
+<p>Logistic model parameter estimates for Spanish.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Possessives</bold></td>
+<td align="left" valign="top"><bold>no</bold></td>
+<td align="left" valign="top"><bold>long</bold></td>
+<td align="left" valign="top"><bold>short</bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Intercept</bold></td>
+<td align="left" valign="top"><italic>&#8211;</italic>2.3537</td>
+<td align="left" valign="top"><italic>&#8211;</italic>2.4455</td>
+<td align="left" valign="top">9.5303</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.4437</td>
+<td align="left" valign="top">0.2582</td>
+<td align="left" valign="top">0.5866</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top"><italic>&#8211;</italic>5.304</td>
+<td align="left" valign="top"><italic>&#8211;</italic>9.473</td>
+<td align="left" valign="top">16.25</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Time coefficient</bold></td>
+<td align="left" valign="top">0.0014</td>
+<td align="left" valign="top">0.001</td>
+<td align="left" valign="top"><italic>&#8211;</italic>0.0084</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0003</td>
+<td align="left" valign="top">0.0002</td>
+<td align="left" valign="top">0.0004</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">5.425</td>
+<td align="left" valign="top">5.257</td>
+<td align="left" valign="top"><italic>&#8211;</italic>19.26</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>The models detect a negative trend with short forms (time coefficient = <italic>&#8211;</italic>0.0084, p &lt; 0.001***), a positive trend with long ones (time coefficient = 0.001, p &lt; 0.001***), and a positive trend in noun phrases without possessives (time coefficient = 0.0014, p &lt; 0.001***).<xref ref-type="fn" rid="n13">13</xref></p>
+</sec>
+<sec>
+<title>3.3 A failed change</title>
+<p>We further evaluate the assumption that in Spanish noun phrases with short possessives, an up-and-down pattern is observable in the available data window. As in the case of French, the hypothesis of an initial rise of determiner frequency, before its decline, is the only one which is able to reconstruct the gap between Late Latin and Old Spanish. To see how plausible this assumption is, we fit a bell-shaped model of the type in (14) to this dataset. The latter replaces the logistic model in <xref ref-type="fig" rid="F6">Figure 6</xref>. Data points for individual texts (in black) have been added here, in addition to 50 year bins (in green). Parameter estimates of the parabolic model are given in <xref ref-type="table" rid="T8">Table 8</xref>.</p>
+<p>We compare the predictive accuracy of the two models, s- and bell-shaped, using ROC (AUC) characteristics. For the s-shaped or logistic model ROC (AUC) equals 0.70 and for the bell-shaped model &#8211; 0.76, which indicates a somewhat better performance of the latter. Hence, the assumption about the evolution of determiners with short possessives following an up-and-down trajectory within the observable data window is no less (or slightly more) plausible than the monotonic decrease assumption.</p>
+<fig id="F6">
+<label>Figure 6</label>
+<caption>
+<p>Determiners in noun phrases with and without possessives in Spanish, parabolic model added.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g6.png"/>
+</fig>
+<table-wrap id="T8">
+<label>Table 8</label>
+<caption>
+<p>Parabolic model parameter estimates for Spanish.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Possessives</bold></td>
+<td align="left" valign="top"><bold>short</bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Intercept</bold></td>
+<td align="left" valign="top">1.5864</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0600</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">26.424</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Time coefficient</bold></td>
+<td align="left" valign="top">2.4924</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0691</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">36.038</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+</sec>
+<sec>
+<title>4 European Portuguese</title>
+<sec>
+<title>4.1 Two possessive paradigms</title>
+<p>Short and long prenominal possessive paradigms from medieval Portuguese are illustrated in <xref ref-type="table" rid="T9">Tables 9</xref>, <xref ref-type="table" rid="T10">10</xref> for the first person.<xref ref-type="fn" rid="n14">14</xref></p>
+<table-wrap id="T9">
+<label>Table 9</label>
+<caption>
+<p>Portuguese short prenominal possessive forms.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>singular</sc></bold></td>
+<td align="left" valign="top"><bold><sc>plural</sc></bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>masculine</sc></td>
+<td align="left" valign="top">mo</td>
+<td align="left" valign="top">not attested</td>
+</tr>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>feminine</sc></td>
+<td align="left" valign="top">m(h)a</td>
+<td align="left" valign="top">mhas</td>
+</tr>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<table-wrap id="T10">
+<label>Table 10</label>
+<caption>
+<p>Portuguese long prenominal possessive forms.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><bold><sc>singular</sc></bold></td>
+<td align="left" valign="top"><bold><sc>plural</sc></bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>masculine</sc></td>
+<td align="left" valign="top">meu</td>
+<td align="left" valign="top">meus</td>
+</tr>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><sc>feminine</sc></td>
+<td align="left" valign="top">mi(nh)a</td>
+<td align="left" valign="top">mi(nh)as</td>
+</tr>
+<tr>
+<td colspan="3"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In contrast to French (and Spanish prenominal position), it is the short forms that do not survive. We track the distribution of the two types in the prenominal position (N = 324,599 noun phrases) using the corpus of Davies (<xref ref-type="bibr" rid="B15">2002-</xref>). The results are visualized in <xref ref-type="fig" rid="F7">Figure 7</xref>.</p>
+<fig id="F7">
+<label>Figure 7</label>
+<caption>
+<p>Estimated probability of short vs. long possessives in Portuguese.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g7.png"/>
+</fig>
+</sec>
+<sec>
+<title>4.2 Co-occurrence with determiners</title>
+<p>In historical texts, both long and short forms are attested with and without determiners in the prenominal position. Examples (27)&#8211;(28) and (29)&#8211;(30) offer illustrations for long and short forms, respectively.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(27)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Early Modern Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>e</p></list-item>
+<list-item><p>and</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>assim</p></list-item>
+<list-item><p>like.this</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>fiquei</p></list-item>
+<list-item><p>stayed</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>sem</p></list-item>
+<list-item><p>without</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>poder</p></list-item>
+<list-item><p>be.able</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>negar</p></list-item>
+<list-item><p>deny</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>a</bold></p></list-item>
+<list-item><p>the</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>minha</bold></p></list-item>
+<list-item><p>my.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>vaidade.</p></list-item>
+<list-item><p>vanity</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;and so I was unable to deny my vanity&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Reflex&#245;es, 1705, A_001_PSD,07.53</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(28)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Early Modern Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Assim</p></list-item>
+<list-item><p>like.this</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>que</p></list-item>
+<list-item><p>as</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>meu</bold></p></list-item>
+<list-item><p>my.<sc>long</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>pai</p></list-item>
+<list-item><p>father</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>morrer</p></list-item>
+<list-item><p>dies</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;As soon as my father dies.&#8217;&#8217;&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Maria Mois&#233;s, 1826, B_005_PSD,16.405</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(29)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Medieval Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Pois</p></list-item>
+<list-item><p>for</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>como</p></list-item>
+<list-item><p>how</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>dizedes</p></list-item>
+<list-item><p>you.say</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>vos</p></list-item>
+<list-item><p>you</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>aa</bold></p></list-item>
+<list-item><p>to.<sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>mha</bold></p></list-item>
+<list-item><p>my.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>alma</p></list-item>
+<list-item><p>soul</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;For how you say to my soul&#8230;&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Livro das Aves, 1184, from Davies (<xref ref-type="bibr" rid="B15">2002-</xref>)</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(30)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Medieval Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Fl&#233;rida</p></list-item>
+<list-item><p>Fl&#233;rida</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>Aquel</p></list-item>
+<list-item><p>Aquel</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>tal</p></list-item>
+<list-item><p>that</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>que</p></list-item>
+<list-item><p>which</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>lamenta</p></list-item>
+<list-item><p>regrets</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>su</bold></p></list-item>
+<list-item><p>his.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>ventura</p></list-item>
+<list-item><p>fate</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>y</p></list-item>
+<list-item><p>and</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>exclama</p></list-item>
+<list-item><p>exclaim</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>su</bold></p></list-item>
+<list-item><p>his.<sc>short</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>tristeza</p></list-item>
+<list-item><p>sadness</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;Fl&#233;rida Aquel, the one who regrets his fate and exclaims his sadness&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Gil Vicente, Obra completa, 1465, from Davies (<xref ref-type="bibr" rid="B15">2002</xref>)</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In Modern European Portuguese, in the prenominal position, long (and only long, short forms having disappeared) possessives normally co-occur with definite determiner, whereas in the postnominal position they are used with indefinite determiners, numerals, <italic>wh</italic>-words, as well as without determiners (cf. Brito (<xref ref-type="bibr" rid="B6">2007: 31</xref>), among many others).<xref ref-type="fn" rid="n15">15</xref></p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(31)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Modern European Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>o</p></list-item>
+<list-item><p>the</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>meu</p></list-item>
+<list-item><p>my</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>livro</p></list-item>
+<list-item><p>book</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;my book&#8217;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(32)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Modern European Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>um</p></list-item>
+<list-item><p>a</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>livro</p></list-item>
+<list-item><p>book</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>meu</p></list-item>
+<list-item><p>my</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;a book of mine&#8217;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>In order to evaluate the overall trends (increase or decrease) in the frequency of determiners and, in particular, the monotonicity assumption in the case of short possessives, we once again fit logistic regression models of the type in (13) to the datasets consisting of noun phrases with long prenominal possessives (N = 318,550 noun phrases, from Davies (<xref ref-type="bibr" rid="B15">2002-</xref>)), with short prenominal possessives (N = 6,409, from Davies (<xref ref-type="bibr" rid="B15">2002-</xref>)), and without possessives (N = 27,705 noun phrases, from Galves et al. (<xref ref-type="bibr" rid="B18">2017</xref>) and P.S. Post Scriptum (<xref ref-type="bibr" rid="B37">2014</xref>)). We visualize this in <xref ref-type="fig" rid="F8">Figure 8</xref>.</p>
+<fig id="F8">
+<label>Figure 8</label>
+<caption>
+<p>Determiners in noun phrases with and without possessives in Portuguese.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g8.png"/>
+</fig>
+<p>As can be seen from <xref ref-type="table" rid="T11">Table 11</xref>, a logistic model detects a positive trend both in all three contexts, time coefficient being 0.5965 (p &lt; 0.001***) with long possessives, 0.1881 (p &lt; 0.001***) in noun phrases without prenominal possessives, and 0.1107 with short possessives (p = 0.0037**). In the latter case, the model&#8217;s estimates are the least reliable, especially after 1600. As <xref ref-type="fig" rid="F7">Figure 7</xref> indicates, around this time short possessives become vanishingly rare in the language.</p>
+<table-wrap id="T11">
+<label>Table 11</label>
+<caption>
+<p>Logistic model parameter estimates for Portuguese.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Possessives</bold></td>
+<td align="left" valign="top"><bold>no</bold></td>
+<td align="left" valign="top"><bold>long</bold></td>
+<td align="left" valign="top"><bold>short</bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Intercept</bold></td>
+<td align="left" valign="top">1.2199</td>
+<td align="left" valign="top"><italic>&#8211;</italic>0.9472</td>
+<td align="left" valign="top"><italic>&#8211;</italic>2.0017</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0144</td>
+<td align="left" valign="top">0.0042</td>
+<td align="left" valign="top">0.0398</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">84.70</td>
+<td align="left" valign="top"><italic>&#8211;</italic>227.0</td>
+<td align="left" valign="top"><italic>&#8211;</italic>50.3</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Time coefficient</bold></td>
+<td align="left" valign="top">0.1881</td>
+<td align="left" valign="top">0.5965</td>
+<td align="left" valign="top">0.1107</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0143</td>
+<td align="left" valign="top">0.0047</td>
+<td align="left" valign="top">0.0382</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">13.13</td>
+<td align="left" valign="top">127.1</td>
+<td align="left" valign="top">2.9</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">&lt;0.001***</td>
+<td align="left" valign="top">0.0037**</td>
+</tr>
+<tr>
+<td colspan="4"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>The use of determiners with short possessives, however, seems to substantially differ from their distribution in noun phases with long possessives. We fit a bell-shaped model in (14) to the determiner distribution with short possessives in order to evaluate the plausibility of an up-and-down change trajectory in the context of short possessives. The result is plotted in <xref ref-type="fig" rid="F9">Figure 9</xref> and the parameter estimates of the parabolic model are given in <xref ref-type="table" rid="T12">Table 12</xref>.</p>
+<fig id="F9">
+<label>Figure 9</label>
+<caption>
+<p>Determiners in noun phrases with and without possessives in Portuguese, parabolic model added.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g9.png"/>
+</fig>
+<table-wrap id="T12">
+<label>Table 12</label>
+<caption>
+<p>Parabolic model parameter estimates for Portuguese.</p>
+</caption>
+<table>
+<thead>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Possessives</bold></td>
+<td align="left" valign="top"><bold>short</bold></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Intercept</bold></td>
+<td align="left" valign="top"><italic>&#8211;</italic>0.2000</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0954</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top"><italic>&#8211;</italic>2.0956</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.0361*</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top"><bold>Time coefficient</bold></td>
+<td align="left" valign="top">2.0000</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">Std. Error</td>
+<td align="left" valign="top">0.0655</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">z-value</td>
+<td align="left" valign="top">30.5563</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+<tr>
+<td align="left" valign="top">p-value</td>
+<td align="left" valign="top">&lt;0.001***</td>
+</tr>
+<tr>
+<td colspan="2"><hr/></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Comparing the two models, logistic and parabolic, in terms of their predictive ability as measured by ROC (AUC), is not very informative in this case: both perform very poorly, at around the chance level, with ROC (AUC) being 0.52 for the former and 0.41 for the latter. While evaluating the two models for the context of short possessives in Portuguese, we need to keep in mind that unlike the data on short possessives in French and Spanish, this dataset comes from a corpus without syntactic annotation and contains a degree of noise. The exploration of the determiner use trends in noun phrases with short possessives in Portuguese remains somewhat inconclusive, except for the important quantitative fact that their distribution in this environment clearly differs from the trend observed in the context of long possessives.</p>
+</sec>
+<sec>
+<title>4.3 A comparison between French, Spanish, and Portuguese</title>
+<p>For the ease of comparison of the evolution of determiner distribution in possessive and non-possessive noun phrases in the three Romance languages under consideration, we present the corresponding plots side by side in <xref ref-type="fig" rid="F10">Figure 10</xref>.</p>
+<fig id="F10">
+<label>Figure 10</label>
+<caption>
+<p>Determiners in French, Spanish, and Portuguese.</p>
+</caption>
+<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g10.png"/>
+</fig>
+<p>These Figures for the three Romance languages under study visualise several important and previously unreported empirical results.</p>
+<p>First, the determiner frequency grows during at least a certain period in all environments we have considered, that is, with short and long possessives, as well as in noun phases without possessives. In case of long possessives and noun phrases without possessives, the monotonic growth period correspond to the whole observed period. For the short possessives, we showed that it is likely that there is an initial growth period followed by the period of decline (except for the inconclusive results on Portuguese, where neither monotonic nor a bell-shaped models perform very well).</p>
+<p>Second, the development in the context of long possessives seems to be largely in line, in terms of the general temporal trends rather than absolute rates, with the evolution of determiners frequencies in noun phrases without possessives. Moreover, in Spanish and Portuguese the two seem to follow a roughly parallel course (red and blue lines in the figures above).<xref ref-type="fn" rid="n16">16</xref></p>
+<p>The third important result is that there is a strong difference in the trends observed in the environment of long prenominal possessives vs. short ones. While in the former environment the frequency of determiners clearly grows with time, in the latter it either declines or follows the up-and-down pattern (French and Spanish). Again, the quality of the Portuguese data on short possessives prevents us from deciding between a logistic model predicting a very slow growth or a model corresponding to a bell-shaped pattern. In either case, in Portuguese as well, the difference between the two environments is indisputable.</p>
+<p>The fourth relevant observation that emerges from language comparison is that changes in determiner frequency in the context of long forms precede changes in the context of short possessives.</p>
+<p>The analysis that we develop in the following section builds on these new empirical findings, as well as on the general theoretical consideration we mentioned before, namely, that it is necessary to admit that the frequency of determiners in the context of short possessives must have increased before it began decreasing in order to account for the transition between Late Latin and early Romance languages, whether we can capture this quantitative trend on the basis of the available empirical data or not.</p>
+</sec>
+</sec>
+<sec>
+<title>5 Analysis: The rise of DP</title>
+<sec>
+<title>5.1 Grammatical shift</title>
+<p>In order to account for the fact that across the three examined languages, the growth of determiner frequency is observed both in noun phrases without prenominal possessives and with long possessives, as well as, initially, with short possessives (as established on theoretical and partially empirical grounds), rather than postulating changes at the level of individual possessive forms, we propose, following Simonenko &amp; Carlier (<xref ref-type="bibr" rid="B44">2020a</xref>), that there is a general rise in frequency of the grammar where (in)definiteness is obligatorily marked at the noun phrase level. In other words, a single shift happens: a replacement of a grammar parsing nominals with their modifiers as an NP structure, as in (33a), by a grammar which parses them as a DP, as in (33b).<xref ref-type="fn" rid="n17">17</xref></p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(33)</p></list-item>
+</list>
+<list list-type="wordfirst">
+<list-item><p>a.</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[<italic><sub>NP</sub></italic> N]&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;old nominal grammar</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>&#160;</p></list-item>
+</list>
+<list list-type="wordfirst">
+<list-item><p>b.</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>[<italic><sub>DP</sub></italic> D [<italic><sub>NP</sub></italic> N]]&#160;&#160;&#160;&#160;&#160;&#160;&#160;new nominal grammar</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Our analysis of this shift is couched in the perspective of grammar competition which assumes that in a given population of speakers more than one syntactic or semantic analysis of an utterance can be available (e.g., Kroch (<xref ref-type="bibr" rid="B25">1989</xref>) as one of the foundational works and Pintzuk (<xref ref-type="bibr" rid="B35">2003</xref>) for an overview). If with time the probability of using one of the grammars grows and that of using the &#8220;competing&#8221; grammar correspondingly declines, we can speak of a language change. The grammar competition approach has already been engaged for explaining the diachronic rise in frequencies in the determiner use in historical Spanish (<xref ref-type="bibr" rid="B5">Batllori &amp; Roca 2000</xref>) and French (<xref ref-type="bibr" rid="B44">Simonenko &amp; Carlier 2020a</xref>). We assume that the increasingly frequent parsing of nominals as structures with a determiner layer is a consequence of an emerging pressure to morphologically mark existential presupposition or its absence at the noun phrase level because marking it at the sentential level by means of constituent order and/or prosodic means becomes progressively unavailable, as suggested by Simonenko &amp; Carlier (<xref ref-type="bibr" rid="B45">2020b</xref>) for French, among others. We adopt the latter point about causality as a conjecture without trying to develop and prove it further here.</p>
+<p>In the following section, we present our account of the semantic and syntactic composition of long and short possessives that is compatible with the quantitative empirical results we have obtained.</p>
+</sec>
+<sec>
+<title>5.2 Semantics of long and short forms</title>
+<p>On the basis of our quantitative results, we endorse the widely advocated view that short and long forms have different semantico-syntactic properties, without subscribing to the claim that either paradigm underwent a semantic evolution. We propose, in particular, that they differ minimally in the presence of the DP layer in their internal structures. This difference, we argue, holds across all time periods and is independent of the NP-to-DP grammar shift operating in the diachrony of the three languages. Nominal expressions with long and short forms correspond to the structures in (34) and (35), respectively, where the parts in bold correspond to the internal structure of a possessive morpheme.</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(34)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>[[<bold>i</bold> [<bold><italic><sub>RP</sub></italic> R</bold> [<italic><sub>NP</sub></italic> N]]]]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub><sc>nominal expression with a long possessive</sc></sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(35)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="word">
+<list-item><p>[<italic><sub>DP</sub></italic> D [<bold>i</bold> [<bold><italic><sub>RP</sub></italic> R</bold> [<italic><sub>NP</sub></italic> N]]]]</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#160;&#160;&#160;&#160;&#160;<sub><sc>nominal expression with a short possessive</sc></sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Here R is a relational operator that introduces a possessive pronoun with index i in its specifier (cf. R in the semantics of demonstratives in Elbourne (<xref ref-type="bibr" rid="B17">2008</xref>) and in the semantics of possessives in Simonenko (<xref ref-type="bibr" rid="B43">to appear</xref>)). The semantics of R is given in (36), where P argument at the Logical Form level corresponds to the denotation of the nominal predicate and y to the denotation of the possessive index (a possessor individual). We also assume that R introduces a presupposition that there exist individuals with the nominal property P in the relevant situation of evaluation (for the discussion see Simonenko (<xref ref-type="bibr" rid="B42">2014</xref>)). R relates individuals with the property denoted by the nominal to a contextually given possessor by a possessive relation, broadly conceived.<xref ref-type="fn" rid="n18">18</xref></p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(36)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#10214;<italic>R</italic>&#10215; = <italic>&#955;</italic>P<sub>&lt;</sub><italic><sub>e</sub></italic><sub>,&lt;</sub><italic><sub>s,t</sub></italic><sub>&gt;&gt;</sub>&#160;. <italic>&#955;</italic>y<italic><sub>e</sub></italic>&#160;. <italic>&#955;</italic>x<italic><sub>e</sub></italic>&#160;. <italic>&#955;</italic>s<italic><sub>&#963;</sub></italic> : &#8707;x[P(x)(s)]&#160;. P(x)(s) &amp; x is possessed by y in s</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>For D, we assume a Fregean semantics from Heim (<xref ref-type="bibr" rid="B20">2011</xref>) in its situational implementation, as in Schwarz (<xref ref-type="bibr" rid="B41">2009</xref>), whereby D denotes a function which takes a situation s, a property P, and returns a Sharvy&#8217;s maximal individual that has P in s, provided that there exists such individual in the relevant situation, as in (37).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(37)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#10214;<italic>D</italic>&#10215; = <italic>&#955;</italic>s<italic><sub>&#963;</sub></italic>. <italic>&#955;</italic>P<sub>&lt;</sub><italic><sub>e,&#963;t</sub></italic><sub>&gt;</sub> : &#8707;!x[Max(P)(x)(s)]&#160;. <italic>&#953;</italic>x[Max(P)(x)(s)],</p></list-item>
+<list-item><p>where Max(P) = <italic>&#955;</italic>x<italic><sub>e</sub></italic>. <italic>&#955;</italic>s<italic><sub>&#963;</sub></italic>&#160;. P(x)(s) &amp; &#172;&#8707;y[P(y)(s) &amp; x &lt; y]<xref ref-type="fn" rid="n19">19</xref></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>There is non-quantitative evidence from Modern Portuguese, which retained long possessives in the prenominal position, that prenominal long possessives spell out a functional head rather than an adjectival phrase. Brito (<xref ref-type="bibr" rid="B6">2007</xref>) shows that in European Portuguese, prenominal possessives cannot be modified by &#8220;exclusion&#8221; adverbs (<italic>s&#243;, apenas</italic> &#8220;only, just&#8221;), (38), in contrast to postnominal possessives, (39).</p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(38)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#160;&#160;<sub><sc>Modern Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>*O</p></list-item>
+<list-item><p>&#160;&#160;<sc>def</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>s&#243;</bold></p></list-item>
+<list-item><p>only</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>meu</bold></p></list-item>
+<list-item><p>my</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>problema</p></list-item>
+<list-item><p>problem</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#233;</p></list-item>
+<list-item><p>is</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>que</p></list-item>
+<list-item><p>that</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#227;o</p></list-item>
+<list-item><p>not</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>percebo</p></list-item>
+<list-item><p>understand</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>nada</p></list-item>
+<list-item><p>nothing</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>disto.</p></list-item>
+<list-item><p>of.this</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#160;&#160;Intended: &#8220;My only problem is that I don&#8217;t understand it.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Brito (<xref ref-type="bibr" rid="B6">2007: 32</xref>)</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(39)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><sub><sc>Modern Portuguese</sc></sub></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>Um</p></list-item>
+<list-item><p><sc>indf</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>problema</p></list-item>
+<list-item><p>problem</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>s&#243;</bold></p></list-item>
+<list-item><p>only</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p><bold>meu</bold></p></list-item>
+<list-item><p>my</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>&#233;</p></list-item>
+<list-item><p>is</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>que</p></list-item>
+<list-item><p>that</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>n&#227;o</p></list-item>
+<list-item><p>not</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>percebo</p></list-item>
+<list-item><p>understand</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>nada</p></list-item>
+<list-item><p>nothing</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>disto.</p></list-item>
+<list-item><p>of.this</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8220;My only problem is that I don&#8217;t understand it.&#8221;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<sub>Brito (<xref ref-type="bibr" rid="B6">2007: 32</xref>)</sub></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>Castro &amp; Costa (<xref ref-type="bibr" rid="B13">2002</xref>) show that prenominal possessives in Portuguese cannot be coordinated. Coupling this fact with the assumption that heads cannot be coordinated (<xref ref-type="bibr" rid="B24">Kayne 1994</xref>), they propose these forms spell out heads, rather than phrases.<xref ref-type="fn" rid="n20">20</xref></p>
+<p>Our proposal also captures the fact that in Modern Portuguese, in the prenominal position long possessives occur virtually exclusively with definite determiners. Since R introduces a presupposition that the extension of RP is not empty in the relevant situation, RP, if felicitous in a given context, satisfies the existential part of the presuppositional requirements of a definite determiner (the other part being the maximality requirement), as given in (37).<xref ref-type="fn" rid="n21">21</xref> On the basis of the empirical data extracted from the corpus of Davies (<xref ref-type="bibr" rid="B15">2002-</xref>), we argue that this situation extends onto the Medieval period as well: the use of prenominal possessives with indefinites (relative to the overall use with indefinite, definite, and demonstratives determiners) was already very marginal in the twelfth century, 0.013, and never became higher. Given the Maximize Presupposition! reasoning, our proposal explains why prenominal long possessives occur almost only with a definite D, rather than an indefinite D.</p>
+<p>Given the representation for nominals with short possessives in (35), it can be expected that determiners are never used in this context, since there is already a D head present as part of the internal structure of short possessives. Empirically, however, we observe the co-occurrence pattern for some period of time, which, we argued, likely followed a bell-shaped trajectory. Assuming that a lexical item can spell out a subset of the features it is specified with, as in the nano-syntactic approach to lexicalization (see Starke (<xref ref-type="bibr" rid="B46">2018</xref>) for a recent exposition), we propose that the short possessives are compatible with either of the spellout options represented in (40). On the first option schematized in (40a), they spell out both the RP and the DP layers, whereas on the second only the RP layer.<xref ref-type="fn" rid="n22">22</xref></p>
+<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(40)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="glossa-7-5703-g13.png"/></p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>We propose that the second spellout option, in (40b), is not competitive, in the long run, in comparison to alternatives that are more economical in terms of processing: short possessives without overt determiners or long possessives with overt determiners. The reason is that in order to generate a sequence &#8216;determiner + short possessives + noun&#8217;, some type of lookahead or post-insertion syntactic realignment is needed to make a short possessive morpheme match only R instead of D-R when D is lexicalized by another determiner. Alternative spellouts, which is to lexicalize both D and R by a single item (i.e., &#8216;short possessive + noun&#8217;) without adding a separate determiner (and thus avoid readjustment) or to lexicalize R by a morpheme which can lexicalize only R and therefore, again, does not require readjustment (&#8216;determiner + long possessive + noun&#8217;), are simpler in terms of processing and therefore, we argue, preferred options. Nevertheless, the force of analogy with the constructions &#8216;determiner + noun&#8217; and &#8216;determiner + long possessive + noun&#8217; drives the use of &#8216;determiner + short possessive + noun&#8217; for some time, before it starts decreasing again.</p>
+<p>The analogy-based argument, in addition to conceptual considerations, rests on the aforementioned quantitative fact that the rise in determiner frequency begins earlier in the context of noun phrases with long possessives than with short ones in the languages we investigated, as Figure 10 shows. From a diachronic viewpoint, the tension between analogy and economy is eventually resolved in favour of the latter in all three languages, and the frequency of &#8216;determiner + short possessives + noun&#8217; goes down.</p>
+</sec>
+</sec>
+<sec>
+<title>6 Conclusions</title>
+<p>This paper examined diachronic changes in the distribution of determiners in noun phrases with short and long prenominal possessives and in noun phrases without possessives in three Romance languages. Focusing on the co-occurrence between possessives and determiners, it was demonstrated, for the first time, that French, Spanish, and Portuguese have remarkably similar evolutionary paths: determiner frequency first starts growing in noun phrases without possessives, then in noun phrases with long possessives, and, finally, in noun phrases with short possessives. In the latter context, shortly after the onset, the frequency goes down and tends to zero. We showed that a parabolic model describing a process that follows a bell-shaped trajectory and suggested in Postma (<xref ref-type="bibr" rid="B36">2010</xref>) for failed changes, in general fits the data as good as a logistic model used for monotonic processes (in this case constant decrease).</p>
+<p>This study provides the first-ever historico-comparative analysis of possessives in Romance languages using quantitative data from large databases and statistical modeling. One of its major original contributions is to have revealed clearly diverging diachronic evolution of the determiner use in the context of short vs. long possessives in Romance languages. More generally, with the exception of Postma (<xref ref-type="bibr" rid="B36">2010</xref>) treatment of Brazilian Portuguese possessives, we are not aware of statistical modelling applied to the evolution of possessive noun phrases in Romance languages. It is also the first study to provide statistical arguments for assuming that the evolution of the determiner use in the context of short possessives in French, Spanish, and Portuguese follows the so-called failed change pattern, rather than monotonically decreasing. Apart from statistical considerations, we argued that the failed change assumption is the only one that can account for the transition from Late Latin, lacking systematic definiteness marking, and the early Romance languages, showing high rates of definiteness marking at the noun phrase level.</p>
+<p>In order to account for the fact that determiner frequency grew for some period in nominal expressions both with and without possessives, we argue that the noun phrase structure in Romance changes in a uniform way, shifting in the direction of using existential presupposition marking at the nominal, rather than clausal, level. In the context of this shift, nominal expressions without prenominal possessives, as well nominal expressions with longs possessives are increasingly parsed as DP, rather that (extended) NP. As to short possessives, which, in our view, contain a determiner head as part of their semantico-syntactic architecture, it is hypothesized that the force of analogy caused a temporal spike in their use with overt determiners.</p>
+<p>One of the most intriguing outstanding questions concerns, of course, the different fates of short and long paradigms across Romance languages: long forms only subsist as pronouns in French, can no longer be used to spell out relational head R in the prenominal position in Spanish, and are still used in Portuguese both pre- and postnominally (while the short forms are lost in this language). We speculate that at least part of the explanation lies in a change related to prosody. In French, the disappearance of word-level stress is sometimes invoked as a possible trigger behind some syntactic changes such as the disappearance V2 order (see Rainsford (<xref ref-type="bibr" rid="B38">2011</xref>) for a discussion). An explanation along this lines can be conceived for the disappearance of long possessives from the prenominal position. Another decisive factor may be the general principle of economy and, in particular, the preference of Late Merge over movement (<xref ref-type="bibr" rid="B48">Van Gelderen 2004</xref>): this would explain why in French postnominal long possessives, whose derivation presumably involves an N-over-AP movement, are replaced by possessive PPs (<italic>&#224; moi</italic> &#8220;of mine&#8221; etc.). We leave further investigation to the future.</p>
+</sec>
+</body>
+<back>
+<sec>
+<title>Abbreviations</title>
+<p><sc>def</sc> = definite, <sc>indf</sc> = indefinite, <sc>dem</sc> = demonstrative, <sc>sbjv</sc> = subjunctive.</p>
+</sec>
+<fn-group>
+<fn id="n1"><p>In addition, Schoorlemmer (<xref ref-type="bibr" rid="B40">1998</xref>) proposes that in some languages without [+definite] features, the possessive form may nevertheless cliticize onto D, precluding insertion of a determiner and making such languages superficially similar to the languages with [+definite] specification (see Ihsane (<xref ref-type="bibr" rid="B21">2000</xref>) for a critical discussion).</p></fn>
+<fn id="n2"><p>Ihsane (<xref ref-type="bibr" rid="B21">2000</xref>) proposes that a determiner possessive can move either from AgrPoss to D or from Spec,AgrPoss to Spec,DP, depending on whether it is a (morpho-phonologically) weak or strong form, respectively.</p></fn>
+<fn id="n3"><p>In the literature the labels stressed/unstressed (<italic>tonique/atone</italic> in French) are sometimes used (e.g. Buridant (<xref ref-type="bibr" rid="B7">2019</xref>)). We opt for long/short to stay agnostic with respect to the prosodic properties of the forms in question.</p></fn>
+<fn id="n4"><p>Today, prenominal long forms are attested sporadically in an archaic or ironic style, e.g. <italic>cette mienne vie</italic> lit. &#8220;this mine life&#8221; (M. Proust, <italic>&#192; la recherche du temps perdu</italic>, 1913). Their only synchronically active use is as pronouns, in noun-less phrases, as in <italic>j&#8217;ai pris ton livre et le mien</italic> (&#8220;I took you book and mine&#8221;).</p></fn>
+<fn id="n5"><p>In order to obtain the quantitative data, we extracted all prenominal possessive forms in the corpora of Martineau et al. (<xref ref-type="bibr" rid="B29">2010</xref>) and Kroch &amp; Santorini (<xref ref-type="bibr" rid="B26">2021</xref>), classified them manually into types that abstract away from purely orthographic variation, and then classified the types into short and long forms. The exact procedure can be found in the supplied CorpusSearch (<xref ref-type="bibr" rid="B39">Randall 2010</xref>) query and R script. Our classification is based on grammatical descriptions such as Buridant (<xref ref-type="bibr" rid="B7">2019</xref>), and previous works on the topic, such as Butet (<xref ref-type="bibr" rid="B8">2018</xref>). For those forms that appeared in neither, because of a substantial orthographic variation, we made decisions based on their surface morpho-phonological shape, classifying mono-syllabic forms as short and disyllabic as long.</p></fn>
+<fn id="n6"><p>Cited from Alexiadou (<xref ref-type="bibr" rid="B1">2004</xref>).</p></fn>
+<fn id="n7"><p>We do not consider vocative noun phrases, as well as <italic>de</italic>-noun phrases in the scope of negation or a quantifier (e.g. <italic>Pierre n&#8217;a pas d&#8217;eau</italic> &#8220;Pierre doesn&#8217;t have any water&#8221;, <italic>Pierre a bu beaucoup d&#8217;eau</italic> &#8220;Pierre has drank a lot of water&#8221;). We also exclude noun phrases with quantifiers that are incompatible with a morphologically overt determiner. We are also dealing here only with possessives which occur with full nominal predicates, leaving aside possessive pronouns used in noun-less phases, which are morphologically long forms.</p></fn>
+<fn id="n8"><p>The plotted relative frequency corresponds to the proportion of noun phrases with a determiner (definite, indefinite or demonstrative) among all relevant noun phrases. Each point corresponds to the proportion plotted at the middle of a given 50 year span, for instance, for the span 1100&#8211;1150, we plot a dot at 1125 on the x-axis with y-value corresponding to the average frequency for the texts in this period.</p></fn>
+<fn id="n9"><p>This parabolic function happens to be the first derivative of a logistic regression (as in (13)) with the same parameters. This relation is important for Postma (<xref ref-type="bibr" rid="B36">2010</xref>), who argues that the slope parameter of the model describing a failed change is identical to the slope of the corresponding successful change. In our case this would mean that the successful change (that is, the rise of the determiner frequency with long possessives) and the failed one (the raise and fall of determiner frequency with short possessives) proceed with the same speed, which would correspond to the hypothesis that these developments are reflections (in different contexts) of the same general grammatical shift, assuming the Constant Rate Hypothesis of Kroch (<xref ref-type="bibr" rid="B25">1989</xref>). Here we content ourselves with evaluating how well a parabolic model, with parameters estimated independently of the &#8220;successful&#8221; logistics, captures the determiner occurrence with the short possessives.</p></fn>
+<fn id="n10"><p>In further work, it would be interesting to consider bell-shaped curves with asymmetrical slopes, which can be generated, in particular, by models involving a multiplication of logistic regressions with different coefficients, such as the ones discussed in Bacovcin (<xref ref-type="bibr" rid="B4">2017</xref>).</p></fn>
+<fn id="n11"><p>One vestige of the archaic system in Modern Spanish, restricted to a formal written register and unattested in spoken language, is the co-occurrence of short prenominal forms with demonstrative, as in <italic>en esta su casa</italic> &#8220;in this house of his&#8221; (<xref ref-type="bibr" rid="B34">Picallo i Soler &amp; Rigau 1999: 977</xref>). Such co-occurrences are not attested in spoken Spanish. In addition, according to Picallo i Soler &amp; Rigau (<xref ref-type="bibr" rid="B34">1999: 977</xref>), some Northern dialects, such as those of L&#233;on and Austurias, allow for the co-occurrence of short forms with definite determiners, as in <italic>la mi casa</italic> &#8220;the house of mine&#8221;.</p></fn>
+<fn id="n12"><p>The rates of long forms in the dataset of Labrousse (<xref ref-type="bibr" rid="B27">2018: 88</xref>) are negligible, ranging from 0% to 0.6% except in the earliest text where it is 13%. We therefore consider the dataset to be representative of short forms.</p></fn>
+<fn id="n13"><p>No mention is made of data on noun phrases without possessives in Labrousse (<xref ref-type="bibr" rid="B27">2018</xref>), and P.S. Post Scriptum (<xref ref-type="bibr" rid="B37">2014</xref>) corpus spans a later period (Early Modern Spanish). We opted for P.S. Post Scriptum (<xref ref-type="bibr" rid="B37">2014</xref>) rather than for Davies (<xref ref-type="bibr" rid="B16">2006-</xref>) because the former corpus has a syntactic annotation layer which makes pattern retrieval extremely reliable, in contrast to the latter corpus.</p></fn>
+<fn id="n14"><p>Like in Old French, there is a lot of spelling variation. All the variants listed in Labrousse (<xref ref-type="bibr" rid="B27">2018: 40&#8211;41</xref>) have been retained, as well as the plural forms.</p></fn>
+<fn id="n15"><p>Exceptions are vocative phrases and predicative positions, where prenominal long possessives can occur without determiners.</p></fn>
+<fn id="n16"><p>Noteworthily, all changes take effect earlier in French than in Spanish, and in both earlier than in Portuguese. This temporal ordering, which will not be explored further in this study, is in line with claims made by Carlier et al. (<xref ref-type="bibr" rid="B12">2012</xref>) and Carlier &amp; Lamiroy (<xref ref-type="bibr" rid="B11">2018</xref>).</p></fn>
+<fn id="n17"><p>We abstract away here, for the sake of clarity, from (the evolution of) a number of important functional layers, such as number and case projections.</p></fn>
+<fn id="n18"><p>We assume that &#8220;possessed by&#8221; in the semantics of R can stand for a wide range of relations and that the exact interpretation is determined by the context (see the discussion in Partee &amp; Borschev (<xref ref-type="bibr" rid="B33">2003</xref>), among others).</p></fn>
+<fn id="n19"><p>The symbol &#8220;&lt;&#8221; stands for a proper part relation.</p></fn>
+<fn id="n20"><p>According to Brito (<xref ref-type="bibr" rid="B6">2007: 34</xref>), coordination of prenominal possessives is marginally acceptable in Portuguese provided one of the coordinated members is focalised. It is preferred, however, to use postnominal possessives in cases of coordination.</p></fn>
+<fn id="n21"><p>Specifically, we assume that the existential presupposition of the definite determiner is satisfied by the combined workings of the existential presupposition introduced by R (that the nominal extension is not empty in a given situation) and a general principle militating against restricting an extension known to be not empty to an empty set. That is, the principle states that restricting the nominal denotation by the property of being related to a possessor, introduced by R, cannot result in an empty extension. We give this principle a working label &#8220;No extension annihilation!&#8221;. We speculate that this semantic mechanism is responsible for at least a share of cases known in morphosyntactic terms as definite feature percolation or definiteness spreading (e.g., in Modern Hebrew, Danon (<xref ref-type="bibr" rid="B14">2008</xref>)). Stated generally, the mechanism in question implies that if one part of a complex nominal expression is presupposed to have a non-empty extension, the whole nominal expression is entailed to have a non-empty extension, which can manifest itself as multiple definiteness marking.</p></fn>
+<fn id="n22"><p>Since spellout targets constituents, we assume that R-to-D movement takes place prior to lexicalization. This assumption essentially matches Cardinaletti (<xref ref-type="bibr" rid="B9">1998</xref>) proposal that clitic possessives head-adjoin D. Miguel (<xref ref-type="bibr" rid="B30">2002</xref>) proposes that the short possessives in medieval Portuguese are D-adjoined clitics.</p></fn>
+</fn-group>
+<sec>
+<title>Supplementary files</title>
+<p>The datasets that we have used in our analysis are available at a repository: <ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://osf.io/92kqw/">https://osf.io/92kqw/</ext-link>. DOI: <ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://doi.org/10.17605/OSF.IO/92KQW">10.17605/OSF.IO/92KQW</ext-link>. The repository also contains an R file which calls on the datasets and contains all the relevant data manipulations, along with statistical analysis and visualisation functions.</p>
+</sec>
+<ack>
+<title>Acknowledgements</title>
+<p>We are very grateful to Gertjan Postma, George Walkden, Beatrice Santorini, and Mallorie Labrousse for the discussions that helped us analyse the data.</p>
+</ack>
+<sec>
+<title>Competing Interests</title>
+<p>The authors have no competing interests to declare.</p>
+</sec>
+<ref-list>
+<ref id="B1"><label>1</label><mixed-citation publication-type="book"><string-name><surname>Alexiadou</surname>, <given-names>Artemis</given-names></string-name>. <year>2004</year>. <chapter-title>On the development of possessive determiners: Consequences for DP structure</chapter-title>. In <string-name><surname>Fu&#223;</surname>, <given-names>E.</given-names></string-name> &amp; <string-name><surname>Trips</surname>, <given-names>C.</given-names></string-name> (eds.), <source>Diachronic Clues to Synchronic Grammar</source> <volume>72</volume>. <fpage>31</fpage>. <publisher-loc>Amsterdam</publisher-loc>: <publisher-name>John Benjamins</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1075/la.72.03ale</pub-id></mixed-citation></ref>
+<ref id="B2"><label>2</label><mixed-citation publication-type="book"><string-name><surname>Altmann</surname>, <given-names>Gabriel</given-names></string-name> &amp; <string-name><surname>von Buttlar</surname>, <given-names>Haro</given-names></string-name> &amp; <string-name><surname>Rott</surname>, <given-names>Walter</given-names></string-name> &amp; <string-name><surname>Strau&#223;</surname>, <given-names>Udo</given-names></string-name>. <year>1983</year>. <chapter-title>A law of change in language</chapter-title>. In <string-name><surname>Brainerd</surname>, <given-names>Barron</given-names></string-name> (ed.), <source>Historical linguistics [Quantitative Linguistics 18]</source>, <fpage>104</fpage>&#8211;<lpage>115</lpage>. <publisher-loc>Bochum</publisher-loc>: <publisher-name>Brockmeyer</publisher-name>.</mixed-citation></ref>
+<ref id="B3"><label>3</label><mixed-citation publication-type="confproc"><string-name><surname>Arteaga</surname>, <given-names>Deborah</given-names></string-name>. <year>1995</year>. <article-title>On Old French genitive constructions</article-title>. In <conf-name>Contemporary Research in Romance Linguistics: papers from the 22nd Linguistic Symposium on Romance Languages, El Paso/Cd. Ju&#225;rez, February 1992</conf-name>. <fpage>79</fpage>&#8211;<lpage>91</lpage>. <conf-loc>Amsterdam</conf-loc>: <conf-sponsor>John Benjamins</conf-sponsor>. DOI: <pub-id pub-id-type="doi">10.1075/cilt.123.08art</pub-id></mixed-citation></ref>
+<ref id="B4"><label>4</label><mixed-citation publication-type="book"><string-name><surname>Bacovcin</surname>, <given-names>Hezekiah Akiva</given-names></string-name>. <year>2017</year>. <chapter-title>Modelling interactions between morphosyntactic changes</chapter-title>. In <string-name><surname>Mathieu</surname>, <given-names>Eric</given-names></string-name> &amp; <string-name><surname>Truswell</surname>, <given-names>Robert</given-names></string-name> (eds.), <source>From Micro-change to Macro-change</source> <volume>23</volume>. <fpage>94</fpage>&#8211;<lpage>103</lpage>. <publisher-loc>Oxford</publisher-loc>: <publisher-name>Oxford University Press</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1093/oso/9780198747840.003.0007</pub-id></mixed-citation></ref>
+<ref id="B5"><label>5</label><mixed-citation publication-type="book"><string-name><surname>Batllori</surname>, <given-names>Montserrat</given-names></string-name> &amp; <string-name><surname>Roca</surname>, <given-names>Francesc</given-names></string-name>. <year>2000</year>. <chapter-title>The Value of Definite Determiners from Old Spanish to Modern Spanish</chapter-title>. In <string-name><surname>Tsoulas</surname>, <given-names>Gerog</given-names></string-name> &amp; <string-name><surname>Pintzuk</surname>, <given-names>Susan</given-names></string-name> &amp; <string-name><surname>Warner</surname>, <given-names>Andrew</given-names></string-name> (eds.), <source>Diachronic Syntax. Models and Mechanisms</source>, <fpage>241</fpage>&#8211;<lpage>254</lpage>. <publisher-loc>Oxford</publisher-loc>: <publisher-name>Oxford University Press</publisher-name>.</mixed-citation></ref>
+<ref id="B6"><label>6</label><mixed-citation publication-type="journal"><string-name><surname>Brito</surname>, <given-names>Ana Maria Barros de</given-names></string-name>. <year>2007</year>. <article-title>European Portuguese possessives and the structure of DP</article-title>. <source>Cuadernos de ling&#252;&#237;stica del I. U. I. Ortega y Gasset</source> <volume>14</volume>. <fpage>27</fpage>&#8211;<lpage>50</lpage>.</mixed-citation></ref>
+<ref id="B7"><label>7</label><mixed-citation publication-type="book"><string-name><surname>Buridant</surname>, <given-names>Claude</given-names></string-name>. <year>2019</year>. <source>Grammaire du fran&#231;ais m&#233;di&#233;val (GFM): XII&#8211;XIVe si&#232;cles</source>. <publisher-loc>Strasbourg</publisher-loc>: <publisher-name>ELIPHI, &#201;ditions de linguistique et de philologie</publisher-name>.</mixed-citation></ref>
+<ref id="B8"><label>8</label><mixed-citation publication-type="thesis"><string-name><surname>Butet</surname>, <given-names>Lise-Marie</given-names></string-name>. <year>2018</year>. <source>&#201;tude empirique des possessifs dans les premiers textes du fran&#231;ais dans le cadre d&#8217;une &#233;tude plus globale des possessifs du latin au fran&#231;ais</source>: <publisher-name>Universit&#233; de Lille</publisher-name> MA thesis.</mixed-citation></ref>
+<ref id="B9"><label>9</label><mixed-citation publication-type="book"><string-name><surname>Cardinaletti</surname>, <given-names>Anna</given-names></string-name>. <year>1998</year>. <chapter-title>On the deficient/strong opposition in possessive systems</chapter-title>. In <string-name><surname>Alexiadou</surname>, <given-names>Artemis</given-names></string-name> &amp; <string-name><surname>Wilder</surname>, <given-names>Chris</given-names></string-name> (eds.), <source>Possessors, Predicates and Movement in the Determiner Phrase</source> <volume>22</volume>. <fpage>17</fpage>&#8211;<lpage>53</lpage>. <publisher-loc>Amsterdam</publisher-loc>: <publisher-name>Benjamins</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1075/la.22.03car</pub-id></mixed-citation></ref>
+<ref id="B10"><label>10</label><mixed-citation publication-type="book"><string-name><surname>Carlier</surname>, <given-names>Anne</given-names></string-name> &amp; <string-name><surname>De Mulder</surname>, <given-names>Walter</given-names></string-name>. <year>2010</year>. <chapter-title>The emergence of the definite article in Late Latin: ille in competition with ipse</chapter-title>. In <string-name><surname>Cuykens</surname>, <given-names>Hubert</given-names></string-name> &amp; <string-name><surname>Davidse</surname>, <given-names>Kristin</given-names></string-name> &amp; <string-name><surname>Van de Lanotte</surname>, <given-names>Lieven</given-names></string-name> (eds.), <source>Subjectification, Intersubjectification and Grammaticalization</source>, <fpage>241</fpage>&#8211;<lpage>275</lpage>. <publisher-loc>The Hague</publisher-loc>: <publisher-name>Mouton De Gruyter</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1515/9783110226102.3.241</pub-id></mixed-citation></ref>
+<ref id="B11"><label>11</label><mixed-citation publication-type="journal"><string-name><surname>Carlier</surname>, <given-names>Anne</given-names></string-name> &amp; <string-name><surname>Lamiroy</surname>, <given-names>B&#233;atrice</given-names></string-name>. <year>2018</year>. <article-title>The emergence of the grammatical paradigm of nominal determiners in French and in Romance: Comparative and diachronic perspectives</article-title>. <source>Canadian Journal of Linguistics/Revue canadienne de linguistique</source> <volume>63</volume>(<issue>2</issue>). <fpage>141</fpage>&#8211;<lpage>166</lpage>. DOI: <pub-id pub-id-type="doi">10.1017/cnj.2017.43</pub-id></mixed-citation></ref>
+<ref id="B12"><label>12</label><mixed-citation publication-type="journal"><string-name><surname>Carlier</surname>, <given-names>Anne</given-names></string-name>, <string-name><surname>Lamiroy</surname>, <given-names>B&#233;atrice</given-names></string-name> &amp; <string-name><surname>De Mulder</surname>, <given-names>Walter</given-names></string-name>. <year>2012</year>. <article-title>The pace of grammaticalization in Romance</article-title>. <source>Folia Linguistica</source> <volume>46</volume>. <fpage>287</fpage>&#8211;<lpage>301</lpage>. DOI: <pub-id pub-id-type="doi">10.1515/flin.2012.010</pub-id></mixed-citation></ref>
+<ref id="B13"><label>13</label><mixed-citation publication-type="journal"><string-name><surname>Castro</surname>, <given-names>Ana</given-names></string-name> &amp; <string-name><surname>Costa</surname>, <given-names>Jo&#227;o</given-names></string-name>. <year>2002</year>. <article-title>Possessivos e adv&#233;rbios: formas fracas como X&#730;</article-title>. <source>Actas do XVII Encontro Nacional da Associa&#231;&#227;o Portuguesa de Lingu&#237;stica</source> <fpage>101</fpage>&#8211;<lpage>111</lpage>.</mixed-citation></ref>
+<ref id="B14"><label>14</label><mixed-citation publication-type="journal"><string-name><surname>Danon</surname>, <given-names>Gabi</given-names></string-name>. <year>2008</year>. <article-title>Definiteness spreading in the Hebrew construct state</article-title>. <source>Lingua</source> <volume>118</volume>(<issue>7</issue>). <fpage>872</fpage>&#8211;<lpage>906</lpage>. DOI: <pub-id pub-id-type="doi">10.1016/j.lingua.2007.05.012</pub-id></mixed-citation></ref>
+<ref id="B15"><label>15</label><mixed-citation publication-type="webpage"><string-name><surname>Davies</surname>, <given-names>Mark</given-names></string-name>. <year>2002</year>-. <source>Corpus do Portugu&#234;s: 45 million words, 1300s&#8211;1900s (Historical/Genres)</source>. <uri>http://www.corpusdoportugues.org/hist-gen/</uri>.</mixed-citation></ref>
+<ref id="B16"><label>16</label><mixed-citation publication-type="webpage"><string-name><surname>Davies</surname>, <given-names>Mark</given-names></string-name>. <year>2006</year>-. <source>Corpus del Espa&#241;ol: 100 million words, 1200s&#8211;1900s. (Historical/Genres)</source>. <uri>http://www.corpusdelespanol.org/hist-gen/</uri>.</mixed-citation></ref>
+<ref id="B17"><label>17</label><mixed-citation publication-type="journal"><string-name><surname>Elbourne</surname>, <given-names>Paul</given-names></string-name>. <year>2008</year>. <article-title>Demonstratives as individual concepts</article-title>. <source>Linguistics and Philosophy</source> <volume>31</volume>(<issue>4</issue>). <fpage>409</fpage>&#8211;<lpage>466</lpage>. DOI: <pub-id pub-id-type="doi">10.1007/s10988-008-9043-0</pub-id></mixed-citation></ref>
+<ref id="B18"><label>18</label><mixed-citation publication-type="webpage"><string-name><surname>Galves</surname>, <given-names>Charlotte</given-names></string-name> &amp; <string-name><surname>de Andrade</surname>, <given-names>Aroldo Leal</given-names></string-name> &amp; <string-name><surname>Faria</surname>, <given-names>Pablo</given-names></string-name>. <year>2017</year>. <source>Tycho Brahe Parsed Corpus of Historical Portuguese</source>. <uri>http://www.tycho.iel.unicamp.br/~tycho/corpus/texts/psd.zip</uri>. DOI: <pub-id pub-id-type="doi">10.1075/lv.00004.gal</pub-id></mixed-citation></ref>
+<ref id="B19"><label>19</label><mixed-citation publication-type="book"><string-name><surname>Gamillscheg</surname>, <given-names>Ernst</given-names></string-name>. <year>1957</year>. <source>Historische Franz&#246;sische Syntax</source>. <publisher-loc>T&#252;bingen</publisher-loc>: <publisher-name>Niemeyer</publisher-name>.</mixed-citation></ref>
+<ref id="B20"><label>20</label><mixed-citation publication-type="book"><string-name><surname>Heim</surname>, <given-names>Irene</given-names></string-name>. <year>2011</year>. <chapter-title>Definiteness and indefiniteness</chapter-title>. In <string-name><surname>Maienborn</surname>, <given-names>Claudia</given-names></string-name> &amp; <string-name><surname>von Heusinger</surname>, <given-names>Klaus</given-names></string-name> &amp; <string-name><surname>Portner</surname>, <given-names>Paul</given-names></string-name> (eds.), <source>Semantics: An International Handbook of Natural Language Meaning</source>, <publisher-loc>Berlin</publisher-loc>: <publisher-name>Mouton De Gruyter</publisher-name>.</mixed-citation></ref>
+<ref id="B21"><label>21</label><mixed-citation publication-type="journal"><string-name><surname>Ihsane</surname>, <given-names>Tabea</given-names></string-name>. <year>2000</year>. <article-title>Three types of possessive modifiers</article-title>. <source>Generative Grammar in Geneva</source> <volume>1</volume>. <fpage>21</fpage>&#8211;<lpage>54</lpage>.</mixed-citation></ref>
+<ref id="B22"><label>22</label><mixed-citation publication-type="journal"><string-name><surname>Ishikawa</surname>, <given-names>Masataka</given-names></string-name>. <year>1997</year>. <article-title>A note on reference and definite articles in Old Spanish</article-title>. <source>Word</source> <volume>48</volume>(<issue>1</issue>). <fpage>61</fpage>&#8211;<lpage>68</lpage>. DOI: <pub-id pub-id-type="doi">10.1080/00437956.1997.11432463</pub-id></mixed-citation></ref>
+<ref id="B23"><label>23</label><mixed-citation publication-type="journal"><string-name><surname>Kauhanen</surname>, <given-names>Henri</given-names></string-name> &amp; <string-name><surname>Walkden</surname>, <given-names>George</given-names></string-name>. <year>2018</year>. <article-title>Deriving the Constant Rate Effect</article-title>. <source>Natural Language &amp; Linguistic Theory</source> <volume>36</volume>(<issue>2</issue>). <fpage>483</fpage>&#8211;<lpage>521</lpage>. DOI: <pub-id pub-id-type="doi">10.1007/s11049-017-9380-1</pub-id></mixed-citation></ref>
+<ref id="B24"><label>24</label><mixed-citation publication-type="book"><string-name><surname>Kayne</surname>, <given-names>Richard S.</given-names></string-name> <year>1994</year>. <source>The antisymmetry of syntax</source>. <publisher-name>The MIT Press</publisher-name>.</mixed-citation></ref>
+<ref id="B25"><label>25</label><mixed-citation publication-type="journal"><string-name><surname>Kroch</surname>, <given-names>Anthony</given-names></string-name>. <year>1989</year>. <article-title>Reflexes of grammar in patterns of language change</article-title>. <source>Language Variation and Change</source> <volume>1</volume>(<issue>3</issue>). <fpage>199</fpage>&#8211;<lpage>244</lpage>. DOI: <pub-id pub-id-type="doi">10.1017/S0954394500000168</pub-id></mixed-citation></ref>
+<ref id="B26"><label>26</label><mixed-citation publication-type="webpage"><string-name><surname>Kroch</surname>, <given-names>Anthony</given-names></string-name> &amp; <string-name><surname>Santorini</surname>, <given-names>Beatrice</given-names></string-name>. <year>2021</year>. <source>Penn-BFM Parsed Corpus of Historical French (PPCHF)</source>. <uri>https://github.com/beatrice57/mcvf-plus-ppchf/</uri>.</mixed-citation></ref>
+<ref id="B27"><label>27</label><mixed-citation publication-type="thesis"><string-name><surname>Labrousse</surname>, <given-names>Mallorie</given-names></string-name>. <year>2018</year>. <source>&#201;tude diachronique et compar&#233;e de l&#8217;alternance [article+possessif+ nom]-[possessif+ nom] en catalan, espagnol et portugais, du 13e au 20e si&#232;cle</source>.: <publisher-loc>Paris</publisher-loc> <fpage>8</fpage> dissertation.</mixed-citation></ref>
+<ref id="B28"><label>28</label><mixed-citation publication-type="journal"><string-name><surname>Lyons</surname>, <given-names>John</given-names></string-name>. <year>1985</year>. <article-title>A possessive parameter</article-title>. <source>Sheffield Working Papers in Language and Linguistics</source> <volume>2</volume>. <fpage>98</fpage>&#8211;<lpage>104</lpage>.</mixed-citation></ref>
+<ref id="B29"><label>29</label><mixed-citation publication-type="book"><string-name><surname>Martineau</surname>, <given-names>France</given-names></string-name> &amp; <string-name><surname>Hirschb&#252;hler</surname>, <given-names>Paul</given-names></string-name> &amp; <string-name><surname>Kroch</surname>, <given-names>Anthony</given-names></string-name> &amp; <string-name><surname>Morin</surname>, <given-names>Yves Charles</given-names></string-name>. <year>2010</year>. <chapter-title>Corpus MCVF annot&#233; syntaxiquement, (2005&#8211;2010), dirig&#233; par France Martineau, avec Paul Hirschb&#252;hler</chapter-title>, <publisher-name>Anthony Kroch et Yves Charles Morin</publisher-name>.</mixed-citation></ref>
+<ref id="B30"><label>30</label><mixed-citation publication-type="journal"><string-name><surname>Miguel</surname>, <given-names>Matilde</given-names></string-name>. <year>2002</year>. <article-title>Possessive pronouns in European Portuguese and Old French</article-title>. <source>Journal of Portuguese Linguistics</source> <volume>1</volume>(<issue>2</issue>). <fpage>215</fpage>&#8211;<lpage>240</lpage>. DOI: <pub-id pub-id-type="doi">10.5334/jpl.43</pub-id></mixed-citation></ref>
+<ref id="B31"><label>31</label><mixed-citation publication-type="journal"><string-name><surname>Niyogi</surname>, <given-names>Partha</given-names></string-name> &amp; <string-name><surname>Berwick</surname>, <given-names>Robert</given-names></string-name>. <year>1997</year>. <article-title>A dynamical systems model for language change</article-title>. <source>Complex Systems</source> <volume>11</volume>(<issue>3</issue>). <fpage>161</fpage>&#8211;<lpage>204</lpage>.</mixed-citation></ref>
+<ref id="B32"><label>32</label><mixed-citation publication-type="thesis"><string-name><surname>Oliveira e Silva</surname>, <given-names>Giselle</given-names></string-name>. <year>1982</year>. <source>Estudo da regularidade na variayao dos possessivos no Portugues do Rio de Janeiro</source>: <publisher-name>Universidade Federal do Rio de Janeiro</publisher-name> dissertation.</mixed-citation></ref>
+<ref id="B33"><label>33</label><mixed-citation publication-type="journal"><string-name><surname>Partee</surname>, <given-names>Barbara H.</given-names></string-name> &amp; <string-name><surname>Borschev</surname>, <given-names>Vladimir</given-names></string-name>. <year>2003</year>. <article-title>Genitives, relational nouns, and argument-modifier ambiguity</article-title>. In <string-name><given-names>Cathrine Fabricius-Hansen</given-names> <surname>Ewald Lang</surname></string-name>, <string-name><given-names>Claudia</given-names> <surname>Maienborn</surname></string-name> (ed.), <source>Modifying adjuncts</source>, vol. <volume>4</volume>.</mixed-citation></ref>
+<ref id="B34"><label>34</label><mixed-citation publication-type="book"><string-name><surname>Picallo i Soler</surname>, <given-names>M. Carme</given-names></string-name> &amp; <string-name><surname>Rigau</surname>, <given-names>Gemma</given-names></string-name>. <year>1999</year>. <chapter-title>El posesivo y las relaciones posesivas</chapter-title>. In <string-name><surname>Bosque</surname>, <given-names>Ignacio</given-names></string-name> &amp; <string-name><surname>Demonte</surname>, <given-names>Violeta</given-names></string-name> (eds.), <source>Gram&#225;tica descriptive de la lengua espa&#241;ola</source> <volume>1</volume>. <fpage>973</fpage>&#8211;<lpage>1024</lpage>. <publisher-loc>Madrid</publisher-loc>: <publisher-name>Espasa Calpe</publisher-name>.</mixed-citation></ref>
+<ref id="B35"><label>35</label><mixed-citation publication-type="book"><string-name><surname>Pintzuk</surname>, <given-names>Susan</given-names></string-name>. <year>2003</year>. <chapter-title>Variationist approaches to syntactic change</chapter-title>. In <string-name><surname>Joseph</surname>, <given-names>Brian D.</given-names></string-name> &amp; <string-name><surname>Janda</surname>, <given-names>Richard D.</given-names></string-name> (eds.), <source>The Handbook of Historical Linguistics</source>, <fpage>509</fpage>&#8211;<lpage>528</lpage>. <publisher-name>Wiley Online Library</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1002/9780470756393.ch15</pub-id></mixed-citation></ref>
+<ref id="B36"><label>36</label><mixed-citation publication-type="book"><string-name><surname>Postma</surname>, <given-names>Gertjan</given-names></string-name>. <year>2010</year>. <chapter-title>The impact of failed changes</chapter-title>. In <string-name><surname>Breitbarth</surname>, <given-names>Anne</given-names></string-name> &amp; <string-name><surname>Lucas</surname>, <given-names>Christopher</given-names></string-name> &amp; <string-name><surname>Watts</surname>, <given-names>Sheila</given-names></string-name> &amp; <string-name><surname>Willis</surname>, <given-names>David</given-names></string-name> (eds.), <source>Continuity and Change in Grammar</source>, <fpage>269</fpage>&#8211;<lpage>302</lpage>. <publisher-name>John Benjamins Publishing</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1075/la.159.13pos</pub-id></mixed-citation></ref>
+<ref id="B37"><label>37</label><mixed-citation publication-type="webpage"><collab>P.S. Post Scriptum</collab>. <year>2014</year>. <source>P.S. Post Scriptum. Arquivo Digital de Escrita Quotidiana em Portugal e Espanha na &#201;poca Moderna</source>. <uri>http://ps.clul.ul.pt</uri>.</mixed-citation></ref>
+<ref id="B38"><label>38</label><mixed-citation publication-type="thesis"><string-name><surname>Rainsford</surname>, <given-names>Thomas Michael</given-names></string-name>. <year>2011</year>. <source>The emergence of group stress in medieval French</source>: <publisher-name>University of Cambridge</publisher-name> dissertation.</mixed-citation></ref>
+<ref id="B39"><label>39</label><mixed-citation publication-type="webpage"><string-name><surname>Randall</surname>, <given-names>Beth</given-names></string-name>. <year>2010</year>. <source>CorpusSearch</source>. <uri>http://corpussearch.sourceforge.net/</uri>.</mixed-citation></ref>
+<ref id="B40"><label>40</label><mixed-citation publication-type="book"><string-name><surname>Schoorlemmer</surname>, <given-names>Maaike</given-names></string-name>. <year>1998</year>. <chapter-title>Possessors, articles, and definiteness</chapter-title>. In <string-name><surname>Alexiadou</surname>, <given-names>Artemis</given-names></string-name> &amp; <string-name><surname>Wilder</surname>, <given-names>Chris</given-names></string-name> (eds.), <source>Possessors, Predicates and Movement in the Determiner Phrase</source> (Linguistik Aktuell/Linguistics Today 22), <fpage>55</fpage>&#8211;<lpage>86</lpage>. <publisher-loc>Amsterdam</publisher-loc>: <publisher-name>Benjamins</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1075/la.22.04sch</pub-id></mixed-citation></ref>
+<ref id="B41"><label>41</label><mixed-citation publication-type="thesis"><string-name><surname>Schwarz</surname>, <given-names>Florian</given-names></string-name>. <year>2009</year>. <source>Two Types of Definites in Natural Language</source>: <publisher-name>University of Massachusetts</publisher-name>, <publisher-loc>Amherst</publisher-loc> dissertation.</mixed-citation></ref>
+<ref id="B42"><label>42</label><mixed-citation publication-type="thesis"><string-name><surname>Simonenko</surname>, <given-names>Alexandra</given-names></string-name>. <year>2014</year>. <source>Grammatical Ingredients of Definiteness</source>: <publisher-name>McGill University</publisher-name> dissertation.</mixed-citation></ref>
+<ref id="B43"><label>43</label><mixed-citation publication-type="webpage"><string-name><surname>Simonenko</surname>, <given-names>Alexandra</given-names></string-name>. to appear. <article-title>Full vs. clitic vs. bound determiners</article-title>. <source>Oxford Handbook of Determiners</source>, ed. <string-name><given-names>Martina</given-names> <surname>Wiltschko</surname></string-name> and <string-name><given-names>Solveiga</given-names> <surname>Armoskaite</surname></string-name>. <uri>https://ling.auf.net/lingbuzz/004519</uri>.</mixed-citation></ref>
+<ref id="B44"><label>44</label><mixed-citation publication-type="webpage"><string-name><surname>Simonenko</surname>, <given-names>Alexandra</given-names></string-name> &amp; <string-name><surname>Carlier</surname>, <given-names>Anne</given-names></string-name>. <year>2020a</year>. <article-title>Between demonstrative and definite: A grammar competition model of the evolution of french l-determiners</article-title>. <source>Canadian Journal of Linguistics</source> <volume>65</volume>(<issue>3</issue>). <fpage>393</fpage>&#8211;<lpage>437</lpage>. <uri>https://ling.auf.net/lingbuzz/004947</uri>. DOI: <pub-id pub-id-type="doi">10.1017/cnj.2020.14</pub-id></mixed-citation></ref>
+<ref id="B45"><label>45</label><mixed-citation publication-type="book"><string-name><surname>Simonenko</surname>, <given-names>Alexandra</given-names></string-name> &amp; <string-name><surname>Carlier</surname>, <given-names>Anne</given-names></string-name>. <year>2020b</year>. <chapter-title>Givenness presupposition marking in a mixed system: Constituent order vs. determiners</chapter-title>. In <string-name><surname>Gergel</surname>, <given-names>Remus</given-names></string-name> &amp; <string-name><surname>Watkins</surname>, <given-names>Jonathan F.</given-names></string-name> (eds.), <source>Quantification and Scales in Change</source>, <fpage>203</fpage>&#8211;<lpage>233</lpage>. <publisher-name>Language Science Press</publisher-name>.</mixed-citation></ref>
+<ref id="B46"><label>46</label><mixed-citation publication-type="book"><string-name><surname>Starke</surname>, <given-names>Michal</given-names></string-name>. <year>2018</year>. <chapter-title>Complex left branches, spellout, and prefixes</chapter-title>. In <string-name><surname>Baunaz</surname>, <given-names>Lena</given-names></string-name> &amp; <string-name><surname>Haegeman</surname>, <given-names>Liliane</given-names></string-name> &amp; <string-name><surname>De Clercq</surname>, <given-names>Karen</given-names></string-name> &amp; <string-name><surname>Lander</surname>, <given-names>Eric</given-names></string-name> (eds.), <source>Exploring nanosyntax</source>, <fpage>239</fpage>&#8211;<lpage>249</lpage>. <publisher-loc>Oxford</publisher-loc>: <publisher-name>Oxford University Press</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1093/oso/9780190876746.003.0009</pub-id></mixed-citation></ref>
+<ref id="B47"><label>47</label><mixed-citation publication-type="book"><string-name><surname>Truswell</surname>, <given-names>Robert</given-names></string-name> &amp; <string-name><surname>Alcorn</surname>, <given-names>Rhona</given-names></string-name> &amp; <string-name><surname>Donaldson</surname>, <given-names>James</given-names></string-name> &amp; <string-name><surname>Wallenberg</surname>, <given-names>Joel</given-names></string-name>. <year>2019</year>. <chapter-title>A parsed linguistic atlas of early middle english</chapter-title>. In <string-name><surname>Alcorn</surname>, <given-names>Rhona</given-names></string-name> &amp; <string-name><surname>Kopaczyk</surname>, <given-names>Joanna</given-names></string-name> &amp; <string-name><surname>Los</surname>, <given-names>Bettelou</given-names></string-name> &amp; <string-name><surname>Molineaux</surname>, <given-names>Benjamin</given-names></string-name> (eds.), <source>Historical Dialectology in the Digital Age</source>, <fpage>19</fpage>&#8211;<lpage>38</lpage>. <publisher-loc>Edinburgh</publisher-loc>: <publisher-name>Edinburgh University Press</publisher-name>. DOI: <pub-id pub-id-type="doi">10.3366/edinburgh/9781474430531.003.0002</pub-id></mixed-citation></ref>
+<ref id="B48"><label>48</label><mixed-citation publication-type="book"><string-name><surname>Van Gelderen</surname>, <given-names>Elly</given-names></string-name>. <year>2004</year>. <source>Grammaticalization as economy</source>, vol. <volume>71</volume>. <publisher-loc>Amsterdam</publisher-loc>: <publisher-name>Benjamins</publisher-name>. DOI: <pub-id pub-id-type="doi">10.1075/la.71</pub-id></mixed-citation></ref>
+<ref id="B49"><label>49</label><mixed-citation publication-type="journal"><string-name><surname>Van Peteghem</surname>, <given-names>Marleen</given-names></string-name>. <year>2012</year>. <article-title>Possessives and grammaticalization in Romance</article-title>. <source>Folia Linguistica</source> <volume>46</volume>. DOI: <pub-id pub-id-type="doi">10.1515/flin.2012.020</pub-id></mixed-citation></ref>
+</ref-list>
+</back>
+</article>

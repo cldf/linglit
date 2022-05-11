@@ -1,4 +1,3 @@
-import re
 import typing
 import pathlib
 import collections
@@ -9,15 +8,13 @@ from pycldf.sources import Source
 from clldutils.misc import lazyproperty
 from pyglottolog import Glottolog as API
 
-__all__ = ['Glottolog', 'Record', 'Repository', 'Publication', 'Example']
+from linglit.util import clean_translation
 
-STARTINGQUOTE = "`‘"
-ENDINGQUOTE = "'’"
-ELLIPSIS = '…'
+__all__ = ['Glottolog', 'Record', 'Repository', 'Publication', 'Example']
 
 
 class Glottolog:
-    def __init__(self, glottolog):
+    def __init__(self, glottolog: typing.Union[str, pathlib.Path, API]):
         if not isinstance(glottolog, API):  # pragma: no cover
             glottolog = API(glottolog)
         self.by_glottocode = {}
@@ -39,7 +36,7 @@ class Glottolog:
         self.by_name = {k: v for k, v in self._by_name.items()}
         self.api = glottolog
 
-    def register_names(self, names):
+    def register_names(self, names: typing.Dict):
         self.by_name = {k: v for k, v in self._by_name.items()}
         for k, v in names.items():
             if v:
@@ -47,7 +44,7 @@ class Glottolog:
                 if v:
                     self.by_name[k] = self.by_glottocode[v]
 
-    def __call__(self, name):
+    def __call__(self, name: str) -> typing.Optional[str]:
         if name:
             if name in self.by_glottocode:
                 return self.by_glottocode[name].id
@@ -60,6 +57,9 @@ class Glottolog:
 
 @attr.s
 class Record:
+    """
+    Metadata record for a publication.
+    """
     ID = attr.ib(validator=attr.validators.matches_re(r'^[0-9]+$'))
     DOI = attr.ib()
     metalanguage = attr.ib()
@@ -83,110 +83,6 @@ class Record:
     @property
     def int_id(self) -> int:
         return int(self.ID)
-
-
-class Repository:
-    id = None
-
-    def __init__(self, d):
-        self.dir = pathlib.Path(d)
-
-    def __getitem__(self, item):  # pragma: no cover
-        raise NotImplementedError()
-
-    def create(self, verbose=False):  # pragma: no cover
-        raise NotImplementedError()
-
-    def iter_publications(self):  # pragma: no cover
-        raise NotImplementedError()
-
-    def register_language_names(self, glottolog):
-        return
-
-
-class Publication:
-    def __init__(self, record, d, repos=None):
-        self.record = record
-        self.dir = pathlib.Path(d)
-        self.repos = repos
-
-    def __str__(self):
-        return "{0.creators} {0.year}. {0.title}".format(self.record)
-
-    @lazyproperty
-    def cited_references(self):
-        return [ref for ref in self.references.values() if ref.id in self.cited]
-
-    @lazyproperty
-    def id(self):
-        return '{}{}'.format(self.repos.id, self.record.ID)
-
-    def as_source(self):
-        src = self.record.as_source()
-        src.id = self.id
-        return src
-
-    @lazyproperty
-    def references(self) -> collections.OrderedDict:
-        res = collections.OrderedDict()
-        for src in self.iter_references():
-            sid = '{}:{}'.format(self.id, src.id)
-            res[sid] = Source(src.genre, sid, _check_id=False, **src)
-        return res
-
-    def iter_references(self) -> typing.Generator[Source, None, None]:  # pragma: no cover
-        raise NotImplementedError()
-
-    @lazyproperty
-    def cited(self) -> collections.Counter:
-        res = collections.Counter()
-        for key in self.iter_cited():
-            res.update(['{}:{}'.format(self.id, key)])
-        return res
-
-    def iter_cited(self):  # pragma: no cover
-        raise NotImplementedError()
-
-    def example_sources(self, ex):
-        return [self.references[sid] for sid, _ in ex.Source if sid != self.id] + [self.as_source()]
-
-    @lazyproperty
-    def examples(self):
-        res = []
-        for ex in self.iter_examples():
-            ex.ID = '{}-{}'.format(self.id, ex.ID)
-            refs = []
-            for sid, pages in ex.Source:
-                refs.append(('{}:{}'.format(self.id, sid), pages))
-            if refs:
-                pages = 'via'
-                if ex.Local_ID:
-                    pages += ':{}'.format(ex.Local_ID)
-                refs.append((self.id, pages))
-            else:
-                refs.append((self.id, ex.Local_ID))
-            ex.Source = refs
-            res.append(ex)
-        return res
-
-    def iter_examples(self):  # pragma: no cover
-        raise NotImplementedError()
-
-
-def clean_translation(trs):
-    trs = re.sub(r'\s+', ' ', trs.strip())
-    try:
-        if trs[0] in STARTINGQUOTE:
-            trs = trs[1:]
-        if trs[-1] in ENDINGQUOTE:
-            trs = trs[:-1]
-        if len(trs) > 1 and (trs[-2] in ENDINGQUOTE) and (trs[-1] == '.'):
-            trs = trs[:-2]
-        trs = trs.replace("()", "")
-    except IndexError:  # s is  ''
-        pass
-    trs = trs.replace('...', ELLIPSIS)
-    return trs
 
 
 @attr.s
@@ -230,3 +126,100 @@ class Example:
             translation=self.Translated_Text,
             abbrs=self.Abbreviations,
         )
+
+
+class Publication:
+    def __init__(self, record: Record, d: typing.Union[str, pathlib.Path], repos=None):
+        self.record = record
+        self.dir = pathlib.Path(d)
+        self.repos = repos
+
+    def __str__(self):
+        return "{0.creators} {0.year}. {0.title}".format(self.record)
+
+    @property
+    def is_current(self) -> bool:
+        return self.record.current
+
+    @property
+    def has_open_license(self) -> bool:
+        return self.record.has_open_license
+
+    @lazyproperty
+    def cited_references(self) -> typing.List[Source]:
+        return [ref for ref in self.references.values() if ref.id in self.cited]
+
+    @lazyproperty
+    def id(self) -> str:
+        return '{}{}'.format(self.repos.id, self.record.ID)
+
+    def as_source(self) -> Source:
+        src = self.record.as_source()
+        src.id = self.id
+        return src
+
+    @lazyproperty
+    def references(self) -> typing.OrderedDict[str, Source]:
+        res = collections.OrderedDict()
+        for src in self.iter_references():
+            sid = '{}:{}'.format(self.id, src.id)
+            res[sid] = Source(src.genre, sid, _check_id=False, **src)
+        return res
+
+    def iter_references(self) -> typing.Generator[Source, None, None]:  # pragma: no cover
+        raise NotImplementedError()
+
+    @lazyproperty
+    def cited(self) -> collections.Counter:
+        res = collections.Counter()
+        for key in self.iter_cited():
+            res.update(['{}:{}'.format(self.id, key)])
+        return res
+
+    def iter_cited(self) -> typing.Generator[str, None, None]:  # pragma: no cover
+        raise NotImplementedError()
+
+    def example_sources(self, ex: Example) -> typing.List[Source]:
+        """
+        Resolve the source IDs for an example to `Source` instances.
+        """
+        return [self.references[sid] for sid, _ in ex.Source if sid != self.id] + [self.as_source()]
+
+    @lazyproperty
+    def examples(self):
+        res = []
+        for ex in self.iter_examples():
+            ex.ID = '{}-{}'.format(self.id, ex.ID)
+            refs = []
+            for sid, pages in ex.Source:
+                refs.append(('{}:{}'.format(self.id, sid), pages))
+            if refs:
+                pages = 'via'
+                if ex.Local_ID:
+                    pages += ':{}'.format(ex.Local_ID)
+                refs.append((self.id, pages))
+            else:
+                refs.append((self.id, ex.Local_ID))
+            ex.Source = refs
+            res.append(ex)
+        return res
+
+    def iter_examples(self) -> typing.Generator[Example, None, None]:  # pragma: no cover
+        raise NotImplementedError()
+
+
+class Repository:
+    id = None
+    lname_map = {}
+
+    def __init__(self, d):
+        self.dir = pathlib.Path(d)
+
+    def __getitem__(self, item: str) -> Publication:  # pragma: no cover
+        raise NotImplementedError()
+
+    def create(self, verbose=False):  # pragma: no cover
+        raise NotImplementedError()
+
+    def iter_publications(self):  # pragma: no cover
+        raise NotImplementedError()

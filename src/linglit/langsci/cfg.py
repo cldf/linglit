@@ -4,7 +4,7 @@ from linglit import util
 
 CFG_PATH = util.CFG_PATH / 'langsci'
 BIBTOOL_RSC = CFG_PATH / 'bibtool.rsc'
-LNAME_TO_GC = {
+LNAME_MAP = {
     'Logoori': 'logo1258',
     'Līkpākpáln': 'konk1269',
     'Totoró Namtrik': 'toto1306',

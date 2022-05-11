@@ -73,9 +73,7 @@ def branch_and_tree(item, olddata):
 
 class Repository(base.Repository):
     id = 'langsci'
-
-    def register_language_names(self, glottolog):
-        glottolog.register_names(cfg.LNAME_TO_GC)
+    lname_map = cfg.LNAME_MAP
 
     def __getitem__(self, item):
         return Publication(self.catalog[item], self.dir / item, self)

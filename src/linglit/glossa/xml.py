@@ -1,9 +1,16 @@
 import re
 import functools
 
+from clldutils.misc import nfilter
 from lxml.etree import fromstring, tostring
 from pyigt import IGT
 from pycldf.sources import Source
+
+
+def element(s):
+    if isinstance(s, str):
+        s = fromstring(s)
+    return s
 
 
 def parse(p):
@@ -25,11 +32,13 @@ sup = functools.partial(
 sub = functools.partial(translate, "aeox0123456789+-=()", "ₐₑₒₓ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎")
 
 
-def iter_text(p):
+def iter_text(p, strict=True):
     for e in p.xpath('child::node()'):
         if getattr(e, 'tag', None):
             if e.tag == 'sc':
-                yield ''.join(iter_text(e)).upper()
+                yield text(e).upper()
+            elif e.tag == 'italic':
+                yield text(e)
             elif e.tag == 'sup':
                 yield sup(e.text)
             elif e.tag == 'sub':
@@ -39,7 +48,9 @@ def iter_text(p):
                     yield e.text.upper()
                 else:  # pragma: no cover
                     raise ValueError(tostring(e))
-            elif e.tag in ['xref', 'ext-link', 'table-wrap', 'disp-formula']:
+            elif e.tag in ['xref', 'ext-link']:
+                yield e.text
+            elif e.tag in ['table-wrap', 'disp-formula']:
                 pass
             elif e.tag == 'list':
                 # FIXME: '<list xmlns:mml="http://www.w3.org/1998/Math/MathML"
@@ -52,12 +63,27 @@ def iter_text(p):
                 #  </list-item>\n</list>'
                 pass  # pragma: no cover
             elif e.text:
-                assert not isinstance(e.tag, str) or (e.tag in [
-                    'bold', 'italic', 'underline', 'strike', 'monospace', 'inline-formula'
-                ]), tostring(e)
+                if strict:
+                    assert not isinstance(e.tag, str) or (e.tag in [
+                        'bold', 'italic', 'underline', 'strike', 'monospace', 'inline-formula'
+                    ]), tostring(e)
                 yield e.text
         else:
             yield str(e)
+
+
+def parse_citation(s):
+    refs = []
+    s = element(s)
+    sub = s.xpath('p/sub')
+    if sub and sub[0].xpath('xref'):
+        for xref in sub[0].xpath('xref'):
+            refs.append((xref.get('rid'), xref.get('ref-type'), xref.text))
+        return text(sub[0]), refs
+
+
+def text(e, strict=True):
+    return ''.join(nfilter(iter_text(element(e), strict=strict)))
 
 
 def t(s, multi=False):
@@ -65,58 +91,19 @@ def t(s, multi=False):
     if not multi:
         assert len(p) == 1 or p[1].xpath('table-wrap') or (
                 len(p) == 2 and
-                ''.join(iter_text(p[1])).strip() in ['', '↔', 'ɛ elsewhere', 'ə elsewhere']), \
+                text(p[1]).strip() in ['', '↔', 'ɛ elsewhere', 'ə elsewhere']), \
             '\n'.join(tostring(pp).decode('utf8') for pp in p)
-        return ''.join(iter_text(p[0]))
-    return '\n'.join(''.join(iter_text(pp)) for pp in p)
+        return text(p[0])
+    return '\n'.join(text(pp) for pp in p)
 
 
 def parse_igt(d):
     """
-    <list list-type="final-sentence">
-        <list-item>
-            <p>
-                <italic>Tongan</italic>
-                (
-                    <xref ref-type="bibr" rid="B23">Otsuka 2005: 73</xref>
-                )
-            </p>
-        </list-item>
-    </list>
-
-#
-# FIXME: orthogonal layout:
-#
-<list list-type="sentence-gloss">
-<list-item>
-<list list-type="final-sentence">
-<list-item><p>Velar palatalization: velars palatalize to postalveolars</p></list-item>
-</list>
-</list-item>
-<list-item>
-<list list-type="word">
-<list-item><p>ba&#638;<bold>k</bold>-a</p></list-item>
-<list-item><p>k&#638;o<bold>&#609;</bold>-a</p></list-item>
-<list-item><p>p&#638;a<bold>x</bold></p></list-item>
-</list>
-<list list-type="word">
-<list-item><p>&#8216;boat&#8217;</p></list-item>
-<list-item><p>&#8216;circle-<sc>GEN</sc>&#8217;</p></list-item>
-<list-item><p>&#8216;dust&#8217;</p></list-item>
-</list>
-<list list-type="word">
-<list-item><p>ba&#638;<bold>&#679;</bold>-itsa</p></list-item>
-<list-item><p>k&#638;o<bold>&#658;</bold>-&#601;ts</p></list-item>
-<list-item><p>p&#638;a<bold>&#643;</bold>-&#601;k</p></list-item>
-</list>
-<list list-type="word">
-<list-item><p>&#8216;boat-<sc>DIMINUTIVE</sc>&#8217;</p></list-item>
-<list-item><p>&#8216;circle-<sc>DIMINUTIVE</sc>&#8217;</p></list-item>
-<list-item><p>&#8216;powder&#8217;</p></list-item>
-</list>
-</list-item>
+    #
+    # FIXME: orthogonal layout - see tests/glossa/6371.xml
+    #
     """
-    comment = ''
+    comment, refs = [], []
     comment_pattern = re.compile(r'\s\s+\(([^)]+)\)$')
     aw, gl, tr = [], [], []
     for i, li in enumerate(d.xpath('list-item')):
@@ -135,7 +122,7 @@ def parse_igt(d):
                 word = t(tiers[0])
                 m = comment_pattern.search(word)
                 if m:
-                    comment = m.groups()[0]
+                    comment.append(m.groups()[0])
                     word = word[:m.start()]
                 aw.append(word)
                 gl.append(t(tiers[1]))
@@ -144,10 +131,14 @@ def parse_igt(d):
             for i, l in enumerate(fs):
                 items = l.xpath('list-item')
                 for j, lii in enumerate(items):
+                    res = parse_citation(lii)
+                    if res:
+                        comment.append(res[0])
+                        refs = res[1]
                     tr.append(t(lii, multi=True))
                 break
 
-    return aw, gl, '\n'.join(tr), comment
+    return aw, gl, '\n'.join(tr), '; '.join(comment), refs
 
 
 def iter_igt(d, abbrs):
@@ -171,23 +162,13 @@ def iter_igt(d, abbrs):
         for ll in l.xpath("list-item/list[@list-type='sentence-gloss']"):
             if ll.xpath(".//list[@list-type='gloss']"):
                 # there are nested examples! skip the wrapper.
-                continue
+                continue  # pragma: no cover
             # look for language and refs:
             fs = ll.xpath("list-item/list[@list-type='final-sentence']")
             if fs:
                 items = fs[0].xpath('list-item')
-                if items and \
-                        len(items) == 1 and \
-                        (
-                                items[0].xpath('p/italic') or
-                                (items[0].xpath('p') and re.match(
-                                    r'([A-Z][a-z]+)(\s+[A-Z][a-z]+)*\s+\(',
-                                    items[0].xpath('p')[0].text or ''))):
-                    # parse language name!
-                    if items[0].xpath('p/italic'):
-                        lname = items[0].xpath('p/italic')[0].text
-                    else:
-                        lname = items[0].xpath('p')[0].text.split('(')[0].strip()
+                if items and len(items) == 1:
+                    lname = parse_language_name(items[0])
                     if lname and len(lname) > 1 and lname[0].isupper():
                         lang = lname
                     for xref in items[0].xpath('p/xref'):
@@ -198,9 +179,25 @@ def iter_igt(d, abbrs):
                 if res:
                     igt = IGT(phrase=res[0], gloss=res[1], translation=res[2], abbrs=abbrs)
                     if igt.primary_text not in seen:
+                        refs.extend(res[4])
                         count += 1
                         yield count, number, letter, lang, refs, igt, res[3]
                         seen.add(igt.primary_text)
+
+
+def parse_language_name(e):
+    e = element(e)
+    n = None
+    if e.xpath('p/italic'):
+        n = e.xpath('p/italic')[0].text
+    if e.xpath('p') and re.match(r'([A-Z][a-z]+)(\s+[A-Z][a-z]+)*\s+\(', e.xpath('p')[0].text or ''):
+        n = e.xpath('p')[0].text.split('(')[0].strip()
+    if e.xpath('p/sub') and not (e.xpath('p')[0].text or '').strip():
+        n = text(e.xpath('p/sub')[0])
+    if e.xpath('p/sc') and not (e.xpath('p')[0].text or '').strip():
+        n = text(e.xpath('p/sc')[0])
+    if n:
+        return ' '.join(w.capitalize() for w in n.split())
 
 
 def names(xp):
@@ -208,13 +205,13 @@ def names(xp):
     for n in xp:
         try:
             if not n.xpath('surname'):
-                continue
+                continue  # pragma: no cover
             name = n.xpath('surname')[0].text
             gn = n.xpath('given-names')
             if gn:
                 name += ', {}'.format(gn[0].text)
             res.append(name)
-        except:
+        except:  # pragma: no cover
             raise ValueError(tostring(n))
     return ' and '.join(res)
 
@@ -224,7 +221,7 @@ def abbreviations(doc):
     res = {}
     if sec:
         ps = sec[0].xpath('p')
-        if not ps:
+        if not ps:  # pragma: no cover
             return res
         abbr, desc = None, []
         for p in ps:
@@ -258,7 +255,7 @@ def metadata(p, doc):
     assert 'creativecommons.org/licenses/by/' in license, license
     doi = doc.xpath(".//article-id[@pub-id-type='doi']")[0].text
     assert doi
-    title = re.sub(r'\s+', ' ', ''.join(iter_text(doc.xpath(".//article-title")[0])))
+    title = re.sub(r'\s+', ' ', text(doc.xpath(".//article-title")[0]))
     assert title
 
     return dict(
@@ -274,67 +271,74 @@ def metadata(p, doc):
     )
 
 
+def parse_ref(ref):
+    ref = element(ref)
+    sid = ref.get('id')
+    mixed = False
+    try:
+        ref = ref.xpath('element-citation')[0]
+    except IndexError:
+        mixed = True
+        ref = ref.xpath('mixed-citation')[0]
+
+    genre = {
+        'journal': 'article',
+        'confproc': 'inproceedings'
+    }.get(ref.get('publication-type'), ref.get('publication-type'))
+    md = {}
+    for pg in ref.xpath('person-group'):
+        md[pg.get('person-group-type')] = names(pg.xpath('name'))
+    if ref.xpath('string-name'):
+        md['author'] = names(ref.xpath('string-name'))
+    for year in ref.xpath('year'):
+        md['year'] = year.text
+        break
+    if ref.xpath('fpage'):
+        md['pages'] = ref.xpath('fpage')[0].text
+        lpage = ref.xpath('lpage')
+        if lpage:
+            md['pages'] += '-{}'.format(lpage[0].text)
+    p = ref.xpath("pub-id[@pub-id-type='doi']")
+    if p:
+        md['doi'] = p[0].text
+    p = ref.xpath("article-title")
+    if p:
+        md['title'] = p[0].text
+    p = ref.xpath("chapter-title")
+    if p:
+        genre = 'incollection'
+        md['title'] = p[0].text
+    p = ref.xpath('source')
+    if p:
+        f = {
+            'incollection': 'booktitle',
+            'article': 'journal',
+        }.get(genre, 'title')
+        md[f] = p[0].text
+        if md[f].endswith('. doctoral dissertation'):
+            md[f] = md[f].replace('. doctoral dissertation', '')
+            genre = 'phdthesis'
+    if mixed and '. doctoral dissertation' in text(ref, strict=False):
+        genre = "phdthesis"
+
+    for xp, field in [
+        ('conf-loc', 'address'),
+        ('conf-name', 'howpublished'),
+        ('conf-sponsor', 'publisher'),
+        ('publisher-loc', 'address'),
+        ('publisher-name', 'publisher'),
+        ('volume', 'volume'),
+    ]:
+        p = ref.xpath(xp)
+        if p:
+            md[field] = p[0].text
+
+    if genre == 'phdthesis' and 'publisher' in md:
+        md['school'] = md.pop('publisher')
+
+    return Source(genre, sid, **md)
+
+
 def refs(doc):
     for ref in doc.xpath('.//ref-list/ref'):
-        sid = ref.get('id')
-        try:
-            ref = ref.xpath('element-citation')[0]
-        except IndexError:
-            ref = ref.xpath('mixed-citation')[0]
-
-        genre = {
-            'journal': 'article',
-            'confproc': 'inproceedings'
-        }.get(ref.get('publication-type'), ref.get('publication-type'))
-        if genre == 'journal':
-            genre = 'article'
-        md = {}
-        for pg in ref.xpath('person-group'):
-            md[pg.get('person-group-type')] = names(pg.xpath('name'))
-        if ref.xpath('string-name'):
-            md['author'] = names(ref.xpath('string-name'))
-        for year in ref.xpath('year'):
-            md['year'] = year.text
-            break
-        if ref.xpath('fpage'):
-            md['pages'] = ref.xpath('fpage')[0].text
-            lpage = ref.xpath('lpage')
-            if lpage:
-                md['pages'] += '-{}'.format(lpage[0].text)
-        p = ref.xpath("pub-id[@pub-id-type='doi']")
-        if p:
-            md['doi'] = p[0].text
-        p = ref.xpath("article-title")
-        if p:
-            md['title'] = p[0].text
-        p = ref.xpath("chapter-title")
-        if p:
-            genre = 'incollection'
-            md['title'] = p[0].text
-        p = ref.xpath('source')
-        if p:
-            f = {
-                'incollection': 'booktitle',
-                'article': 'journal',
-            }.get(genre, 'title')
-            md[f] = p[0].text
-            if md[f].endswith('. doctoral dissertation'):
-                md[f] = md[f].replace('. doctoral dissertation', '')
-                genre = 'phdthesis'
-
-        for xp, field in [
-            ('conf-loc', 'address'),
-            ('conf-name', 'howpublished'),
-            ('conf-sponsor', 'publisher'),
-            ('publisher-loc', 'address'),
-            ('publisher-name', 'publisher'),
-            ('volume', 'volume'),
-        ]:
-            p = ref.xpath(xp)
-            if p:
-                md[field] = p[0].text
-
-        if genre == 'phdthesis' and 'publisher' in md:
-            md['school'] = md.pop('publisher')
-
-        yield Source(genre, sid, **md)
+        yield parse_ref(ref)

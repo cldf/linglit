@@ -8,6 +8,6 @@ def register(parser):
     add_provider(parser)
 
 
-def run(args):
+def run(args):  # pragma: no cover
     repo = get_provider(args)
     repo.create(verbose=True)
