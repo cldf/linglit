@@ -13,6 +13,11 @@ def repo():
     return Repository(pathlib.Path(__file__).parent / 'langsci')
 
 
+@pytest.fixture
+def tmp_repo(tmp_path):
+    return Repository(tmp_path)
+
+
 def test_Repository(repo):
     pubs = list(repo.iter_publications())
     assert len(pubs) == 1
@@ -21,16 +26,37 @@ def test_Repository(repo):
 
     assert len(pub.examples) == 1
     assert pub.example_sources(pub.examples[0])[0].genre == 'book'
+    assert repo['1']
 
 
-def test_Repository_fetch_files(tmp_path, mocker):
+def test_Repository_fetch_filelist(tmp_repo, mocker, langsci_repos):
+    class Req:
+        def urlopen(self, url):
+            return mocker.Mock(read=lambda: langsci_repos.joinpath('catalog.tsv').read_bytes())
+
+    mocker.patch('linglit.langsci.catalog.urllib.request', Req())
+    tmp_repo.fetch_catalog()
+    assert len(tmp_repo.catalog) == 1
+
+    content = b'{"default_branch": "", "url": "", "tree": [{"path": "LSP", "mode": "", ' \
+              b'"type": "blob", "sha": "", "url": ""}]}'
+    mocker.patch('linglit.langsci.repository.ensure_cmd', lambda _: True)
+    mocker.patch(
+        'linglit.langsci.repository.subprocess',
+        mocker.Mock(check_output=lambda *a, **kw: content))
+    mocker.patch('linglit.langsci.repository.TEX_BRANCH', {1: 'main'})
+    tmp_repo.fetch_filelist()
+    tmp_repo.fetch_filelist()
+
+
+def test_Repository_fetch_files(tmp_repo, mocker, tmp_path):
     content = b'abc'
     mocker.patch(
         'linglit.langsci.repository.subprocess',
         mocker.Mock(
             check_output=lambda *a, **kw: json.dumps(
                 dict(content=base64.b64encode(content).decode(), encoding='base64'))))
-    fl = tmp_path / 'filelist.json'
+    fl = tmp_repo.path('filelist.json')
     jsonlib.dump(dict({
         "16": [
             "main",
@@ -49,9 +75,8 @@ def test_Repository_fetch_files(tmp_path, mocker):
                 ]
             }]
     }), fl)
-    repo = Repository(tmp_path)
-    repo.fetch_files(fl)
-    assert tmp_path.joinpath('16', 'main.tex').exists()
+    tmp_repo.fetch_files(fl)
+    assert tmp_repo.path('16', 'main.tex').exists()
 
 
 def test_File(mocker, tmp_path):

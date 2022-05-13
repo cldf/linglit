@@ -218,6 +218,9 @@ class Repository:
     def __getitem__(self, item: str) -> Publication:  # pragma: no cover
         raise NotImplementedError()
 
+    def path(self, *comps):
+        return self.dir.joinpath(*comps)
+
     def create(self, verbose=False):  # pragma: no cover
         raise NotImplementedError()
 

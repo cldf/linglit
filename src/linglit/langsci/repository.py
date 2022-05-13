@@ -66,7 +66,7 @@ def gh_api(item, path=None, url=None):
 
 def branch_and_tree(item, olddata):
     default_branch = olddata[0] if olddata else gh_api(item)['default_branch']
-    if int(getattr(item, 'ID', item)) in TEX_BRANCH:
+    if int(getattr(item, 'ID', item)) in TEX_BRANCH:  # pragma: no cover
         default_branch = TEX_BRANCH[item.int_id]
     return default_branch, gh_api(item, '/git/trees/{}?recursive=1'.format(default_branch))
 
@@ -85,7 +85,7 @@ class Repository(base.Repository):
             if item.int_id not in MISSING_TEX_SOURCES:
                 yield Publication(item, self.dir / item.ID, self)
 
-    def create(self, verbose=False):
+    def create(self, verbose=False):  # pragma: no cover
         """
         Create a repository from scratch (may need to be restarted a couple of times if
         GH rate limit problems are encountered):

@@ -22,6 +22,11 @@ def test_dir():
 
 
 @pytest.fixture
+def langsci_repos(test_dir):
+    return test_dir / 'langsci'
+
+
+@pytest.fixture
 def glossa_repos(test_dir):
     return test_dir / 'glossa'
 
