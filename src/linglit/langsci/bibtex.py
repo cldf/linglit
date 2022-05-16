@@ -193,5 +193,5 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             try:
                 for k, e in database.parse_string('@' + chunk, 'bibtex').entries.items():
                     yield to_source(k, e)
-            except:  # pragma: no cover
-                raise ValueError('{}::@{}'.format(ps, chunk))
+            except:  # pragma: no cover # noqa: E722
+                raise ValueError('{}::@{}'.format(ps, chunk))  # pragma: no cover

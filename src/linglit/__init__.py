@@ -1,5 +1,5 @@
-import collections
 import pathlib
+import collections
 
 from tqdm import tqdm
 

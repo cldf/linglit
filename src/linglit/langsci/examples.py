@@ -1,3 +1,4 @@
+import functools
 import re
 import typing
 import hashlib
@@ -24,7 +25,7 @@ CHAR_REPLS = {
 }
 
 
-def parse_langinfo(l):
+def parse_langinfo(line):
     def get_name(arg):
         if len(arg.contents) == 1 and \
                 isinstance(arg.contents[0], TexCmd) and \
@@ -32,7 +33,7 @@ def parse_langinfo(l):
             return '\\' + arg.contents[0].name
         return ''.join(TexSoup(re.sub(r'\\label{[^}]+}', '', arg.string)).text)
 
-    langinfo = TexSoup(r'\langinfo' + l.split(r'\langinfo')[-1], tolerance=1).langinfo
+    langinfo = TexSoup(r'\langinfo' + line.split(r'\langinfo')[-1], tolerance=1).langinfo
     if langinfo and len(langinfo.args) == 3:
         return (
             get_name(langinfo.args[0]),
@@ -41,20 +42,18 @@ def parse_langinfo(l):
         )
 
 
-def parse_ili(l):
+def parse_cmd(cmd, line):
     try:
-        ili = TexSoup(r'\ili{' + l.split(r'\ili{')[-1].split('}')[0], tolerance=1).ili
-    except:  # pragma: no cover
-        raise ValueError(l)
-    return (ili.args[0].string, '', '')
+        # Cut out the command and its first argument from line:
+        texcmd = '\\' + cmd + '{' + line.split('\\' + cmd + '{')[-1].split('}')[0]
+        cmd = getattr(TexSoup(texcmd, tolerance=1), cmd)
+    except:  # noqa: E722
+        raise ValueError(line)  # pragma: no cover
+    return (cmd.args[0].string.split('!')[-1], '', '')
 
 
-def parse_il(l):
-    try:
-        il = TexSoup(r'\il{' + l.split(r'\il{')[-1].split('}')[0], tolerance=1).il
-    except:  # pragma: no cover
-        raise ValueError(l)
-    return (il.args[0].string.split('!')[-1], '', '')
+parse_ili = functools.partial(parse_cmd, 'ili')
+parse_il = functools.partial(parse_cmd, 'il')
 
 
 def iter_gll(s):
@@ -127,14 +126,14 @@ def iter_gll(s):
         prevline = line
 
 
-def recombine(l):
+def recombine(morphemes):
     """
     For better visual alignment, morphemes in examples are sometimes whitespace-separated - making
     them appear as words. This function recombines morphemes into words according to leading and
     trailing LGR morpheme separators.
     """
     chunk = []
-    for c in l:
+    for c in morphemes:
         if not c:
             continue
         if c[0] in MORPHEME_SEPARATORS or (chunk and chunk[-1][-1] in MORPHEME_SEPARATORS):
@@ -250,8 +249,8 @@ def lines_and_comment(lines):
                     comment.append(s.jambox.string)
                     s.jambox.delete()
                     line = str(s)
-            except:  # pragma: no cover
-                pass
+            except:  # noqa: E722
+                pass  # pragma: no cover
             if line:
                 res.append(line)
 
@@ -313,7 +312,7 @@ def make_example(
         comment.append(cmt)
 
     # ... and split the remainder at latex newlines:
-    aligned = [l.strip() for l in re.split(r'\\(?:\\|newline)', aligned) if l.strip()]
+    aligned = [line.strip() for line in re.split(r'\\(?:\\|newline)', aligned) if line.strip()]
 
     # book-specifics:
     if pub.record.int_id == 212:
@@ -328,14 +327,14 @@ def make_example(
         comment.append(cmt)
 
     al = []
-    for l in aligned:
-        delatexed, cmt, _refs = to_text(l)
+    for line in aligned:
+        delatexed, cmt, _refs = to_text(line)
         if _refs:
             refs.extend(_refs)
         if cmt:
             comment.append(cmt)
-        if delatexed.replace('*', '').strip():
-            al.append(l)
+        if delatexed.replace('*', '').strip():  # Not an empty line (when texed).
+            al.append(line)
     aligned = al
 
     if len(aligned) == 3:
@@ -373,7 +372,7 @@ def make_example(
 
     obj = obj or IGT(phrase=pt, gloss=gl).primary_text
     return Example(
-        ID = hashlib.sha256(obj.replace('.', '').encode('utf8')).hexdigest()[:10],
+        ID=hashlib.sha256(obj.replace('.', '').encode('utf8')).hexdigest()[:10],
         Primary_Text=obj,
         Analyzed_Word=pt,
         Gloss=gl,

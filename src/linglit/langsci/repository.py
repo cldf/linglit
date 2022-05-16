@@ -80,8 +80,8 @@ class Repository(base.Repository):
 
     def iter_publications(self):
         for item in self.catalog:
-            #if item.int_id != 22:
-            #    continue
+            # if item.int_id != 22:
+            #     continue
             if item.int_id not in MISSING_TEX_SOURCES:
                 yield Publication(item, self.dir / item.ID, self)
 

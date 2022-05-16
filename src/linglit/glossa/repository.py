@@ -45,7 +45,7 @@ def get_xml(url, d, verbose=False):
             p = d / '{}.xml'.format(m.group('id'))
             if not p.exists():
                 page = bs(download(url, verbose=verbose), 'lxml')
-                xml_url = page.find('a', href=True, text='Download XML')
+                xml_url = page.find('a', href=True, string='Download XML')
                 if xml_url:
                     xml_url = xml_url['href']
                     p.write_text(download(BASE_URL + xml_url), encoding='utf8')

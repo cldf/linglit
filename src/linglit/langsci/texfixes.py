@@ -21,7 +21,7 @@ def normalize_cite(t):
         flags=re.MULTILINE)
 
     t = replace_pattern(
-        r"\\(parencites?|cites|textcites)\*?\s*(\([^)]*\)|\[[^]]*]|{[^}]+})+",  prepl, t)
+        r"\\(parencites?|cites|textcites)\*?\s*(\([^)]*\)|\[[^]]*]|{[^}]+})+", prepl, t)
 
     t = t.replace('\\citesource{', '\\customcitesource{')
 
@@ -54,7 +54,8 @@ def read_tex(p, with_input=True):
 
     # For book 259:
     t = re.sub(
-        r'\\input ([a-z]+|complex-predicates|control-raising)-include\.tex}{\\input chapters/([a-z]+|complex-predicates|control-raising)-include\.tex}',
+        r'\\input ([a-z]+|complex-predicates|control-raising)-include\.tex}'
+        r'{\\input chapters/([a-z]+|complex-predicates|control-raising)-include\.tex}',
         lambda m: r'\input{chapters/%s-include.tex}}' % m.groups()[0],
         t
     )

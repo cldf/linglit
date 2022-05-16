@@ -30,7 +30,7 @@ FIX_FILENAMES = {
 class Publication(base.Publication):
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
-        if self.record.int_id in MAIN_TEX_EXCEPTIONS:
+        if self.record.int_id in MAIN_TEX_EXCEPTIONS:  # pragma: no cover
             main = self.dir / MAIN_TEX_EXCEPTIONS[self.record.int_id]
         else:
             main = self._find_main_tex()
@@ -61,7 +61,8 @@ class Publication(base.Publication):
                         if key in self.bibkeys:
                             refs.append((self.bibkeys[key], pages))
                     ex.Source = refs
-                    if ex.Language_Name is None and (self.record.int_id, p.name) in texfile2language:
+                    if ex.Language_Name is None and \
+                            (self.record.int_id, p.name) in texfile2language:
                         ex.Language_Name = texfile2language[(self.record.int_id, p.name)]
                     if ex.Language_Name is None and self.record.objectlanguage:
                         ex.Language_Name = self.record.objectlanguage
@@ -90,7 +91,7 @@ class Publication(base.Publication):
             self._refs = list(iter_bib(self.bibs))
         yield from iter(self._refs)
 
-    #--- langsci specifics
+    # --- langsci specifics
     def read_tex(self, p, with_input=True):
         if str(p) not in self._includes_tex:
             self._includes_tex[str(p)] = texfixes.read_tex(p, with_input=with_input)
@@ -116,15 +117,18 @@ class Publication(base.Publication):
 
         return res
 
+    def _get_includes_and_bibs(self):
+        self._includes, self._bibs = includes_and_bib(
+            self.dir,
+            self.main,
+            CHAPTERS_NAME if self.main.parent.joinpath(CHAPTERS_NAME).exists() else 'indexed',
+            no_bib=self.record.int_id in NO_BIB,
+        )
+
     @property
     def bibs(self):
         if self._bibs is None:
-            self._includes, self._bibs = includes_and_bib(
-                self.dir,
-                self.main,
-                CHAPTERS_NAME if self.main.parent.joinpath(CHAPTERS_NAME).exists() else 'indexed',
-                no_bib=self.record.int_id in NO_BIB,
-            )
+            self._get_includes_and_bibs()  # pragma: no cover
         return self._bibs
 
     @lazyproperty
@@ -139,12 +143,7 @@ class Publication(base.Publication):
     @property
     def includes(self):
         if self._includes is None:
-            self._includes, self._bibs = includes_and_bib(
-                self.dir,
-                self.main,
-                CHAPTERS_NAME if self.main.parent.joinpath(CHAPTERS_NAME).exists() else 'indexed',
-                no_bib=self.record.int_id in NO_BIB,
-            )
+            self._get_includes_and_bibs()
         return self._includes
 
     def _find_makefile(self):
@@ -171,7 +170,7 @@ class Publication(base.Publication):
                     if tex and make.parent.joinpath(tex).exists():
                         return make.parent / tex
             for line in make.read_text(encoding='utf8').splitlines():
-                pdf = re.search(r'\s+([A-Za-z_0-9]+)\.pdf(\s|$)', line.strip())
+                pdf = re.search(r'\s+([A-Za-z_0-9]+)\.pdf(\s|$)', line.strip(), flags=re.MULTILINE)
                 if pdf:
                     tex = '{}.tex'.format(pdf.groups()[0])
                     if tex and make.parent.joinpath(tex).exists():
@@ -214,9 +213,9 @@ def includes_and_bib(d, main, chapterpath, no_bib):
     # Three variants of bib detection:
     bibs = [p for p in d.glob('*.bib')]
     if no_bib:  # explicitly marked as not having a bib
-        bibs = []
+        bibs = []  # pragma: no cover
     elif len(bibs) == 1:  # only one choice for bibs
-        pass
+        pass  # pragma: no cover
     else:  # more bib files available, pick by parsing the main tex file
         bibs, bibnames = [], []
         for soup in tex_lines:

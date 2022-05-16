@@ -90,7 +90,7 @@ def t(s, multi=False):
     p = s.xpath('p')
     if not multi:
         assert len(p) == 1 or p[1].xpath('table-wrap') or (
-                len(p) == 2 and
+                len(p) == 2 and  # noqa: W504
                 text(p[1]).strip() in ['', '↔', 'ɛ elsewhere', 'ə elsewhere']), \
             '\n'.join(tostring(pp).decode('utf8') for pp in p)
         return text(p[0])
@@ -144,8 +144,10 @@ def parse_igt(d):
 def iter_igt(d, abbrs):
     seen, count, number, letter = set(), 0, None, None
     lang, refs = None, []
-    for l in d.xpath(".//list[@list-type='gloss']"):
-        numbers = [t(li.xpath('list-item')[0]) for li in l.xpath(".//list[@list-type='wordfirst']")]
+    for gloss in d.xpath(".//list[@list-type='gloss']"):
+        numbers = [
+            t(li.xpath('list-item')[0])
+            for li in gloss.xpath(".//list[@list-type='wordfirst']")]
         for n in numbers:
             m = re.match(r'\(([0-9]+|[iv]+)\)', n)
             if m:
@@ -159,7 +161,7 @@ def iter_igt(d, abbrs):
                 letter = m.groups()[0]
                 break
 
-        for ll in l.xpath("list-item/list[@list-type='sentence-gloss']"):
+        for ll in gloss.xpath("list-item/list[@list-type='sentence-gloss']"):
             if ll.xpath(".//list[@list-type='gloss']"):
                 # there are nested examples! skip the wrapper.
                 continue  # pragma: no cover
@@ -190,7 +192,8 @@ def parse_language_name(e):
     n = None
     if e.xpath('p/italic'):
         n = e.xpath('p/italic')[0].text
-    if e.xpath('p') and re.match(r'([A-Z][a-z]+)(\s+[A-Z][a-z]+)*\s+\(', e.xpath('p')[0].text or ''):
+    if e.xpath('p') and re.match(
+            r'([A-Z][a-z]+)(\s+[A-Z][a-z]+)*\s+\(', e.xpath('p')[0].text or ''):
         n = e.xpath('p')[0].text.split('(')[0].strip()
     if e.xpath('p/sub') and not (e.xpath('p')[0].text or '').strip():
         n = text(e.xpath('p/sub')[0])
@@ -211,8 +214,8 @@ def names(xp):
             if gn:
                 name += ', {}'.format(gn[0].text)
             res.append(name)
-        except:  # pragma: no cover
-            raise ValueError(tostring(n))
+        except:  # pragma: no cover # noqa: E722
+            raise ValueError(tostring(n))  # pragma: no cover
     return ' and '.join(res)
 
 
