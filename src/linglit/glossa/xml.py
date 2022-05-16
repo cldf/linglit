@@ -36,9 +36,9 @@ def iter_text(p, strict=True):
     for e in p.xpath('child::node()'):
         if getattr(e, 'tag', None):
             if e.tag == 'sc':
-                yield text(e).upper()
+                yield text(e, strict=strict).upper()
             elif e.tag == 'italic':
-                yield text(e)
+                yield text(e, strict=strict)
             elif e.tag == 'sup':
                 yield sup(e.text)
             elif e.tag == 'sub':
@@ -286,7 +286,11 @@ def parse_ref(ref):
 
     genre = {
         'journal': 'article',
-        'confproc': 'inproceedings'
+        'confproc': 'inproceedings',
+        'webpage': 'online',
+        '/label': 'misc',
+        'conf-proc': 'inproceedings',
+        'cofproc': 'inproceedings',
     }.get(ref.get('publication-type'), ref.get('publication-type'))
     md = {}
     for pg in ref.xpath('person-group'):
@@ -295,6 +299,12 @@ def parse_ref(ref):
         md['author'] = names(ref.xpath('string-name'))
     for year in ref.xpath('year'):
         md['year'] = year.text
+        break
+    for year in ref.xpath('edition'):
+        md['edition'] = year.text
+        break
+    for uri in ref.xpath('uri'):
+        md['url'] = uri.text
         break
     if ref.xpath('fpage'):
         md['pages'] = ref.xpath('fpage')[0].text
@@ -306,24 +316,25 @@ def parse_ref(ref):
         md['doi'] = p[0].text
     p = ref.xpath("article-title")
     if p:
-        md['title'] = p[0].text
+        md['title'] = text(p[0])
     p = ref.xpath("chapter-title")
     if p:
         genre = 'incollection'
-        md['title'] = p[0].text
+        md['title'] = text(p[0])
     p = ref.xpath('source')
     if p:
         f = {
             'incollection': 'booktitle',
             'article': 'journal',
         }.get(genre, 'title')
-        md[f] = p[0].text
+        md[f] = text(p[0])
         if md[f].endswith('. doctoral dissertation'):
             md[f] = md[f].replace('. doctoral dissertation', '')
             genre = 'phdthesis'
     if mixed and '. doctoral dissertation' in text(ref, strict=False):
         genre = "phdthesis"
-
+    if mixed and 'MA dissertation' in text(ref, strict=False):  # pragma: no cover
+        genre = "mastersthesis"
     for xp, field in [
         ('conf-loc', 'address'),
         ('conf-name', 'howpublished'),
@@ -331,12 +342,15 @@ def parse_ref(ref):
         ('publisher-loc', 'address'),
         ('publisher-name', 'publisher'),
         ('volume', 'volume'),
+        ('issue', 'number'),
+        ('issn', 'issn'),
+        ('isbn', 'isbn'),
     ]:
         p = ref.xpath(xp)
         if p:
-            md[field] = p[0].text
+            md[field] = text(p[0])
 
-    if genre == 'phdthesis' and 'publisher' in md:
+    if ('thesis' in genre) and ('publisher' in md):
         md['school'] = md.pop('publisher')
 
     return Source(genre, sid, **md)

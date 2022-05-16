@@ -10,7 +10,7 @@ def test_Record():
         metalanguage='m',
         objectlanguage='o',
         license='l',
-        creators='c',
+        creators='c,',
         title='t',
         edited='ed',
         superseded='True',

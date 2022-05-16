@@ -33,10 +33,16 @@ class Record(base.Record):
             publisher="Language Science Press",
             doi=self.DOI,
         )
+        parts = [ss.strip() for ss in self.creators.replace(' & ', ',').split(',')]
+        assert len(parts) % 2 == 0, 'Odd number of commas: {}'.format(self.creators)
+        names = ' and '.join(['{}, {}'.format(*parts[i:i + 2]) for i in range(0, len(parts), 2)])
+        names = names.replace('\u180e', '').strip()
+        if names.endswith(','):
+            names = names[:-1].strip()
         if self.edited:
-            md['editor'] = self.creators
+            md['editor'] = names
         else:
-            md['author'] = self.creators
+            md['author'] = names
         return Source('book', self.ID, **md)
 
 

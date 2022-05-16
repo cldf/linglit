@@ -163,6 +163,7 @@ class Publication:
         res = collections.OrderedDict()
         for src in self.iter_references():
             sid = '{}:{}'.format(self.id, src.id)
+            src['isreferencedby'] = self.id
             res[sid] = Source(src.genre, sid, _check_id=False, **src)
         return res
 

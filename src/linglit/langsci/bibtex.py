@@ -10,6 +10,7 @@ import unicodedata
 
 from pybtex import database
 from clldutils.source import Source
+from clldutils.misc import slug
 from clldutils.path import ensure_cmd
 
 from .latex import simple_to_text
@@ -99,11 +100,30 @@ class LangsciSource(Source):
 
 
 def to_source(key, e):
-    src = LangsciSource.from_entry('x', e)
+    def remove_unbalanced_braces(s):
+        for o, c in ['()', '{}']:
+            if s.count(o) != s.count(c):
+                s = s.replace(o, '').replace(c, '')
+        return s
+
+    src = LangsciSource.from_entry('x', e) if not isinstance(e, LangsciSource) else e
     src.id = normalize_key(key)
     src.genre = GENRE_MAP.get(src.genre.lower(), src.genre.lower())
+    if src.genre == 'phdthesis' and (
+            slug(src.get('type', '')) == 'mathesis' or 'M.A.' in src.get('type', '')):
+        src.genre = 'mastersthesis'
+        del src['type']
     for k in list(src):
-        src[k.lower() if k.lower() != 'date' else 'year'] = simple_to_text(src.pop(k))
+        src[k.lower() if k.lower() != 'date' else 'year'] = remove_unbalanced_braces(
+            simple_to_text(src.pop(k)))
+        if k in ['author', 'editor']:
+            src[k] = src[k].replace('[', '').replace(']', '')
+    for field in [
+        'modified', 'authauthor', 'bdsk-url-1', 'optisbn', 'cited', 'comment', 'bilal',
+        'achilleos', 'xmonth', 'xaddress', 'last_changed', 'urlyear', 'copyright',
+    ]:
+        if field in src:
+            del src[field]
     return src
 
 

@@ -12,6 +12,9 @@ from unidecode import unidecode
 __all__ = ['iter_merged', 'iter_entries']
 
 YEAR_PATTERN = re.compile('([0-9]{4})')
+ACC_FIELDS = {  # Fields where content from merged records should be accumulated.
+    'isreferencedby': ' ',
+}
 
 
 def hash(e):
@@ -104,8 +107,16 @@ def merged(key, batch):
             m = Source.from_entry(key, e)
         else:
             for k, v in e.fields.items():
-                if k not in m or len(m[k]) < len(v):
-                    m[k] = v
+                if not v.strip():  # pragma: no cover
+                    continue
+                if k in ACC_FIELDS:
+                    if k in m:
+                        m[k] += '{}{}'.format(ACC_FIELDS[k], v)
+                    else:
+                        m[k] = v
+                else:
+                    if k not in m or len(m[k]) < len(v):  # longest is best
+                        m[k] = v
     m['citekeys'] = ' '.join(sorted(keymap))
     return m, keymap
 
