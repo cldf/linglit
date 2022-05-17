@@ -17,7 +17,7 @@ class Repository(base.Repository):
     lname_map = cfg.LNAME_MAP
 
     def create(self, verbose=False):
-        get_all(self.dir, verbose=verbose)
+        get_all(self.dir, verbose=verbose, pages=30)
 
     def __getitem__(self, item):
         p = self.dir / '{}.xml'.format(item)
@@ -54,9 +54,13 @@ def get_xml(url, d, verbose=False):
             return p.read_text(encoding='utf8')
 
 
-def get_all(d, verbose=False):
+def get_all(d, verbose=False, pages=None):
     url = CATALOG_URL
+    pagenum = 0
     while url:
+        pagenum += 1
+        if pages and pagenum >= pages:
+            break  # pragma: no cover
         page = bs(download(url, verbose=verbose), 'lxml')
         for p in page.find_all('div', class_='card-panel'):
             for a in p.find_all('a'):

@@ -9,6 +9,7 @@ from linglit.langsci.bibtex import LangsciSource, to_source
         ('misc', dict(title='a(b'), lambda s: s['title'] == 'ab'),
         ('phdthesis', dict(type='M.A.'), lambda s: s.genre == 'mastersthesis'),
         ('misc', dict(xmonth='May'), lambda s: 'xmonth' not in s),
+        ('misc', dict(journaltitle='a'), lambda s: 'journal' in s and 'journaltitle' not in s),
     ]
 )
 def test_to_source(genre, md, test):
