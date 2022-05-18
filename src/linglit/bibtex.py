@@ -1,3 +1,6 @@
+"""
+Functionality to merge bibliographies serialized as BibTeX files.
+"""
 import re
 import typing
 import pathlib
@@ -8,13 +11,22 @@ from pybtex import database
 from pycldf.sources import Source
 from thefuzz import fuzz
 from unidecode import unidecode
+from pylatexenc.latex2text import LatexNodes2Text
 
-__all__ = ['iter_merged', 'iter_entries']
+__all__ = ['iter_merged', 'iter_entries', 'merge']
 
 YEAR_PATTERN = re.compile('([0-9]{4})')
 ACC_FIELDS = {  # Fields where content from merged records should be accumulated.
     'isreferencedby': ' ',
 }
+
+
+def merge(d: pathlib.Path, bib: pathlib.Path, delatex=False):
+    res = []
+    for src, _ in iter_merged(iter_entries(d, delatex=delatex)):
+        res.append(src.bibtex())
+    bib.write_text('\n'.join(res), encoding='utf8')
+    return len(res)
 
 
 def hash(e):
@@ -32,10 +44,25 @@ def similarity(s1, s2):
 
 
 def iter_entries(
-        d: typing.Union[str, pathlib.Path]) -> typing.Generator[database.Entry, None, None]:
+        d: typing.Union[str, pathlib.Path],
+        delatex=False) -> typing.Generator[database.Entry, None, None]:
     d = pathlib.Path(d)
-    for p in sorted(d.glob('*.bib'), key=lambda pp: pp.stem):
-        yield from database.parse_string(p.read_text(encoding='utf8'), 'bibtex').entries.values()
+    if d.is_dir():
+        paths = sorted(d.glob('*.bib'), key=lambda pp: pp.stem)
+    else:
+        paths = [d]
+    for p in paths:
+        for e in database.parse_string(p.read_text(encoding='utf8'), 'bibtex').entries.values():
+            if delatex:
+                src = Source.from_entry(e.key, e)
+                for k in list(src.keys()):
+                    try:
+                        src[k] = LatexNodes2Text().latex_to_text(src[k])
+                    except:  # noqa: E722
+                        pass
+                e = src.entry
+                e.key = src.id
+            yield e
 
 
 def iter_merged(
@@ -150,33 +177,3 @@ def make_key(e):
     for c in "/.'()= ":
         creators = creators.replace(c, '')
     return creators.lower() + ed + ':' + year
-
-
-# --------------------------------------
-def main():  # pragma: no cover
-    def read_bib(p):
-        return {k: e for k, e in
-                database.parse_string(p.read_text(encoding='utf8'), 'bibtex').entries.items()}
-
-    lsp = pathlib.Path('lsp.bib')
-    lsp.write_text('\n\n'.join(
-        [m[0].bibtex() for m in iter_merged(iter_entries('langsci/bibtex'))]), encoding='utf8')
-
-    #
-    # compare citation keys between langsci.bib and lsp.bib
-    #
-    gllsp = read_bib(pathlib.Path('../../glottolog/glottolog/references/bibtex/langsci.bib'))
-    lsp = read_bib(lsp)
-    lspkeys = {re.sub(':[0-9]$', '', k) for k in lsp}
-    lsp_no_ed_keys = {k.replace(':ed:', ':') for k in lspkeys}
-
-    a, m = 0, 0
-    for k in gllsp:
-        k = re.sub('([0-9])[a-z]$', lambda m: m.groups()[0], k)
-        a += 1
-        if k.lower() not in lspkeys:
-            kk = k.lower().replace(':ed:', ':')
-            if kk not in lsp_no_ed_keys:
-                m += 1
-                print(k)
-    print(a, m)

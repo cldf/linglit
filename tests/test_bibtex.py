@@ -5,6 +5,10 @@ from pycldf.sources import Source
 from linglit.bibtex import *
 
 
+def test_merge(tmp_path, langsci_repos):
+    assert merge(langsci_repos / '1', tmp_path / 'out.bib') == 2
+
+
 def test_iter_merged():
     # Same hash:
     md = dict(editor="Author, The and B, C and D, E", year="1999", title="This is the Title")
@@ -33,5 +37,12 @@ def test_iter_merged():
     assert len(res) == 2
 
 
-def test_iter_entries(test_dir):
-    assert len(list(iter_entries(test_dir / 'langsci' / '1'))) == 1
+def test_iter_entries(langsci_repos, tmp_path):
+    assert len(list(iter_entries(langsci_repos / '1'))) == 3
+
+    tmp_path.joinpath('test.bib').write_text(
+        '@article{key,\ntitle={{Word} in {Braces}},\nseries={\\href{..}}}', encoding='utf8')
+    res = list(iter_entries(tmp_path / 'test.bib', delatex=True))
+    assert len(res) == 1
+    assert res[0].fields['title'] == 'Word in Braces'
+    assert res[0].fields['series'] == '\\href{..}'

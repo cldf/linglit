@@ -1,8 +1,9 @@
 # Releasing linglit
 
-* run tests and flake8 via tox (making sure statement coverage is at 100%):
+* run tests via tox and flake8 (making sure statement coverage is at 100%):
 ```shell
 tox -r
+flake8 src
 ```
 
 * Change to the new  version number in `setup.cfg`
