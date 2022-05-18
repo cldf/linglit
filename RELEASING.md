@@ -10,6 +10,7 @@ flake8 src
 
 - Create a release tag:
 ```shell
+git commit -a -m"<VERSION> release"
 git tag -a v<VERSION> -m "<VERSION> release"
 ```
 
