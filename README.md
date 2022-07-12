@@ -18,7 +18,7 @@ from
 - papers published in Glossa (if XML downloads are publicly available)
 
 `linglit` does not come with any data (except some configuration), but it provides functionality to create and
-curate repositories with the "raw" data per publication provider (see CLI). For Language Science Press such a repository
+curate repositories with the "raw" data per publication provider (see [CLI](#cli)). For Language Science Press such a repository
 is publicly available at https://github.com/langsci/raw_texfiles .
 
 
