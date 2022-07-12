@@ -3,7 +3,38 @@ import pytest
 from linglit.langsci.examples import *
 
 
-def test_make_example(mocker):
+@pytest.mark.parametrize(
+    'tex,check',
+    [
+        (r"""\ea\label{ex:8.141}
+\gll He amo \textbf{i} \textbf{te} \textbf{{\ꞌ}āriŋa}. \\
+\textsc{ntr} wipe/clean \textsc{acc} \textsc{art} face \\
+
+\glt
+‘She wiped her face.’ \textstyleExampleref{[Ley-9-55.030]}
+\z
+""",
+         lambda ex: ex.Translated_Text == 'She wiped her face.' and ex.Corpus_Ref == 'Ley-9-55.030'),
+        (r"""
+  \ea\label{x:rc-80}
+\longexampleandlanguage{
+  \gll   un problème dont     Paul est certain [[que nous avons parlé  \trace] [et que nous \textnobf{y} reviendrons plus tard]]\\
+    a  problem  of.which Paul is  sure    \hphantom{[[}that we have   spoken {} \hphantom{[}and that we to.it will.come.back more late\\}{French}
+  \glt Lit: `a problem of which Paul is sure that we have  spoken and that he is sure that we will come back to it later'
+  \z
+""",
+         lambda ex: ex.Language_Name == 'French')
+    ]
+)
+def test_make_example(tex, check, mocker):
+    res = list(iter_gll(tex))
+    assert len(res) == 1
+    ex = make_example(mocker.Mock(), *res[0])
+    print(ex.Translated_Text)
+    assert check(ex)
+
+
+def test_make_example_init(mocker):
     ex = make_example(
         mocker.Mock(), ('', '', ''), ['The phrase.', 'THE GLOSS', "The translation"], '')
     #assert ex.Gloss == ['THE', 'GLOSS']
@@ -44,16 +75,6 @@ B
 """))
     assert len(res) == 1
     assert res[0][0][0] == 'Languagec'
-
-    res = list(iter_gll(r"""
-  \ea\label{x:rc-80}
-\longexampleandlanguage{
-  \gll   un problème dont     Paul est certain [[que nous avons parlé  \trace] [et que nous \textnobf{y} reviendrons plus tard]]\\
-    a  problem  of.which Paul is  sure    \hphantom{[[}that we have   spoken {} \hphantom{[}and that we to.it will.come.back more late\\}{French}
-  \glt Lit: `a problem of which Paul is sure that we have  spoken and that he is sure that we will come back to it later'
-  \z
-"""))
-    assert res[0][0][0] == 'French'
 
 
 def test_recombine():

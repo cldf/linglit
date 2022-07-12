@@ -100,6 +100,20 @@ class Example:
     Abbreviations = attr.ib(default=attr.Factory(collections.OrderedDict))
     Local_ID = attr.ib(default=None)
     Meta_Language_ID = attr.ib(default=None)
+    Corpus_Ref = attr.ib(default=None)
+
+    def __attrs_post_init__(self):
+        if self.Translated_Text.endswith(']') and self.Translated_Text.count('[') == 1:
+            tt, _, cmt = self.Translated_Text[:-1].partition('[')
+            if cmt not in ['…']:
+                self.Translated_Text = clean_translation(tt.strip())
+                cmt = cmt.strip()
+                if len(cmt.split()) > 1:
+                    if self.Comment:
+                        self.Comment += ';'
+                    self.Comment = (self.Comment or '') + cmt
+                else:
+                    self.Corpus_Ref = cmt
 
     def __str__(self):
         res = '({})'.format(self.Local_ID or self.ID)

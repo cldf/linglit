@@ -1,6 +1,6 @@
 import pytest
 
-from linglit.glossa.xml import text, parse_citation, parse_language_name, parse_ref
+from linglit.glossa.xml import text, parse_citation, parse_language_name, parse_ref, iter_igt
 
 
 def _xml(s):
@@ -75,3 +75,68 @@ def test_parse_citation():
         '&#160;&#160;&#160;&#160;<sub>Graal,1245, cited from Labrousse (<xref ref-type="bibr" ' \
         'rid="B27">2018: 1620</xref>)</sub></p></list-item>'
     assert parse_citation(s)[0] == 'Graal,1245, cited from Labrousse (2018: 1620)'
+
+
+@pytest.mark.parametrize(
+    'xml,check',
+    [
+        ("""
+        <list list-type="gloss">
+            <list-item>
+                <list list-type="wordfirst">
+                    <list-item><p>&#160;</p></list-item>
+                </list>
+                <list list-type="wordfirst">
+                    <list-item><p>b.</p></list-item>
+                </list>
+            </list-item>
+            <list-item>
+                <list list-type="sentence-gloss">
+                    <list-item>
+                        <list list-type="final-sentence">
+                            <list-item><p><italic>German</italic>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(<xref ref-type="bibr" rid="B11">De Cesare 2014: 19</xref>, cited from <xref ref-type="bibr" rid="B17">Erdmann 1990</xref>)</p></list-item>
+                        </list>
+                    </list-item>
+                    <list-item>
+                        <list list-type="word">
+                            <list-item><p>Alles</p></list-item>
+                            <list-item><p>all</p></list-item>
+                        </list>
+                        <list list-type="word">
+                            <list-item><p>was</p></list-item>
+                            <list-item><p>what</p></list-item>
+                        </list>
+                        <list list-type="word">
+                            <list-item><p>du</p></list-item>
+                            <list-item><p>you</p></list-item>
+                        </list>
+                        <list list-type="word">
+                            <list-item><p>brauchst,</p></list-item>
+                            <list-item><p>need</p></list-item>
+                        </list>
+                        <list list-type="word">
+                            <list-item><p>ist</p></list-item>
+                            <list-item><p>is</p></list-item>
+                        </list>
+                        <list list-type="word">
+                            <list-item><p>Liebe.</p></list-item>
+                            <list-item><p>love</p></list-item>
+                        </list>
+                    </list-item>
+                    <list-item>
+                        <list list-type="final-sentence">
+                            <list-item><p>&#8216;All you need is love.&#8217;</p></list-item>
+                        </list>
+                    </list-item>
+                </list>
+            </list-item>
+        </list>
+        """,
+         lambda count, number, letter, lang, refs, igt, _: lang == 'German' and igt.translation == 'All you need is love.'),
+    ],
+)
+def test_iter_igt(xml, check):
+    xml = _xml(xml)
+    res = list(iter_igt(xml, {}))
+    assert len(res) == 1
+    assert check(*res[0])

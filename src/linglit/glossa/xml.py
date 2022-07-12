@@ -126,17 +126,18 @@ def parse_igt(d):
                     word = word[:m.start()]
                 aw.append(word)
                 gl.append(t(tiers[1]))
-        fs = li.xpath("list[@list-type='final-sentence']")
-        if fs:
-            for i, l in enumerate(fs):
-                items = l.xpath('list-item')
-                for j, lii in enumerate(items):
-                    res = parse_citation(lii)
-                    if res:
-                        comment.append(res[0])
-                        refs = res[1]
-                    tr.append(t(lii, multi=True))
-                break
+        if aw:  # Look for translation only in final-sentence items **after** the aligned text.
+            fs = li.xpath("list[@list-type='final-sentence']")
+            if fs:
+                for i, l in enumerate(fs):
+                    items = l.xpath('list-item')
+                    for j, lii in enumerate(items):
+                        res = parse_citation(lii)
+                        if res:
+                            comment.append(res[0])
+                            refs = res[1]
+                        tr.append(t(lii, multi=True))
+                    break
 
     return aw, gl, '\n'.join(tr), '; '.join(comment), refs
 
@@ -144,7 +145,7 @@ def parse_igt(d):
 def iter_igt(d, abbrs):
     seen, count, number, letter = set(), 0, None, None
     lang, refs = None, []
-    for gloss in d.xpath(".//list[@list-type='gloss']"):
+    for gloss in element(d).xpath(".//list[@list-type='gloss']"):
         numbers = [
             t(li.xpath('list-item')[0])
             for li in gloss.xpath(".//list[@list-type='wordfirst']")]

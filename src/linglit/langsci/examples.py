@@ -76,7 +76,8 @@ def iter_gll(s):
     ex_pattern = re.compile(
         r"\\ex\s+(?P<lname>[A-Z][a-z]+)\s+(\([A-Z][0-9],\s+)?\\cite[^{]+{(?P<ref>[^}]+)}")
     gll, in_gll, prevline, pregll = [], False, None, None
-    for lineno, line in enumerate(s.split('\n')):
+    lines = s.split('\n')
+    for lineno, line in enumerate(lines):
         line = strip_tex_comment(line).strip()
         if r'\langinfo' in line:
             res = parse_langinfo(line)
@@ -108,7 +109,9 @@ def iter_gll(s):
                     linfo = ((mm.groups()[0], '', ''), lineno)
                     gll[-1] = gll[-1][:mm.start()]
                 pre = line[:m.start()]
-                line = line[m.end() - 1:]
+                line = line[m.end() - (1 if m.groups()[1] else 0):]
+                if not line:  # glt on a line by itself. We assume the next line is the translation.
+                    line = lines[lineno + 1]
                 gll.append(pre)
                 gll.append(line)
                 # Return linfo it wasn't parsed too far from the example:
