@@ -177,7 +177,10 @@ def iter_igt(d, abbrs):
                         refs.append((xref.get('rid'), xref.get('ref-type'), xref.text))
 
             if ll.xpath("list-item/list[@list-type='word']") and not ll.xpath(".//inline-graphic"):
-                res = parse_igt(ll)
+                try:
+                    res = parse_igt(ll)
+                except AssertionError:  # pragma: no cover
+                    res = None
                 if res:
                     igt = IGT(phrase=res[0], gloss=res[1], translation=res[2], abbrs=abbrs)
                     if igt.primary_text not in seen:
@@ -191,6 +194,8 @@ def parse_language_name(e):
     e = element(e)
     n = None
     if e.xpath('p/italic'):
+        if text(e.xpath('p')[0]).startswith('‘'):
+            return
         n = e.xpath('p/italic')[0].text
     if e.xpath('p') and re.match(
             r'([A-Z][a-z]+)(\s+[A-Z][a-z]+)*\s+\(', e.xpath('p')[0].text or ''):

@@ -60,6 +60,8 @@ def test_iter_text(xml, res):
          'Modern Portuguese'),
         ('<list-item><p>Modern Portuguese (stuff)</p></list-item>',
          'Modern Portuguese'),
+        ('<list-item><p>&#8216;He will take <italic>the</italic> guests/them to the restaurant.&#8217;</p></list-item>',
+         None)
     ]
 )
 def test_parse_language_name(xml, res):

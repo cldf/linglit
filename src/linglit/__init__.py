@@ -11,10 +11,12 @@ assert langsci and glossa
 PROVIDERS = {r.id: r for r in Repository.__subclasses__() if r.id}
 
 
-def iter_publications(d='.', glottolog='glottolog', with_examples=False, **dirs):
+def iter_publications(d='.', glottolog='glottolog', with_examples=False, exclude=None, **dirs):
     d = pathlib.Path(d)
     glottolog = Glottolog(glottolog)
     for rid, cls in PROVIDERS.items():
+        if exclude and rid in exclude:
+            continue  # pragma: no cover
         sd = dirs.get(rid, d / rid)
         if sd.exists():
             repos = cls(sd)

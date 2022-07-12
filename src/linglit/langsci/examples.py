@@ -377,7 +377,7 @@ def make_example(
         Analyzed_Word=pt,
         Gloss=gl,
         Translated_Text=translation,
-        Language_Name=lname,
+        Language_Name=lname if len(lname or '') > 2 else None,
         Comment=comment,
         Source=refs,
     )
