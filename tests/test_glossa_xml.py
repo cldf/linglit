@@ -133,6 +133,47 @@ def test_parse_citation():
         </list>
         """,
          lambda count, number, letter, lang, refs, igt, _: lang == 'German' and igt.translation == 'All you need is love.'),
+        ("""<list list-type="gloss">
+<list-item>
+<list list-type="wordfirst">
+<list-item><p>(49)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="sentence-gloss">
+<list-item>
+<list list-type="final-sentence">
+<list-item><p><italic>Amele</italic> (<xref ref-type="bibr" rid="B100">Stirling 1993: 213</xref>)</p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="word">
+<list-item><p>[ Ege</p></list-item>
+<list-item><p>&#160;&#160;&#160;1<sc>PL</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>h-u-me-b</p></list-item>
+<list-item><p>come-<sc>PRED-SS</sc>-1<sc>PL</sc></p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>] sab</p></list-item>
+<list-item><p>&#160;&#160;&#160;food</p></list-item>
+</list>
+<list list-type="word">
+<list-item><p>jo-si-a.</p></list-item>
+<list-item><p>eat-3<sc>DU.TODPST</sc></p></list-item>
+</list>
+</list-item>
+<list-item>
+<list list-type="final-sentence">
+<list-item><p>&#8216;We<sub><italic>i,j,k</italic></sub> came and they two<sub><italic>k,l</italic></sub> ate the food.&#8217;</p></list-item>
+</list>
+</list-item>
+</list>
+</list-item>
+</list>
+""",
+         lambda count, number, letter, lang, refs, igt, _: igt.gloss == ['1PL', 'come-PRED-SS-1PL', 'food', 'eat-3DU.TODPST'])
     ],
 )
 def test_iter_igt(xml, check):

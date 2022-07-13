@@ -124,8 +124,8 @@ def parse_igt(d):
                 if m:
                     comment.append(m.groups()[0])
                     word = word[:m.start()]
-                aw.append(word)
-                gl.append(t(tiers[1]))
+                aw.append(word.strip())
+                gl.append(t(tiers[1]).strip())
         if aw:  # Look for translation only in final-sentence items **after** the aligned text.
             fs = li.xpath("list[@list-type='final-sentence']")
             if fs:
