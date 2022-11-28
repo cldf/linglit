@@ -48,7 +48,9 @@ def get_xml(url, d, verbose=False):
                 xml_url = page.find('a', href=True, string='Download XML')
                 if xml_url:
                     xml_url = xml_url['href']
-                    p.write_text(download(BASE_URL + xml_url), encoding='utf8')
+                    if not xml_url.startswith('http'):
+                        xml_url = BASE_URL + xml_url
+                    p.write_text(download(xml_url), encoding='utf8')
                 else:  # pragma: no cover
                     return
             return p.read_text(encoding='utf8')
@@ -64,7 +66,10 @@ def get_all(d, verbose=False, pages=None):
         page = bs(download(url, verbose=verbose), 'lxml')
         for p in page.find_all('div', class_='card-panel'):
             for a in p.find_all('a'):
-                get_xml(BASE_URL + a['href'], d, verbose=verbose)
+                url = a['href']
+                if not url.startswith('http'):
+                    url = BASE_URL + url
+                get_xml(url, d, verbose=verbose)
                 # download HTML, look for "Download XML" link:
                 # <a href="/article/5809/galley/21790/download/">Download XML</a>
                 # https://www.glossa-journal.org/article/5821/galley/21844/download/
