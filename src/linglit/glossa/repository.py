@@ -28,7 +28,7 @@ class Repository(base.Repository):
 
     def iter_publications(self):
         lspecs = cfg.language_specs()
-        for p in self.dir.glob('*.xml'):
+        for p in sorted(self.dir.glob('*.xml'), key=lambda p_: int(p_.stem)):
             yield Publication(lspecs.get(int(p.stem)), p, repos=self)
 
 

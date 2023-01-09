@@ -84,7 +84,7 @@ Ameka, Felix and de Witte, Carlien and Wilkins, David and Wilkins, David. 1999. 
 ...
 ```
 
-Using the `--bibtex` optin will print out the bibliography formatted in BibTeX:
+Using the `--bibtex` option will print out the bibliography formatted in BibTeX:
 ```shell
 $ linglit bib glossa ../../cldf_datasets/imtvault/raw/glossa/ 6371 --bibtex
 @article{glossa6371:B1,
