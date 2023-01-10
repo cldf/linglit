@@ -7,6 +7,7 @@ flake8 src
 ```
 
 * Change to the new  version number in `setup.cfg`
+* Adapt `CHANGELOG.md`
 
 - Create a release tag:
 ```shell

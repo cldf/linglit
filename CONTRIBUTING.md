@@ -7,7 +7,7 @@
 publications. Thus, parsing may break when these conventions change. Since you may be the first
 person running `linglit` on a brand new Glossa paper or Language Science Press book, you may also
 be the first one to encounter such breakage.
-Llet us know](https://github.com/cldf/linglit/issues/new).
+[Let us know](https://github.com/cldf/linglit/issues/new).
 
 
 ## New data providers
