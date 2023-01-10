@@ -94,7 +94,7 @@ def iter_merged(
 
     for h, v in sorted(aggr.items()):
         t, y, a = h
-        if t and (y or a):  # A meaningful has. So we assume all entries in v to be identical.
+        if t and (y or a):  # A meaningful hash. So we assume all entries in v to be identical.
             k = make_key(v[0])
             if k in keys:  # The same key has already been computed for a batch of entries.
                 (_, y2, a2), title2 = keys[k]
@@ -173,7 +173,7 @@ def make_key(e):
     s = s.replace("ö", "oe")
     s = s.replace("ü", "ue")
     s = s.replace('"=', '-')
-    creators = unidecode(s)
+    creators = unidecode(s).replace(',', '')  # unidecode converts ogonek to comma!
     for c in "/.'()= ":
         creators = creators.replace(c, '')
     return creators.lower() + ed + ':' + year

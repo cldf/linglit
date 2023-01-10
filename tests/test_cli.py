@@ -19,3 +19,4 @@ def test_mergedbib(capsys, glossa_repos):
     main(['mergedbib', 'glossa', str(glossa_repos)])
     out, _ = capsys.readouterr()
     assert 'isreferencedby' in out
+    assert ':j,ed' not in out
