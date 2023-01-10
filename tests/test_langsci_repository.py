@@ -1,3 +1,4 @@
+import os
 import json
 import base64
 import pathlib
@@ -18,6 +19,7 @@ def tmp_repo(tmp_path):
     return Repository(tmp_path)
 
 
+@pytest.mark.skipif('CI' in os.environ, reason="bibtool command not available in GH action.")
 def test_Repository(repo):
     pubs = list(repo.iter_publications())
     assert len(pubs) == 1
