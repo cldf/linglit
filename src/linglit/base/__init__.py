@@ -74,7 +74,7 @@ class Record:
 
     @property
     def has_open_license(self) -> bool:
-        return self.license in ['CC-BY', 'CC-BY-SA']
+        return any(self.license.split()[0] == s for s in ['CC-BY', 'CC-BY-SA'])
 
     @property
     def current(self) -> bool:
