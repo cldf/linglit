@@ -20,7 +20,8 @@ from . import cfg
 
 CATALOG_NAME = "catalog.tsv"
 FILELIST_NAME = "files.json"
-MISSING_TEX_SOURCES = [155, 192, 195, 255, 287, 297, 311, 325, 373, 380]
+MISSING_TEX_SOURCES = [155, 192, 195, 255, 287, 297, 311, 325, 373, 380, 398, 410]
+MISSING_REPOS = [410]
 TEX_BRANCH = {187: 'master'}
 
 
@@ -106,7 +107,7 @@ class Repository(base.Repository):
         ids = {int(i) for i in ids or []}
         with update_ordered(self.dir / FILELIST_NAME) as d:
             for item in self.catalog:
-                if not refresh and (item.ID in d):
+                if item.int_id in MISSING_REPOS or (not refresh and (item.ID in d)):
                     continue
                 if not ids or (item.int_id in ids):
                     d[item.ID] = branch_and_tree(item, d.get(item.ID))
