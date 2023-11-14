@@ -1,5 +1,10 @@
 # Changes
 
+## [1.5.0] - 2023-11-14
+
+- Drop Python 3.7 compatibility.
+- Adapt to imtvault v1.1
+
 
 ## [1.4.0] - 2023-05-10
 
