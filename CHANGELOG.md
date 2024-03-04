@@ -1,5 +1,10 @@
 # Changes
 
+## [1.6.0] - 2024-03-04
+
+- Adapt to newer langsci and more glossa publications.
+
+
 ## [1.5.0] - 2023-11-14
 
 - Drop Python 3.7 compatibility.
