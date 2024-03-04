@@ -79,8 +79,11 @@ def get_all(d, verbose=False, pages=None):
         active = None
         for p in pagination.find_all('li'):
             if active:  # pragma: no cover
-                url = CATALOG_URL + p.find('a')['href']
-                break
+                try:
+                    url = CATALOG_URL + p.find('a')['href']
+                    break
+                except KeyError:
+                    continue
             if 'active' in p['class']:
                 active = True
         else:

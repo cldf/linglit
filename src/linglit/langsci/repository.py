@@ -20,8 +20,11 @@ from . import cfg
 
 CATALOG_NAME = "catalog.tsv"
 FILELIST_NAME = "files.json"
-MISSING_TEX_SOURCES = [155, 192, 195, 255, 287, 297, 311, 325, 373, 380, 398, 410]
-MISSING_REPOS = [410]
+MISSING_TEX_SOURCES = [
+    155, 192, 195, 255, 287, 297, 311, 325, 373, 380, 398, 410,
+    284,  # For the time being ...
+]
+MISSING_REPOS = [410, 389, 392, 393]
 TEX_BRANCH = {187: 'master'}
 
 

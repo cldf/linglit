@@ -71,7 +71,7 @@ class Catalog:
 
     def __iter__(self):
         for item in self.items:
-            if item.has_open_license:
+            if item.has_open_license and item.year != 'Forthcoming':
                 yield item
 
     def __getitem__(self, item):

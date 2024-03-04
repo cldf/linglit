@@ -236,7 +236,7 @@ def abbreviations(doc):
         for p in ps:
             for e in p.xpath('child::node()'):
                 if getattr(e, 'tag', None):
-                    if e.tag == 'sc':
+                    if e.tag == 'sc' and e.text:
                         if abbr:
                             res[abbr] = ''.join(desc)
                         abbr, desc = e.text.upper(), []

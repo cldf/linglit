@@ -20,6 +20,7 @@ __all__ = ['iter_bib', 'normalize_key']
 
 # Invalid author lists (and fixes):
 NAMES = {
+    'Trommler, Friederike, Hammann, Marcus': 'Trommler, Friederike and Hammann, Marcus',
     'De Decker, Paul, Nycz, Jennifer': 'De Decker, Paul and Nycz, Jennifer',
     'SkL, Holm. B 74, 4\\textsuperscript{o} = Brøndum-Nielsen, Johs':
         'SkL, Holm. B and Brøndum-Nielsen, Johs',
