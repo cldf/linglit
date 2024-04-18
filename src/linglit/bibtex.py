@@ -18,6 +18,7 @@ __all__ = ['iter_merged', 'iter_entries', 'merge']
 YEAR_PATTERN = re.compile('([0-9]{4})')
 ACC_FIELDS = {  # Fields where content from merged records should be accumulated.
     'isreferencedby': ' ',
+    'lgcode': '; ',
 }
 
 
@@ -173,6 +174,13 @@ def make_key(e):
     s = s.replace("ö", "oe")
     s = s.replace("ü", "ue")
     s = s.replace('"=', '-')
+    s = s.replace('`', '')
+    s = s.replace('{', '')
+    s = s.replace('}', '')
+    s = s.replace('[', '')
+    s = s.replace(']', '')
+    s = s.replace('?', 'na')
+    s = s.replace('&', '')
     creators = unidecode(s).replace(',', '')  # unidecode converts ogonek to comma!
     for c in "/.'()= ":
         creators = creators.replace(c, '')

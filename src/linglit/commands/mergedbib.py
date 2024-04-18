@@ -3,6 +3,7 @@ Create a bibliography by merging all glossa publications in the repository and t
 """
 from clldutils.path import TemporaryDirectory
 from tqdm import tqdm
+from pybtex.database import parse_string
 
 from linglit.cli_util import add_provider, get_provider
 from linglit.bibtex import iter_entries, iter_merged
@@ -31,4 +32,6 @@ def run(args):
                 for src in pub.cited_references:
                     bib.write(bibtex(src))
         for src, _ in iter_merged(iter_entries(tmp)):
-            print(bibtex(src))
+            res = bibtex(src)
+            parse_string(res, 'bibtex')
+            print(res)

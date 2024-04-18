@@ -1,11 +1,11 @@
 import typing
 import pathlib
+import functools
 import collections
 
 import attr
 from pyigt import IGT
 from pycldf.sources import Source
-from clldutils.misc import lazyproperty
 from pyglottolog import Glottolog as API
 
 from linglit.util import clean_translation
@@ -159,11 +159,11 @@ class Publication:
     def has_open_license(self) -> bool:
         return self.record.has_open_license
 
-    @lazyproperty
+    @functools.cached_property
     def cited_references(self) -> typing.List[Source]:
         return [ref for ref in self.references.values() if ref.id in self.cited]
 
-    @lazyproperty
+    @functools.cached_property
     def id(self) -> str:
         return '{}{}'.format(self.repos.id, self.record.ID)
 
@@ -172,7 +172,7 @@ class Publication:
         src.id = self.id
         return src
 
-    @lazyproperty
+    @functools.cached_property
     def references(self) -> typing.OrderedDict[str, Source]:
         res = collections.OrderedDict()
         for src in self.iter_references():
@@ -184,7 +184,7 @@ class Publication:
     def iter_references(self) -> typing.Generator[Source, None, None]:  # pragma: no cover
         raise NotImplementedError()
 
-    @lazyproperty
+    @functools.cached_property
     def cited(self) -> collections.Counter:
         res = collections.Counter()
         for key in self.iter_cited():
@@ -200,7 +200,7 @@ class Publication:
         """
         return [self.references[sid] for sid, _ in ex.Source if sid != self.id] + [self.as_source()]
 
-    @lazyproperty
+    @functools.cached_property
     def examples(self):
         res = []
         for ex in self.iter_examples():

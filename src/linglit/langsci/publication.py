@@ -1,8 +1,8 @@
 import re
+import functools
 import collections
 
 from clldutils.path import walk
-from clldutils.misc import lazyproperty
 
 from linglit import base
 from .bibtex import iter_bib, normalize_key
@@ -97,7 +97,7 @@ class Publication(base.Publication):
             self._includes_tex[str(p)] = texfixes.read_tex(p, with_input=with_input)
         return self._includes_tex[str(p)]
 
-    @lazyproperty
+    @functools.cached_property
     def gloss_abbreviations(self):
         abbr_pattern = re.compile(r'\\(sub)?section\*?(\[[^]]+])?{Abbreviations(\s+[A-Za-z]+)*}')
         section_pattern = re.compile(r'\\(?:sub)?section')
@@ -131,7 +131,7 @@ class Publication(base.Publication):
             self._get_includes_and_bibs()  # pragma: no cover
         return self._bibs
 
-    @lazyproperty
+    @functools.cached_property
     def bibkeys(self):
         res = {}
         for src in self.iter_references():

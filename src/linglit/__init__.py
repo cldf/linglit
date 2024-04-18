@@ -5,9 +5,10 @@ from tqdm import tqdm
 
 from . import langsci
 from . import glossa
+from . import cldf
 from .base import Repository, Glottolog
 
-assert langsci and glossa
+assert langsci and glossa and cldf
 PROVIDERS = {r.id: r for r in Repository.__subclasses__() if r.id}
 
 
