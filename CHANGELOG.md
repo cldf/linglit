@@ -1,5 +1,10 @@
 # Changes
 
+## Unreleased
+
+- New provider, extracting bib and igt from CLDF datasets.
+
+
 ## [1.6.0] - 2024-03-04
 
 - Adapt to newer langsci and more glossa publications.
