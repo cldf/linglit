@@ -1,6 +1,6 @@
 # Changes
 
-## Unreleased
+## [1.7.0] - 2024-10-24
 
 - New provider, extracting bib and igt from CLDF datasets.
 
