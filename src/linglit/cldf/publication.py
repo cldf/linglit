@@ -65,7 +65,7 @@ class Publication(base.Publication):
             fname, abbrcol, defcol = self.cfg.gloss_abbreviations
             abbrs = collections.OrderedDict(
                 [(r[abbrcol], r[defcol]) for r in self.ds.iter_rows(fname)])
-        l2gc = {l.id: (l.cldf.glottocode, l.cldf.name) for l in self.languages}
+        l2gc = {lg.id: (lg.cldf.glottocode, lg.cldf.name) for lg in self.languages}
         if self.cfg.igt:
             for count, ex in enumerate(self.ds.objects('ExampleTable', cls=Example), start=1):
                 if abbrs:

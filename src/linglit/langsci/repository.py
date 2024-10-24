@@ -21,10 +21,13 @@ from . import cfg
 CATALOG_NAME = "catalog.tsv"
 FILELIST_NAME = "files.json"
 MISSING_TEX_SOURCES = [
-    155, 192, 195, 255, 287, 297, 311, 325, 373, 380, 398, 410,
+    155, 192, 195, 255, 287, 297, 311, 325, 373, 380,
+    410,
     284,  # For the time being ...
+    292,
+    438,
 ]
-MISSING_REPOS = [410, 389, 392, 393]
+MISSING_REPOS = [410, 389, 392, 393, 438]
 TEX_BRANCH = {187: 'master'}
 
 
@@ -86,6 +89,8 @@ class Repository(base.Repository):
         for item in self.catalog:
             # if item.int_id != 22:
             #     continue
+            if item.int_id in MISSING_REPOS:
+                continue
             if item.int_id not in MISSING_TEX_SOURCES:
                 yield Publication(item, self.dir / item.ID, self)
 

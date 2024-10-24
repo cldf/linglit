@@ -62,8 +62,12 @@ def iter_entries(
                     except:  # noqa: E722
                         pass
                 e = src.entry
-                e.key = src.id
+                e.key = src.id.replace('\\', '')
             yield e
+
+
+def strip_capitalization(s):
+    return re.sub(r'\{(?P<letter>\w)}', lambda m: m.group('letter'), s)
 
 
 def iter_merged(
@@ -91,7 +95,7 @@ def iter_merged(
     by_key = collections.defaultdict(list)
 
     def norm_title(e):
-        return e.fields.get('title', '').lower()
+        return strip_capitalization(e.fields.get('title', '').lower())
 
     for h, v in sorted(aggr.items()):
         t, y, a = h
@@ -145,6 +149,9 @@ def merged(key, batch):
                 else:
                     if k not in m or len(m[k]) < len(v):  # longest is best
                         m[k] = v
+    for field in {'title', 'booktitle'}:
+        if field in m:
+            m[field] = strip_capitalization(m[field])
     m['citekeys'] = ' '.join(sorted(keymap))
     return m, keymap
 

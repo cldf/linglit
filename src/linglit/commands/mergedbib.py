@@ -31,7 +31,11 @@ def run(args):
                 bib.write(bibtex(pub.as_source()))
                 for src in pub.cited_references:
                     bib.write(bibtex(src))
+        ids = set()
         for src, _ in iter_merged(iter_entries(tmp)):
+            src.id = src.id.replace('\\', '')
+            assert src.id not in ids, src.id
+            ids.add(src.id)
             res = bibtex(src)
             parse_string(res, 'bibtex')
             print(res)

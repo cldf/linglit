@@ -146,9 +146,12 @@ def iter_igt(d, abbrs):
     seen, count, number, letter = set(), 0, None, None
     lang, refs = None, []
     for gloss in element(d).xpath(".//list[@list-type='gloss']"):
-        numbers = [
-            t(li.xpath('list-item')[0])
-            for li in gloss.xpath(".//list[@list-type='wordfirst']")]
+        try:
+            numbers = [
+                t(li.xpath('list-item')[0])
+                for li in gloss.xpath(".//list[@list-type='wordfirst']")]
+        except IndexError:
+            continue
         for n in numbers:
             m = re.match(r'\(([0-9]+|[iv]+)\)', n)
             if m:
