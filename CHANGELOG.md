@@ -1,5 +1,11 @@
 # Changes
 
+
+## [1.7.1] - 2024-11-08
+
+Better testing.
+
+
 ## [1.7.0] - 2024-10-24
 
 - New provider, extracting bib and igt from CLDF datasets.
