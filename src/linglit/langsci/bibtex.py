@@ -538,7 +538,7 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             text = text.replace(k, v)
         bibtex.append(text)
 
-    if not os.getenv("GITHUB_ACTIONS"):  # bibtool is not available in GH action.
+    if 'CI' not in os.environ:  # bibtool is not available in GH action.
         # Now run bibtool:
         cmd = subprocess.Popen(
             [ensure_cmd('bibtool'), '-r', str(cfg.BIBTOOL_RSC)],
