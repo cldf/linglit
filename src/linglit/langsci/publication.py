@@ -239,7 +239,7 @@ def includes_and_bib(d, main, chapterpath, no_bib):
             p = m.get(p.name.lower(), p)
             if not p.exists() and (p.stem in ['preface', 'acknowledgments']):
                 continue
-            if not p.exists() and p.stem == 'abbreviations':
+            if not p.exists() and p.stem == 'abbreviations':  # pragma: no cover
                 if p.parent.parent.joinpath('abbreviations.tex').exists():
                     p = p.parent.parent.joinpath('abbreviations.tex')
             assert p.exists(), str(p)

@@ -89,7 +89,7 @@ class Repository(base.Repository):
             if dldir.exists():
                 if self.metadata(did)['version'] == rec.version:
                     continue
-                shutil.rmtree(dldir)
+                shutil.rmtree(dldir)  # pragma: no cover
             print('downloading {} ...'.format(rec.version))
             rec.download_dataset(self.dir / did)
             print('... done')

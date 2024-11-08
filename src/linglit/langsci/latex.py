@@ -798,7 +798,7 @@ simple_parser_context_db.add_context_category(
 def uppercase_arg(n, l2tobj):
     if n.nodeargd:
         return l2tobj.nodelist_to_text([n.nodeargd.argnlist[0]]).upper()
-    return ''
+    return ''  # pragma: no cover
 
 
 def dot_uppercase_arg(n, l2tobj):
@@ -829,7 +829,7 @@ def secondarg(n, l2tobj):
 
 
 def repl(abbr, *args):
-    return abbr
+    return abbr  # pragma: no cover
 
 
 def japhug(n, l2tobj):
@@ -871,19 +871,19 @@ def cite(n, l2tobj):
         # n.nodeargd can be empty if e.g. \putinquotes was a single
         # token passed as an argument to a macro,
         # e.g. \newcommand\putinquotes...
-        return ''
+        return ''  # pragma: no cover
     page = ''
     if len(n.nodeargd.argnlist) > 1:
         page = _get_optional_arg(n.nodeargd.argnlist[0], '', l2tobj)
     key = l2tobj.nodelist_to_text([n.nodeargd.argnlist[-1]]).strip().replace('   ', '&')
     if key:
         return '<cit page="{}">{}</cit>'.format(page.replace('"', ''), key)
-    return ''
+    return ''  # pragma: no cover
 
 
 def langinfo(n, l2tobj):
     if not n.nodeargd:
-        return ''
+        return ''  # pragma: no cover
     res = ''
     for i, arg in enumerate(n.nodeargd.argnlist):
         t = l2tobj.nodelist_to_text([arg]).strip()
@@ -990,7 +990,7 @@ def custom_latex_to_text(input_latex, parser=lw_context_db, converter=l2t_contex
     # convert to text
     try:
         return l2t_obj.nodelist_to_text(nodelist)
-    except (IndexError, ValueError):
+    except (IndexError, ValueError):  # pragma: no cover
         return input_latex
 
 
@@ -1034,20 +1034,20 @@ def to_text(latex):
 
     # extract citations:
     pattern = re.compile(r'<cit page="([^"]*)">([^<]+)</cit>')
-    for m in pattern.finditer(text):
-        if m.groups()[1] != '[':
-            for sid in m.groups()[1].split(','):
-                if sid.strip():
-                    refs.append((sid.strip(), m.groups()[0]))
-    if refs:
-        text = pattern.sub('', text).strip()
 
-    for cc in comment:
-        for m in pattern.finditer(cc):
+    def find_refs(t):
+        for m in pattern.finditer(t):
             if m.groups()[1] != '[':
                 for sid in m.groups()[1].split(','):
                     if sid.strip():
                         refs.append((sid.strip(), m.groups()[0]))
+
+    find_refs(text)
+    if refs:
+        text = pattern.sub('', text).strip()
+
+    for cc in comment:
+        find_refs(cc)
     comment = [pattern.sub(lambda m: m.groups()[1], cc).strip() for cc in comment]
 
     #

@@ -1,4 +1,4 @@
-from linglit.base import Glottolog
+from linglit.base import Glottolog, Example
 
 
 def test_Glottolog(glottolog_api):
@@ -15,3 +15,16 @@ def test_Glottolog(glottolog_api):
 def test_Publication(glossa_pub):
     assert glossa_pub.is_current and glossa_pub.has_open_license
     assert 'Skilton' in str(glossa_pub)
+
+
+def test_Example():
+    ex = Example(
+        ID=1,
+        Primary_Text='text',
+        Analyzed_Word=[],
+        Gloss=[],
+        Translated_Text='some text [and a comment]',
+        Language_Name='l',
+        Comment='comment',
+        Source=[])
+    assert ex.Comment == 'comment; and a comment'

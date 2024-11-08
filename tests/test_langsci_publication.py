@@ -3,6 +3,12 @@ import shutil
 from linglit.langsci.publication import Publication
 
 
+def test_Publication_examples(langsci_pub1, langsci_pub121):
+    assert len(langsci_pub121.examples) == 2
+    assert langsci_pub121.examples[0].Language_Name == 'Akan'
+    assert langsci_pub1.examples
+
+
 def test_Publication_main(tmp_path, mocker):
     tmp_path.joinpath('Makefile').write_text('\nxelatex the\n', encoding='utf8')
     tmp_path.joinpath('the.tex').write_text('\\yes{}')

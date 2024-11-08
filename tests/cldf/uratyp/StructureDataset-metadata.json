@@ -275,6 +275,19 @@
             "url": "languages.csv"
         },
         {
+            "tableSchema": {
+                "columns": [
+                    {
+                        "name": "abbr"
+                    },
+                    {
+                        "name": "def"
+                    }
+                ]
+            },
+            "url": "ga.csv"
+        },
+        {
             "dc:extent": 44,
             "tableSchema": {
                 "columns": [

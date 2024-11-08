@@ -39,9 +39,6 @@ def iter_examples(d='.', glottolog='glottolog', **dirs):  # pragma: no cover
     c = collections.Counter()
     glottolog = Glottolog(glottolog)
     for rid, cls in PROVIDERS.items():
-        # if rid != 'glossa':
-        if rid != 'langsci':
-            continue
         sd = dirs.get(rid, d / rid)
         bibtex = sd / 'bibtex'
         if sd.exists():
@@ -66,7 +63,6 @@ def iter_examples(d='.', glottolog='glottolog', **dirs):  # pragma: no cover
                 bibtex.joinpath(
                     '{}.bib'.format(pub.record.ID)).write_text('\n\n'.join(t), encoding='utf8')
 
-                continue
                 pid = '{}-{}'.format(rid, pub.record.ID)
                 for i, ex in enumerate(pub.iter_examples()):
                     if ex.Language_ID is None:

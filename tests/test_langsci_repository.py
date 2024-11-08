@@ -22,7 +22,7 @@ def tmp_repo(tmp_path):
 @pytest.mark.skipif(not shutil.which('bibtool'), reason="bibtool command not available.")
 def test_Repository(repo):
     pubs = list(repo.iter_publications())
-    assert len(pubs) == 1
+    assert len(pubs) == 2
     pub = pubs[0]
     assert len(pub.cited) == 1
 
@@ -38,7 +38,7 @@ def test_Repository_fetch_filelist(tmp_repo, mocker, langsci_repos):
 
     mocker.patch('linglit.langsci.catalog.urllib.request', Req())
     tmp_repo.fetch_catalog()
-    assert len(tmp_repo.catalog) == 1
+    assert len(tmp_repo.catalog) == 2
 
     content = b'{"default_branch": "", "url": "", "tree": [{"path": "LSP", "mode": "", ' \
               b'"type": "blob", "sha": "", "url": ""}]}'

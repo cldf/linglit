@@ -1,0 +1,25 @@
+{
+  "doi": "10.5281/zenodo.6392555",
+  "title": "other",
+  "creators": [
+    "Vesakoski, Outi"
+  ],
+  "year": "2022",
+  "license": "cc-by-4.0",
+  "download_urls": [
+    "https://zenodo.org/records/6392555/files/cldf-datasets/uratyp-v1.1.zip/content"
+  ],
+  "keywords": [
+    "cldf:StructureDataset",
+    "linguistics"
+  ],
+  "communities": [],
+  "github_repos": {
+    "org": "cldf-datasets",
+    "name": "uratyp",
+    "tag": "v1.1"
+  },
+  "closed_access": false,
+  "version": "v1.1",
+  "concept_doi": "10.5281/zenodo.5236365"
+}

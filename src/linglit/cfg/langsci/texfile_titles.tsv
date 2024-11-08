@@ -788,6 +788,7 @@ Book_ID	Filename	Language	Title
 280	simik.tex		Inherent vs. accidental uniqueness in bare and demonstrative nominals
 280	zimmermann.tex		The role of the correlate in clause-embedding
 280	zivojinovic.tex	Torlak	Torlak clitic doubling: A cross-linguistic comparison
+282	bliss.tex	siks1238	
 282	diessel.tex		A typology of demonstrative clause linkers
 282	fuchs.tex		Referential shift potential of demonstrative pronouns – Evidence from text continuation
 282	johannessen.tex		Psychologically distal demonstratives in Scandinavian are not “discourse new”
@@ -871,6 +872,21 @@ Book_ID	Filename	Language	Title
 290	08.tex		Building bridges between languages: How students develop crosslinguistic awareness in multilingual learning settings
 290	09.tex		Students’ perceptions of plurilingual nonnative teachers in higher education: An added or a mudded value?
 290	prefaceEd.tex		Preface
+291	02-Cupik.tex	cent2127	Constituency in Cup'ik and the problem of holophrasis
+291	03-Cherokee.tex	cher1273	Constituency in Oklahoma Cherokee
+291	04-Kiowa.tex	kiow1266	Constituency and Wordhood in Kiowa
+291	05-Mazatec.tex	ayau1235	Constituency in Ayautla Mazatec
+291	06-Mixtec.tex	juxt1235	Constituency in Tù'un Ntá'ví (Mixtec) of San Martín Duraznos
+291	07-Zapotec.tex	teot1238	Words as emergent constituents in Teotitlán del Valle Zapotec
+291	08-Chatino.tex	zenz1235	Constituency in Zenzontepec Chatino
+291	09-Martinican.tex	mart1259	Constituency in Martinican (creole, Martinique)
+291	10-Hup.tex	hupd1244	Constituency in Hup: Synchronic and diachronic perspectives
+291	11-Yukuna.tex	yucu1253	Constituency in Yukuna
+291	12-Mebengokre.tex	kaya1330	Constituency in Mẽbêngôkre independent clauses
+291	13-Araona.tex	arao1248	Graded constituency in the Araona (Takana) verb complex
+291	14-Quechua.tex	sout2991	Word structure and constituency in Uma Piwra South Bolivian Quechua
+291	15-Chorote.tex	iyoj1235	Wordhood in Chorote (Mataguayan)
+291	16-Mocovi.tex	moco1246	Constituency in Northern Chaco Mocoví (Guaycuruan, Argentina)
 293	avatime.tex	Avatime	A note on  wh -questions in Avatime
 293	barzlai.tex	Nobiin	Morphologically conditioned phonological variation in Nobiin
 293	bukusumu.tex	Lubukusu	Object marking in Lubukusu: Information structure in the verb phrase
@@ -1015,3 +1031,19 @@ Book_ID	Filename	Language	Title
 329	07.tex		Agreement inflection and word order in Viskadalian Swedish
 329	08.tex		From ‘big’ to ‘much’ From ‘big’ to ‘much’: On the grammaticalization of two gradable adjectives in Swedish
 329	prefaceEd.tex		Preface with an editor, abstract and citation footer
+383	kahigi.tex	sumb1240	Verb extensions and morphosyntactic variation in Bantu: The case of Sumbwa
+383	lukusa.tex	luba1249	A morphosyntactic study of verb object marking in Čilubà
+383	lusekelo.tex	nyak1261	Concord and agreement in Eastern Bantu: The augment and noun classes in Nyakyusa
+383	mallya.tex	bosh1240	The morphosyntax of locative expressions in Kiwoso
+383	ngwasi.tex	hehe1240	The historical development of the reflexive-reciprocal polysemy in Hehe
+383	taji.tex	yaoo1241	Demonstratives in Chiyao: An analysis of their form, distribution and functions
+383	yoneda.tex	gand1255	Multiple-object constructions in Ganda
+411	01-Arsenijevic.tex	sout1528	Specification of telicity in Serbo-Croatian, without null prefixes
+411	06-Georgieva.tex	bulg1262	Inflectionless adjectives in Bulgarian as a case of nominal predication
+411	08-Geist.tex	russ1263	Responding to negative biased questions in Russian
+411	09-Matushansky.tex	russ1263	Responding to negative biased questions in Russian
+411	12-Stepanov.tex	slov1268	Number mismatch effect and processing cataphora in a \textit{pro}-drop language: The case of Slovenian
+440	01.tex	Czech	LEMUR: A lexicon of Czech multiword expressions
+440	02.tex	poma1238	Description of Pomak within IDION: Challenges in the representation of verb multiword expressions
+440	07.tex	Dutch	MWE-Finder: Querying for multiword expressions in large Dutch text corpora
+440	09.tex	Swedish	Multiword expressions in Swedish as a second language: Taxonomy, annotation, and initial results

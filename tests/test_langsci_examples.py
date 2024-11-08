@@ -4,8 +4,54 @@ from linglit.langsci.examples import *
 
 
 @pytest.mark.parametrize(
-    'tex,check',
+    'tex,check,problem',
     [
+        (r"""\ea\label{ex:8.141}
+\gll x a b \\
+x e f () \\
+\glt
+‘a b.’
+""",
+         lambda ex: ex,
+         'Trailing () not stripped from gloss line.'),
+        (r"""\ea\label{ex:8.141}
+\gll x a b \\
+x e f [abcd] \\
+\glt
+‘a b.’
+""",
+         lambda ex: 'abcd' in ex.Comment,
+         'Trailing comment not detected in gloss line.'),
+        (r"""\ea\label{ex:8.141}
+\gll x a b \\
+x e f \\
+x {c \\
+}\jambox{more}{stuff} d
+\glt
+‘a b.’
+                        """,
+         lambda ex: 'cmorestuff' in ex.Gloss,
+         'Continuation gloss line not detected.'),
+        (r"""\longexampleandlanguage{
+\gll a b\footnote{comment}\fatcit{a}{b} \\
+e f \\
+c d\fatcit{a}{b} \\
+}{Lang}
+\glt
+‘a b.’
+                """,
+         lambda ex: ex.Language_Name == 'Lang',
+         'longexampleandlanguage command not properly parsed.'),
+        (r"""\ea\label{ex:8.141}
+\gll He amo \textbf{i} \textbf{te} \textbf{{\ꞌ}āriŋa}. \\
+\textsc{ntr} wipe/clean \textsc{acc} \textsc{art} face \\
+American-English
+\glt
+‘She wiped her face.’ \footnote{comment}\fatcit{a}{b}
+\z
+        """,
+         lambda ex: 'American-English' in ex.Comment and 'comment' in ex.Comment,
+         'Trailing one word comment in gloss line not detected.'),
         (r"""\ea\label{ex:8.141}
 \gll He amo \textbf{i} \textbf{te} \textbf{{\ꞌ}āriŋa}. \\
 \textsc{ntr} wipe/clean \textsc{acc} \textsc{art} face \\
@@ -14,7 +60,8 @@ from linglit.langsci.examples import *
 ‘She wiped her face.’ \textstyleExampleref{[Ley-9-55.030]}
 \z
 """,
-         lambda ex: ex.Translated_Text == 'She wiped her face.' and ex.Corpus_Ref == 'Ley-9-55.030'),
+         lambda ex: ex.Translated_Text == 'She wiped her face.' and ex.Corpus_Ref == 'Ley-9-55.030',
+         'Reference in translation line not detected.'),
         (r"""
   \ea\label{x:rc-80}
 \longexampleandlanguage{
@@ -23,15 +70,15 @@ from linglit.langsci.examples import *
   \glt Lit: `a problem of which Paul is sure that we have  spoken and that he is sure that we will come back to it later'
   \z
 """,
-         lambda ex: ex.Language_Name == 'French')
+         lambda ex: ex.Language_Name == 'French',
+         'Language name in longexampleandlanguage command not properly parsed.'),
     ]
 )
-def test_make_example(tex, check, mocker):
+def test_make_example(tex, check, problem, mocker):
     res = list(iter_gll(tex))
     assert len(res) == 1
     ex = make_example(mocker.Mock(), *res[0])
-    print(ex.Translated_Text)
-    assert check(ex)
+    assert check(ex), problem
 
 
 def test_make_example_init(mocker):

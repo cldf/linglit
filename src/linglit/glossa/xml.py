@@ -150,8 +150,8 @@ def iter_igt(d, abbrs):
             numbers = [
                 t(li.xpath('list-item')[0])
                 for li in gloss.xpath(".//list[@list-type='wordfirst']")]
-        except IndexError:
-            continue
+        except IndexError:  # pragma: no cover
+            continue  # Something isn't as expected. We just skip this potential example.
         for n in numbers:
             m = re.match(r'\(([0-9]+|[iv]+)\)', n)
             if m:

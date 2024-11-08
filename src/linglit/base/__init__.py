@@ -110,7 +110,7 @@ class Example:
                 cmt = cmt.strip()
                 if len(cmt.split()) > 1:
                     if self.Comment:
-                        self.Comment += ';'
+                        self.Comment += '; '
                     self.Comment = (self.Comment or '') + cmt
                 else:
                     self.Corpus_Ref = cmt

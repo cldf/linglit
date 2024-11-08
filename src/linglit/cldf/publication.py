@@ -24,7 +24,7 @@ class Publication(base.Publication):
     def iter_references(self):
         sid2langs = collections.defaultdict(set)
         if not self.cfg.bib:
-            return
+            return  # pragma: no cover
         s2l = self.cfg.source_to_language
         l2gc = {}
         for row in self.languages:

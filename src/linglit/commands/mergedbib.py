@@ -24,9 +24,9 @@ def run(args):
     with TemporaryDirectory() as tmp:
         for pub in tqdm(repos.iter_publications()):
             if pub.id == 'langsci{}'.format(args.drop_until):
-                do = True
+                do = True  # pragma: no cover
             if not do:
-                continue
+                continue  # pragma: no cover
             with tmp.joinpath('{}.bib'.format(pub.id)).open('w') as bib:
                 bib.write(bibtex(pub.as_source()))
                 for src in pub.cited_references:

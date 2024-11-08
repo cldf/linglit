@@ -1,7 +1,7 @@
-import functools
 import re
 import typing
 import hashlib
+import functools
 
 from pyigt.igt import IGT, NON_OVERT_ELEMENT
 from pyigt.lgrmorphemes import MORPHEME_SEPARATORS
@@ -47,7 +47,7 @@ def parse_cmd(cmd, line):
         # Cut out the command and its first argument from line:
         texcmd = '\\' + cmd + '{' + line.split('\\' + cmd + '{')[-1].split('}')[0]
         cmd = getattr(TexSoup(texcmd, tolerance=1), cmd)
-    except:  # noqa: E722
+    except:  # pragma: no cover # noqa: E722
         raise ValueError(line)  # pragma: no cover
     return (cmd.args[0].string.split('!')[-1], '', '')
 
@@ -252,7 +252,7 @@ def lines_and_comment(lines):
                     comment.append(s.jambox.string)
                     s.jambox.delete()
                     line = str(s)
-            except:  # noqa: E722
+            except:  # pragma: no cover # noqa: E722
                 pass  # pragma: no cover
             if line:
                 res.append(line)
@@ -282,7 +282,8 @@ def lines_and_comment(lines):
                         to_text(res[-1].split('\n')[0])[0].strip())
                     if m:
                         if m.groups()[0][0].isalpha() and m.groups()[0][0].islower():
-                            linfo = (m.groups()[0], '', '')
+                            # Hm. Seems to be impossible given the regex.
+                            linfo = (m.groups()[0], '', '')  # pragma: no cover
                         else:
                             comment.append(m.groups()[0])
                         res = res[:-1]
@@ -318,7 +319,7 @@ def make_example(
     aligned = [line.strip() for line in re.split(r'\\(?:\\|newline)', aligned) if line.strip()]
 
     # book-specifics:
-    if pub.record.int_id == 212:
+    if pub.record.int_id == 212:  # pragma: no cover
         if len(aligned) > 2:
             if 'footnotesize' in aligned[2]:
                 aligned = aligned[:2]
@@ -347,7 +348,7 @@ def make_example(
         pt, gl = aligned
         obj = None
     elif len(aligned):
-        if len(aligned) == 4 and aligned[3].startswith(r'}\\jambox'):
+        if len(aligned) == 4 and aligned[3].startswith(r'}\jambox'):
             obj, pt = aligned[0], aligned[1]
             gl = aligned[2] + aligned[3]
         else:  # Dunno what to do here ...
@@ -356,7 +357,7 @@ def make_example(
             # print('---')
             return
     else:  # ... or here.
-        return
+        return  # pragma: no cover
     if obj:
         obj, cmt, _refs = to_text(obj)
         if _refs:
@@ -370,8 +371,8 @@ def make_example(
     if len(pt) != len(gl):
         if gl and gl[-1] in ['()', '*()']:
             gl = gl[:-1]
-    if len(pt) != len(gl):
-        return
+    if len(pt) != len(gl):  # Primary text cannot be aligned with glosses.
+        return  # pragma: no cover
 
     obj = obj or IGT(phrase=pt, gloss=gl).primary_text
     return Example(

@@ -32,7 +32,7 @@ def test_Catalog(mocker, test_dir, tmp_path):
     fname = tmp_path / 'test'
     cat.write(fname)
     cat = Catalog.from_local(fname)
-    assert len(cat) == 1
+    assert len(cat) == 2
     assert cat['1']
 
     with pytest.raises(KeyError):
