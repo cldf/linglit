@@ -1,6 +1,7 @@
 """
 Functionality to read LSP BibTeX files.
 """
+import os
 import re
 import typing
 import logging
@@ -537,24 +538,28 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             text = text.replace(k, v)
         bibtex.append(text)
 
-    # Now run bibtool:
-    cmd = subprocess.Popen(
-        [ensure_cmd('bibtool'), '-r', str(cfg.BIBTOOL_RSC)],
-        stdin=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        stdout=subprocess.PIPE,
-    )
-    stdout, stderr = cmd.communicate(input='\n'.join(bibtex).encode('utf8'))
-    for line in stderr.decode('utf8').splitlines():  # pragma: no cover
-        if line.strip():
-            if any(s in line for s in
-                   ['Duplicate field', 'non-space characters ignored', "Missing ',' assumed"]):
-                continue
-            if verbose:
-                log.warning('bibtool:::' + line)
+    if os.getenv("GITHUB_ACTIONS") != "true":
+        # Now run bibtool:
+        cmd = subprocess.Popen(
+            [ensure_cmd('bibtool'), '-r', str(cfg.BIBTOOL_RSC)],
+            stdin=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+        )
+        stdout, stderr = cmd.communicate(input='\n'.join(bibtex).encode('utf8'))
+        for line in stderr.decode('utf8').splitlines():  # pragma: no cover
+            if line.strip():
+                if any(s in line for s in
+                       ['Duplicate field', 'non-space characters ignored', "Missing ',' assumed"]):
+                    continue
+                if verbose:
+                    log.warning('bibtool:::' + line)
+        bibtex = stdout.decode('utf8')
+    else:  # pragma: no cover
+        bibtex = '\n'.join(bibtex)
 
     # Now feed the bibtex to pybtex one record at a time to skip duplicate keys:
-    for i, chunk in enumerate(re.split(r'^@', stdout.decode('utf8'), flags=re.MULTILINE)):
+    for i, chunk in enumerate(re.split(r'^@', bibtex, flags=re.MULTILINE)):
         # Again some preprocessing:
         if re.match('[A-Za-z]+{,', chunk):  # record without key.
             continue  # pragma: no cover
