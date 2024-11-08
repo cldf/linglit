@@ -1,8 +1,13 @@
+import os
 import shutil
+
+import pytest
 
 from linglit.langsci.publication import Publication
 
 
+@pytest.mark.skipif(
+    os.getenv("GITHUB_ACTIONS") == "true", reason="bibtool not installed in GH Actions.")
 def test_Publication_examples(langsci_pub1, langsci_pub121):
     assert len(langsci_pub121.examples) == 2
     assert langsci_pub121.examples[0].Language_Name == 'Akan'
