@@ -13,11 +13,13 @@ GITHUB_ORG = 'langsci'
 
 @attr.s
 class Record(base.Record):
+    #ID	DOI	edited	metalanguage	objectlanguage	license	superseded	pages	series	seriesnumber	creators	title	year	isbn
     edited = attr.ib()
     superseded = attr.ib()
     pages = attr.ib()
     series = attr.ib()
     seriesnumber = attr.ib()
+    isbn = attr.ib(default=None)
 
     @property
     def current(self):

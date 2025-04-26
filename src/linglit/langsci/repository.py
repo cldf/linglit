@@ -31,10 +31,12 @@ MISSING_TEX_SOURCES = [
     325,
     373,
     380,
+    408,
     # 410,
     284,  # For the time being ... no main file found
     # 292,
     438,
+    478,
 ]
 MISSING_REPOS = [  # Some publications don't have a public repository (yet).
     410,

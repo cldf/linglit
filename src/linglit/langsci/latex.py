@@ -840,10 +840,13 @@ def japhug(n, l2tobj):
 
 
 def href(n, l2tobj):
-    return "[{}]({})".format(
-        l2tobj.nodelist_to_text([n.nodeargd.argnlist[1]]),
-        l2tobj.nodelist_to_text([n.nodeargd.argnlist[0]]),
-    )
+    try:
+        return "[{}]({})".format(
+            l2tobj.nodelist_to_text([n.nodeargd.argnlist[1]]),
+            l2tobj.nodelist_to_text([n.nodeargd.argnlist[0]]),
+        )
+    except:
+        return ''
 
 
 def scite(n, l2tobj):

@@ -67,6 +67,10 @@ NAMES = {
         'Johann-Mattis List and Dik Bakker and Dmitry Egorov and Matthias Urban and Robert '
         'Mailhammer and Agustina Carrizo and Matthew S. Dryer and Evgenia Korovina and David Beck '
         'and Helen Geyer and Patience Epps and Anthony Grant',
+    'Haudricourt, André-Georges and Rivierre, Jean-Claude and Ozanne-Rivierre, Françoise and family=Fontinelle, given=Jacqueline, prefix=de la, useprefix=true':
+        'Haudricourt, André-Georges and Rivierre, Jean-Claude and Ozanne-Rivierre, Françoise and Fontinelle, Jacqueline',
+    'Haudricourt, André-Georges and Rivierre, Jean-Claude and Rivierre, Françoise and Moyse-Faurie, Claire and family=Fontinelle, given=Jacqueline, prefix=de la, useprefix=true':
+        'Haudricourt, André-Georges and Rivierre, Jean-Claude and Rivierre, Françoise and Moyse-Faurie, Claire and Fontinelle, Jacqueline',
 }
 
 GENRE_MAP = {

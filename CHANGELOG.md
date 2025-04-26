@@ -1,6 +1,11 @@
 # Changes
 
 
+## Unreleased
+
+Updates, keeping up with new langsci publications.
+
+
 ## [1.7.1] - 2024-11-08
 
 Better testing.
