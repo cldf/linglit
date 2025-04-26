@@ -174,7 +174,10 @@ def iter_igt(d, abbrs):
             if fs:
                 items = fs[0].xpath('list-item')
                 if items and len(items) == 1:
-                    lname = parse_language_name(items[0])
+                    try:
+                        lname = parse_language_name(items[0])
+                    except AssertionError:
+                        continue
                     if lname and len(lname) > 1 and lname[0].isupper():
                         lang = lname
                     for xref in items[0].xpath('p/xref'):

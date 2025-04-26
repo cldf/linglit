@@ -3,7 +3,7 @@
 
 ## Unreleased
 
-Updates, keeping up with new langsci publications.
+Updates, keeping up with new langsci and glossa publications.
 
 
 ## [1.7.1] - 2024-11-08
