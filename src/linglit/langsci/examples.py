@@ -80,7 +80,10 @@ def iter_gll(s):
     for lineno, line in enumerate(lines):
         line = strip_tex_comment(line).strip()
         if r'\langinfo' in line:
-            res = parse_langinfo(line)
+            try:  # We might get a TexSoup error.
+                res = parse_langinfo(line)
+            except TypeError:
+                continue
             if res:
                 linfo = (res, lineno)
         elif r'\ili{' in line:

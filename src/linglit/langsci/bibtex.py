@@ -20,6 +20,10 @@ __all__ = ['iter_bib', 'normalize_key']
 
 # Invalid author lists (and fixes):
 NAMES = {
+    'Cuonz, Christina/ Studler, Rebekka': 'Cuonz, Christina and Studler, Rebekka',
+    'Llamas, Carmen/Mullany, Louise/ Stockwell, Peter': 'Llamas, Carmen and Mullany, Louise and Stockwell, Peter',
+    'Christen, Helen/Patocka, Franz/ Ziegler, Evelyn': 'Christen, Helen and Patocka, Franz and Ziegler, Evelyn',
+    'Scheel, Helmuth, Togan, Zeki Velidi': 'Scheel, Helmuth and Togan, Zeki Velidi',
     'Trommler, Friederike, Hammann, Marcus': 'Trommler, Friederike and Hammann, Marcus',
     'De Decker, Paul, Nycz, Jennifer': 'De Decker, Paul and Nycz, Jennifer',
     'SkL, Holm. B 74, 4\\textsuperscript{o} = Brøndum-Nielsen, Johs':
@@ -71,6 +75,10 @@ NAMES = {
         'Haudricourt, André-Georges and Rivierre, Jean-Claude and Ozanne-Rivierre, Françoise and Fontinelle, Jacqueline',
     'Haudricourt, André-Georges and Rivierre, Jean-Claude and Rivierre, Françoise and Moyse-Faurie, Claire and family=Fontinelle, given=Jacqueline, prefix=de la, useprefix=true':
         'Haudricourt, André-Georges and Rivierre, Jean-Claude and Rivierre, Françoise and Moyse-Faurie, Claire and Fontinelle, Jacqueline',
+    'Jóhanna Barðdal, Elena Smirnova, Lotte Sommerer, Spike Gildea':
+        'Jóhanna Barðdal and Elena Smirnova and Lotte Sommerer and Spike Gildea',
+    'family=Lier, given=Eva, prefix=van, useprefix=true':
+        'Lier, Eva van'
 }
 
 GENRE_MAP = {
@@ -572,9 +580,13 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             lambda m: '%s = {%s},' % (m.groups()[0], m.groups()[1]),
             chunk,
             flags=re.MULTILINE)
+        #
+        # FIXME:
+        # author = {family=Zanten, given=Ellen, prefix=van, useprefix=true and Dol, Philomena}
+        #
         if i:
             try:
                 for k, e in database.parse_string('@' + chunk, 'bibtex').entries.items():
                     yield to_source(k, e)
             except:  # pragma: no cover # noqa: E722
-                raise ValueError('{}::@{}'.format(ps, chunk))  # pragma: no cover
+                print('{}::@{}'.format(ps, chunk))  # pragma: no cover

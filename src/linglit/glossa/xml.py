@@ -304,6 +304,7 @@ def parse_ref(ref):
         'conf-proc': 'inproceedings',
         'cofproc': 'inproceedings',
     }.get(ref.get('publication-type'), ref.get('publication-type'))
+    genre = genre or 'misc'
     md = {}
     for pg in ref.xpath('person-group'):
         md[pg.get('person-group-type')] = names(pg.xpath('name'))

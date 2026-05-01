@@ -18,6 +18,12 @@ def iter_publications(d='.', glottolog='glottolog', with_examples=False, exclude
     for rid, cls in sorted(PROVIDERS.items(), key=lambda i: i[0]):
         if exclude and rid in exclude:
             continue  # pragma: no cover
+
+        # debug
+        #if rid != 'langsci':
+        #    continue
+        # debug
+
         sd = dirs.get(rid, d / rid)
         if sd.exists():
             repos = cls(sd)

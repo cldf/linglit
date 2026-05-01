@@ -2,6 +2,7 @@
 Functionality to merge bibliographies serialized as BibTeX files.
 """
 import re
+import shutil
 import typing
 import pathlib
 import collections
@@ -53,17 +54,22 @@ def iter_entries(
     else:
         paths = [d]
     for p in paths:
-        for e in database.parse_string(p.read_text(encoding='utf8'), 'bibtex').entries.values():
-            if delatex:
-                src = Source.from_entry(e.key, e)
-                for k in list(src.keys()):
-                    try:
-                        src[k] = LatexNodes2Text().latex_to_text(src[k])
-                    except:  # noqa: E722
-                        pass
-                e = src.entry
-                e.key = src.id.replace('\\', '')
-            yield e
+        try:
+            for e in database.parse_string(p.read_text(encoding='utf8'), 'bibtex').entries.values():
+                if delatex:
+                    src = Source.from_entry(e.key, e)
+                    for k in list(src.keys()):
+                        try:
+                            src[k] = LatexNodes2Text().latex_to_text(src[k])
+                        except:  # noqa: E722
+                            pass
+                    e = src.entry
+                    e.key = src.id.replace('\\', '')
+                yield e
+        except:
+            shutil.copy(p, pathlib.Path('/tmp') / p.name)
+            print('/tmp/' + p.name)
+            raise
 
 
 def strip_capitalization(s):

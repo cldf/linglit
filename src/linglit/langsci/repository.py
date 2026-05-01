@@ -37,13 +37,20 @@ MISSING_TEX_SOURCES = [
     # 292,
     438,
     478,
+    497,
+    502,
+    505,
+    507,
+    513,
+    521,
 ]
 MISSING_REPOS = [  # Some publications don't have a public repository (yet).
     410,
     389,
     # 392,
     # 393,
-    438]
+    438,
+    549]
 TEX_BRANCH = {187: 'master'}
 
 
@@ -102,7 +109,13 @@ class Repository(base.Repository):
         return Publication(self.catalog[item], self.dir / item, self)
 
     def iter_publications(self):
-        for item in self.catalog:
+        for item in sorted(self.catalog, key=lambda i: i.int_id):
+
+            # debug
+            #if item.int_id < 495:
+            #    continue
+            # debug
+
             if item.int_id in MISSING_REPOS:
                 continue  # pragma: no cover
             if item.int_id not in MISSING_TEX_SOURCES:

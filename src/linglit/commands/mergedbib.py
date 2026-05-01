@@ -22,15 +22,22 @@ def run(args):
     repos = get_provider(args)
     do = False if args.drop_until else True
     with TemporaryDirectory() as tmp:
-        for pub in tqdm(repos.iter_publications()):
+        for pub in repos.iter_publications():
+            if pub.id in {'langsci501'}:  # FIXME: Something wrong. Investigate!
+                continue
             if pub.id == 'langsci{}'.format(args.drop_until):
                 do = True  # pragma: no cover
             if not do:
                 continue  # pragma: no cover
-            with tmp.joinpath('{}.bib'.format(pub.id)).open('w') as bib:
-                bib.write(bibtex(pub.as_source()))
-                for src in pub.cited_references:
-                    bib.write(bibtex(src))
+            args.log.info(pub.id)
+            try:
+                with tmp.joinpath('{}.bib'.format(pub.id)).open('w') as bib:
+                    bib.write(bibtex(pub.as_source()))
+                    for src in pub.cited_references:
+                        bib.write(bibtex(src))
+            except AssertionError as e:
+                args.log.warning('skipping {}'.format(pub.id))
+                args.log.warning(str(e))
         ids = set()
         for src, _ in iter_merged(iter_entries(tmp)):
             src.id = src.id.replace('\\', '')

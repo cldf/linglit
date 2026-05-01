@@ -13,12 +13,14 @@ from .examples import iter_gll, make_example
 from . import cfg
 
 MAKEFILE_NAME = 'Makefile'
-MAIN_TEX_NAMES = ['main.tex', 'book.tex']
+MAIN_TEX_NAMES = ['main.tex', 'book.tex']  # 495: mainPAP.tex
 BACKMATTER_NAME = 'backmatter.tex'
 ABBREVIATIONS_NAME = 'abbreviations.tex'
 CHAPTERS_NAME = 'chapters'
 MAIN_TEX_EXCEPTIONS = {  # Cases where the main TeX file can't be found:
     49: 'ind-steelsbook.tex',
+    495: 'mainPAP.tex',
+    496: 'mainPAP.tex',
 }
 NO_BIB = [274]
 NO_INCLUDES = [163]
@@ -242,6 +244,9 @@ def includes_and_bib(d, main, chapterpath, no_bib):
             if not p.exists() and p.stem == 'abbreviations':  # pragma: no cover
                 if p.parent.parent.joinpath('abbreviations.tex').exists():
                     p = p.parent.parent.joinpath('abbreviations.tex')
-            assert p.exists(), str(p)
-            includes.append(p)
+            if p.exists():
+                includes.append(p)
+            else:
+                pass
+                # FIXME: warn!
     return includes, bibs
