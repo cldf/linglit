@@ -4,12 +4,12 @@ We aggregate the relevant source files of langsci books in a repository.
 This repository is created and synched with the upstream repositories by using the GitHub
 REST API via [gh](https://cli.github.com/).
 """
+import dataclasses
 import json
 import base64
 import pathlib
 import subprocess
 
-import attr
 from clldutils.jsonlib import update_ordered, load
 from clldutils.path import ensure_cmd
 
@@ -54,14 +54,17 @@ MISSING_REPOS = [  # Some publications don't have a public repository (yet).
 TEX_BRANCH = {187: 'master'}
 
 
-@attr.s
+@dataclasses.dataclass
 class File:
-    path = attr.ib(converter=pathlib.Path)  # "chapters/01.tex",
-    sha = attr.ib()   # "9b724bc0398020c9c9b14926319a38d219f56786",
-    mode = attr.ib()
-    type = attr.ib()
-    size = attr.ib()  # 23220,
-    url = attr.ib()
+    path: pathlib.Path
+    sha: str
+    mode: str
+    type: str
+    size: int
+    url: str
+
+    def __post_init__(self):
+        self.path = pathlib.Path(self.path)
 
     @property
     def content(self):

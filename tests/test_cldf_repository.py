@@ -1,14 +1,13 @@
+import dataclasses
 import shutil
-
-import attr
 
 from linglit.cldf import Repository
 
 
 def test_create(tmp_path, cldf_repos, mocker):
-    @attr.s
+    @dataclasses.dataclass
     class ZenodoRecord:
-        version = attr.ib(default='1.0')
+        version: str = '1.0'
 
         @classmethod
         def from_concept_doi(cls, _):

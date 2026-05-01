@@ -20,7 +20,7 @@ def iter_publications(d='.', glottolog='glottolog', with_examples=False, exclude
             continue  # pragma: no cover
 
         # debug
-        #if rid != 'langsci':
+        # if rid != 'langsci':
         #    continue
         # debug
 

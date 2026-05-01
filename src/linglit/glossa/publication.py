@@ -1,13 +1,14 @@
-import attr
+import dataclasses
+
 from pycldf.sources import Source
 
 from linglit import base
 from . import xml
 
 
-@attr.s
+@dataclasses.dataclass
 class Record(base.Record):
-    doc = attr.ib()
+    doc: str
 
     def as_source(self):
         return Source(

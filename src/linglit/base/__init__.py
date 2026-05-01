@@ -1,9 +1,11 @@
-import typing
+import re
 import pathlib
 import functools
 import collections
+from collections.abc import Generator
+import dataclasses
+from typing import Optional, Union
 
-import attr
 from pyigt import IGT
 from pycldf.sources import Source
 from pyglottolog import Glottolog as API
@@ -14,7 +16,7 @@ __all__ = ['Glottolog', 'Record', 'Repository', 'Publication', 'Example']
 
 
 class Glottolog:
-    def __init__(self, glottolog: typing.Union[str, pathlib.Path, API]):
+    def __init__(self, glottolog: Union[str, pathlib.Path, API]):
         if not isinstance(glottolog, API):  # pragma: no cover
             glottolog = API(glottolog)
         self.by_glottocode = {}
@@ -36,7 +38,7 @@ class Glottolog:
         self.by_name = {k: v for k, v in self._by_name.items()}
         self.api = glottolog
 
-    def register_names(self, names: typing.Dict):
+    def register_names(self, names: dict[str, str]):
         self.by_name = {k: v for k, v in self._by_name.items()}
         for k, v in names.items():
             if v:
@@ -44,7 +46,7 @@ class Glottolog:
                 if v:
                     self.by_name[k] = self.by_glottocode[v]
 
-    def __call__(self, name: str) -> typing.Optional[str]:
+    def __call__(self, name: str) -> Optional[str]:
         if name:
             if name in self.by_glottocode:
                 return self.by_glottocode[name].id
@@ -55,19 +57,22 @@ class Glottolog:
                 return gl.id
 
 
-@attr.s
+@dataclasses.dataclass
 class Record:
     """
     Metadata record for a publication.
     """
-    ID = attr.ib(validator=attr.validators.matches_re(r'^[0-9]+$'))
-    DOI = attr.ib()
-    metalanguage = attr.ib()
-    objectlanguage = attr.ib()
-    license = attr.ib()
-    creators = attr.ib()
-    title = attr.ib()
-    year = attr.ib()
+    ID: str
+    DOI: str
+    metalanguage: Optional[str]
+    objectlanguage: Optional[str]
+    license: str
+    creators: str
+    title: str
+    year: str
+
+    def __post_init__(self):
+        assert re.fullmatch(r'[0-9]+', self.ID)
 
     def as_source(self) -> Source:  # pragma: no cover
         raise NotImplementedError()
@@ -85,24 +90,30 @@ class Record:
         return int(self.ID)
 
 
-@attr.s
+@dataclasses.dataclass
 class Example:
-    ID = attr.ib()
-    Primary_Text = attr.ib()
-    Analyzed_Word = attr.ib(validator=attr.validators.instance_of(list))
-    Gloss = attr.ib(validator=attr.validators.instance_of(list))
-    Translated_Text = attr.ib(converter=clean_translation)
-    Language_Name = attr.ib()
-    Comment = attr.ib(converter=lambda s: '; '.join(s) if isinstance(s, list) else s)
-    Source = attr.ib(validator=attr.validators.instance_of(list))
-    Language_ID = attr.ib(default=None)  # Assigned after initialization based on Language_Name
-    Source_Path = attr.ib(default=None)
-    Abbreviations = attr.ib(default=attr.Factory(collections.OrderedDict))
-    Local_ID = attr.ib(default=None)
-    Meta_Language_ID = attr.ib(default=None)
-    Corpus_Ref = attr.ib(default=None)
+    ID: str
+    Primary_Text: str
+    Analyzed_Word: list[str]
+    Gloss: list[str]
+    Translated_Text: str
+    Language_Name: str
+    Comment: str
+    Source: list[str]
+    Language_ID: Optional[str] = None
+    Source_Path: Optional[str] = None
+    Abbreviations: dict[str, str] = dataclasses.field(default_factory=collections.OrderedDict)
+    Local_ID: Optional[str] = None
+    Meta_Language_ID: Optional[str] = None
+    Corpus_Ref: Optional[str] = None
 
-    def __attrs_post_init__(self):
+    def __post_init__(self):
+        assert isinstance(self.Analyzed_Word, list)
+        assert isinstance(self.Gloss, list)
+        self.Translated_Text = clean_translation(self.Translated_Text)
+        assert isinstance(self.Source, list)
+        self.Comment = '; '.join(self.Comment) if isinstance(self.Comment, list) else self.Comment
+
         if self.Translated_Text.endswith(']') and self.Translated_Text.count('[') == 1:
             tt, _, cmt = self.Translated_Text[:-1].partition('[')
             if cmt not in ['…']:
@@ -116,9 +127,9 @@ class Example:
                     self.Corpus_Ref = cmt
 
     def __str__(self):
-        res = '({})'.format(self.Local_ID or self.ID)
+        res = f'({self.Local_ID or self.ID})'
         if self.Language_Name:
-            res += ' {}'.format(self.Language_Name)
+            res += f' {self.Language_Name}'
         if self.Source:
             res += ' ('
             for i, (sid, pages) in enumerate(self.Source):
@@ -126,7 +137,7 @@ class Example:
                     res += '; '
                 res += sid
                 if pages:
-                    res += ': {}'.format(pages)
+                    res += f': {pages}'
             res += ')'
         res += '\n'
         res += str(self.as_igt())
@@ -143,13 +154,13 @@ class Example:
 
 
 class Publication:
-    def __init__(self, record: Record, d: typing.Union[str, pathlib.Path], repos=None):
+    def __init__(self, record: Record, d: Union[str, pathlib.Path], repos=None):
         self.record = record
         self.dir = pathlib.Path(d)
         self.repos = repos
 
     def __str__(self):
-        return "{0.creators} {0.year}. {0.title}".format(self.record)
+        return f"{self.record.creators} {self.record.year}. {self.record.title}"
 
     @property
     def is_current(self) -> bool:
@@ -160,12 +171,12 @@ class Publication:
         return self.record.has_open_license
 
     @functools.cached_property
-    def cited_references(self) -> typing.List[Source]:
+    def cited_references(self) -> list[Source]:
         return [ref for ref in self.references.values() if ref.id in self.cited]
 
     @functools.cached_property
     def id(self) -> str:
-        return '{}{}'.format(self.repos.id, self.record.ID)
+        return f'{self.repos.id}{self.record.int_id}'
 
     def as_source(self) -> Source:
         src = self.record.as_source()
@@ -173,15 +184,15 @@ class Publication:
         return src
 
     @functools.cached_property
-    def references(self) -> typing.OrderedDict[str, Source]:
+    def references(self) -> collections.OrderedDict[str, Source]:
         res = collections.OrderedDict()
         for src in self.iter_references():
-            sid = '{}:{}'.format(self.id, src.id)
+            sid = f'{self.id}:{src.id}'
             src['isreferencedby'] = self.id
             res[sid] = Source(src.genre, sid, _check_id=False, **src)
         return res
 
-    def iter_references(self) -> typing.Generator[Source, None, None]:  # pragma: no cover
+    def iter_references(self) -> Generator[Source, None, None]:  # pragma: no cover
         raise NotImplementedError()
 
     @functools.cached_property
@@ -191,10 +202,10 @@ class Publication:
             res.update(['{}:{}'.format(self.id, key)])
         return res
 
-    def iter_cited(self) -> typing.Generator[str, None, None]:  # pragma: no cover
+    def iter_cited(self) -> Generator[str, None, None]:  # pragma: no cover
         raise NotImplementedError()
 
-    def example_sources(self, ex: Example) -> typing.List[Source]:
+    def example_sources(self, ex: Example) -> list[Source]:
         """
         Resolve the source IDs for an example to `Source` instances.
         """
@@ -204,14 +215,14 @@ class Publication:
     def examples(self):
         res = []
         for ex in self.iter_examples():
-            ex.ID = '{}-{}'.format(self.id, ex.ID)
+            ex.ID = f'{self.id}-{ex.ID}'
             refs = []
             for sid, pages in ex.Source:
-                refs.append(('{}:{}'.format(self.id, sid), pages))
+                refs.append((f'{self.id}:{sid}', pages))
             if refs:
                 pages = 'via'
                 if ex.Local_ID:
-                    pages += ':{}'.format(ex.Local_ID)
+                    pages += f':{ex.Local_ID}'
                 refs.append((self.id, pages))
             else:
                 refs.append((self.id, ex.Local_ID))
@@ -219,7 +230,7 @@ class Publication:
             res.append(ex)
         return res
 
-    def iter_examples(self) -> typing.Generator[Example, None, None]:  # pragma: no cover
+    def iter_examples(self) -> Generator[Example, None, None]:  # pragma: no cover
         raise NotImplementedError()
 
 

@@ -1,8 +1,8 @@
 import shutil
 import functools
 import collections
+import dataclasses
 
-import attr
 import cldfzenodo
 from clldutils.jsonlib import dump, load
 from pycldf import Source
@@ -12,27 +12,33 @@ from linglit import base
 from .publication import Publication
 
 
-@attr.s
+@dataclasses.dataclass
 class Record(base.Record):
-    bibtex = attr.ib()
+    bibtex: str
 
     def as_source(self):
         return Source.from_bibtex(self.bibtex)
 
 
-@attr.s
+@dataclasses.dataclass
 class Dataset:
     """
     A row in a repository's catalog.csv file.
     """
-    id = attr.ib()
-    name = attr.ib()
-    conceptdoi = attr.ib()
-    source_to_language = attr.ib()
-    hhtype = attr.ib()
-    bib = attr.ib(converter=lambda s: bool(s))
-    igt = attr.ib(converter=lambda s: bool(s))
-    gloss_abbreviations = attr.ib(converter=lambda s: s.split())  # triple (fname, abbrcol, defcol)
+    id: str
+    name: str
+    conceptdoi: str
+    source_to_language: str
+    hhtype: str
+    bib: bool
+    igt: bool
+    gloss_abbreviations: tuple[str, str, str]
+
+    def __post_init__(self):
+        self.bib = bool(self.bib)
+        self.igt = bool(self.igt)
+        # triple (fname, abbrcol, defcol)
+        self.gloss_abbreviations = self.gloss_abbreviations.split()
 
 
 class Repository(base.Repository):
@@ -93,4 +99,4 @@ class Repository(base.Repository):
             print('downloading {} ...'.format(rec.version))
             rec.download_dataset(self.dir / did)
             print('... done')
-            dump(attr.asdict(rec), self.dir / '{}.json'.format(did), indent=2)
+            dump(dataclasses.asdict(rec), self.dir / '{}.json'.format(did), indent=2)

@@ -1,7 +1,8 @@
 import io
+import dataclasses
 import urllib.request
+from typing import Optional
 
-import attr
 from csvw.dsv import reader, UnicodeWriter
 from pycldf.sources import Source
 
@@ -11,15 +12,15 @@ URL = "https://raw.githubusercontent.com/langsci/opendata/master/catalog.csv"
 GITHUB_ORG = 'langsci'
 
 
-@attr.s
+@dataclasses.dataclass
 class Record(base.Record):
     #ID	DOI	edited	metalanguage	objectlanguage	license	superseded	pages	series	seriesnumber	creators	title	year	isbn
-    edited = attr.ib()
-    superseded = attr.ib()
-    pages = attr.ib()
-    series = attr.ib()
-    seriesnumber = attr.ib()
-    isbn = attr.ib(default=None)
+    edited: str
+    superseded: str
+    pages: str
+    series: str
+    seriesnumber: str
+    isbn: Optional[str] = None
 
     @property
     def current(self):
@@ -64,9 +65,9 @@ class Catalog:
 
     def write(self, dest):
         with UnicodeWriter(dest, delimiter='\t') as w:
-            w.writerow([f.name for f in attr.fields(Record)])
+            w.writerow([f.name for f in dataclasses.fields(Record)])
             for item in self.items:
-                w.writerow(attr.astuple(item))
+                w.writerow(dataclasses.astuple(item))
 
     def __len__(self):
         return len(self.items)

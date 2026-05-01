@@ -66,7 +66,7 @@ def iter_entries(
                     e = src.entry
                     e.key = src.id.replace('\\', '')
                 yield e
-        except:
+        except:  # noqa: E722
             shutil.copy(p, pathlib.Path('/tmp') / p.name)
             print('/tmp/' + p.name)
             raise
