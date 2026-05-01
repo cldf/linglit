@@ -8,7 +8,7 @@ import pathlib
 import collections
 
 from clldutils.misc import slug
-from pybtex import database
+from simplepybtex import database
 from pycldf.sources import Source
 from thefuzz import fuzz
 from unidecode import unidecode

@@ -2,8 +2,7 @@
 Create a bibliography by merging all glossa publications in the repository and their references.
 """
 from clldutils.path import TemporaryDirectory
-from tqdm import tqdm
-from pybtex.database import parse_string
+from simplepybtex.database import parse_string
 
 from linglit.cli_util import add_provider, get_provider
 from linglit.bibtex import iter_entries, iter_merged

@@ -8,7 +8,7 @@ import pathlib
 import subprocess
 import unicodedata
 
-from pybtex import database
+from simplepybtex import database
 from clldutils.source import Source
 from clldutils.misc import slug
 from clldutils.path import ensure_cmd
