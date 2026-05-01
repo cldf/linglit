@@ -1,9 +1,11 @@
 # Changes
 
 
-## Unreleased
+## [1.8.0] - 2026-05-01
 
-Updates, keeping up with new langsci and glossa publications.
+- Updates, keeping up with new langsci and glossa publications.
+- Dropped attrs dependency.
+- Dropped py3.8 support.
 
 
 ## [1.7.1] - 2024-11-08
