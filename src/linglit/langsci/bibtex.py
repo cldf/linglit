@@ -566,6 +566,13 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             if verbose:
                 log.warning('bibtool:::' + line)
 
+    def repl(m):
+        key, value = m.groups()[0], m.groups()[1]
+        if key.lower() == 'author':
+            if re.match(r'\s*[A-Za-z]+\s*\=\s+', value):
+                value = value.partition('=')[2].strip()
+        return '%s = {%s},' % (key, value)
+
     # Now feed the bibtex to pybtex one record at a time to skip duplicate keys:
     for i, chunk in enumerate(re.split(r'^@', stdout.decode('utf8'), flags=re.MULTILINE)):
         # Again some preprocessing:
@@ -576,11 +583,8 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
         for k, v in NAMES.items():  # Fix invalid author lists.
             chunk = chunk.replace(k, v)
         # Field values without enclosing braces:
-        chunk = re.sub(
-            r'^\s*([a-zA-Z]+)\s*=([^{]+),$',
-            lambda m: '%s = {%s},' % (m.groups()[0], m.groups()[1]),
-            chunk,
-            flags=re.MULTILINE)
+        chunk = re.sub(r'^\s*([a-zA-Z]+)\s*=([^{]+),$', repl, chunk, flags=re.MULTILINE)
+
         #
         # FIXME:
         # author = {family=Zanten, given=Ellen, prefix=van, useprefix=true and Dol, Philomena}
