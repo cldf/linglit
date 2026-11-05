@@ -2,7 +2,7 @@ import functools
 import collections
 
 from pycldf.dataset import iter_datasets
-from pycldf.sources import Sources
+from pycldf.sources import Sources, Source
 from pyigt import Example
 
 from linglit import base
@@ -41,6 +41,7 @@ class Publication(base.Publication):
                         sid, _ = Sources.parse(src)
                         sid2langs[sid].add(l2gc[row['languageReference']])
         for src in self.ds.sources:
+            src = Source(src.genre, src.id, _lowercase=True, **src)
             for field in [
                 'besttxt', 'cfn', 'delivered', 'fn',
                 'languageid', 'glottolog_ref_id', 'glottolog_ref',
