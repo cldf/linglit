@@ -80,6 +80,8 @@ NAMES = {
     'family=Lier, given=Eva, prefix=van, useprefix=true':
         'Lier, Eva van',
     '{ALEW = Hock, Wolfgang, Rainer Fecht, Anna H. Feulner, Eugen Hill \\& Dagmar S. Wodtko}': 'Hock, Wolfgang and Rainer Fecht and Anna H. Feulner and Eugen Hill and Dagmar S. Wodtko',
+    'CHD = Goedegebuure, Petra M., Hans G. Güterbock, Harry A. Hoffner & Theo P. J. van den Hout':
+        'Goedegebuure, Petra M. and Hans G. Güterbock and Harry A. Hoffner and Theo P. J. van den Hout',
 }
 
 GENRE_MAP = {
