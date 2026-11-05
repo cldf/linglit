@@ -86,6 +86,7 @@ NAMES = {
     '{Hackstein, Olav and Jared Miller and Elisabeth Rieken and Ilya Yakubovich}',
     'Morgenstierne, Georg, publisher = Dybwad., title = An Etymological Vocabulary of Pashto, Skrifter utgitt av Det Norske Videnskaps-Akademi i Oslo II, Historisk-Filosofisk Klasse, year = 1927 and Sims-Williams, Nicholas':
     'Morgenstierne, Georg and Sims-Williams, Nicholas',
+    'Nicholas, Gabriel, Aliya, Bhatia': 'Nicholas, Gabriel and Aliya Bhatia',
 }
 
 GENRE_MAP = {
