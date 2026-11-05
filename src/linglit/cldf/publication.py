@@ -41,7 +41,12 @@ class Publication(base.Publication):
                         sid, _ = Sources.parse(src)
                         sid2langs[sid].add(l2gc[row['languageReference']])
         for src in self.ds.sources:
-            src = Source(src.genre, src.id, _lowercase=True, _check_id=False, **src)
+            src = Source(
+                src.genre, src.id,
+                _lowercase=True,
+                _check_id=False,
+                _strip_tex=['author', 'title', 'publisher', 'year', 'doi'],
+                **src)
             for field in [
                 'besttxt', 'cfn', 'delivered', 'fn',
                 'languageid', 'glottolog_ref_id', 'glottolog_ref',
