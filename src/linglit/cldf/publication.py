@@ -45,7 +45,7 @@ class Publication(base.Publication):
                 src.genre, src.id,
                 _lowercase=True,
                 _check_id=False,
-                _strip_tex=['author', 'title', 'publisher', 'year', 'doi'],
+                _strip_tex=['author', 'title', 'publisher', 'year', 'doi', 'booktitle', 'editor'],
                 **src)
             for field in [
                 'besttxt', 'cfn', 'delivered', 'fn',
