@@ -588,15 +588,16 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
             continue  # pragma: no cover
         if chunk.startswith('unpublished{rien'):  # empty stub.
             continue  # pragma: no cover
+        if "given=" in chunk:
+            # FIXME:
+            # author = {family=Zanten, given=Ellen, prefix=van, useprefix=true and Dol, Philomena}
+            continue
+
         for k, v in NAMES.items():  # Fix invalid author lists.
             chunk = chunk.replace(k, v)
         # Field values without enclosing braces:
         chunk = re.sub(r'^\s*([a-zA-Z]+)\s*=([^{]+),$', repl, chunk, flags=re.MULTILINE)
 
-        #
-        # FIXME:
-        # author = {family=Zanten, given=Ellen, prefix=van, useprefix=true and Dol, Philomena}
-        #
         if i:
             try:
                 for k, e in database.parse_string('@' + chunk, 'bibtex').entries.items():
