@@ -84,6 +84,8 @@ NAMES = {
         'Goedegebuure, Petra M. and Hans G. Güterbock and Harry A. Hoffner and Theo P. J. van den Hout',
     '{eDiAna = Hackstein, Olav, Jared Miller, Elisabeth Rieken \\& Ilya Yakubovich (eds.).}':
     '{Hackstein, Olav and Jared Miller and Elisabeth Rieken and Ilya Yakubovich}',
+    'Morgenstierne, Georg, publisher = Dybwad., title = An Etymological Vocabulary of Pashto, Skrifter utgitt av Det Norske Videnskaps-Akademi i Oslo II, Historisk-Filosofisk Klasse, year = 1927 and Sims-Williams, Nicholas':
+    'Morgenstierne, Georg and Sims-Williams, Nicholas',
 }
 
 GENRE_MAP = {
