@@ -82,6 +82,8 @@ NAMES = {
     '{ALEW = Hock, Wolfgang, Rainer Fecht, Anna H. Feulner, Eugen Hill \\& Dagmar S. Wodtko}': 'Hock, Wolfgang and Rainer Fecht and Anna H. Feulner and Eugen Hill and Dagmar S. Wodtko',
     '{CHD = Goedegebuure, Petra M., Hans G. Güterbock, Harry A. Hoffner \\& Theo P. J. van den Hout}':
         'Goedegebuure, Petra M. and Hans G. Güterbock and Harry A. Hoffner and Theo P. J. van den Hout',
+    '{eDiAna = Hackstein, Olav, Jared Miller, Elisabeth Rieken \\& Ilya Yakubovich (eds.).}':
+    '{Hackstein, Olav and Jared Miller and Elisabeth Rieken and Ilya Yakubovich}',
 }
 
 GENRE_MAP = {

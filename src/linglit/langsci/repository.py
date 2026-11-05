@@ -120,7 +120,7 @@ class Repository(base.Repository):
         for item in sorted(self.catalog, key=lambda i: i.int_id):
 
             # debug
-            if item.int_id > 589:
+            if item.int_id < 550:
                 continue
             # debug
 
