@@ -79,7 +79,7 @@ NAMES = {
         'Jóhanna Barðdal and Elena Smirnova and Lotte Sommerer and Spike Gildea',
     'family=Lier, given=Eva, prefix=van, useprefix=true':
         'Lier, Eva van'
-    '{ALEW = Hock, Wolfgang, Rainer Fecht, Anna H. Feulner, Eugen Hill \& Dagmar S. Wodtko}': 'Hock, Wolfgang and Rainer Fecht and Anna H. Feulner and Eugen Hill and Dagmar S. Wodtko',
+    '{ALEW = Hock, Wolfgang, Rainer Fecht, Anna H. Feulner, Eugen Hill \\& Dagmar S. Wodtko}': 'Hock, Wolfgang and Rainer Fecht and Anna H. Feulner and Eugen Hill and Dagmar S. Wodtko',
 }
 
 GENRE_MAP = {
