@@ -91,12 +91,12 @@ class Repository(base.Repository):
         for did, dataset in self.catalog.items():
             dldir = self.dir / did
             print(did)
-            rec = cldfzenodo.Record.from_concept_doi(dataset.conceptdoi)
+            rec = cldfzenodo.API.get_record(conceptdoi=dataset.conceptdoi)
             if dldir.exists():
                 if self.metadata(did)['version'] == rec.version:
                     continue
                 shutil.rmtree(dldir)  # pragma: no cover
-            print('downloading {} ...'.format(rec.version))
+            print(f'downloading {rec.version} ...')
             rec.download_dataset(self.dir / did)
             print('... done')
-            dump(dataclasses.asdict(rec), self.dir / '{}.json'.format(did), indent=2)
+            dump(dataclasses.asdict(rec), self.dir / f'{did}.json', indent=2)
