@@ -80,7 +80,7 @@ NAMES = {
     'family=Lier, given=Eva, prefix=van, useprefix=true':
         'Lier, Eva van',
     '{ALEW = Hock, Wolfgang, Rainer Fecht, Anna H. Feulner, Eugen Hill \\& Dagmar S. Wodtko}': 'Hock, Wolfgang and Rainer Fecht and Anna H. Feulner and Eugen Hill and Dagmar S. Wodtko',
-    'CHD = Goedegebuure, Petra M., Hans G. Güterbock, Harry A. Hoffner & Theo P. J. van den Hout':
+    '{CHD = Goedegebuure, Petra M., Hans G. Güterbock, Harry A. Hoffner \\& Theo P. J. van den Hout}':
         'Goedegebuure, Petra M. and Hans G. Güterbock and Harry A. Hoffner and Theo P. J. van den Hout',
 }
 
@@ -571,6 +571,8 @@ def iter_bib(ps: typing.List[pathlib.Path], verbose=False) -> typing.Generator[S
     def repl(m):
         key, value = m.groups()[0], m.groups()[1]
         if key.lower() == 'author':
+            if value.startswith('{') and value.endswith('}'):
+                value = value[1:-1]
             if re.match(r'\s*[A-Za-z]+\s*\=\s+', value):
                 value = value.partition('=')[2].strip()
         return '%s = {%s},' % (key, value)
