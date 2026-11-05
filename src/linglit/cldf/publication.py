@@ -41,7 +41,7 @@ class Publication(base.Publication):
                         sid, _ = Sources.parse(src)
                         sid2langs[sid].add(l2gc[row['languageReference']])
         for src in self.ds.sources:
-            src = Source(src.genre, src.id, _lowercase=True, **src)
+            src = Source(src.genre, src.id, _lowercase=True, _check_id=False, **src)
             for field in [
                 'besttxt', 'cfn', 'delivered', 'fn',
                 'languageid', 'glottolog_ref_id', 'glottolog_ref',
@@ -51,7 +51,7 @@ class Publication(base.Publication):
                 if field in src:
                     del src[field]
             if src.id in sid2langs:
-                src['lgcode'] = '; '.join('[{}]'.format(gc) for gc in sorted(sid2langs[src.id]))
+                src['lgcode'] = '; '.join(f'[{gc}]' for gc in sorted(sid2langs[src.id]))
             if self.cfg.hhtype:
                 src['hhtype'] = self.cfg.hhtype
             yield src
