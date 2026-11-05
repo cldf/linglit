@@ -41,8 +41,13 @@ MISSING_TEX_SOURCES = [
     502,
     505,
     507,
-    513,
-    521,
+    #513,
+    #521,
+    524,
+    554,
+    555,
+    564,
+    589,
 ]
 MISSING_REPOS = [  # Some publications don't have a public repository (yet).
     410,
@@ -115,8 +120,8 @@ class Repository(base.Repository):
         for item in sorted(self.catalog, key=lambda i: i.int_id):
 
             # debug
-            #if item.int_id < 495:
-            #    continue
+            if item.int_id > 589:
+                continue
             # debug
 
             if item.int_id in MISSING_REPOS:
