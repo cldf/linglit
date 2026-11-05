@@ -19,6 +19,6 @@ def test_create(tmp_path, cldf_repos, mocker):
     shutil.copy(cldf_repos / 'catalog.csv', tmp_path)
     repo = Repository(tmp_path)
 
-    mocker.patch('linglit.cldf.repository.cldfzenodo', mocker.Mock(Record=ZenodoRecord()))
+    mocker.patch('linglit.cldf.repository.cldfzenodo.API.get_record', lambda **_: ZenodoRecord())
     repo.create()
     repo.create()
